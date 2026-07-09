@@ -1,0 +1,230 @@
+{
+  "name": "THOR",
+  "real_name": "THOR ODINSON",
+  "role": "VANGUARD",
+  "description": "The son of Odin taps into his divine power to call forth thunder and lightning, raining down relentless fury upon his enemies. With his mighty hammer Mjolnir in hand, Thor effortlessly asserts his dominance on the field of combat.",
+  "lore": "Prince of Asgard and God of Thunder, Thor Odinson is one of the bravest warriors the cosmos has ever known. With his enchanted hammer in hand, Thor summons the full fury of the storm to smite his foes… but only if he proves himself worthy of Mjolnir’s might. Alas, Thor has suffered greatly since the Timestream Entanglement. When the All-Father was forced to enter his regenerative Odinsleep, Thor and his brother Loki battled for the throne. Through deceit and trickery, Loki bested his brother, exiling Thor to a distant and dangerous timeline.",
+  "base_stats": {
+    "Health": "300+300 Regenerative Shield",
+    "Movement Speed": "6.5 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/9b0660d6-90c1-4d16-82e0-840a198a8837.png",
+    "https://r.res.easebar.com/pic/20241122/76bd758a-dd5c-4c35-9d27-b5b2ff317cc0.png"
+  ],
+  "forms": [
+    {
+      "name": "Thor",
+      "stats": {
+        "Health": "300+300 Regenerative Shield",
+        "Movement Speed": "6.5 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/9b0660d6-90c1-4d16-82e0-840a198a8837.png",
+        "https://r.res.easebar.com/pic/20241122/76bd758a-dd5c-4c35-9d27-b5b2ff317cc0.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Mjolnir Bash",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/5767ff16-bdb0-4e38-be05-f86ae73aef7e.png",
+      "description": "Wield Mjolnir to strike enemies. When Awakened, Thor can launch lightning arc waves to deal damage",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast Spell Field",
+        "Range": "4m",
+        "Attack Interval": "0.6s",
+        "Damage": "45"
+      },
+      "icon_file": "thor/abilities/01_primary_left-click_mjolnir-bash.png"
+    },
+    {
+      "name": "God of Thunder",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/68c2df37-4e4b-48be-af36-22a545b1cb8d.png",
+      "description": "Soar upwards and smite the ground after charging for a duration, inflicting damage on enemies within range",
+      "stats": {
+        "Key": "Q",
+        "Casting": "A persistent spell field that generates a one-time spell field upon expiration",
+        "Range": "The sustained spell field is cylindrical, measuring 8m in radius and 20m in height, whereas the one-time spell field has an 8m spherical radius",
+        "Height": "9m",
+        "Duration": "1.5s",
+        "Damage": "The sustained spell field lasts for 0.5s, dealing 40 damage, while the one-time spell field deals 220 damage",
+        "Special Effect": "After Ultimate Ability lands, Stun surrounding enemies for 1s",
+        "Energy Cost": "3100"
+      },
+      "icon_file": "thor/abilities/02_ability_q_god-of-thunder.png"
+    },
+    {
+      "name": "Storm Surge",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/b18044b4-d344-4400-95aa-1db27f994c9c.png",
+      "description": "Hold to spin Mjolnir before dashing forward and knocking back enemies",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Charged Dash",
+        "Maximum Charge Time": "2s",
+        "Dash Distance": "No charge: 10m; Full charge: 20m. When carrying an enemy, the ranges are 6m with no charge and 13m with full",
+        "Damage": "No Charge Damage: 40; Full Charge Damage: 60",
+        "Thorforce Cost": "1"
+      },
+      "icon_file": "thor/abilities/03_ability_shift_storm-surge.png"
+    },
+    {
+      "name": "Lightning Realm",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/37d0dc4d-ca68-48f0-8e5a-d7511b05b02e.png",
+      "description": "Summon lightning that restores Thorforce based on the number of hit enemies",
+      "stats": {
+        "Key": "E",
+        "Casting": "Persistent Spell Field",
+        "Range": "5m spherical radius",
+        "Maximum Duration": "4s",
+        "Damage": "Deal 40 damage when enemies cross the boundaries",
+        "Cooldown": "12s",
+        "Special Effect": "For each enemy within the spell area, 1 point of Thorforce is restored. Enemies that cross the boundary will be Slowed by 30%, Enemies that cross the boundary will receive an additional debuff that restricts aerial abilities for 2s."
+      },
+      "icon_file": "thor/abilities/04_ability_e_lightning-realm.png"
+    },
+    {
+      "name": "Awakening Rune",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/77bc01c1-2967-4660-a899-87a8b6c3efe5.png",
+      "description": "Consume Thorforce to enter the Awakened state, granting Bonus Health and enhancing Mjolnir Bash",
+      "stats": {
+        "Key": "F",
+        "Casting": "Ability Enhancement",
+        "Key (Enhanced)": "Left Click",
+        "Projectile Speed": "60 m/s",
+        "Attack Interval": "The first three stages last for 0.4s each, while the fourth stage lasts for 0.8s",
+        "Range": "3m spherical radius",
+        "Duration": "5s",
+        "Damage": "Projectile Damage: 70, Spell Field Damage: 15 per second",
+        "Max Shield Duration": "2.5s",
+        "Thorforce Cost": "3",
+        "Special Effect": "Inflict damage over time on nearby enemies; After casting Awakening Rune, you can manually cancel the Awakened state after a brief delay. At the end of the Awakened state, Thor restores 1 point of Thunderforce."
+      },
+      "icon_file": "thor/abilities/05_ability_f_awakening-rune.png"
+    },
+    {
+      "name": "Hammer Throw",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/06301e2b-a041-47cb-bf81-009ef24c3a3d.png",
+      "description": "Throw Mjolnir forward which then returns",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Launch a single-target projectile that returns after a delayed hit",
+        "Projectile Speed": "The projectile travels outward at a speed of 60m per second and returns at a speed of 80m per second",
+        "Maximum Distance": "24m",
+        "Damage": "Outward Projectile Damage: 50; Returning Projectile Damage: 25",
+        "Cooldown": "6s",
+        "Critical Hit": "No",
+        "Special Effect": "Hits grant 75 Bonus Health (only triggers once per throw, even if hitting multiple enemies)"
+      },
+      "icon_file": "thor/abilities/06_ability_right-click_hammer-throw.png"
+    },
+    {
+      "name": "Thorforce",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/78caf91d-ecd4-431c-9e43-31558f4e5fa9.png",
+      "description": "Consume Thorforce to gain Bonus Health. Landing Mjolnir Bash on an enemy instantly recharges Thorforce",
+      "stats": {
+        "Key": "Passive",
+        "Maximum Thorforce": "3",
+        "Thorforce Recovery Speed": "5s per Thorforce",
+        "Bonus Health Per Thorforce": "Each point of Thorforce consumed grants 50 Bonus Health, while abilities that consume 3 points of Thorforce grant 150 Bonus Health",
+        "Bonus Max Health": "150",
+        "Mjolnir Bash Energy Recovery Per Thorforce": "5s",
+        "Thorforce Consumption Cooldown": "1.5s"
+      },
+      "icon_file": "thor/abilities/07_passive_passive_thorforce.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "THUNDERSTRIKE PIKE",
+        "icon": "https://r.res.easebar.com/pic/20250912/f3f25383-cb85-43c1-9479-e4d60a8dfcb7.png",
+        "description": "Angela shares fragments of her Ichors with Thor, empowering him to hurl a Thunder Spear that restores Thorforce for each enemy struck. Afterward, Thor can leap to the spear's explosion point, dealing a second wave of damage to all enemies within range",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "30s",
+          "Projectile Speed": "80m/s",
+          "Projectile Damage": "25",
+          "Projectile-Generated Spell Field Range": "5m",
+          "Projectile-Generated Spell Field Damage": "30",
+          "Hit Ground Spell Field Range": "5m",
+          "Hit Ground Spell Field Damage": "45",
+          "Hit Ground Maximum Distance": "30m"
+        },
+        "icon_file": "thor/teamups/received_01_thunderstrike-pike.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "RAGNAROK REBIRTH",
+        "icon": "https://r.res.easebar.com/pic/20260707/8ce70d44-ba34-494c-8eec-1a9330fce5f2.png",
+        "partner": "Hela",
+        "base": {
+          "description": "Receiving fatal damage prevents immediate defeat, Thor gains a decaying pool of Bonus Health. If he participates in a KO during this time, he resurrects and recovers a small amount of Health.",
+          "stats": {
+            "Key": "Passive",
+            "Cooldown": "50s",
+            "Cooldown on Failed Resurrection": "30s",
+            "Minimum Health Gained on Successful Resurrection": "300",
+            "Bonus Health": "600",
+            "Damage Reduction While Active": "40%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hela, if either of them participates in a KO, Thor instantly revives, restoring Health equal to his remaining Bonus Health and gaining a Continuous Healing effect.",
+          "stats": {
+            "Key": "Passive",
+            "Healing Over Time": "50/s for 3s"
+          }
+        },
+        "icon_file": "thor/teamups/provided_01_ragnarok-rebirth.png"
+      },
+      {
+        "name": "DIVINE ARMORY",
+        "icon": "https://r.res.easebar.com/pic/20260707/e77a0ba5-4f3e-4b46-9dc2-e44d1b1976e3.png",
+        "partner": "Angela",
+        "base": {
+          "description": "Hurl a Thunder Spear that restores Thorforce for each enemy struck. Afterward, Thor canleap to the spear's explosion point, dealing a second wave of damage to all enemies within range.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Thunder Spear Spell Field Damage": "30",
+            "Thunder Spear Spell Field Range": "5m spherical radius",
+            "Ground Slam Damage": "45",
+            "Ground Slam Damage Range": "5m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Angela, leaping to the Thunder Spear grants Bonus Health.",
+          "stats": {
+            "Key": "C",
+            "Bonus Health": "100"
+          }
+        },
+        "icon_file": "thor/teamups/provided_02_divine-armory.png"
+      }
+    ]
+  },
+  "source_name": "THOR",
+  "uuid": "fcddbb53-6a99-45f6-9cc8-65c68edd96e0",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195657.html",
+  "portrait_files": [
+    "thor/portraits/portrait_1.png",
+    "thor/portraits/portrait_2.png"
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "name": "STAR-LORD",
+  "real_name": "PETER QUILL",
+  "role": "DUELIST",
+  "description": "Peter Quill lives to dazzle his foes on the battlefield with his signature swagger. As his element guns paint arcs of devastation, his acrobatic moves sail through the sky with unrivaled style. With performances this spectacular, it's no wonder that Star-Lord is so legendary!",
+  "lore": "Half human. Half alien. All awesome. That's how Peter Quill, the space outlaw called Star-Lord, would probably describe himself. And as leader of the spacefaring heroes known as the Guardians of the Galaxy, he's saved the universe enough times to actually live up to his legends. At Shuri's request, Star-Lord led a scouting mission to the surface of the symbiote planet, Klyntar. As the Guardians made their approach, their ship was disabled by a mysterious force, leaving Star-Lord and his crew stranded on a hostile world nearing the brink of annihilation.",
+  "base_stats": {
+    "Health": "150+100 Regenerative Shield",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/501ebad0-7b4d-41d7-8108-3af72231a555.png",
+    "https://r.res.easebar.com/pic/20241122/4c7caee5-b3e7-4906-a4f8-a201c157e212.png"
+  ],
+  "forms": [
+    {
+      "name": "STAR-LORD",
+      "stats": {
+        "Health": "150+100 Regenerative Shield",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/501ebad0-7b4d-41d7-8108-3af72231a555.png",
+        "https://r.res.easebar.com/pic/20241122/4c7caee5-b3e7-4906-a4f8-a201c157e212.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Element Guns",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/947d9975-ec6d-4d17-b00b-ce4642fafebc.png",
+      "description": "Shoot enemies with dual Element Guns",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Rapid-fire shots with spread.",
+        "Damage": "6.5 damage per round",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 50% at 25m",
+        "Crosshair Spread Radius (at 10m)": "After 2 consecutive shots, the spread increases to 0.15m; after 5 consecutive shots, the spread expands to 0.24m",
+        "Fire Rate": "40 rounds per second",
+        "Ammo": "50",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "star-lord/abilities/01_primary_left-click_element-guns.png"
+    },
+    {
+      "name": "Galactic Legend",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/cdfdc8b1-27e7-4a28-a666-3a3387b92263.png",
+      "description": "Engage in free-flight and lock onto enemies in sight",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Rapid-fire projectile.",
+        "Damage": "6.5 damage per round",
+        "Damage Falloff": "Falloff begins at 25m, decreasing to 75% at 40m",
+        "Fire Rate": "40 rounds per second",
+        "Ammo": "40",
+        "Critical Hit": "No",
+        "Duration": "8s",
+        "Movement Boost": "20%",
+        "Reload Time Reduction": "70%",
+        "Maximum Locking Distance": "40m",
+        "Energy Cost": "3100",
+        "Special Mechanic": "During this period, Star-Lord's Reload Speed increases significantly"
+      },
+      "icon_file": "star-lord/abilities/02_ability_q_galactic-legend.png"
+    },
+    {
+      "name": "Rocket Propulsion",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/2c065ae8-398d-4001-a38d-c30a2d4737bc.png",
+      "description": "Consume energy to gain a Movement Boost and soar forward",
+      "stats": {
+        "Key": "SHIFT",
+        "Movement Boost": "100%",
+        "Maximum Energy": "1800",
+        "Energy Cost": "300/s",
+        "Energy Recovery Speed": "100/s"
+      },
+      "icon_file": "star-lord/abilities/03_ability_shift_rocket-propulsion.png"
+    },
+    {
+      "name": "Blaster Barrage",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/00802ad1-6900-44dc-a134-258fae77b326.png",
+      "description": "Fire a frenzy of shots, causing damage to enemies within range.",
+      "stats": {
+        "Key": "E",
+        "Casting": "Spherical Spell Field",
+        "Duration": "3s",
+        "Range": "8m spherical radius",
+        "Attack Interval": "0.1 per hit",
+        "Damage": "7.5 damage per hit",
+        "Damage Falloff": "Falloff begins at 4m, decreasing to 80% at 8m",
+        "Cooldown": "8s"
+      },
+      "icon_file": "star-lord/abilities/04_ability_e_blaster-barrage.png"
+    },
+    {
+      "name": "Stellar Shift",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/8f25f3a9-7dba-437d-b794-fed37ea2fdd3.png",
+      "description": "Dodge in the direction of movement and swiftly reload",
+      "stats": {
+        "Key": "Right Click",
+        "Invincibility Duration": "0.37s",
+        "Charges": "2",
+        "Recharge Speed": "5s per charge"
+      },
+      "icon_file": "star-lord/abilities/05_ability_right-click_stellar-shift.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Astral Jump",
+        "icon": "https://r.res.easebar.com/pic/20250808/cd6417e5-8cbb-4e85-b34f-0e4d79875b80.png",
+        "description": "Star-Lord gets a teleport to its deployment point from anywhere on the map",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "Teleport Cooldown 30s; jump device deployment Cooldown 5s.",
+          "Teleport Delay": "1s",
+          "Summons' Health": "100"
+        },
+        "icon_file": "star-lord/teamups/received_01_astral-jump.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "FLORA MUNITIONS",
+        "icon": "https://r.res.easebar.com/pic/20260707/800569ea-afe8-419f-9488-ba195824bba4.png",
+        "partner": "Groot",
+        "base": {
+          "description": "Gain a new ability to toss Twisted Thorn Seeds forward. Upon landing, they rapidly Sprout and take root, generating Thorn Snares around the area. Enemies stepping on a snare take damage and suffer a Root effect.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Traps Generated": "5",
+            "Trap Generation Delay": "1",
+            "Trap Duration": "4",
+            "Imprison Duration": "0.8s",
+            "Damage": "30 each"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Groot, the number of Thorn Snares deployed increases, and the damage dealt when an enemy steps on them is boosted.",
+          "stats": {
+            "Key": "C",
+            "Traps Generated": "8",
+            "Damage": "45 each"
+          }
+        },
+        "icon_file": "star-lord/teamups/provided_01_flora-munitions.png"
+      },
+      {
+        "name": "STAR-SOUL",
+        "icon": "https://r.res.easebar.com/pic/20260707/52b37322-315d-4192-9c0b-5930037955e3.png",
+        "partner": "Adam Warlock",
+        "base": {
+          "description": "Gain a new ability to place a Telekinetic Beacon. You can teleport back to the location where the beacon is deployed from anywhere on the map. Upon defeat, Star-Lord will cocoon and respawn at the Telekinetic Beacon's coordinates.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "30s",
+            "Cooldown to respawn": "120s",
+            "Cooldown to Replace After Canceling Telekinetic Beacon": "5s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Adam Warlock, every time Star-Lord participates in a KO, Telekinetic Beaconcooldown is reduced.",
+          "stats": {
+            "Key": "C",
+            "Ability CD Reduction per KO": "10s"
+          }
+        },
+        "icon_file": "star-lord/teamups/provided_02_star-soul.png"
+      }
+    ]
+  },
+  "source_name": "STAR-LORD",
+  "uuid": "f052a66a-d95a-4062-911a-0c4cd35386ac",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195683.html",
+  "portrait_files": [
+    "star-lord/portraits/portrait_1.png",
+    "star-lord/portraits/portrait_2.png"
+  ]
+}

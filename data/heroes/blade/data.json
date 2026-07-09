@@ -1,0 +1,228 @@
+{
+  "name": "BLADE",
+  "real_name": "ERIC BROOKS",
+  "role": "DUELIST",
+  "description": "Half-human and half-vampire, Eric Brooks walks betweenworlds, craving the very life force of his enemies. As nightfalls, Blade's hunt begins as he wields the Sword of Draculato become the nightmare of any foe who dares to bare theirfangs.",
+  "lore": "Eric Brooks was born a Daywalker — half-human, half-vampire — because his mother was bitten by a vampire while Eric was still in her womb. His supernatural powers and mastery of weapons made him the perfect vampire hunter — Blade. When Dracula took over New York City, Blade was the first hero to confront him. Having mastered the power of the Chronovium, Dracula defeated Blade and imprisoned him in a dungeon. After Blade was freed, he was sent to Wakanda to recover… until Shuri recruited him as her most powerful ally against Knull!",
+  "base_stats": {
+    "Health": "350",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250808/786a1a2d-106d-4b2b-a919-45e2d1472636.png",
+    "https://r.res.easebar.com/pic/20250808/a61fb815-4822-492d-acae-b2ae4087eb90.png"
+  ],
+  "forms": [
+    {
+      "name": "BLADE",
+      "stats": {
+        "Health": "350",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250808/786a1a2d-106d-4b2b-a919-45e2d1472636.png",
+        "https://r.res.easebar.com/pic/20250808/a61fb815-4822-492d-acae-b2ae4087eb90.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Ancestral Sword",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250808/7fbc426f-d5a0-4566-9d1f-00f79ad25bc3.png",
+      "description": "Slash forward with Blade's Ancestral Sword",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "Cause 26 damage per single slash; double strike cause 13 damage per hit",
+        "Maximum Distance": "5m",
+        "Attack Interval": "2 strikes per second"
+      },
+      "icon_file": "blade/abilities/01_primary_left-click_ancestral-sword.png"
+    },
+    {
+      "name": "Hunter's Shotgun",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250808/2b532b79-61a8-4300-98a8-5cbaa4f5a29b.png",
+      "description": "Fire at enemies using your Shotgun",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Projectile that fires in a straight trajectory, which breaks into shrapnel after reaching a certain distance",
+        "Initial Projectile Maximum Distance": "8m",
+        "Initial Projectile Speed": "180 m/s",
+        "Initial Projectile Damage": "45",
+        "Shrapnel Amount": "11",
+        "Damage per Shrapnel Hit": "8",
+        "Shrapnel Projectile Speed": "150 m/s",
+        "Shrapnel Damage Falloff": "Falloff begins at 15m, decreasing to 50% at 30m"
+      },
+      "icon_file": "blade/abilities/02_primary_left-click_hunter-s-shotgun.png"
+    },
+    {
+      "name": "Scarlet Shroud",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250808/38dda78b-768c-421d-a971-772db41ee3dd.png",
+      "description": "Parry with Ancestral Sword to become Unstoppable for a brief period, reducing damage taken from the front and decreasing the cooldown of Daywalker Dash",
+      "stats": {
+        "Key": "Right Click",
+        "Maximum Energy": "120",
+        "Energy Cost": "60/s",
+        "Energy Recovery Speed": "15/s",
+        "Activation Cost": "15",
+        "Cooldown": "3s",
+        "Unstoppable Duration": "1s after activation",
+        "Damage Reduction": "80%",
+        "Special Effect": "Every 200 damage resisted grants 1 charge for Daywalker Dash"
+      },
+      "icon_file": "blade/abilities/03_ability_right-click_scarlet-shroud.png"
+    },
+    {
+      "name": "Bloodline Awakening",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250808/407381d7-9280-4cfc-9f6e-2dac3d07e0ce.png",
+      "description": "Awaken the Dhampir bloodline, enhancing slash speed during continuous attacks and triggering Whirlwind Slash.If all Whirlwind Slash strikes hit, your Attack Speed will further increase. While under this state, you suffer Reduced Healing, but attacks gain Lifesteal",
+      "stats": {
+        "Key": "E",
+        "Special Effect": "Landing all four hits of Whirlwind Slash grants 1 slash speed stack; Excess lifesteal grants Bonus Health( max 75; conversion rate 50%)",
+        "Lifesteal Proportion": "70%, Affected by Healing Reduction",
+        "Self Reduce Healing Proportion": "25%",
+        "Movement Speed Boost": "1.5 m/s",
+        "Max Attack Speed Boost Buff Stack": "10",
+        "Left Click Hit Buff Stack": "1",
+        "Shift Hit Buff Stack": "5",
+        "Attack Speed Boost Proportion from Each Buff Stack": "10%",
+        "Duration of Each Buff Stack": "1s",
+        "Whirlwind Slash Damage": "64",
+        "Hits to Trigger the Whirlwind Slash": "5"
+      },
+      "icon_file": "blade/abilities/04_ability_e_bloodline-awakening.png"
+    },
+    {
+      "name": "Daywalker Dash",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20250808/317a7483-cdd2-4114-9fed-861f7973e7cf.png",
+      "description": "Dash forward. If wielding your gun, shoot at enemies upon impact, applying a Healing Reduction effect. If wielding your sword, deliver a cleaving strike that inflicts Slow",
+      "stats": {
+        "Key": "Shift",
+        "Casting": "Dash. Cause damage and special effects to the enemies hit",
+        "Dash Distance": "15m",
+        "Damage": "30",
+        "Special Effect": "Hit while wielding the gun, inflict Slow effect to the enemy; hit while wielding the sword, deal Healing Reduction to the enemy",
+        "Healing Reduction Proportion": "apply 8% Healing Reduction per strike (32% total if all hit)",
+        "Healing Reduction Duration": "4s",
+        "Slow Rate": "40%",
+        "Slow Duration": "1.5s",
+        "Gun Second Hit Damage": "50",
+        "Sword Second Hit Damage": "10 per hit, 4 hits in total",
+        "Second Hit Damage Range": "6.5m"
+      },
+      "icon_file": "blade/abilities/05_ability_shift_daywalker-dash.png"
+    },
+    {
+      "name": "Thousand-Fold Slash",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250808/76a3bf21-fa7d-46b9-af37-db2c078fda6f.png",
+      "description": "Charge power and swiftly draw the Sword of Dracula, executing a powerful Iaido strike as you dash forward, leaving behind a slashing zone where the sword automatically strikes enemies. Enemies hit suffer Reduced Healing",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "2800",
+        "Self Slow": "25%",
+        "Maximum Charge Time": "3s",
+        "Charge time for max distance": "1s",
+        "Dash Distance": "10m, maximum distance 24m after fully charged.",
+        "Direct Hit Damage": "100",
+        "Spell Field Damage Over Time": "225/s",
+        "Spell Field Range": "Length: Maximum dash distance; Width: 6m; Height: 4.5m",
+        "Spell Field Duration": "2s",
+        "Healing Reduction Proportion": "20%",
+        "Healing Reduction Duration": "4s"
+      },
+      "icon_file": "blade/abilities/06_ability_q_thousand-fold-slash.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "ECLIPSE EDGE",
+        "icon": "https://r.res.easebar.com/pic/20251115/103c790d-0d19-45e9-aad0-3a5ca92c2313.png",
+        "description": "Blessed by Khonshu, Blade gains a new ability. When activated, Blade swings his Ancestral Sword in a powerful slash, dashing forward a short distance. At the end of the dash, he swiftly slashes four times, each strike sending a Darkmoon Blade forward. When a Darkmoon Blade hits an enemy, it bounces to nearby targets",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "20s",
+          "Dash Duration": "8m",
+          "Dash Damage": "30",
+          "Number of Projectiles": "4",
+          "Projectile Speed": "150m/s",
+          "Damage": "40",
+          "Bounce Range": "8m",
+          "Damage Falloff Per Bounce": "20% per bounce",
+          "Maximum Times of Bounce": "3"
+        },
+        "icon_file": "blade/teamups/received_01_eclipse-edge.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "BLADE OF KHONSHU",
+        "icon": "https://r.res.easebar.com/pic/20260707/de9495f6-030a-4ee1-8d4b-0366e1350caa.png",
+        "partner": "Moon Knight",
+        "base": {
+          "description": "Perform a heavy forward cleave with the Ancestral Sword while performing a short dash. At the end of the dash, swiftly slash four times, each strike sending a Darkmoon Blade forward. When a Darkmoon Blade hits an enemy, it bounces to nearby targets.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Dash Duration": "0.15",
+            "Max Dash Speed": "60 m/s",
+            "Darkmoon Blade Damage": "40",
+            "Darkmoon Blade Flight Speed": "150 m/s",
+            "Darkmoon Blades Fired": "4",
+            "DAMAGE FALLOFF PER BOUNCE": "-35%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Moon Knight, each Whirlwind Slash triggered generates one additional Darkmoon Blade.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "Each Whirlwind Slash generates an additional Crescent Blade"
+          }
+        },
+        "icon_file": "blade/teamups/provided_01_blade-of-khonshu.png"
+      },
+      {
+        "name": "BLEED FOR BATTLE",
+        "icon": "https://r.res.easebar.com/pic/20260707/e1cb8629-c7e4-4ce6-9781-02f0610e2836.png",
+        "partner": "Captain America",
+        "base": {
+          "description": "For every set amount of damage taken, Blade builds a stack of Bloodline Awakening.",
+          "stats": {
+            "Key": "Passive",
+            "Bloodline Awakening Stacks Gained from Damage Taken": "40 per stack"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Captain America, taking critical damage instantly triggers the Bloodline Awakening state, gaining bonus stacks while raising the overall stack cap.",
+          "stats": {
+            "Key": "Passive",
+            "Bloodline Awakening Max Stacks Increase": "2",
+            "Health Percentage Threshold": "65%",
+            "Bonus Stacks Gained": "5"
+          }
+        },
+        "icon_file": "blade/teamups/provided_02_bleed-for-battle.png"
+      }
+    ]
+  },
+  "source_name": "BLADE",
+  "uuid": "4bb813d7-30ab-4c36-bd05-b9d299e4c1e3",
+  "article_url": "https://www.marvelrivals.com/20250808/41360_1252733.html",
+  "portrait_files": [
+    "blade/portraits/portrait_1.png",
+    "blade/portraits/portrait_2.png"
+  ]
+}

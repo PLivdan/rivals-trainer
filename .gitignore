@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+scratch_*.png
+teamup_probe.txt
+.DS_Store

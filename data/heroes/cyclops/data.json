@@ -1,0 +1,216 @@
+{
+  "name": "CYCLOPS",
+  "real_name": "SCOTT SUMMERS",
+  "role": "DUELIST",
+  "description": "Scott Summers leads the X-Men as Cyclops. Through his specialized ruby quartz visor, he precisely controls the devastating force channeled through eyes, neutralizing any threat on the battlefield. But when that visor comes off, all restraint disappears, erupting into an unstoppable torrent of concussive energy!",
+  "lore": "A longtime leader of the X-Men, Scott Summers has the Mutant ability to release beams of pure concussive force from his eyes, requiring him to wear special ruby quartz lenses at all times to keep his power contained. Swept away to the year 2099 by the Timestream Entanglement, Cyclops ended up in Nueva York and was targeted by Alchemax. After his visor was damaged while protecting Moon Girl, who was accidentally caught in the conflict, Alchemax imprisoned Cyclops and used his Mutant ability to create a powerful new form of Chronovium.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260611/f60f40fd-04c5-4101-b454-d02008a49b7a.png",
+    "https://r.res.easebar.com/pic/20260611/529bec33-abd9-4e96-8850-f2b2e23d86c9.png"
+  ],
+  "forms": [
+    {
+      "name": "Cyclops",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260611/f60f40fd-04c5-4101-b454-d02008a49b7a.png",
+        "https://r.res.easebar.com/pic/20260611/529bec33-abd9-4e96-8850-f2b2e23d86c9.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Optic Blast",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260611/67d45b41-e124-4be6-a08f-28b7f6868a7e.png",
+      "description": "Fire a quick burst of kinetic force forward. Hitting enemies accelerates Ricochet Force charge rate",
+      "stats": {
+        "Key": "Left Click",
+        "Tick Rate": "0.03s per use",
+        "Damage per Tick": "21",
+        "Hit Checks per Attack": "3",
+        "Attack Interval": "0.6s",
+        "Ricochet Force CD Reduction per Hit": "0.15s"
+      },
+      "icon_file": "cyclops/abilities/01_primary_left-click_optic-blast.png"
+    },
+    {
+      "name": "Concussive Beam",
+      "slot": "primary",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260611/3f017cb2-5d18-4fcb-8ca4-15e3da0fdab6.png",
+      "description": "Continuously fire a powerful beam that can refract between enemies and the environment. Hitting enemies accelerates Ricochet Force charge rate",
+      "stats": {
+        "Key": "Right Click",
+        "Tick Rate": "0.083s per use",
+        "Damage per Tick": "11.5",
+        "Ricochet Damage Falloff": "50%, minimum 10%",
+        "Environment Ricochet Damage Falloff": "30%",
+        "Ricochet Force CD Reduction per Hit": "0.15s",
+        "Maximum Energy": "100",
+        "Energy Cost per Second": "25/s",
+        "Energy Recovery per Second": "10/s"
+      },
+      "icon_file": "cyclops/abilities/02_primary_right-click_concussive-beam.png"
+    },
+    {
+      "name": "Ricochet Force",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260611/f247fe64-7879-4363-b6be-609748fa254a.png",
+      "description": "Fire a beam that can diffract and track nearby enemies after hitting terrain. Upon use, Cyclops gains Bonus Health",
+      "stats": {
+        "Key": "E",
+        "Beam Damage": "70",
+        "Environment Ricochet Damage Falloff": "65%",
+        "Environment Refraction Damage Falloff": "20%",
+        "Character Refraction Damage Falloff": "50%",
+        "Environment Refraction Damage Falloff Distance": "Falloff begins at 8m, decreasing to 40% at 12m",
+        "Environment Refraction Damage Scaling per Refraction": "After the first refraction, each additional refraction increases damage by 10%, up to 20%",
+        "Environment Refraction Character Tracking Range": "12m",
+        "Cooldown": "2 charges, with each charge taking 15s to recharge. Base Cooldown 2s"
+      },
+      "icon_file": "cyclops/abilities/03_ability_e_ricochet-force.png"
+    },
+    {
+      "name": "Propulsion Burst",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20260611/b8204ec4-4bc0-4d75-9e40-c75d9a80159a.png",
+      "description": "Fire a propulsion beam to push yourself and the target backward, applying a Slow effect to the enemy",
+      "stats": {
+        "Key": "SHIFT",
+        "Cooldown": "15s",
+        "Ability Duration": "Minimum 0.35s, maximum 1s",
+        "Dash Duration": "Minimum 11m, maximum 22m",
+        "Slow Effect": "35% for 2s",
+        "Tick Rate": "0.083s per use",
+        "Damage": "5 per hit"
+      },
+      "icon_file": "cyclops/abilities/04_ability_shift_propulsion-burst.png"
+    },
+    {
+      "name": "Optic Ascent",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260611/e20c4dc4-44bd-4e8c-b872-d10e84ef478e.png",
+      "description": "Fire a propulsion beam directly downward to push yourself up and knock back hit enemies, applying a Slow effect to them",
+      "stats": {
+        "Key": "F",
+        "Cooldown": "15s",
+        "Ability Duration": "0.6s",
+        "Dash Duration": "12m",
+        "Movement Boost": "35% for 2s",
+        "Tick Rate": "0.083s per use",
+        "Damage": "5 per hit"
+      },
+      "icon_file": "cyclops/abilities/05_ability_f_optic-ascent.png"
+    },
+    {
+      "name": "Kinetic Hover",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260611/34579f57-e95c-49e5-a80e-9cd0b03350d8.png",
+      "description": "Enter a slow-fall state while firing Concussive Beam mid-air",
+      "stats": {
+        "Key": "Passive"
+      },
+      "icon_file": "cyclops/abilities/06_passive_passive_kinetic-hover.png"
+    },
+    {
+      "name": "Ruby Rage",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260611/a9a51b9e-f60d-494a-9ae7-3e185cde4c4d.png",
+      "description": "Remove visor and fire a powerful sweeping beam forward. The blast leaves behind volatile excess energy that erupts, dealing massive secondary explosive damage",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3700",
+        "First Spell Field Damage": "75+20%Maximum Health",
+        "Interval Between Two Fields": "1.1s",
+        "Second Spell Field Damage": "75+40%Maximum Health",
+        "Maximum Range": "60m",
+        "Spell Field Width": "First field 2m, second field 8m"
+      },
+      "icon_file": "cyclops/abilities/07_ability_q_ruby-rage.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Red Adamantium",
+        "icon": "https://r.res.easebar.com/pic/20260611/163cb861-6d98-42a9-8101-c0fa96a4c48f.png",
+        "description": "Cyclops supercharges Wolverine's claws, extending his attack range. While active, Wolverine's Vicious Rampage is replaced with Kinetic Claws, granting him a brief forward lunge that unleashes a flurry of slashes around him",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Damage Boost"
+        },
+        "icon_file": "cyclops/teamups/received_01_red-adamantium.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SLIM AND RED",
+        "icon": "https://r.res.easebar.com/pic/20260707/ed5db428-740a-43d3-916c-9a368353eee4.png",
+        "partner": "Phoenix",
+        "base": {
+          "description": "Hitting an enemy with Ricochet Force summons the Phoenix Force to ignite them, causing continuous burn damage over a set duration. Hitting an ignited target with Optic Blast or Concussive Beam instantly triggers a percentage of the remaining burn damage as a single burst.",
+          "stats": {
+            "Key": "E",
+            "Cooldown": "15s",
+            "Burn Damage": "7/hit, 2 times per second",
+            "Burn Damage Duration": "3s",
+            "Spark Detonation Damage": "50% of remaining Ignite damage"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Phoenix, Spark detonations reduce the cooldown of Ricochet Force.",
+          "stats": {
+            "Key": "Passive",
+            "Ricochet Force Charges": "0.5"
+          }
+        },
+        "icon_file": "cyclops/teamups/provided_01_slim-and-red.png"
+      },
+      {
+        "name": "KINETIC KIN",
+        "icon": "https://r.res.easebar.com/pic/20260707/f33b7790-3a58-4d36-842e-92437eb7b6f4.png",
+        "partner": "Gambit",
+        "base": {
+          "description": "Release stored kinetic energy to enter an enhanced state for a duration. While active, Cyclops gains significantly increased movement speed and jump height.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "18s",
+            "Duration": "6s",
+            "Movement Boost": "40%",
+            "Enhanced Jump Speed": "5m/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Gambit, during the enhanced state, the attack speeds for both Optic Blast and Concussive Beam are increased.",
+          "stats": {
+            "Key": "C",
+            "Optic Blast Attack Speed Boost": "25%",
+            "Concussive Beam Attack Frequency Boost": "10%"
+          }
+        },
+        "icon_file": "cyclops/teamups/provided_02_kinetic-kin.png"
+      }
+    ]
+  },
+  "source_name": "CYCLOPS",
+  "uuid": "4b46591b-a837-43ba-ae41-571de988c190",
+  "article_url": "https://www.marvelrivals.com/20260611/41360_1303977.html",
+  "portrait_files": [
+    "cyclops/portraits/portrait_1.png",
+    "cyclops/portraits/portrait_2.png"
+  ]
+}

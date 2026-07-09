@@ -1,0 +1,194 @@
+{
+  "name": "PHOENIX",
+  "real_name": "JEAN GREY",
+  "role": "DUELIST",
+  "description": "Original X-Man Jean Grey boasted immense psychic power even before becoming host the unbridled Phoenix Force, embodiment of life and psionic energy across the universe. Now aligned with this ancient cosmic power, Jean and the Phoenix traverse space together, burning bright as both a spark of creation and inferno of destruction!",
+  "lore": "An Omega-level telepath and telekinetic, Jean Grey was already one of the most powerful Mutants on Earth. Her bond with the Phoenix Force — a cosmic entity embodying creation itself — made her one of the most powerful beings in the universe. Jean and the Phoenix left Krakoa before the Timestream Entanglement struck. Their journey took them across the galaxy, saving countless civilizations. Sensing an unusual disturbance in time and space, Jean and the Phoenix decided to travel to Klyntar to eliminate the darkness at its source: Knull, the King in Black.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250710/cfe78de4-d483-4658-9f45-0e3a5ff6cdc8.png",
+    "https://r.res.easebar.com/pic/20250710/139feef8-9ae0-4828-9821-3a0822682949.png"
+  ],
+  "forms": [
+    {
+      "name": "Phoenix",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250710/cfe78de4-d483-4658-9f45-0e3a5ff6cdc8.png",
+        "https://r.res.easebar.com/pic/20250710/139feef8-9ae0-4828-9821-3a0822682949.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Cosmic Flames",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250710/e458821f-fbdc-4505-8407-0eafe85f5a22.png",
+      "description": "Launch a fiery projectile forward, applying 1 Spark to enemies hit. Critical hits apply 2 Sparks. At 3 Sparks, Phoenix triggers a fiery explosion that applies 1 Spark to enemies around and Healing Over Time to self. Sparks from explosions will not stack within a brief period",
+      "stats": {
+        "Key": "Left Click",
+        "Damage": "55",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 65% at 30m",
+        "Fire Rate": "0.435s per round",
+        "Special Effect": "Apply 1 Spark to enemies hit. Critical hits apply 2 Sparks. At 3 Sparks, Phoenix triggers a fiery explosion that applies 1 Spark to enemies around. Sparks from explosions will not stack within a brief period.",
+        "Explosion Direct Damage": "35",
+        "Explosion Range Damage": "12",
+        "Explosion Range": "4m spherical radius spell field",
+        "Self Healing Amount after the Explosion": "5/s for 4 s"
+      },
+      "icon_file": "phoenix/abilities/01_primary_left-click_cosmic-flames.png"
+    },
+    {
+      "name": "Telekinesis Burst",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250710/986f26e7-7141-4dc9-90ac-acff1b8c380a.png",
+      "description": "Mark a targeted area with psionic energy, followed by a series of fiery explosions. The first blast Stuns enemies, while the subsequent two explosions inflict Slow. Applies 1 Spark to enemies hit",
+      "stats": {
+        "Key": "Right Click",
+        "Target Explosion Damage": "20",
+        "Target Explosion Range": "A cylindrical spell field with a 2m radius and a height of 4m.",
+        "Subsequent Explosion Damage": "20",
+        "Subsequent Explosion Range": "A cylindrical spell field with a 3m radius and a height of 6m.",
+        "Special Effect": "The first blast Stuns enemies, while the subsequent two explosions inflict Slow.",
+        "Stun Duration": "0.3s",
+        "Slow Effect": "Inflict 30% Slow for 2 seconds.",
+        "Cooldown": "10s"
+      },
+      "icon_file": "phoenix/abilities/02_ability_right-click_telekinesis-burst.png"
+    },
+    {
+      "name": "Dark Ascent",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250710/7ef4eae3-1354-41eb-ac11-0fefbcd96808.png",
+      "description": "Merge with the Phoenix, entering a state of free flight. Gain a Movement Boost",
+      "stats": {
+        "Key": "E",
+        "Special Effect": "Enter a state of free flight within the duration. Gain a 50% Movement Boost",
+        "Cooldown": "1s",
+        "Maximum Energy": "1200",
+        "Energy Cost": "400/s",
+        "Energy Recovery": "120/s"
+      },
+      "icon_file": "phoenix/abilities/03_ability_e_dark-ascent.png"
+    },
+    {
+      "name": "Telepathic Illusion",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20250710/18388d22-1918-4cfe-98e3-7a59f701b1a6.png",
+      "description": "Leave behind an illusion and instantly teleport in the desired direction, followed by detonating the illusion. Enemies hit are applied with 1 Spark",
+      "stats": {
+        "Key": "SHIFT",
+        "Dash Distance": "8m",
+        "Detonation Damage": "50",
+        "Detonation Range": "3m spherical radius spell field",
+        "Special Effect": "The detonation applies 1 Spark to enemies hit.",
+        "Cooldown": "12s"
+      },
+      "icon_file": "phoenix/abilities/04_ability_shift_telepathic-illusion.png"
+    },
+    {
+      "name": "Endsong Inferno",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250710/4a733ade-7bcc-4152-b3e7-3dc01bfcdb06.png",
+      "description": "Soar into the sky with the Phoenix and crash down onto a selected area, dealing devastating damage to enemies while creating a shockwave that destroys enemy summons, shields, and any Bonus Health. Enemies hit are applied with 1 Spark",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3100",
+        "Explosion Damage": "140",
+        "Explosion Range": "10m spherical radius spell field",
+        "Shockwave Damage": "50",
+        "Summons' Health": "500",
+        "Special Effect": "The shockwave destroys enemy summons, shields, and any Bonus Health. Enemies hit by the spell field and the shockwave are applied with 1 Spark.",
+        "Self Healing Amount": "250"
+      },
+      "icon_file": "phoenix/abilities/05_ability_q_endsong-inferno.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Mind's Grace",
+        "icon": "https://r.res.easebar.com/pic/20250710/89d03be4-06bc-4a67-abb6-f7e95a222760.png",
+        "description": "Jean Grey imbues Wolverine with the awe-inspiring Phoenix Force",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "10% damage boost"
+        },
+        "icon_file": "phoenix/teamups/received_01_mind-s-grace.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "CIRCLE OF LIFE",
+        "icon": "https://r.res.easebar.com/pic/20260707/d4f8cd72-aaf4-4e60-b6a4-2db04ba7668c.png",
+        "partner": "Hela",
+        "base": {
+          "description": "Psionic Detonation is replaced by Phoenix Netherfire, applying a Telekinetic Mark to the targeted location. Upon hitting, it triggers an initial small explosion that briefly Stuns enemies, followed by two larger explosions that apply a Healing Reduction effect. Every single blast inflicts Sparks onto the enemies.",
+          "stats": {
+            "Key": "Right Click",
+            "Cooldown": "12s",
+            "First Spell Field Damage": "15",
+            "2nd & 3rd Spell Field Damage": "20",
+            "Stun Duration": "0.3s",
+            "Healing Reduction Amount": "40%",
+            "Healing Reduction Duration": "3s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hela, every blast in the sequence applies multiple stacks of Sparks to enemies caught within.",
+          "stats": {
+            "Key": "Right Click",
+            "Ember Stacks Added per Hit": "2"
+          }
+        },
+        "icon_file": "phoenix/teamups/provided_01_circle-of-life.png"
+      },
+      {
+        "name": "TELEKINETIC BEATDOWN",
+        "icon": "https://r.res.easebar.com/pic/20260707/90a0b94b-1988-43e9-9f87-7ae33023d385.png",
+        "partner": "Rogue",
+        "base": {
+          "description": "Fire a telekinetic shockwave forward. If it lands, the Phoenix Force rushes the enemy and delivers a powerful punch. If there are other targets nearby, the Phoenix Force rapidly blinks between them to strike them as well, inflicting Sparks on each victim while healing Phoenix.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Direct Hit Damage": "40",
+            "Bounce Damage": "40",
+            "Bounce Spell Field Detection Range": "8m radius",
+            "Self Health Recovery": "50",
+            "Spark Stacks Added per Hit": "1",
+            "MAXIMUM NUMBER OF BOUNCES": "3"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Rogue, the width of the telekinetic shockwave expands, and the Phoenix Force's target detection range is increased.",
+          "stats": {
+            "Key": "C",
+            "Spark Stacks Added on Hit": "2",
+            "MAXIMUM NUMBER OF BOUNCES": "4",
+            "SELF HEALING AMOUNT": "65"
+          }
+        },
+        "icon_file": "phoenix/teamups/provided_02_telekinetic-beatdown.png"
+      }
+    ]
+  },
+  "source_name": "PHOENIX",
+  "uuid": "f2521fc5-3180-477d-945c-403fa65fd7f5",
+  "article_url": "https://www.marvelrivals.com/20250710/41360_1246363.html",
+  "portrait_files": [
+    "phoenix/portraits/portrait_1.png",
+    "phoenix/portraits/portrait_2.png"
+  ]
+}

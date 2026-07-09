@@ -1,0 +1,191 @@
+{
+  "name": "BLACK WIDOW",
+  "real_name": "NATASHA ROMANOVA",
+  "role": "DUELIST",
+  "description": "Natasha Romanova is the world's most elite spy in any era. Her mastery of the sniper rifle eliminates targets from afar, while her shock batons neutralize close-range threats. Black Widow is locked, loaded, and ready to deliver a fatal bite!",
+  "lore": "Trained from childhood in the infamous Red Room, Natasha Romanova became one of the most feared spies and saboteurs in the world. For years, she put her unrivaled combat skills to use as a member of the Avengers, keeping pace with some of the most powerful beings who ever lived. Imbued with supersoldier-like treatments that vastly extended her lifespan, Black Widow outlived most of her enemies and allies. But her fight still rages on decades into the future, where she leads the Red Room in its ongoing effort to overthrow the tyrannical Doom 2099.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241204/65724497-6773-42cf-8b9e-7415e720b3cd.png",
+    "https://r.res.easebar.com/pic/20241204/bbf97283-de5e-4ee7-93b3-88983c4a93c3.png"
+  ],
+  "forms": [
+    {
+      "name": "Black Widow",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241204/65724497-6773-42cf-8b9e-7415e720b3cd.png",
+        "https://r.res.easebar.com/pic/20241204/bbf97283-de5e-4ee7-93b3-88983c4a93c3.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Widow's Bite Baton",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/66ad25fa-5a94-4087-8d1d-d626e1a5c798.png",
+      "description": "Strike with the enhanced electric batons",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "45",
+        "Maximum Distance": "3m",
+        "Fire Rate": "2 strikes per second"
+      },
+      "icon_file": "black-widow/abilities/01_primary_left-click_widow-s-bite-baton.png"
+    },
+    {
+      "name": "Red Room Rifle",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/67bd0973-ab49-4e6d-a04b-70f67cb2514b.png",
+      "description": "Attack with the Red Room Rifle",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast direct hit",
+        "Damage": "120 damage per round",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 50% at 20m",
+        "Fire Rate": "15",
+        "Critical Hit": "Yes",
+        "Aiming down sights times": "0.3s",
+        "Special Effect": "Shares the same magazine with Red Room Rifle. Straight Shooter activates only after aiming down sights for a specific duration; otherwise, it will fire from the Red Room Rifle"
+      },
+      "icon_file": "black-widow/abilities/02_primary_left-click_red-room-rifle.png"
+    },
+    {
+      "name": "ASSASSIN'S FOCUS",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260709/4dabe2ca-e173-4016-97c5-0e91244405ff.png",
+      "description": "Switch the Red Room Rifle to sniper mode. Shots fired in this state pierce through targets and deal increased damage",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "2800",
+        "Bullet Damage": "160",
+        "Rounds": "6",
+        "Critical Hit": "Yes",
+        "Critical Hit Multiplier": "1.5x",
+        "Fire Rate": "0.8s/Round",
+        "Maximum Duration": "12s"
+      },
+      "icon_file": "black-widow/abilities/03_ability_q_assassin-s-focus.png"
+    },
+    {
+      "name": "ELECTRO-PLASMA BLAST",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260709/04b1c193-17bf-45cb-8837-9044d0c15b7d.png",
+      "description": "Fire an electro-plasma round forward. Upon hitting the environment or an enemy, it explodes and applies a Slow effect",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Charged release, with delayed projectiles.",
+        "Cooldown": "10s",
+        "Projectile Speed": "100 m/s",
+        "Explosion Range": "3.5m to 5m radius spherical spell field",
+        "Explosion Damage": "40~60",
+        "Slow Rate": "-0.40",
+        "Maximum Charge Time": "1s"
+      },
+      "icon_file": "black-widow/abilities/04_ability_right-click_electro-plasma-blast.png"
+    },
+    {
+      "name": "EDGE DANCER",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260709/5344178b-3361-46ab-9df0-aa58876ddb5b.png",
+      "description": "Unleash a spinning kick to Launch Up enemies. Landing the hit will allow her to zip to the target with a grappling hook for a second kick",
+      "stats": {
+        "Key": "E",
+        "Casting": "Melee",
+        "Spinning Kick Damage": "35",
+        "Maximum Distance": "5m",
+        "Flying Kick Distance": "12m",
+        "Second Flying Kick Damage": "35",
+        "Flying Kick Stun Duration": "0.2s",
+        "Flying Kick Casting Window": "5s",
+        "Cooldown": "15s"
+      },
+      "icon_file": "black-widow/abilities/05_ability_e_edge-dancer.png"
+    },
+    {
+      "name": "WIDOW'S BITE SLAM",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260709/632db193-8e88-4aa2-9bb3-4dbff266e5df.png",
+      "description": "Leap toward a target area and slam the ground with her Widow's Bite gauntlet, dealing damage to enemies within range",
+      "stats": {
+        "Key": "F",
+        "Casting": "Targeted",
+        "Damage": "30",
+        "Cooldown": "15s",
+        "Damage Range": "5m radius"
+      },
+      "icon_file": "black-widow/abilities/06_ability_f_widow-s-bite-slam.png"
+    }
+  ],
+  "team_ups": {
+    "received": [],
+    "provided": [
+      {
+        "name": "ALLIED AGENTS",
+        "icon": "https://r.res.easebar.com/pic/20260707/328e1159-5784-4534-99f0-0cd346610d0a.png",
+        "partner": "Hawkeye",
+        "base": {
+          "description": "Landing hits with Red Room Rifle builds Focus. At three stacks, enter a Focused state where the next bullet gains the Hunter's Sight effect, granting Damage Boost and pierce effects.",
+          "stats": {
+            "Key": "Passive",
+            "Focus Gained on Crit": "2 stacks",
+            "Focus Gained on Red Room Rifle Hit": "1 stack",
+            "Focused State Bullet Damage": "55 damage per round"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hawkeye, landing a critical hit prevents the Focused state from expiring, allowing continuous enhanced fire until missing a crit.",
+          "stats": {
+            "Key": "Passive",
+            "Special Effect": "Landing a critical hit prevents the Focused state from expiring, allowing continuous enhanced fire until missing a crit."
+          }
+        },
+        "icon_file": "black-widow/teamups/provided_01_allied-agents.png"
+      },
+      {
+        "name": "BURNING BULLETS",
+        "icon": "https://r.res.easebar.com/pic/20260707/63ca266f-0aad-4477-a7cf-ffc21c4d1159.png",
+        "partner": "Phoenix",
+        "base": {
+          "description": "Activation grants the Red Room Rifle a Fire Rate Boost. Additionally, the Plasma Cannon projectile becomes a hitscan laser that no longer requires charging.",
+          "stats": {
+            "Key": "Passive",
+            "Fire Rate Increase": "15%",
+            "Plasma Cannon Damage": "70",
+            "Plasma Cannon Cooldown": "10s",
+            "Plasma CannonRange": "5m spherical radius",
+            "Plasma Cannon Slow Effect": "40% for 3s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Phoenix, her Plasma Cannon gains a second ability charge.",
+          "stats": {
+            "Key": "Passive",
+            "Special Effect": "Plasma Cannon has 2 charges"
+          }
+        },
+        "icon_file": "black-widow/teamups/provided_02_burning-bullets.png"
+      }
+    ]
+  },
+  "source_name": "BLACK WIDOW",
+  "uuid": "baa0fe39-41ff-42f3-b48f-3e453317503a",
+  "article_url": "https://www.marvelrivals.com/20241204/41360_1198106.html",
+  "portrait_files": [
+    "black-widow/portraits/portrait_1.png",
+    "black-widow/portraits/portrait_2.png"
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "name": "IRON FIST",
+  "real_name": "LIN LIE",
+  "role": "DUELIST",
+  "description": "Lin Lie is a master of Chinese martial arts who once wielded the shattered Sword of Fu Xi. After fusing its pieces with the mighty Chi of Shou-Lao, he is poised to strike his foes with the grace and force of a soaring dragon as the latest immortal Iron Fist",
+  "lore": "Lin Lie inherited the legendary Sword of Fu Xi, becoming the hero known as Sword Master. But that was only the beginning of his epic journey. Eventually, he found himself in the mystical city of K'un Lun, where the dragon Shou-Lao blessed him with the power of the immortal Iron Fist. The Timestream Entanglement has caused great upheaval in a number of magical realms. As wars between the gods begin to rage, Lin Lie must protect the sanctuary of K'un Lun from those who seek to tarnish its majestic splendor.",
+  "base_stats": {
+    "Health": "300",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241201/731573a8-ce1b-42b6-b7c5-e5c2dd616239.png",
+    "https://r.res.easebar.com/pic/20241201/5a875844-58d5-4745-bbc6-c410e4e3f9e8.png"
+  ],
+  "forms": [
+    {
+      "name": "IRON FIST",
+      "stats": {
+        "Health": "300",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241201/731573a8-ce1b-42b6-b7c5-e5c2dd616239.png",
+        "https://r.res.easebar.com/pic/20241201/5a875844-58d5-4745-bbc6-c410e4e3f9e8.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Jeet Kune Do",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/08e65caa-9aa0-425c-aeba-fa1544c03be2.png",
+      "description": "Strike the targeted enemy with Jeet Kune Do, reducing the cooldown of Block and Strike with every hit",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "The first four strikes each deal 35 damage, while the fifth strike deals 55 damage",
+        "Maximum Distance": "3m",
+        "Attack Interval": "The first four strikes have an interval of 0.45s between them, while the fifth strike has a 0.67s interval from the fourth strike",
+        "Maximum Pull-In Distance": "6m",
+        "Dragon's Defense Cooldown Reduction Per Hit": "1.2s"
+      },
+      "icon_file": "iron-fist/abilities/01_primary_left-click_jeet-kune-do.png"
+    },
+    {
+      "name": "Yat Jee Chung Kuen",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/fd8bfe86-ffd7-4752-9da3-d005bafa8668.png",
+      "description": "Dash forward to pursue the targeted enemy and unleash a flurry of attacks",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Duration": "5s",
+        "Maximum Pull-In Distance": "11m",
+        "Dashing Speed Without Target": "12 m/s",
+        "Dashing Distance Without Target": "3m",
+        "Range": "3m",
+        "Damage": "8 base damage + 3.1% of the enemy's Max Health per strike",
+        "Attack Speed": "7 strikes per second"
+      },
+      "icon_file": "iron-fist/abilities/02_primary_left-click_yat-jee-chung-kuen.png"
+    },
+    {
+      "name": "Living Chi",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241205/080f088b-94dd-45ac-9bc7-9e5c512d51d0.png",
+      "description": "Become living Chi to boost his speed, damage, and attack range, delivering stronger punches while reducing the cooldown of Dragon's Defense",
+      "stats": {
+        "Key": "Q",
+        "Duration": "12s",
+        "Yat Jee Chung Kuen Bonus Range": "100%",
+        "K'un-Lun Kick Bonus Range": "100%",
+        "Damage Boost": "30%",
+        "Movement Boost": "20%",
+        "Yat Jee Chung Kuen Cooldown Reduction": "-80%",
+        "Energy Cost": "3400"
+      },
+      "icon_file": "iron-fist/abilities/03_ability_q_living-chi.png"
+    },
+    {
+      "name": "K'un-Lun Kick",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241205/e5377516-d352-4169-bb87-7bd68523dda7.png",
+      "description": "Dash forward, delivering a flying kick when hitting an enemy or reaching full range, dealing damage to nearby enemies. Damage increases with lower enemy health",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Movement-based damage ability",
+        "Dashing Speed": "40 m/s",
+        "Maximum Dash Distance": "12m",
+        "First Flying Kick Damage": "40",
+        "Second Flying Kick Damage": "35 - 70 (Maximum damage is achieved when the target is at 50% Health)",
+        "Cooldown": "10s"
+      },
+      "icon_file": "iron-fist/abilities/04_ability_shift_k-un-lun-kick.png"
+    },
+    {
+      "name": "Harmony Recovery",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241205/14e2c16b-cf9f-4e49-bef0-690bcc3d910c.png",
+      "description": "Cross legs and channel Chi, slowly gaining Bonus Health",
+      "stats": {
+        "Key": "E",
+        "Duration": "3s",
+        "Healing Per Second": "100",
+        "Excess Healing/Max Health Conversion": "100",
+        "Cooldown": "12s"
+      },
+      "icon_file": "iron-fist/abilities/05_ability_e_harmony-recovery.png"
+    },
+    {
+      "name": "Crane Leap",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241205/62f2f94b-228c-4015-9d56-b9134c171cf5.png",
+      "description": "Perform up to three consecutive jumps while airborne",
+      "stats": {
+        "Key": "Space",
+        "Cooldown": "3 charges, with each charge taking 1s to recharge"
+      },
+      "icon_file": "iron-fist/abilities/06_ability_space_crane-leap.png"
+    },
+    {
+      "name": "Dragon's Defense",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/5745baab-4f3f-47f0-9eb0-8b8ea67f81f2.png",
+      "description": "Assume a defensive stance with a boost of Chi to block incoming attacks and gain Damage Reduction, then strike back with Yat Jee Chung Kuen",
+      "stats": {
+        "Key": "Right Click",
+        "Block Time": "1.2s",
+        "Damage Reduction": "30%",
+        "Bonus Health/Damage Blocked Conversion": "1.3",
+        "Max Health/Damage Blocked Conversion": "175",
+        "Cooldown": "15s"
+      },
+      "icon_file": "iron-fist/abilities/07_ability_right-click_dragon-s-defense.png"
+    },
+    {
+      "name": "Wall Runner",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241205/53125bd3-2ca7-4b39-a51c-bac18c6ecfdd.png",
+      "description": "Run horizontally along the walls",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "9 m/s"
+      },
+      "icon_file": "iron-fist/abilities/08_ability_space_wall-runner.png"
+    },
+    {
+      "name": "Chi Absorption",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241205/2946ce20-8956-4efb-9729-afbdaa5efc51.png",
+      "description": "Assists in taking down enemies allow him to absorb their Chi and gain Bonus Health",
+      "stats": {
+        "Key": "Passive",
+        "Bonus Health": "50"
+      },
+      "icon_file": "iron-fist/abilities/09_passive_passive_chi-absorption.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Lunar Chi",
+        "icon": "https://r.res.easebar.com/pic/20250808/63e8c36e-c83a-439d-9359-5f343c7d65fa.png",
+        "description": "Luna Snow grants Winter's Chill to Hawkeye and Iron Fist. When Iron Fist activates Harmony Recovery, he can heal nearby allies with Lunar Chi",
+        "stats": {
+          "Key": "E",
+          "Casting": "Cylindrical Spell Field",
+          "Special Effect": "Excess healing converts to Bonus Health.",
+          "Cooldown": "12s",
+          "Healing Range": "A cylindrical spell field with a 10m radius and a height of 10m.",
+          "Healing Amount": "55/s",
+          "Duration": "3s",
+          "Bonus Health Falloff Delay": "2s",
+          "Bonus Health Falloff Speed": "15/s"
+        },
+        "icon_file": "iron-fist/teamups/received_01_lunar-chi.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "IRON & STONE",
+        "icon": "https://r.res.easebar.com/pic/20260707/c5751e20-c1ce-4947-bb8c-be4a2928fcfa.png",
+        "partner": "",
+        "base": {
+          "description": "Unleash a powerful uppercut to Launch Up enemies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "8s",
+            "Damage Distance": "5m",
+            "Damage": "45"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up The Thing, unleashing the uppercut can be chained directly into a sweeping leg sweep for a follow-up attack.",
+          "stats": {
+            "Key": "Left Click",
+            "Damage Distance": "5m",
+            "Damage": "45"
+          }
+        },
+        "icon_file": "iron-fist/teamups/provided_01_iron-and-stone.png"
+      },
+      {
+        "name": "KUMIHO PALM",
+        "icon": "https://r.res.easebar.com/pic/20260707/f4aaff36-0362-4086-acd9-f058e0617a30.png",
+        "partner": "",
+        "base": {
+          "description": "Hitting an enemy with Yat Jee Chung Kuen provides a burst of healing to nearby allies.",
+          "stats": {
+            "Key": "Passive",
+            "Healing Amount": "6",
+            "Spell Field Range": "6m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up White Fox, the lock-on distance for Yat Jee Chung Kuen is significantly increased.",
+          "stats": {
+            "Key": "Passive",
+            "Targetless Dash Speed Increase": "4 m/s",
+            "Target Selection Max Range Increase": "2m",
+            "Healing Amount": "7.5"
+          }
+        },
+        "icon_file": "iron-fist/teamups/provided_02_kumiho-palm.png"
+      }
+    ]
+  },
+  "source_name": "IRON FIST",
+  "uuid": "c90562b1-0bf1-4f90-94ed-d24a7650a2b0",
+  "article_url": "https://www.marvelrivals.com/20241201/41360_1197227.html",
+  "portrait_files": [
+    "iron-fist/portraits/portrait_1.png",
+    "iron-fist/portraits/portrait_2.png"
+  ]
+}

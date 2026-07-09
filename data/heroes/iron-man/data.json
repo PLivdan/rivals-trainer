@@ -1,0 +1,284 @@
+{
+  "name": "IRON MAN",
+  "real_name": "ANTHONY \"TONY\" STARK",
+  "role": "DUELIST",
+  "description": "Armed with superior intellect and a nanotech battlesuit of his own design, Tony Stark stands alongside gods as the Invincible Iron Man. His state of the art armor turns any battlefield into his personal playground, allowing him to steal the spotlight he so desperately desires.",
+  "lore": "Wounded by a weapon of his own design, billionaire inventor Tony Stark created a custom-made suit of armor to keep himself alive. Though his wounds have healed, his upgraded armor now saves the lives of countless others when Tony dons it to become the world’s greatest fighting machine—the invincible Iron Man! When the legions of the night descended upon New York City, Iron Man and his fellow Avengers turned their tower into a stronghold. From there, Tony leads the effort to unravel the mysteries of Chronovium and to reverse the Timestream Entanglement.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6 m/s",
+    "Movement Mode": "Flight"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/4ec118f3-8e91-4bf9-a8e4-b9ed65c45036.png",
+    "https://r.res.easebar.com/pic/20241122/333c00f7-8226-485a-9e87-30ab6f08a924.png"
+  ],
+  "forms": [
+    {
+      "name": "IRON MAN",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6 m/s",
+        "Movement Mode": "Flight"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/4ec118f3-8e91-4bf9-a8e4-b9ed65c45036.png",
+        "https://r.res.easebar.com/pic/20241122/333c00f7-8226-485a-9e87-30ab6f08a924.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Repulsor Blast",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/d69cf17a-732e-486d-87e3-43c5892e42c3.png",
+      "description": "Fire nano pulse cannons forward",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Ammo": "100",
+        "Critical Hit": "No",
+        "Special Mechanic 1": "After firing the one-handed repulsor twice in a row, the next attack will fire two repulsors at once",
+        "Special Mechanic 2": "Repulsor Blast and Unibeam share the same ammo count",
+        "Projectile Speed": "80 m/s",
+        "Damage": "50",
+        "Range": "5m spherical radius",
+        "Spell Field Damage": "50",
+        "Spell Field Damage Falloff": "40% falloff at 5m",
+        "Fire Rate": "1.39 rounds per second",
+        "Ammo Consumption": "16 damage per round",
+        "Two-handed Repulsors": ""
+      },
+      "icon_file": "iron-man/abilities/01_primary_left-click_repulsor-blast.png"
+    },
+    {
+      "name": "Repulsor Blast (Armor Overdrive)",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/d69cf17a-732e-486d-87e3-43c5892e42c3.png",
+      "description": "Fire nano pulse cannons forward",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Ammo": "Infinite",
+        "Critical Hit": "No",
+        "Projectile Speed": "80m/s",
+        "Damage": "45",
+        "Range": "5m spherical radius",
+        "Spell Field Damage": "60",
+        "Spell Field Damage Falloff": "40% falloff at 5m",
+        "Fire Rate": "1.33 rounds per second"
+      },
+      "icon_file": "iron-man/abilities/01_primary_left-click_repulsor-blast.png"
+    },
+    {
+      "name": "Unibeam",
+      "slot": "primary",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/5a005241-4e91-4240-9da0-671454971524.png",
+      "description": "Fire nano pulse cannons forward",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Channeled",
+        "Ammo": "100",
+        "Critical Hit": "No",
+        "Special Mechanic": "Repulsor Blast and Unibeam share the same ammo count",
+        "Beam Length": "25m",
+        "Damage": "140 damage per second",
+        "Ammo Consumption": "10/s"
+      },
+      "icon_file": "iron-man/abilities/03_primary_right-click_unibeam.png"
+    },
+    {
+      "name": "Unibeam (Armor Overdrive)",
+      "slot": "primary",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/5a005241-4e91-4240-9da0-671454971524.png",
+      "description": "Fire nano pulse cannons forward",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Channeled",
+        "Ammo": "Infinite",
+        "Critical Hit": "No",
+        "Beam Length": "25m",
+        "Damage": "180/s"
+      },
+      "icon_file": "iron-man/abilities/03_primary_right-click_unibeam.png"
+    },
+    {
+      "name": "Invincible Pulse Cannon",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/35909ad4-f7f5-4d30-8d58-b076bebca067.png",
+      "description": "Fire a devastating pulse cannon in the targeted direction, delivering catastrophic damage to the targeted area upon impact",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Energy Cost": "3400",
+        "Projectile Speed": "25 m/s",
+        "Dispersive Spell Field": "Length: 15m, Width: 5m, Height: 5m",
+        "Damage Over Time": "300/s",
+        "Explosion Range": "10m spherical radius",
+        "Explosion Damage": "1000",
+        "Spell Field Damage Falloff": "5% falloff at 10m",
+        "Special Mechanic": "As the projectile travels, it creates a dispersive spell field that deals Damage Over Time to nearby enemies"
+      },
+      "icon_file": "iron-man/abilities/05_ability_q_invincible-pulse-cannon.png"
+    },
+    {
+      "name": "Hyper-Velocity",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/ea996cd4-74a0-40d7-9498-3253084b9be2.png",
+      "description": "Activate Hyper-Velocity state for swift forward flight",
+      "stats": {
+        "Key": "SHIFT",
+        "Movement Boost": "100%",
+        "Maximum Energy": "120",
+        "Energy Cost": "15/s",
+        "Energy Recovery Speed": "10/s"
+      },
+      "icon_file": "iron-man/abilities/06_ability_shift_hyper-velocity.png"
+    },
+    {
+      "name": "Hyper-Velocity (Armor Overdrive)",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/ea996cd4-74a0-40d7-9498-3253084b9be2.png",
+      "description": "Activate Hyper-Velocity state for swift forward flight",
+      "stats": {
+        "Key": "SHIFT",
+        "Movement Boost": "100%",
+        "Maximum Energy": "Infinite"
+      },
+      "icon_file": "iron-man/abilities/06_ability_shift_hyper-velocity.png"
+    },
+    {
+      "name": "Armor Overdrive",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/27f07e85-4220-4227-892b-04c9850a7c02.png",
+      "description": "Activate Armor Overdrive state, enhancing the damage of Repulsor Blast and Unibeam",
+      "stats": {
+        "Key": "E",
+        "Duration": "10s",
+        "Bonus Health": "100",
+        "Cooldown": "20s",
+        "Special Effect": "Each KO while Armor Overdrive is active extends its duration by 2s"
+      },
+      "icon_file": "iron-man/abilities/08_ability_e_armor-overdrive.png"
+    },
+    {
+      "name": "Micro-Missile Barrage",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/19e4e5da-fa8d-4cf8-a817-1111d91dc389.png",
+      "description": "When Hyper-Velocity or Armor Overdrive is used, Iron Man can launch a missile bombardment",
+      "stats": {
+        "Key": "F",
+        "Casting": "Scatter-type projectile that generates a spell area upon impact",
+        "Missiles": "16",
+        "Projectile Speed": "15 m/s",
+        "Range": "2m spherical radius",
+        "Spell Field Damage": "20 damage per round",
+        "Cooldown": "8s",
+        "Special Mechanic": "Launch missiles directly beneath Iron Man"
+      },
+      "icon_file": "iron-man/abilities/09_ability_f_micro-missile-barrage.png"
+    },
+    {
+      "name": "Micro-Missile Barrage (Armor Overdrive)",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/19e4e5da-fa8d-4cf8-a817-1111d91dc389.png",
+      "description": "When Hyper-Velocity or Armor Overdrive is used, Iron Man can launch a missile bombardment",
+      "stats": {
+        "Key": "F",
+        "Casting": "Scatter-type projectile that generates a spell area upon impact",
+        "Missiles": "18",
+        "Projectile Speed": "60 m/s",
+        "Range": "2m spherical radius",
+        "Spell Field Damage": "15 damage per round",
+        "Cooldown": "6s",
+        "Special Mechanic": "Launch in the direction of Iron Man's crosshair"
+      },
+      "icon_file": "iron-man/abilities/09_ability_f_micro-missile-barrage.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "NANO TECH",
+        "icon": "https://r.res.easebar.com/pic/20250531/2d4ab1bf-a8da-4216-9c4c-5e755596e86d.png",
+        "description": "When Iron Man, Ultron and Squirrel Girl team up, Ultron's Encephalo-Ray upgrades to Nano-Ray, firing a beam that pierces through all characters, dealing continuous damage to foes while healing allies; Squirrel Girl gains the Squirrel Missile ability. She directs a squirrel to ride Iron Man's nanotech glove as a homing missile. Upon hit, the squirrel flees just before a fiery explosion!",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Damage Boost"
+        },
+        "icon_file": "iron-man/teamups/received_01_nano-tech.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "GAMMA CHARGE",
+        "icon": "https://r.res.easebar.com/pic/20260707/e8021992-4e85-4268-b571-8570d61930c5.png",
+        "partner": "Hulk",
+        "base": {
+          "description": "Upgrade Armor Overdrive to Gamma Overdrive. In this state, Iron Man gains a Gamma Shield and can fire significantly stronger Repulsor Blasts and Unibeams.",
+          "stats": {
+            "Key": "E",
+            "Cooldown": "20",
+            "Duration": "10s",
+            "Ability Duration Extension per Assist/Kill (s)": "2s",
+            "Pulse Cannon Projectile Hit Damage": "50",
+            "Pulse Cannon Spell Field Damage": "65",
+            "Pulse Cannon Spell Field Range": "5m spherical radius",
+            "Pulse Cannon Damage Falloff": "Falloff starts at 0.3m, down to 40% at 5m",
+            "Unibeam Damage": "20/hit, 10 times per second"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hulk, releasing Invincible Invincible Pulse Cannon generates a Gamma Shield and heavily infuses the blast, creating a Gamma Pulse Cannon. Its radiation creates a massive damage increase while the projectile flies.",
+          "stats": {
+            "Key": "E",
+            "Gamma Shield Health": "75",
+            "Gamma Shield Max Duration": "2s",
+            "Dissipation Damage": "45"
+          }
+        },
+        "icon_file": "iron-man/teamups/provided_01_gamma-charge.png"
+      },
+      {
+        "name": "THUNDER OVERDRIVE",
+        "icon": "https://r.res.easebar.com/pic/20260707/cddc14a5-6b94-4649-8b6f-642f17104058.png",
+        "partner": "Thor",
+        "base": {
+          "description": "Enhance Unibeam both in and out of Armor Overdrive. When fired, a ring of volatile lightning energy forms, dealing bonus damage to enemies caught near the beam's edge.",
+          "stats": {
+            "Key": "E",
+            "Unibeam Outer Ring Range": "0.75m radius",
+            "Unibeam Outer Ring Damage": "8.4/hit, 10 times per second",
+            "Unibeam Damage": "14/hit, 10 times per second",
+            "Thunder Overdrive Unibeam Outer Ring Range": "18/hit, 10 times per second"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Thor, Armor Overdrive cooldown is massively reduced.",
+          "stats": {
+            "Key": "E",
+            "Thunder Overdrive CD Reduction": "5s"
+          }
+        },
+        "icon_file": "iron-man/teamups/provided_02_thunder-overdrive.png"
+      }
+    ]
+  },
+  "source_name": "IRON MAN",
+  "uuid": "ef114434-6c2a-48ff-a4f7-05dc278aedde",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195687.html",
+  "portrait_files": [
+    "iron-man/portraits/portrait_1.png",
+    "iron-man/portraits/portrait_2.png"
+  ]
+}

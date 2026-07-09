@@ -1,0 +1,210 @@
+{
+  "name": "BLACK PANTHER",
+  "real_name": "T'CHALLA",
+  "role": "DUELIST",
+  "description": "T'Challa, King of Wakanda, wields the perfect blend of the cutting-edge Vibranium technology and ancestral power drawn from the Panther God, Bast. The Black Panther bides his time until elegantly infiltrating enemy lines and commencing his hunt.",
+  "lore": "King T’Challa of Wakanda is more than just the ruler of the most advanced civilization known to man. He also wears the mantle of the Black Panther, the sacred protector of his people. It is his sworn duty to ensure Wakanda’s continued survival against any threat imaginable. T’Challa recently expanded his reign into the cosmos, creating the Intergalactic Empire of Wakanda. As he awaits a sign from Bast to tell him if either Doom can be trusted, he protects the Empire’s Chronovium supply and shares its tech with trusted allies — including Reed Richards.",
+  "base_stats": {
+    "Health": "150+125 Regenerative Shield",
+    "Movement Speed": "7m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/da35a6d2-354e-4faa-bec1-0a700a84573f.png",
+    "https://r.res.easebar.com/pic/20241122/7bb22665-76c1-4dbf-9735-3284b834feaa.png"
+  ],
+  "forms": [
+    {
+      "name": "BLACK PANTHER",
+      "stats": {
+        "Health": "150+125 Regenerative Shield",
+        "Movement Speed": "7m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/da35a6d2-354e-4faa-bec1-0a700a84573f.png",
+        "https://r.res.easebar.com/pic/20241122/7bb22665-76c1-4dbf-9735-3284b834feaa.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Vibranium Claws",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/095862fd-2dce-4947-8996-58741ba3e326.png",
+      "description": "Slice Vibranium Claws forward",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "35",
+        "Maximum Distance": "3m",
+        "Attack Interval": "0.44s per hit"
+      },
+      "icon_file": "black-panther/abilities/01_primary_left-click_vibranium-claws.png"
+    },
+    {
+      "name": "Bast's Descent",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/796baaa9-278e-464f-a394-bc5869dbc473.png",
+      "description": "Summon Bast, pouncing forward, dealing damage, and attaching a Vibranium Mark to enemies hit while refreshing Spirit Rend",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Cuboid Spell Field",
+        "Range": "Length: 22m, Width: 20m, Height: 7m",
+        "Casting Angle": "150°",
+        "Damage": "150",
+        "Energy Cost": "3300",
+        "Special Effect": "Gain 50% Damage Reduction during Bast's Descent startup animation"
+      },
+      "icon_file": "black-panther/abilities/02_ability_q_bast-s-descent.png"
+    },
+    {
+      "name": "Spirit Rend",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/5420a5ab-0ba8-4c9c-8953-7f60adf79cd2.png",
+      "description": "Lunge forward and deal damage to enemies. Vibranium Mark produces Bonus Health and refreshes the ability",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Movement-based damage ability",
+        "Average Speed": "50m/s",
+        "Maximum Distance": "15m",
+        "Damage": "80",
+        "Bonus Health": "25",
+        "Bonus Max Health": "75",
+        "Cooldown": "10s"
+      },
+      "icon_file": "black-panther/abilities/03_ability_shift_spirit-rend.png"
+    },
+    {
+      "name": "Spinning Kick",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/a56f606b-d519-49aa-9570-cc615be6f239.png",
+      "description": "Spiral forward and attach a Vibranium Mark to enemies hit",
+      "stats": {
+        "Key": "E",
+        "Casting": "Movement-based damage ability",
+        "Average Speed": "15m/s",
+        "Maximum Distance": "16m",
+        "Damage": "75",
+        "Cooldown": "8s"
+      },
+      "icon_file": "black-panther/abilities/04_ability_e_spinning-kick.png"
+    },
+    {
+      "name": "Subtle Step",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/715f8f12-5bf3-4f11-a583-ee4ad606136d.png",
+      "description": "Hold Space to run on a wall; perform a jump after detaching from the wall",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "10m/s"
+      },
+      "icon_file": "black-panther/abilities/05_ability_space_subtle-step.png"
+    },
+    {
+      "name": "Spear Toss",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/4ccd846a-f72e-4d69-aa9f-6c459f67648c.png",
+      "description": "Toss a Vibranium energy spear forward, creating a Vibranium Force Field and attaching a Vibranium Mark to enemies in its radius",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Arced projectile that generates a spell field upon impact",
+        "Projectile Speed": "60m/s",
+        "Range": "5m spherical radius",
+        "Damage": "50",
+        "Cooldown": "6s",
+        "Charges": "2"
+      },
+      "icon_file": "black-panther/abilities/06_ability_right-click_spear-toss.png"
+    },
+    {
+      "name": "Panther's Cunning",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/07bd1118-a93b-49f7-8789-696e0480ee44.png",
+      "description": "Deal higher damage when at low Health",
+      "stats": {
+        "Key": "Passive",
+        "Trigger Condition": "Health drops below 100",
+        "Damage Boost": "20%"
+      },
+      "icon_file": "black-panther/abilities/07_passive_passive_panther-s-cunning.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "GAMMA VIBRANIUM ARMOR",
+        "icon": "https://r.res.easebar.com/pic/20250912/d1ab2347-3f3a-48e8-a936-506f89e78a75.png",
+        "description": "Hulk charges Namor and Black Panther with gamma radiation. Namor can summon an extra Gamma Monstro which will continuously fire gamma rays at locked-on enemies. The longer the rays hit, the higher the damage. Black Panther's Vibranium armor is enhanced; when his health is low he receives a gamma shield, blocking incoming attacks and becoming Unstoppable",
+        "stats": {
+          "Key": "PASSIVE",
+          "Shield Value": "100",
+          "Health Threshold for Ability Activation": "100",
+          "Cooldown": "45"
+        },
+        "icon_file": "black-panther/teamups/received_01_gamma-vibranium-armor.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "DAMISA-YAO",
+        "icon": "https://r.res.easebar.com/pic/20260707/80f600cc-3f7a-4ae5-8e5b-effeab82c1d9.png",
+        "partner": "Storm",
+        "base": {
+          "description": "Triggers the elemental power within his armor, dealing damage and applying Slow to surrounding enemies while attaching Vibranium Marks.",
+          "stats": {
+            "Key": "C",
+            "Spell Field Range": "8m spherical radius",
+            "Damage": "40",
+            "Slow Rate": "35% for 2s",
+            "Cooldown": "12s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Storm, enemies within range are launched toward Black Panther.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "When Black Panther teams up with Storm, pulls enemies within range toward himself",
+            "Slow Rate": "45% for 2s"
+          }
+        },
+        "icon_file": "black-panther/teamups/provided_01_damisa-yao.png"
+      },
+      {
+        "name": "DIMENSIONAL SHORTCUT",
+        "icon": "https://r.res.easebar.com/pic/20260707/a9020e7d-65e9-488a-9cef-aa5224ad4cc1.png",
+        "partner": "Magik",
+        "base": {
+          "description": "Activate a Limbo stepping disc to instantly return to your position from a few seconds ago, gaining Bonus Health in the process. When the teleport ends, the disc collapses in an explosion, damaging nearby enemies and applying Vibranium Marks.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "35s",
+            "Bonus Health": "50",
+            "Explosion Range": "8m spherical radius spell field",
+            "Damage": "40"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Magik, the teleportation sequence can be manually canceled mid-transit.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "Can be manually stopped during teleport"
+          }
+        },
+        "icon_file": "black-panther/teamups/provided_02_dimensional-shortcut.png"
+      }
+    ]
+  },
+  "source_name": "BLACK PANTHER",
+  "uuid": "fa01bc79-aba9-4559-9a0e-fc4fb5666f0a",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195677.html",
+  "portrait_files": [
+    "black-panther/portraits/portrait_1.png",
+    "black-panther/portraits/portrait_2.png"
+  ]
+}

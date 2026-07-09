@@ -1,0 +1,626 @@
+[
+  {
+    "name": "ADAM WARLOCK",
+    "slug": "adam-warlock",
+    "role": "STRATEGIST",
+    "uuid": "ef4511de-a2ff-43f0-b061-d915f0ccb37d",
+    "abilities": 7,
+    "team_ups": [
+      "COSMIC CYCLONE",
+      "FLAWLESS DESIGN"
+    ],
+    "dir": "heroes/adam-warlock"
+  },
+  {
+    "name": "ANGELA",
+    "slug": "angela",
+    "role": "VANGUARD",
+    "uuid": "03af29d0-1a53-4077-9062-8201ed327635",
+    "abilities": 8,
+    "team_ups": [
+      "ASGARDIANS OF THE GALAXY",
+      "ODIN'S UNACKNOWLEDGED"
+    ],
+    "dir": "heroes/angela"
+  },
+  {
+    "name": "BLACK CAT",
+    "slug": "black-cat",
+    "role": "DUELIST",
+    "uuid": "84b3b29a-326a-443d-bf18-4ebb9f2948fc",
+    "abilities": 24,
+    "team_ups": [
+      "FELINE ALLIANCE",
+      "BINDING TIES"
+    ],
+    "dir": "heroes/black-cat"
+  },
+  {
+    "name": "BLACK PANTHER",
+    "slug": "black-panther",
+    "role": "DUELIST",
+    "uuid": "fa01bc79-aba9-4559-9a0e-fc4fb5666f0a",
+    "abilities": 7,
+    "team_ups": [
+      "DAMISA-YAO",
+      "DIMENSIONAL SHORTCUT"
+    ],
+    "dir": "heroes/black-panther"
+  },
+  {
+    "name": "BLACK WIDOW",
+    "slug": "black-widow",
+    "role": "DUELIST",
+    "uuid": "baa0fe39-41ff-42f3-b48f-3e453317503a",
+    "abilities": 6,
+    "team_ups": [
+      "ALLIED AGENTS",
+      "BURNING BULLETS"
+    ],
+    "dir": "heroes/black-widow"
+  },
+  {
+    "name": "BLADE",
+    "slug": "blade",
+    "role": "DUELIST",
+    "uuid": "4bb813d7-30ab-4c36-bd05-b9d299e4c1e3",
+    "abilities": 6,
+    "team_ups": [
+      "BLADE OF KHONSHU",
+      "BLEED FOR BATTLE"
+    ],
+    "dir": "heroes/blade"
+  },
+  {
+    "name": "CAPTAIN AMERICA",
+    "slug": "captain-america",
+    "role": "VANGUARD",
+    "uuid": "b3e3bc0b-0a15-4fa8-8139-e08f7fcd9beb",
+    "abilities": 7,
+    "team_ups": [
+      "STARS ALIGNED",
+      "VOLTAIC UNION"
+    ],
+    "dir": "heroes/captain-america"
+  },
+  {
+    "name": "CLOAK&DAGGER",
+    "slug": "cloak-and-dagger",
+    "role": "STRATEGIST",
+    "uuid": "5b5a8c7a-c9c0-4f4c-89a3-dae465db8c7f",
+    "abilities": 10,
+    "team_ups": [
+      "OBLIVION SHROUD",
+      "FROZEN HAVEN"
+    ],
+    "dir": "heroes/cloak-and-dagger"
+  },
+  {
+    "name": "CYCLOPS",
+    "slug": "cyclops",
+    "role": "DUELIST",
+    "uuid": "4b46591b-a837-43ba-ae41-571de988c190",
+    "abilities": 7,
+    "team_ups": [
+      "SLIM AND RED",
+      "KINETIC KIN"
+    ],
+    "dir": "heroes/cyclops"
+  },
+  {
+    "name": "DAREDEVIL",
+    "slug": "daredevil",
+    "role": "DUELIST",
+    "uuid": "043108d4-fd6b-4884-aee1-1ccbefb79790",
+    "abilities": 9,
+    "team_ups": [
+      "COMPREHENSIVE DEFENSE",
+      "DEVILISH AFFAIR"
+    ],
+    "dir": "heroes/daredevil"
+  },
+  {
+    "name": "DEADPOOL",
+    "slug": "deadpool",
+    "role": "VANGUARD DUELIST STRATEGIST",
+    "uuid": "3ef6b679-d1b4-4757-a8ee-0ea53379c754",
+    "abilities": 69,
+    "team_ups": [
+      "\"HEL-YEAH, HONEY\"",
+      "GUMBO CHIMICHANGAS"
+    ],
+    "dir": "heroes/deadpool"
+  },
+  {
+    "name": "DEVIL DINOSAUR",
+    "slug": "devil-dinosaur",
+    "role": "VANGUARD",
+    "uuid": "d579e90a-46a7-45fd-975f-4d63c7755d27",
+    "abilities": 8,
+    "team_ups": [
+      "PRIMAL PUNISHMENT",
+      "SURF & TURF"
+    ],
+    "dir": "heroes/devil-dinosaur"
+  },
+  {
+    "name": "DOCTOR STRANGE",
+    "slug": "doctor-strange",
+    "role": "VANGUARD",
+    "uuid": "692c786c-08f4-4502-9803-a55f3bc8f83b",
+    "abilities": 7,
+    "team_ups": [
+      "GAMMA MAELSTROM",
+      "PSIONIC VORTEX"
+    ],
+    "dir": "heroes/doctor-strange"
+  },
+  {
+    "name": "ELSA BLOODSTONE",
+    "slug": "elsa-bloodstone",
+    "role": "DUELIST",
+    "uuid": "91b586e3-4d55-455c-bd7d-69fbe0563d26",
+    "abilities": 8,
+    "team_ups": [
+      "PREHISTORIC TRAP",
+      "LOUDMOUTH MERCS"
+    ],
+    "dir": "heroes/elsa-bloodstone"
+  },
+  {
+    "name": "EMMA FROST",
+    "slug": "emma-frost",
+    "role": "VANGUARD",
+    "uuid": "011f4b5b-f020-4187-93f5-8a64df44ad48",
+    "abilities": 8,
+    "team_ups": [
+      "SPIRIT BREAKER",
+      "ICED OUT DIAMOND"
+    ],
+    "dir": "heroes/emma-frost"
+  },
+  {
+    "name": "GAMBIT",
+    "slug": "gambit",
+    "role": "STRATEGIST",
+    "uuid": "46e47f1b-a312-4686-ae9f-328318c544dd",
+    "abilities": 10,
+    "team_ups": [
+      "FAVORABLE ODDS",
+      "SPARKLING STAFF"
+    ],
+    "dir": "heroes/gambit"
+  },
+  {
+    "name": "GROOT",
+    "slug": "groot",
+    "role": "VANGUARD",
+    "uuid": "f29f3cf1-e8dd-4188-acce-e519dd94206d",
+    "abilities": 7,
+    "team_ups": [
+      "WILD WALL",
+      "BUBBLE BUDDIES"
+    ],
+    "dir": "heroes/groot"
+  },
+  {
+    "name": "HAWKEYE",
+    "slug": "hawkeye",
+    "role": "DUELIST",
+    "uuid": "e7e0573d-ac83-4d1e-b286-7c7e4c79fc81",
+    "abilities": 8,
+    "team_ups": [
+      "SENBONZAKURA STRIKE",
+      "MOONLIT SLASH"
+    ],
+    "dir": "heroes/hawkeye"
+  },
+  {
+    "name": "HELA",
+    "slug": "hela",
+    "role": "DUELIST",
+    "uuid": "7db8153e-f7fd-4889-b234-af4e06a0cabe",
+    "abilities": 7,
+    "team_ups": [
+      "Hel Tendrils",
+      "DEEP WRATH"
+    ],
+    "dir": "heroes/hela"
+  },
+  {
+    "name": "HULK",
+    "slug": "hulk",
+    "role": "VANGUARD",
+    "uuid": "9471f35c-3f81-4ae2-9726-b2944dd431e9",
+    "abilities": 14,
+    "team_ups": [
+      "SAVAGE SLAM",
+      "GAMMA FASTBALL"
+    ],
+    "dir": "heroes/hulk"
+  },
+  {
+    "name": "HUMAN TORCH",
+    "slug": "human-torch",
+    "role": "DUELIST",
+    "uuid": "f0ec2612-649f-48bb-a18b-48ef1fe9ba56",
+    "abilities": 6,
+    "team_ups": [
+      "FIERY SPARKS",
+      "STORMING IGNITION"
+    ],
+    "dir": "heroes/human-torch"
+  },
+  {
+    "name": "INVISIBLE WOMAN",
+    "slug": "invisible-woman",
+    "role": "STRATEGIST",
+    "uuid": "9cc13662-5669-460f-adbf-f53aba63bb46",
+    "abilities": 7,
+    "team_ups": [
+      "UNITED SIBLINGS",
+      "FIRST FAMILY"
+    ],
+    "dir": "heroes/invisible-woman"
+  },
+  {
+    "name": "IRON FIST",
+    "slug": "iron-fist",
+    "role": "DUELIST",
+    "uuid": "c90562b1-0bf1-4f90-94ed-d24a7650a2b0",
+    "abilities": 9,
+    "team_ups": [
+      "IRON & STONE",
+      "KUMIHO PALM"
+    ],
+    "dir": "heroes/iron-fist"
+  },
+  {
+    "name": "IRON MAN",
+    "slug": "iron-man",
+    "role": "DUELIST",
+    "uuid": "ef114434-6c2a-48ff-a4f7-05dc278aedde",
+    "abilities": 10,
+    "team_ups": [
+      "GAMMA CHARGE",
+      "THUNDER OVERDRIVE"
+    ],
+    "dir": "heroes/iron-man"
+  },
+  {
+    "name": "JEFF THE LAND SHARK",
+    "slug": "jeff-the-land-shark",
+    "role": "STRATEGIST",
+    "uuid": "49e078be-c0c3-4efc-ad01-9c6f4b4f043e",
+    "abilities": 6,
+    "team_ups": [
+      "GUARDIAN OF THE DEEP",
+      "MR. POOL'S INTERDIMENSIONAL TOY BOX"
+    ],
+    "dir": "heroes/jeff-the-land-shark"
+  },
+  {
+    "name": "JUBILEE",
+    "slug": "jubilee",
+    "role": "STRATEGIST",
+    "uuid": "dc1d68ab-9f3f-465a-80c0-e77bb51a66bc",
+    "abilities": 6,
+    "team_ups": [
+      "HELLFIRE SPARKS",
+      "VAMPIRIC KIN"
+    ],
+    "dir": "heroes/jubilee"
+  },
+  {
+    "name": "LOKI",
+    "slug": "loki",
+    "role": "STRATEGIST",
+    "uuid": "c6011abe-8d17-4962-ac88-7232dc3d208f",
+    "abilities": 7,
+    "team_ups": [
+      "VILLAIN'S ILLUSION",
+      "VIBRANT VITALITY"
+    ],
+    "dir": "heroes/loki"
+  },
+  {
+    "name": "LUNA SNOW",
+    "slug": "luna-snow",
+    "role": "STRATEGIST",
+    "uuid": "1077f07b-2178-49d3-80be-d915de78d17c",
+    "abilities": 8,
+    "team_ups": [
+      "ATLAS BOND",
+      "DUALITY DANCE"
+    ],
+    "dir": "heroes/luna-snow"
+  },
+  {
+    "name": "MAGIK",
+    "slug": "magik",
+    "role": "DUELIST",
+    "uuid": "dd9a323f-da66-4ba8-9e37-1d3e8398a9b4",
+    "abilities": 14,
+    "team_ups": [
+      "CHAIN OF CYTTORAK",
+      "VOID PENTAGRAM"
+    ],
+    "dir": "heroes/magik"
+  },
+  {
+    "name": "MAGNETO",
+    "slug": "magneto",
+    "role": "VANGUARD",
+    "uuid": "2dffcc89-3280-4d43-907a-646eea9d3a74",
+    "abilities": 7,
+    "team_ups": [
+      "METALLIC CHAOS",
+      "MAGNETIC RESONANCE"
+    ],
+    "dir": "heroes/magneto"
+  },
+  {
+    "name": "MANTIS",
+    "slug": "mantis",
+    "role": "STRATEGIST",
+    "uuid": "bbb138f7-80d3-4db4-a608-4ee2d29c5fc0",
+    "abilities": 7,
+    "team_ups": [
+      "STAR BLOSSOM",
+      "VITALITY PACT"
+    ],
+    "dir": "heroes/mantis"
+  },
+  {
+    "name": "MISTER FANTASTIC",
+    "slug": "mister-fantastic",
+    "role": "DUELIST",
+    "uuid": "fccfe09c-c34c-40d6-b546-a34386612729",
+    "abilities": 6,
+    "team_ups": [
+      "FANTASTIC AMPLIFIER",
+      "CLOBBERIN' RESEARCH DEPT."
+    ],
+    "dir": "heroes/mister-fantastic"
+  },
+  {
+    "name": "MOON KNIGHT",
+    "slug": "moon-knight",
+    "role": "DUELIST",
+    "uuid": "7dc8b934-fe12-49ae-ac3b-7d7c3a688443",
+    "abilities": 8,
+    "team_ups": [
+      "LUMINOUS MOON",
+      "BLOOD MOON"
+    ],
+    "dir": "heroes/moon-knight"
+  },
+  {
+    "name": "NAMOR",
+    "slug": "namor",
+    "role": "DUELIST",
+    "uuid": "afbd915c-3505-4660-9815-bebe2c96370b",
+    "abilities": 5,
+    "team_ups": [
+      "GAMMA MONSTRO",
+      "CHILLING CHARISMA"
+    ],
+    "dir": "heroes/namor"
+  },
+  {
+    "name": "PENI PARKER",
+    "slug": "peni-parker",
+    "role": "VANGUARD",
+    "uuid": "3929765b-c856-44c9-b97a-eb965f3fbdf6",
+    "abilities": 7,
+    "team_ups": [
+      "VIBRANIUM MECH",
+      "ROCKET NETWORK"
+    ],
+    "dir": "heroes/peni-parker"
+  },
+  {
+    "name": "PHOENIX",
+    "slug": "phoenix",
+    "role": "DUELIST",
+    "uuid": "f2521fc5-3180-477d-945c-403fa65fd7f5",
+    "abilities": 5,
+    "team_ups": [
+      "CIRCLE OF LIFE",
+      "TELEKINETIC BEATDOWN"
+    ],
+    "dir": "heroes/phoenix"
+  },
+  {
+    "name": "PSYLOCKE",
+    "slug": "psylocke",
+    "role": "DUELIST",
+    "uuid": "1c8d092c-74b9-4988-82ba-151a4b4f1308",
+    "abilities": 5,
+    "team_ups": [
+      "MENTAL PROJECTION",
+      "LIGHT & DARK DARTS"
+    ],
+    "dir": "heroes/psylocke"
+  },
+  {
+    "name": "ROCKET RACCOON",
+    "slug": "rocket-raccoon",
+    "role": "STRATEGIST",
+    "uuid": "e1fb7cc4-a1a0-473b-8809-68b04dcc9420",
+    "abilities": 7,
+    "team_ups": [
+      "MAMMALIAN BOND",
+      "PLANET X PALS"
+    ],
+    "dir": "heroes/rocket-raccoon"
+  },
+  {
+    "name": "ROGUE",
+    "slug": "rogue",
+    "role": "VANGUARD",
+    "uuid": "deb6b426-c97e-4449-b345-4d7131336a64",
+    "abilities": 7,
+    "team_ups": [
+      "MR. & MRS. X",
+      "EXPLOSIVE ENTANGLEMENT"
+    ],
+    "dir": "heroes/rogue"
+  },
+  {
+    "name": "SCARLET WITCH",
+    "slug": "scarlet-witch",
+    "role": "DUELIST",
+    "uuid": "1d3f08cf-abee-4eb9-b2fd-31ce9947e5a1",
+    "abilities": 6,
+    "team_ups": [
+      "SORCERERS SUPREME",
+      "HEX FIREWORKS"
+    ],
+    "dir": "heroes/scarlet-witch"
+  },
+  {
+    "name": "SPIDER-MAN",
+    "slug": "spider-man",
+    "role": "DUELIST",
+    "uuid": "feef5830-45b0-435e-8f7b-829241918b4d",
+    "abilities": 9,
+    "team_ups": [
+      "SYMBIOTE BOND",
+      "PARKER POWER-UP"
+    ],
+    "dir": "heroes/spider-man"
+  },
+  {
+    "name": "SQUIRREL GIRL",
+    "slug": "squirrel-girl",
+    "role": "DUELIST",
+    "uuid": "4ed51741-f094-46ef-b5ca-bb2025b15c50",
+    "abilities": 5,
+    "team_ups": [
+      "SQUIRREL MISSILE",
+      "ESU ALUMNUS"
+    ],
+    "dir": "heroes/squirrel-girl"
+  },
+  {
+    "name": "STAR-LORD",
+    "slug": "star-lord",
+    "role": "DUELIST",
+    "uuid": "f052a66a-d95a-4062-911a-0c4cd35386ac",
+    "abilities": 5,
+    "team_ups": [
+      "FLORA MUNITIONS",
+      "STAR-SOUL"
+    ],
+    "dir": "heroes/star-lord"
+  },
+  {
+    "name": "STORM",
+    "slug": "storm",
+    "role": "DUELIST",
+    "uuid": "93784596-43d9-42f9-bb0c-86a5140f4917",
+    "abilities": 5,
+    "team_ups": [
+      "GOD OF THUNDER",
+      "JAWS OF FATE"
+    ],
+    "dir": "heroes/storm"
+  },
+  {
+    "name": "THE PUNISHER",
+    "slug": "the-punisher",
+    "role": "DUELIST",
+    "uuid": "77ad32c5-b42c-405d-afeb-bd452681b8e8",
+    "abilities": 7,
+    "team_ups": [
+      "BESTIAL HUNT",
+      "AMMO OVERLOAD"
+    ],
+    "dir": "heroes/the-punisher"
+  },
+  {
+    "name": "THE THING",
+    "slug": "the-thing",
+    "role": "VANGUARD",
+    "uuid": "10bfa106-6a69-4dac-85f5-8b327e98e566",
+    "abilities": 7,
+    "team_ups": [
+      "TWO IN ONE",
+      "UNBREAKABLE FORCES"
+    ],
+    "dir": "heroes/the-thing"
+  },
+  {
+    "name": "THOR",
+    "slug": "thor",
+    "role": "VANGUARD",
+    "uuid": "fcddbb53-6a99-45f6-9cc8-65c68edd96e0",
+    "abilities": 7,
+    "team_ups": [
+      "RAGNAROK REBIRTH",
+      "DIVINE ARMORY"
+    ],
+    "dir": "heroes/thor"
+  },
+  {
+    "name": "ULTRON",
+    "slug": "ultron",
+    "role": "STRATEGIST",
+    "uuid": "dddc5632-ed86-4312-b8da-1616183fd909",
+    "abilities": 5,
+    "team_ups": [
+      "STARK PROTOCOL",
+      "SP//DR SYNC"
+    ],
+    "dir": "heroes/ultron"
+  },
+  {
+    "name": "VENOM",
+    "slug": "venom",
+    "role": "VANGUARD",
+    "uuid": "fa12017d-641d-4734-b459-187c2a6cdeb1",
+    "abilities": 7,
+    "team_ups": [
+      "BLOOD LEECH",
+      "ABYSSAL FLAMES"
+    ],
+    "dir": "heroes/venom"
+  },
+  {
+    "name": "WHITE FOX",
+    "slug": "white-fox",
+    "role": "STRATEGIST",
+    "uuid": "bff0c7c6-3042-4384-8735-7ec6354baa1e",
+    "abilities": 10,
+    "team_ups": [
+      "LUCKY LOAN",
+      "PSIONIC FOX"
+    ],
+    "dir": "heroes/white-fox"
+  },
+  {
+    "name": "WINTER SOLDIER",
+    "slug": "winter-soldier",
+    "role": "DUELIST",
+    "uuid": "7b26015b-e5f2-4d01-983b-885540b6236d",
+    "abilities": 6,
+    "team_ups": [
+      "TIMELESS VETERANS",
+      "EXPERT INSTINCT"
+    ],
+    "dir": "heroes/winter-soldier"
+  },
+  {
+    "name": "WOLVERINE",
+    "slug": "wolverine",
+    "role": "DUELIST",
+    "uuid": "a9b308ab-f0d8-412a-9362-e60091e57ded",
+    "abilities": 7,
+    "team_ups": [
+      "BLAST SLASH",
+      "PAIR OF THREES"
+    ],
+    "dir": "heroes/wolverine"
+  }
+]

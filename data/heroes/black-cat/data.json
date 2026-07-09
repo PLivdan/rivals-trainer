@@ -1,0 +1,460 @@
+{
+  "name": "BLACK CAT",
+  "real_name": "FELICIA HARDY",
+  "role": "DUELIST",
+  "description": "One of the world's premiere thieves, Felicia Hardy glides across the battlefield with swift precision and a dancer's grace, ever ready to purloin an opponent's fortune. Those who meet the Black Cat's gaze should beware, as her omens never miss their mark!",
+  "lore": "Felicia Hardy is one of the most notorious thieves in the world. Once the Black Cat has her eyes on a prize, it's already as good as gone. This is one feline femme fatale you don't want to cross... because luck is always on her side! After being ousted from the Thieves Guild, the Black Cat was recruited by Wilson Fisk to infiltrate Doctor Strange's Sanctum Sanctorum. Her job: Steal the Tablet of Life and Time so the Kingpin can harness its ancient power to counter Alchemax's dangerous timestream incursion.",
+  "base_stats": {
+    "Health": "150+125 Regenerative Shield",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260416/52d63b17-8793-44c9-8134-387d5e249bb6.png",
+    "https://r.res.easebar.com/pic/20260416/7ecb3548-74b1-4171-8d85-aa59ca31f388.png"
+  ],
+  "forms": [
+    {
+      "name": "Black Cat",
+      "stats": {
+        "Health": "150+125 Regenerative Shield",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260416/52d63b17-8793-44c9-8134-387d5e249bb6.png",
+        "https://r.res.easebar.com/pic/20260416/7ecb3548-74b1-4171-8d85-aa59ca31f388.png"
+      ]
+    },
+    {
+      "name": "Black Cat",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260416/52d63b17-8793-44c9-8134-387d5e249bb6.png",
+        "https://r.res.easebar.com/pic/20260416/7ecb3548-74b1-4171-8d85-aa59ca31f388.png"
+      ]
+    },
+    {
+      "name": "Black Cat",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260416/52d63b17-8793-44c9-8134-387d5e249bb6.png",
+        "https://r.res.easebar.com/pic/20260416/7ecb3548-74b1-4171-8d85-aa59ca31f388.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "FELINE FURY",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260416/b418cfa2-f3dd-4eae-b205-967e67831cf7.png",
+      "description": "Swipe forward with razor-sharp claws",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "35",
+        "Maximum Distance": "3.5m"
+      },
+      "icon_file": "black-cat/abilities/01_primary_left-click_feline-fury.png"
+    },
+    {
+      "name": "CALLING CARD",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260416/c1b8429e-cbce-4c01-ad81-b1255d6ddbb8.png",
+      "description": "Issue a Calling Card to all enemies. Instantly dash to any enemy in sight and range, tearing into them with your claws to deal Percentage Damage",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3100",
+        "Maximum Dash Distance": "40m",
+        "Fore-swing Damage Reduction": "50%",
+        "Ability Duration": "10s",
+        "Maximum Targeting Distance": "8m",
+        "1st Claw Strike Damage": "30",
+        "2nd Claw Strike Damage": "70"
+      },
+      "icon_file": "black-cat/abilities/02_ability_q_calling-card.png"
+    },
+    {
+      "name": "CAT'S CRADLE",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260416/0724214f-fa9d-4530-803b-02b40f0b9af7.png",
+      "description": "Lunge forward with claws bared, slicing through any enemies caught in your path",
+      "stats": {
+        "Key": "Shift",
+        "Maximum Dash Distance": "15m",
+        "Damage": "40",
+        "Cooldown": "1 charges, with each charge taking 8s to recharge"
+      },
+      "icon_file": "black-cat/abilities/03_ability_shift_cat-s-cradle.png"
+    },
+    {
+      "name": "TURN OF FORTUNE",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260416/46a0da80-3314-466d-aab1-41bc525fc793.png",
+      "description": "Launch a grappling hook forward that damages an enemy on impact and steals Fortunebefore pulling it back to Black Cat",
+      "stats": {
+        "Key": "E",
+        "Hook Speed": "120m/s",
+        "Hook Maximum Distance": "30m",
+        "Hook Damage": "30",
+        "Bonus Health from Hook Hit": "50",
+        "Cooldown": "5s"
+      },
+      "icon_file": "black-cat/abilities/04_ability_e_turn-of-fortune.png"
+    },
+    {
+      "name": "THIEVING GRACE",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20260416/331db52b-ea1e-4d74-a4c7-c27fa17ec1a5.png",
+      "description": "Perform a double jump",
+      "stats": {
+        "Key": "Space"
+      },
+      "icon_file": "black-cat/abilities/05_ability_space_thieving-grace.png"
+    },
+    {
+      "name": "FORTUNE'S FAVOR",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260416/f20a3d87-0110-46b5-ae9c-e942746833cd.png",
+      "description": "Spend Fortuneto unleash either Grapple Swipeor Phantom Pursuit",
+      "stats": {
+        "Key": "Right Click",
+        "Grapple Swipe Fortune Consumption": "150",
+        "Phantom Pursuit Fortune Consumption": "300"
+      },
+      "icon_file": "black-cat/abilities/06_ability_right-click_fortune-s-favor.png"
+    },
+    {
+      "name": "STEALTHY CATWALK",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20260416/76e1a388-8bcd-40cb-b9b9-cbfea50d5264.png",
+      "description": "Hold {Jump} to crawl up vertical surfaces",
+      "stats": {
+        "Key": "Space"
+      },
+      "icon_file": "black-cat/abilities/07_ability_space_stealthy-catwalk.png"
+    },
+    {
+      "name": "MALKIN MISFORTUNE",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260416/048b7e20-1062-44e0-9ae2-588cbb9d4fc8.png",
+      "description": "Apply Jinxto enemies on hit. Jinxedfoes have a chance to lose their bonus damage when striking Black Cat with a Critical Hit",
+      "stats": {
+        "Key": "Passive"
+      },
+      "icon_file": "black-cat/abilities/08_passive_passive_malkin-misfortune.png"
+    },
+    {
+      "name": "CLAW WHIP",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260416/5868fb3b-fb3d-4ed5-9907-0252b6687288.png",
+      "description": "Fire out tethered claws and whip them forward in a devastating arc, dealing damage to all enemies caught in range",
+      "stats": {
+        "Key": "Left Click",
+        "Spell Field Range": "150° cone spell field with a radius of 7.5m and a height of 2.5m",
+        "Spell Field Damage": "65",
+        "Attack Interval": "0.6s per hit",
+        "Damage Falloff": "Falloff begins at 30°, drop to 30% of maximum damage at 75°",
+        "Bonus Health Per Hit": "25",
+        "Max Bonus Health": "50"
+      },
+      "icon_file": "black-cat/abilities/09_primary_left-click_claw-whip.png"
+    },
+    {
+      "name": "CALLING CARD",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260416/542f0f37-1553-45e5-b794-9a5804088ccb.png",
+      "description": "Issue a Calling Card to all enemies. Instantly dash to any enemy in sight and range, tearing into them with your claws to deal Percentage Damage",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3100",
+        "Maximum Dash Distance": "60m",
+        "Fore-swing Damage Reduction": "50%",
+        "Ability Duration": "10s",
+        "Maximum Targeting Distance": "8m",
+        "1st Claw Strike Damage": "30",
+        "2nd Claw Strike Damage": "30+20% Target’s Maximum Health"
+      },
+      "icon_file": "black-cat/abilities/10_ability_q_calling-card.png"
+    },
+    {
+      "name": "CAT'S CRADLE",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260416/de907edd-e322-4e4b-b64d-26f1dd5bd08e.png",
+      "description": "Lunge forward with claws bared, slicing through any enemies caught in your path",
+      "stats": {
+        "Key": "Shift",
+        "Maximum Dash Distance": "15m",
+        "Damage": "40",
+        "Cooldown": "1 charges, with each charge taking 8s to recharge"
+      },
+      "icon_file": "black-cat/abilities/11_ability_shift_cat-s-cradle.png"
+    },
+    {
+      "name": "PHANTOM PURSUIT",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260416/0f50962e-bc08-42a0-85db-7138a350d05f.png",
+      "description": "Swiftly dash to an enemy, unleash a rapid flurry of claw attacks, and flash back to your starting position. Black Cat is Untargetableduring this move",
+      "stats": {
+        "Key": "E",
+        "Dash Duration": "0.25s",
+        "Damage": "70",
+        "Maximum Dash Distance": "20m",
+        "Cooldown": "2s"
+      },
+      "icon_file": "black-cat/abilities/12_ability_e_phantom-pursuit.png"
+    },
+    {
+      "name": "THIEVING GRACE",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20260416/db492550-ee00-49bd-b8f2-a8725012dbe1.png",
+      "description": "Perform a double jump",
+      "stats": {
+        "Key": "Space"
+      },
+      "icon_file": "black-cat/abilities/13_ability_space_thieving-grace.png"
+    },
+    {
+      "name": "FORTUNE'S FAVOR",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260416/aaaacbd7-f567-40c0-be49-494f0e6933db.png",
+      "description": "Spend Fortuneto unleash either Grapple Swipeor Phantom Pursuit",
+      "stats": {
+        "Key": "Right Click",
+        "Grapple Swipe Fortune Consumption": "150",
+        "Phantom Pursuit Fortune Consumption": "300"
+      },
+      "icon_file": "black-cat/abilities/14_ability_right-click_fortune-s-favor.png"
+    },
+    {
+      "name": "STEALTHY CATWALK",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20260416/cf0e15f3-6715-49c6-8313-9513eed6fa61.png",
+      "description": "Hold {Jump} to crawl up vertical surfaces",
+      "stats": {
+        "Key": "Space"
+      },
+      "icon_file": "black-cat/abilities/15_ability_space_stealthy-catwalk.png"
+    },
+    {
+      "name": "MALKIN MISFORTUNE",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260416/f8475d37-2f3e-495d-8783-66a39a55e6a7.png",
+      "description": "Apply Jinxto enemies on hit. Jinxedfoes have a chance to lose their bonus damage when striking Black Cat with a Critical Hit",
+      "stats": {
+        "Key": "Passive"
+      },
+      "icon_file": "black-cat/abilities/16_passive_passive_malkin-misfortune.png"
+    },
+    {
+      "name": "GILDED DEAL",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/35b59c4e-01ea-4c4f-9321-2e378148df61.png",
+      "description": "Use the Spatial Resonator to open a portal to the Elder Gods' dimension, consuming Fortune to trade with the Golden Elder and acquire items from the New York Thieves Guild vault.",
+      "stats": {
+        "Key": "F"
+      },
+      "icon_file": "black-cat/abilities/17_ability_f_gilded-deal.png"
+    },
+    {
+      "name": "TABLET OF DESTINIES",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/ce5e92ec-444e-48f9-9a2e-73b4f86c07fe.png",
+      "description": "Gain a random amount of Fortune",
+      "stats": {
+        "Key": "F",
+        "Special Effect": "Gain 0/50/200/500 Fortune randomly",
+        "Fortune Consumption": "100"
+      },
+      "icon_file": "black-cat/abilities/18_ability_f_tablet-of-destinies.png"
+    },
+    {
+      "name": "HELM OF HADES",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/b4507d88-ec34-4a0b-9303-96757d10cd5b.png",
+      "description": "Enter Invisiblestate for a set duration",
+      "stats": {
+        "Key": "F",
+        "Fortune Consumption": "200",
+        "Invisibility Duration": "2s",
+        "Movement Speed Boost Duration": "2s",
+        "Movement Boost": "60%, drop to 0 in 2s"
+      },
+      "icon_file": "black-cat/abilities/19_ability_f_helm-of-hades.png"
+    },
+    {
+      "name": "FALTINE FLAME ORB",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/004aee58-b3ee-436d-bbe7-41ef6c00b4d5.png",
+      "description": "Conjure an orb of mystical Faltine Flame to Revealand mark all nearby enemies",
+      "stats": {
+        "Key": "F",
+        "Fortune Consumption": "200",
+        "Summon Health": "50",
+        "Maximum Summon Quantity": "1"
+      },
+      "icon_file": "black-cat/abilities/20_ability_f_faltine-flame-orb.png"
+    },
+    {
+      "name": "CHERNOBOG'S CRYSTAL",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/d7499d6e-8126-4d52-b3c5-649961da300b.png",
+      "description": "Purify yourself, instantly removing any active control effects",
+      "stats": {
+        "Key": "F",
+        "Fortune Consumption": "300",
+        "Special Effect": "Remove any active control effects"
+      },
+      "icon_file": "black-cat/abilities/21_ability_f_chernobog-s-crystal.png"
+    },
+    {
+      "name": "RING OF ZONA",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/37abc875-d763-4531-8095-c0d74aae0e22.png",
+      "description": "Open a portal on a surface, allowing instant traversal to the opposite side",
+      "stats": {
+        "Key": "F",
+        "Fortune Consumption": "300"
+      },
+      "icon_file": "black-cat/abilities/22_ability_f_ring-of-zona.png"
+    },
+    {
+      "name": "MENTO-FISH",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260416/685beeba-23c2-457c-83a0-9beb64c100d9.png",
+      "description": "Create a hypnosis field. Inflicts Slow, disables movement abilities, and Groundsall enemies caught within",
+      "stats": {
+        "Key": "F",
+        "Fortune Consumption": "300",
+        "Casting": "Projectile that generates a spell field upon impact",
+        "Projectile Speed": "30m/s",
+        "Spell Field Range": "A cylindrical spell field with a radius of 5m and a height of 40m.",
+        "Slow Ratio": "35%"
+      },
+      "icon_file": "black-cat/abilities/23_ability_f_mento-fish.png"
+    },
+    {
+      "name": "STICKY PAWS",
+      "slot": "passive",
+      "key": "PASSIVE",
+      "icon": "https://r.res.easebar.com/pic/20260416/d1950ebc-6411-4006-93b9-c6db6b41ee45.png",
+      "description": "Steal a set amount of Fortunewhenever your attacks hit an enemy",
+      "stats": {
+        "Key": "PASSIVE",
+        "Fortune Gained per Target Hit (Feline Fury)": "50, up to 50",
+        "Fortune Gained per Target Hit (Claw Whip)": "50, up to 100",
+        "Fortune Gained per Target Hit (Phantom Pursuit)": "150, up to 150",
+        "Fortune Gained per Hit (Turn of Fortune)": "300",
+        "Fortune Gained per Hit (Calling Card)": "300",
+        "Fortune Lost Upon Death": "Lose 50% of Fortune when defeated, with a minimum deduction of 200"
+      },
+      "icon_file": "black-cat/abilities/24_passive_passive_sticky-paws.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "GIFT OF GOLD",
+        "icon": "https://r.res.easebar.com/pic/20260416/dba9f061-232b-4cca-8797-cf61c520201e.png",
+        "description": "Black Cat shares items acquired from Insider Trading with White Fox and Captain America. White Fox receives the Life Orb, which restores Spirit Fox Tail energy and converts life energy into Nine-Tailed Radiance that auto-tracks nearby allies and enemies, granting allies speed and healing while dealing damage and slowing enemies. Captain America receives the Vibranium Energy Amplifier, which expands shield block range when raised and reflects projectiles back along the crosshair direction.",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Damage Boost"
+        },
+        "icon_file": "black-cat/teamups/received_01_gift-of-gold.png"
+      },
+      {
+        "name": "GIFT OF GOLD",
+        "icon": "https://r.res.easebar.com/pic/20260416/dba9f061-232b-4cca-8797-cf61c520201e.png",
+        "description": "Black Cat shares items acquired from Insider Trading with White Fox and Captain America. White Fox receives the Life Orb, which restores Spirit Fox Tail energy and converts life energy into Nine-Tailed Radiance that auto-tracks nearby allies and enemies, granting allies speed and healing while dealing damage and slowing enemies. Captain America receives the Vibranium Energy Amplifier, which expands shield block range when raised and reflects projectiles back along the crosshair direction.",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Damage Boost"
+        },
+        "icon_file": "black-cat/teamups/received_01_gift-of-gold.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "FELINE ALLIANCE",
+        "icon": "https://r.res.easebar.com/pic/20260707/d047d566-84a4-461b-8046-ac5487e23fe4.png",
+        "partner": "Black Panther",
+        "base": {
+          "description": "Taking damage accumulates Vibranium Energy. Upon reaching a specific threshold, Black Cat can unleash a violent explosion, damaging and Knocking back surrounding enemies while gaining a brief Speed Boost and Bonus Health.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Damage Taken Threshold": "50",
+            "Spell Field Range": "8m spherical radius spell field",
+            "Spell Field Damage": "45",
+            "Movement Boost": "3 m/s, decaying to 0 over 3s",
+            "Bonus Health": "25"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Black Panther, this explosion is no longer restricted by the energy threshold and can be triggered at any time.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "No longer limited by energy accumulation ratio; can be cast anytime"
+          }
+        },
+        "icon_file": "black-cat/teamups/provided_01_feline-alliance.png"
+      },
+      {
+        "name": "BINDING TIES",
+        "icon": "https://r.res.easebar.com/pic/20260707/262ef028-4fc2-42d5-8340-713856dbe63d.png",
+        "partner": "Spider-Man",
+        "base": {
+          "description": "Turn of Fortune is replaced by Spider-Web Grapple, which has 2 charges. Landing the grapple on an enemy steals Fortune and applies a Spider-Tracer. If Black Cat hits an enemy carrying a Spider-Tracer with any other ability, she triggers the mark to deal bonus damage.",
+          "stats": {
+            "Key": "E",
+            "Cooldown": "2 charges, 5s each",
+            "Bonus Damage on Mark Trigge": "45"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Spider-Man, using Spider-Web Grapple to hit an enemy already marked with a Spider-Tracer temporarily Immobilizes them in place.",
+          "stats": {
+            "Key": "E",
+            "Imprison Duration": "0.5s"
+          }
+        },
+        "icon_file": "black-cat/teamups/provided_02_binding-ties.png"
+      }
+    ]
+  },
+  "source_name": "BLACK CAT",
+  "uuid": "84b3b29a-326a-443d-bf18-4ebb9f2948fc",
+  "article_url": "https://www.marvelrivals.com/20260416/41360_1296480.html",
+  "portrait_files": [
+    "black-cat/portraits/portrait_1.png",
+    "black-cat/portraits/portrait_2.png"
+  ]
+}

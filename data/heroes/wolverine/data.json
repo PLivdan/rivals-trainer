@@ -1,0 +1,252 @@
+{
+  "name": "WOLVERINE",
+  "real_name": "LOGAN",
+  "role": "DUELIST",
+  "description": "Thanks to his regenerative healing factor and berserker rage, the centuries-old Logan can fight through the worst pain to go claw-to-claw with any foe. The Wolverine stands ready to shred through all obstacles in his way with his Adamantium claws.",
+  "lore": "Gifted with a powerful healing factor and razor sharp claws, the Mutant called Logan was turned into a living weapon when the clandestine government organization Weapon X bonded indestructible Adamantium to his skeleton. Wolverine has proven to be more than a killing machine, finding ways to rise above his pain to do what's right for Mutants and humans alike. Now, Logan splits his time between battling Doom 2099 and ushering Mutants to safety on Krakoa. Even in the far future, Wolverine remains the best there is at what he does.",
+  "base_stats": {
+    "Health": "350",
+    "Movement Speed": "7m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241204/34073cdf-2f02-4671-bad6-fbd7287fcff1.png",
+    "https://r.res.easebar.com/pic/20241204/061d2f6b-9927-4774-929e-5fd61c5e9530.png"
+  ],
+  "forms": [
+    {
+      "name": "Wolverine",
+      "stats": {
+        "Health": "350",
+        "Movement Speed": "7m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241204/34073cdf-2f02-4671-bad6-fbd7287fcff1.png",
+        "https://r.res.easebar.com/pic/20241204/061d2f6b-9927-4774-929e-5fd61c5e9530.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Savage Claw",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/97b1d4c6-7ea2-43f2-b528-5ea88904853f.png",
+      "description": "Slash with Adamantium claws for a Claw Strike. Unleashing Feral Leap will enhance it to Berserk Claw Strike for a brief period",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Base Damage": "15 damage per strike",
+        "Percentage Damage": "Deal damage equal to 1.5% of the target's Max Health, with an extra 0.057% damage for each point of Rage",
+        "Maximum Distance": "3.5m",
+        "Attack Interval": "The first three strikes have an interval of 0.27s between them, while the fourth strike has a 0.84s interval from the third strike"
+      },
+      "icon_file": "wolverine/abilities/01_primary_left-click_savage-claw.png"
+    },
+    {
+      "name": "Last Stand",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241205/6900d5e2-7074-4c28-a424-4015ad9780a8.png",
+      "description": "Knock enemies ahead airborne and spiral through the air, sweeping up enemies along the path and delivering a devastating impact at the landing point",
+      "stats": {
+        "Key": "Q",
+        "Knockback Range": "8m spherical radius",
+        "Knockback Damage": "50",
+        "Snatching Damage Over Time": "20/s",
+        "Impact Range": "8m spherical radius",
+        "Impact Base Damage": "50",
+        "Impact Percentage Damage": "Deal damage equal to 10% of the target's Max Health, with an extra 0.3% damage for each point of Rage",
+        "Knockdown Time": "0.75s",
+        "Energy Cost": "2800"
+      },
+      "icon_file": "wolverine/abilities/02_ability_q_last-stand.png"
+    },
+    {
+      "name": "Feral Leap",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241205/e88c7523-3fab-4cfb-a954-080c5824f0fe.png",
+      "description": "Leap like an animal to snatch the first enemy upon impact and Smash them to the ground. Unleashing this ability will enhance his normal attack to Berserk Claw Strike for a brief period",
+      "stats": {
+        "Key": "SHIFT",
+        "Snatch Damage": "35",
+        "Smash Damage": "35",
+        "Knockdown Duration": "0.75s",
+        "Berserk Claw Strike Duration": "5s",
+        "Berserk Claw Strike Base Damage": "6 damage per strike",
+        "Berserk Claw Strike Percentage Damage": "Deal damage equal to 1% of the target's Max Health, with an extra 0.035% damage for each point of Rage",
+        "Berserk Claw Strike Maximum Distance": "3.5m",
+        "Berserk Claw Strike Attack Interval": "5.88 strikes per second",
+        "Cooldown": "12s"
+      },
+      "icon_file": "wolverine/abilities/03_ability_shift_feral-leap.png"
+    },
+    {
+      "name": "Undying Animal",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241205/15a76d54-520c-447a-b8f1-2ab0a488faac.png",
+      "description": "Unleash a fierce howl to briefly reduce incoming damage",
+      "stats": {
+        "Key": "E",
+        "Duration": "5s",
+        "Damage Reduction": "40%",
+        "Cooldown": "16s"
+      },
+      "icon_file": "wolverine/abilities/04_ability_e_undying-animal.png"
+    },
+    {
+      "name": "Vicious Rampage",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/a015b659-87d4-4569-a870-4af03347ecb3.png",
+      "description": "Dash forward and unleash a Claw Strike",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Movement-based damage ability",
+        "Average Speed": "44m/s",
+        "Maximum Distance": "7.5m",
+        "Range": "3m",
+        "Base Damage": "15 damage per strike",
+        "Percentage Damage": "Deal damage equal to 1.5% of the target's Max Health, with an extra 0.057% damage for each point of Rage",
+        "Cooldown": "3s"
+      },
+      "icon_file": "wolverine/abilities/05_ability_right-click_vicious-rampage.png"
+    },
+    {
+      "name": "Regenerative Healing Factor",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241205/031e30b1-f8d7-4be1-9a03-b758bdddc6be.png",
+      "description": "Begin to heal and rise with a hefty Bonus Health, shaking off all debuffs. After a brief moment, any remaining Bonus Health morphs into a one-off heal, zeroing out his Rage. Assists in KOs reduce this cooldown",
+      "stats": {
+        "Key": "Passive",
+        "Bonus Health": "150 - 300 (Damage increases with Rage)",
+        "Bonus Health Duration": "3s",
+        "Bonus Health/Healing Conversion": "1",
+        "Cooldown Reduction Per KO Engaged": "10s",
+        "Cooldown": "90s"
+      },
+      "icon_file": "wolverine/abilities/06_passive_passive_regenerative-healing-factor.png"
+    },
+    {
+      "name": "Berserker Rage",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241205/e97de2d3-6f28-4619-80cd-59da00931e8b.png",
+      "description": "Rage builds when Wolverine attacks or takes hits, boosting the damage of his Claw Strikes and the Bonus Health from his regenerative healing factor",
+      "stats": {
+        "Key": "Passive",
+        "Max Rage": "100",
+        "Rage Per Savage Claw Hit": "10",
+        "Rage Per Vicious Rampage Hit": "15",
+        "Rage Per Feral Leap Snatch": "10",
+        "Rage Per Berserk Claw Strike Hit": "5",
+        "Rage Per Last Stand Knockback": "25",
+        "Rage Per Hit Taken": "5",
+        "Rage Gain From Taking Hits": "2 per second"
+      },
+      "icon_file": "wolverine/abilities/07_passive_passive_berserker-rage.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Phoenix Warrior",
+        "icon": "https://r.res.easebar.com/pic/20250712/052fd724-4a96-47a3-97d7-fef8ac9056ac.png",
+        "description": "Wolverine and Hulk can interact with each other. Once both parties confirm, Hulk can lift Wolverine and press the key to hurl him forwardJean Grey imbues Wolverine with the awe-inspiring Phoenix Force. With this power, Wolverine's Feral Leap transforms into Phoenix Warrior. While active, he is enveloped in Phoenix flames that continuously scorch him and nearby enemies, dealing Percentage Damage. In this state, Wolverine's abilities gain Lifesteal when inflicting damage",
+        "stats": {
+          "Key": "Shift",
+          "Cooldown": "15s",
+          "Spell Field Range": "3m spherical radius spell field",
+          "Spell Field Damage": "Deal damage equals to target's 1% Maximum Health per second",
+          "Lifesteal Proportion": "0.33",
+          "Snatch Damage": "35",
+          "Smash Damage": "35",
+          "Knockdown Duration": "0.75s",
+          "Berserk Claw Strike Duration": "5s",
+          "Berserk Claw Strike Base Damage": "6 damage per strike",
+          "Berserk Claw Strike Percentage Damage": "Deal damage equal to 1% of the target's Max Health, with an extra 0.035% damage for each point of Rage.",
+          "Berserk Claw Strike Maximum Distance": "3.5m",
+          "Berserk Claw Strike Attack Interval": "5.88 strikes per second"
+        },
+        "icon_file": "wolverine/teamups/received_01_phoenix-warrior.png"
+      },
+      {
+        "name": "Kinetic Claws",
+        "icon": "https://r.res.easebar.com/pic/20260611/163cb861-6d98-42a9-8101-c0fa96a4c48f.png",
+        "description": "Cyclops supercharges Wolverine's claws, extending his attack range. While active, Wolverine's Vicious Rampage is replaced with Kinetic Claws, granting him a brief forward lunge that unleashes a flurry of slashes around him",
+        "stats": {
+          "Key": "X",
+          "Ability Cooldown": "20s",
+          "Ability Duration": "8s",
+          "Attack Range Bonus:": "1m",
+          "Kinetic Claws Cooldown": "3s",
+          "Kinetic Claws Damage Tick Rate:": "0.1s",
+          "Kinetic Claws Damage:": "5 + 0.01% Max HP per Rage point",
+          "Kinetic Claws Duration:": "1.5s"
+        },
+        "icon_file": "wolverine/teamups/received_02_kinetic-claws.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "BLAST SLASH",
+        "icon": "https://r.res.easebar.com/pic/20260707/cc7d61e7-2b80-45e2-a913-6e287ab6fcfc.png",
+        "partner": "Cyclops",
+        "base": {
+          "description": "Activation extends the attack range of Savage Claw and Berserk Claw Strike. Vicious Rampage is replaced with Kinetic Claws, granting a brief forward lunge that unleashes a flurry of slashes around.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20",
+            "Ability Duration": "8s",
+            "Attack Range Increase": "1m",
+            "Kinetic Claws Cooldown": "3s",
+            "Kinetic Claws Damage": "5 + 0.01% of Max Health as damage per Rage point",
+            "Kinetic Claws Duration": "1s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Cyclops, Blast Slash is permanently active.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "Blast Slash is permanently active."
+          }
+        },
+        "icon_file": "wolverine/teamups/provided_01_blast-slash.png"
+      },
+      {
+        "name": "PAIR OF THREES",
+        "icon": "https://r.res.easebar.com/pic/20260707/a23b6234-0f27-41a1-8252-72388c21b814.png",
+        "partner": "Gambit",
+        "base": {
+          "description": "Upon activation, Wolverine receives Kinetic Enhancement, gaining increased Movement Speed and a Jump Boost. Attacking enemies applies Kinetic Particles that detonate after a short delay for bonus damage. The effect lasts for duration.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Ability Duration": "5s",
+            "Movement Boost": "35%",
+            "Bonus Jump Height": "350",
+            "Bonus Damage Tick Interval": "0.5",
+            "Bonus Damage": "15%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Gambit, Wolverine receives Continuous Healing for the entire duration of the ability.",
+          "stats": {
+            "Key": "C",
+            "Healing Amount": "25/s"
+          }
+        },
+        "icon_file": "wolverine/teamups/provided_02_pair-of-threes.png"
+      }
+    ]
+  },
+  "source_name": "WOLVERINE",
+  "uuid": "a9b308ab-f0d8-412a-9362-e60091e57ded",
+  "article_url": "https://www.marvelrivals.com/20241204/41360_1198101.html",
+  "portrait_files": [
+    "wolverine/portraits/portrait_1.png",
+    "wolverine/portraits/portrait_2.png"
+  ]
+}

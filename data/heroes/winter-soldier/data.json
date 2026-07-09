@@ -1,0 +1,210 @@
+{
+  "name": "WINTER SOLDIER",
+  "real_name": "JAMES BUCHANAN \"BUCKY\" BARNES",
+  "role": "DUELIST",
+  "description": "Terrifying experiments turned him into a brainwashed assassin, but now James Buchanan \"Bucky\" Barnes is in control of his own fate once again. With his enhanced mechanical arm, the Winter Soldier is primed to deliver earth-shattering blows to any foe in his path!",
+  "lore": "Captain America's sidekick during World War II, James Buchanan \"Bucky\" Barnes was thought to have been killed in action. In truth, he had been recovered by enemy forces and rebuilt into their ultimate assassin. But the Winter Soldier eventually broke his conditioning to become a hero once more. Captured during an operation to sabotage Charteris Base, the Winter Soldier was subjected to horrific experiments at the hands of Hydra scientists. He was rescued by Hawkeye and a version of Captain America from the year 2099, who gifted an upgraded arm to his former partner.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/77e57120-a2de-417b-b410-f609a01d4aa9.png",
+    "https://r.res.easebar.com/pic/20241122/95d06a2a-5342-4ec4-be9b-d8902f381a55.png"
+  ],
+  "forms": [
+    {
+      "name": "WINTER SOLDIER",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/77e57120-a2de-417b-b410-f609a01d4aa9.png",
+        "https://r.res.easebar.com/pic/20241122/95d06a2a-5342-4ec4-be9b-d8902f381a55.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Roterstern",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/c394a786-61e2-4311-af38-ddbb77fb0c17.png",
+      "description": "Fire explosive rounds with his blaster, Roterstern, damaging the target hit and enemies behind them.",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Projectile Speed": "180 m/s",
+        "Projectile Damage": "80",
+        "Range": "Cone-shaped spell field with a 5m radius and an apex angle of 90°",
+        "Spell Field Damage": "45",
+        "Damage Falloff": "Falloff begins at 20m, decreasing to 70% at 40m",
+        "Fire Rate": "2.5 rounds per second",
+        "Ammo": "3",
+        "Critical Hit": "Projectile: Yes; Spell Field: No",
+        "Special Mechanic": "Enemies that take damage from the projectile will no longer receive damage from the spell field"
+      },
+      "icon_file": "winter-soldier/abilities/01_primary_left-click_roterstern.png"
+    },
+    {
+      "name": "Kraken Impact",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/a53ce147-45d7-472a-b01d-27c0824f21e0.png",
+      "description": "Leap high, then dash forward and slam down with the bionic arm, dealing damage to enemies in range, marking them for Culling. Marked enemies will perish instantly if their health falls below a certain threshold, recharging the bionic arm for another Kraken Impact within a short period",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Spherical Spell Field",
+        "Range": "5m spherical radius",
+        "Spell Field Damage": "70",
+        "Culling Duration": "5s",
+        "Culling Threshold": "20% Health",
+        "Next Kraken Impact After A Culling": "8s",
+        "Energy Cost": "3100"
+      },
+      "icon_file": "winter-soldier/abilities/02_ability_q_kraken-impact.png"
+    },
+    {
+      "name": "Trooper's Fist",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/239b4e01-33ed-4f71-afd9-845810e96b8e.png",
+      "description": "Dash forward, seizing enemies along the path and launching up enemies at the end of the dash",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Movement-based damage ability",
+        "Average Speed": "30 m/s",
+        "Maximum Distance": "9m",
+        "Seize Damage": "25",
+        "Range": "Length: 4.5m, Width: 4.5m, Height: 2m",
+        "Knockback Damage": "65",
+        "Cooldown": "10s"
+      },
+      "icon_file": "winter-soldier/abilities/03_ability_shift_trooper-s-fist.png"
+    },
+    {
+      "name": "Tainted Voltage",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/65cf216c-9ad1-4a8e-9e2c-d7f1c2a9964c.png",
+      "description": "Charge up and launch a powerful electrical punch with the bionic arm in the target direction, dealing damage to enemies within range and Slowing them. This ability can Knock Down flying heroes",
+      "stats": {
+        "Key": "E",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Projectile Speed": "100 m/s",
+        "Damage": "55",
+        "Slow Rate": "-35%",
+        "Slow Duration": "2s",
+        "Special Mechanic": "Projectiles pierce through enemies",
+        "Cooldown": "5s"
+      },
+      "icon_file": "winter-soldier/abilities/04_ability_e_tainted-voltage.png"
+    },
+    {
+      "name": "Bionic Hook",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/4173fa58-8641-47f9-9ee5-b63472fe074e.png",
+      "description": "Charge up and launch a hook with his bionic arm, reeling in the first target hit and enemies lurking behind",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Projectile Speed": "80 m/s",
+        "Charge Time": "0.5s - 4s",
+        "Range": "Cone-shaped spell field with a 4.5m radius and an apex angle of 80°",
+        "Projectile Damage": "15",
+        "Spell Field Damage": "20",
+        "Cooldown": "15s"
+      },
+      "icon_file": "winter-soldier/abilities/05_ability_right-click_bionic-hook.png"
+    },
+    {
+      "name": "Ceaseless Charge",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/55a1b572-78dd-47c3-8006-5b26e8d8813a.png",
+      "description": "Roterstern reloads automatically while the bionic arm is in action, granting Bonus Health to the Winter Soldier",
+      "stats": {
+        "Key": "Passive",
+        "Bonus Health (Self)": "40 (Bionic Hook & Tainted Voltage), 50 (Trooper's Fist, Kraken Impact)"
+      },
+      "icon_file": "winter-soldier/abilities/06_passive_passive_ceaseless-charge.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Stellar Impact",
+        "icon": "https://r.res.easebar.com/pic/20250410/c34a6f5c-8be1-4bcb-a0f0-f5572a64e6e9.png",
+        "description": "Inspired by Captain America's resolve, Winter Soldier can leap to the aid of a designated ally, slamming the ground with his mechanical arm to damage nearby foes and grant Bonus Health to allies within range. Captain America and Winter Soldier can interact with each other once both parties confirm. The duo then collides and unleashes a shockwave that damages and slows enemies",
+        "stats": {
+          "Key": "C",
+          "Damage": "70",
+          "Range": "8m spherical radius",
+          "Clash Damage": "80",
+          "Clash Damage Range": "10m spherical radius",
+          "Special Effect": "Stellar Impact also triggers the Ceaseless Charge passive effect",
+          "Bonus Health (Self)": "30",
+          "Bonus Health (Ally)": "50",
+          "Cooldown": "12s"
+        },
+        "icon_file": "winter-soldier/teamups/received_01_stellar-impact.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "TIMELESS VETERANS",
+        "icon": "https://r.res.easebar.com/pic/20260707/ef072c40-a11b-481f-b14a-9f7b7e2d7bfc.png",
+        "partner": "The Punisher",
+        "base": {
+          "description": "Unlocks the Burst Spike ability. Using the bionic arm emits forward electricity, dealing damage and Knocking Back enemies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Burst Spike Max Attack Range": "15.25m",
+            "Burst Spike Damage": "85"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with The Punisher, the electric burst applies a Grounded effect and Knocks Back enemies even further.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "Burst Spike applies a Grounded effect and knocks back enemies even further"
+          }
+        },
+        "icon_file": "winter-soldier/teamups/provided_01_timeless-veterans.png"
+      },
+      {
+        "name": "EXPERT INSTINCT",
+        "icon": "https://r.res.easebar.com/pic/20260707/974941d3-dcad-4849-8006-e0f07f36af3e.png",
+        "partner": "Elsa Bloodstone",
+        "base": {
+          "description": "Securing or participating in a KO grants a stack of Culling Instinct. Each stack reduces the cooldowns of Winter Soldier's other abilities. All stacks are lost upon defeat.",
+          "stats": {
+            "Key": "Passive",
+            "Other Ability CD Reduction per Culling Instinct Stack": "1.5s",
+            "Culling Instinct Max Stacks": "2",
+            "Culling Instinct Stacks for Death Damage Reduction": "1",
+            "Direct Damage Required per Energy Stack": "500"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Elsa Bloodstone, the Bonus Health generated by Ceaseless Charge is increased.",
+          "stats": {
+            "Key": "Passive",
+            "Bonus Health": "70"
+          }
+        },
+        "icon_file": "winter-soldier/teamups/provided_02_expert-instinct.png"
+      }
+    ]
+  },
+  "source_name": "WINTER SOLDIER",
+  "uuid": "7b26015b-e5f2-4d01-983b-885540b6236d",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195681.html",
+  "portrait_files": [
+    "winter-soldier/portraits/portrait_1.png",
+    "winter-soldier/portraits/portrait_2.png"
+  ]
+}

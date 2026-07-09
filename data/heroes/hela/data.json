@@ -1,0 +1,238 @@
+{
+  "name": "HELA",
+  "real_name": "HELA",
+  "role": "DUELIST",
+  "description": "As the Goddess of Death, Hela wields supreme control over the fallen souls residing in Hel. With a haunting whisper and a murder of crows, the queen of the underworld gracefully reaps the souls of her enemies without an ounce of mercy.",
+  "lore": "The Asgardian Goddess of Death, Hela is a powerful sorceress who controls an endless army of undead warriors. She has long sought to expand her domain beyond the nether realms and will make any deal that benefits her goal. Hela will not rest until all souls—living and dead—are hers to command. Hela offered to support Loki's coup in exchange for an extension of Hel's territory into the realm of the living. In truth, though, she seeks to claim Yggsgard's throne—and the temporal power that comes with it—for herself.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/09eb05c5-cf62-4ec8-be1e-abf557473498.png",
+    "https://r.res.easebar.com/pic/20241122/35e3313f-84f8-4a18-9de8-dab05f4a7411.png"
+  ],
+  "forms": [
+    {
+      "name": "HELA",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/09eb05c5-cf62-4ec8-be1e-abf557473498.png",
+        "https://r.res.easebar.com/pic/20241122/35e3313f-84f8-4a18-9de8-dab05f4a7411.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Nightsword Thorn",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/ea4b3942-f0b3-43b4-a2fc-d5b43b6a8b35.png",
+      "description": "Throw Nightsword thorns",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast direct hit",
+        "Damage": "80",
+        "Damage Falloff": "Falloff begins at 18m, decreasing to 75% at 35m",
+        "Fire Rate": "2 rounds per second",
+        "Ammo": "10",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "hela/abilities/01_primary_left-click_nightsword-thorn.png"
+    },
+    {
+      "name": "Goddess of Death",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/cc37d07b-7128-47a0-8706-240fda571a47.png",
+      "description": "Soar into the sky and unleash Nastrond Crows from each hand at will",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Duration": "10s",
+        "Nastrond Crow Health": "1000",
+        "Fire Rate": "1 rounds per second",
+        "Projectile Speed": "80 m/s",
+        "Explosion Range": "6m spherical radius",
+        "Explosion Damage": "125",
+        "Explosion Damage Falloff": "32% falloff at 4m.",
+        "Energy Cost": "4000"
+      },
+      "icon_file": "hela/abilities/02_ability_q_goddess-of-death.png"
+    },
+    {
+      "name": "Astral Flock",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20241120/e9a46cd0-2dcc-4835-9f4b-f18302c03eac.png",
+      "description": "Transform into a Nastrond Crow to glide forth, press again to undo the transformation. Gain Bonus Health when the transformation ends",
+      "stats": {
+        "Key": "Shift",
+        "Casting": "Dash",
+        "Dash Speed": "15 m/s",
+        "Dash Distance": "18m",
+        "Cooldown": "15s",
+        "Bonus Health": "25",
+        "Special Effect": "Shapeshift into a Nastrond Crow and gain invincibility"
+      },
+      "icon_file": "hela/abilities/03_ability_shift_astral-flock.png"
+    },
+    {
+      "name": "Soul Drainer",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/558313fc-c58a-4507-a812-18e9acf92b97.png",
+      "description": "Project an explosive Hel sphere to Stun nearby enemies.",
+      "stats": {
+        "Key": "E",
+        "Casting": "Arced projectile that generates a spell field upon impact",
+        "Projectile Speed": "40 m/s",
+        "Damage": "1",
+        "Range": "3m spherical radius",
+        "Spell Field Damage": "40",
+        "Stun Duration": "0.3s",
+        "Cooldown": "10s"
+      },
+      "icon_file": "hela/abilities/04_ability_e_soul-drainer.png"
+    },
+    {
+      "name": "Piercing Night",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/b40f4698-b5ca-4cd1-a8fd-4ff916f1a5da.png",
+      "description": "Fire multiple Nightsword thorns that detonate after a delay",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Number of Projectiles": "4",
+        "Projectile Speed": "80 m/s",
+        "Projectile Damage": "10",
+        "Explosion Delay": "3s",
+        "Range": "3m spherical radius",
+        "Spell Field Damage": "35 damage per round",
+        "Cooldown": "8s",
+        "Special Effect": "Projectiles stick to enemies on hit"
+      },
+      "icon_file": "hela/abilities/05_ability_right-click_piercing-night.png"
+    },
+    {
+      "name": "Nastrond Crowstorm",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/f7bbe4b0-932e-421b-a60e-d5fb5560c6f7.png",
+      "description": "Defeating an enemy will generate a Nastrond Crow, exploding after a duration",
+      "stats": {
+        "Key": "Passive",
+        "Delay": "1.8s",
+        "Range": "5m spherical radius",
+        "Damage": "80"
+      },
+      "icon_file": "hela/abilities/06_passive_passive_nastrond-crowstorm.png"
+    },
+    {
+      "name": "Hel's Descent",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/29f6f04d-087b-4e97-8aeb-3b505b3c2952.png",
+      "description": "Hold Space to fall slowly",
+      "stats": {
+        "Key": "Space",
+        "Horizontal Movement Speed": "6 m/s",
+        "Descending Speed": "3.5 m/s"
+      },
+      "icon_file": "hela/abilities/07_ability_space_hel-s-descent.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Hel Tendrils",
+        "icon": "https://r.res.easebar.com/pic/20250712/bf161d8e-a652-4abe-aca7-add44ac5429e.png",
+        "description": "Venom shares his symbiotes with Jeff and Hela. Hela's Hel Tendrils unleash a symbiotic Hel Sphere. Upon hit, it pulls nearby enemies toward the impact point and links them, slowing enemies that try to escape.",
+        "stats": {
+          "Key": "E",
+          "Projectile Speed": "40 m/s",
+          "Spell Field Damage": "40",
+          "Range": "3m spherical radius spell field",
+          "Stun Duration": "0.3s",
+          "Maximum Linking Distance": "5m",
+          "Maximum Linking Duration": "2s",
+          "Slow Effect": "Slow the enemies by 20% at the center, increasing to 40% at 2.5m from the center.",
+          "Cooldown": "10s"
+        },
+        "icon_file": "hela/teamups/received_01_hel-tendrils.png"
+      },
+      {
+        "name": "DEATH KNELL",
+        "icon": "https://r.res.easebar.com/pic/20251011/00e05df0-3681-4908-a9f8-c14cc35bbc57.png",
+        "description": "Hela channels energy of the undead to empower Namor. When Namor strikes with his trident, a spectral water column erupts at the target area, slowing enemies hit. Whenever Hela or Namor assist in a KO, an invulnerable Undead Monstro spawns at the fallen enemy's position, automatically attacking the nearest foe for a short time before vanishing",
+        "stats": {
+          "Key": "Passive",
+          "Undead Monstro Duration": "3s",
+          "Undead Monstro Damage": "10",
+          "Undead Monstro Fire Rate": "0.5s per hit",
+          "Damage Falloff": "Falloff begins at 20m, decreasing to 50% at 40m"
+        },
+        "icon_file": "hela/teamups/received_02_death-knell.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "Hel Tendrils",
+        "icon": "https://r.res.easebar.com/pic/20260707/fbdef29d-0619-4f3b-ade2-9b573d825a30.png",
+        "partner": "Venom",
+        "base": {
+          "description": "Replace Soul Drainer with Hel Tendrils. Upon hit, tendrils pull nearby enemies toward the impact point and links them, Slowingenemies that try to escape.",
+          "stats": {
+            "Key": "E",
+            "Cooldown": "10",
+            "Gravity Field Range": "3m spherical radius",
+            "Max Gravity Duration": "2s",
+            "Stun Duration": "0.5s",
+            "Slow Effect": "20%, up to 40% at 2.5m from center",
+            "Damage": "50"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Venom, Piercing Night fires a dense volley of symbiote-infused Nightsword Thorns. Each direct Nightsword Thorn hit restores a portion of Hela's Health",
+          "stats": {
+            "Nightsword Thorn Increase": "2",
+            "Health Restored": "20 per round"
+          }
+        },
+        "icon_file": "hela/teamups/provided_01_hel-tendrils.png"
+      },
+      {
+        "name": "DEEP WRATH",
+        "icon": "https://r.res.easebar.com/pic/20260707/6aafd31f-95e4-4fee-8efc-64a3593ed016.png",
+        "partner": "Namor",
+        "base": {
+          "description": "Whenever Hela participates in a KO, an Undead Monstro spawns at the fallen enemy's position. While an Undead Monstro is present, casting Piercing Night will command the Monstro to spit a Nightsword Thorn at the nearest enemy.",
+          "stats": {
+            "Undead Monstro Health": "150",
+            "Undead Monstro Damage": "15 per round",
+            "Damage Falloff": "Falloff begins at 20m, decreasing to 50% at 40m",
+            "Attack Speed": "0.33s per round"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Namor, each attack during Goddess of Death spawns an Undead Monstro at the point of impact.",
+          "stats": {
+            "Special Effect": "Each attack during Goddess of Death spawns an Undead Monstro at the point of impact."
+          }
+        },
+        "icon_file": "hela/teamups/provided_02_deep-wrath.png"
+      }
+    ]
+  },
+  "source_name": "HELA",
+  "uuid": "7db8153e-f7fd-4889-b234-af4e06a0cabe",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195676.html",
+  "portrait_files": [
+    "hela/portraits/portrait_1.png",
+    "hela/portraits/portrait_2.png"
+  ]
+}

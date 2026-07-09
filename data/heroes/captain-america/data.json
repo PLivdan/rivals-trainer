@@ -1,0 +1,229 @@
+{
+  "name": "CAPTAIN AMERICA",
+  "real_name": "STEVEN “STEVE” ROGERS",
+  "role": "VANGUARD",
+  "description": "Enhanced by the Super-Soldier Serum, Steven \"Steve\" Rogers uses his Vibranium shield and extensive combat training to confront any threat to justice. When Captain America rallies his troops, a wave of courage sweeps across the battlefield!",
+  "lore": "In hopes of serving his country during World War II, young Steve Rogers volunteered for an experiment that enhanced his strength, speed, and agility, making him America's first super soldier. As Captain America, he proudly fought enemy forces until he became frozen in ice and lost to the ages. Discovered and unthawed in the 2099, Captain America began battling the threats of tomorrow — including Doom 2099. Now, he fights alongside the Avengers to prevent the desperate future he awoke in.",
+  "base_stats": {
+    "Health": "300+300 Regenerative Shield",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/01ca407f-13af-4ed1-a596-2b3ea86ed66d.png",
+    "https://r.res.easebar.com/pic/20241122/f2154661-dd8c-46e3-80dc-0c7a9aaaca58.png"
+  ],
+  "forms": [
+    {
+      "name": "CAPTAIN AMERICA",
+      "stats": {
+        "Health": "300+300 Regenerative Shield",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/01ca407f-13af-4ed1-a596-2b3ea86ed66d.png",
+        "https://r.res.easebar.com/pic/20241122/f2154661-dd8c-46e3-80dc-0c7a9aaaca58.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Sentinel Strike",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/588f99a1-b1e0-4133-a626-35f8e6e4b158.png",
+      "description": "Get up close to strike enemies. Landing the second hit enables a shield throw that can ricochet four times",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Change Form",
+        "Melee Range": "4m",
+        "Shield Flying Speed": "60m/s",
+        "Max Flying Distance": "25m",
+        "Damage": "Melee Attack Damage: 45, Flying Shield Damage: 45",
+        "Attack Interval": "Melee 1st Hit: 0.4s, Melee 2nd Hit: 0.5s, Flying Shield 1st Hit: 0.5s, Flying Shield 2nd Hit: 0.57s",
+        "Ammo": "Up to 4 throws",
+        "Critical Hit": "No",
+        "Special Effect": "Automatically target enemies near the crosshair"
+      },
+      "icon_file": "captain-america/abilities/01_primary_left-click_sentinel-strike.png"
+    },
+    {
+      "name": "Freedom Charge",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/301a3e56-eeee-47e4-b3b6-08c164b5f780.png",
+      "description": "Shield held high, carve a path forward, granting both himself and allies along the path continuous Bonus Health and Movement Boosts. Allies also gain Ultimate Ability Charge Acceleration. Using Living Legend and Leading Dash while this ability is active can Launch Up enemies",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Activation",
+        "Range": "A spherical spell field with a 4m radius enveloping the caster, and a spell area with a width of 4m along the path",
+        "Spell Field Duration": "10s",
+        "Spell Area Duration": "5s",
+        "Health Recovery Rate": "Cast to gain 150 Bonus Health and grant allies 100 Bonus Health. Every second afterward, gain 100 Bonus Health and grant allies 60 Bonus Health",
+        "Movement Boost": "Grant a 30% Movement Boost to both yourself and your allies",
+        "Energy Cost": "3100",
+        "Special Effect": "Allies within its path gain a 20% boost to Ultimate Energy charge efficiency"
+      },
+      "icon_file": "captain-america/abilities/02_ability_q_freedom-charge.png"
+    },
+    {
+      "name": "Leading Dash",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/dfc71932-8e4a-47e1-8eaf-3dffddf51cb4.png",
+      "description": "Boost speed and enable Fearless Leap to leap into the air",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Channeled",
+        "Movement Boost": "33.40%",
+        "Fearless Leap Height": "5m"
+      },
+      "icon_file": "captain-america/abilities/03_ability_shift_leading-dash.png"
+    },
+    {
+      "name": "Vibranium Energy Saw",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/ba7fc0c4-f0c7-4ce7-a792-63374163cc22.png",
+      "description": "Hurl the energy-charged shield to strike enemies in a path",
+      "stats": {
+        "Key": "E",
+        "Casting": "Single-cast projectile that can ricochet",
+        "Projectile Speed": "80 m/s",
+        "Maximum Distance": "25m",
+        "Number of Ricochets": "3",
+        "Damage": "Start at 70, with a 20% reduction for each ricochet",
+        "Cooldown": "6s"
+      },
+      "icon_file": "captain-america/abilities/04_ability_e_vibranium-energy-saw.png"
+    },
+    {
+      "name": "Liberty Rush",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/63eef162-7c33-46a8-8f48-aa74b29f910a.png",
+      "description": "Raise the shield and charge forward",
+      "stats": {
+        "Key": "F",
+        "Casting": "Single-cast forward dash",
+        "Dash Distance": "12m",
+        "Damage": "30",
+        "Cooldown": "10s"
+      },
+      "icon_file": "captain-america/abilities/05_ability_f_liberty-rush.png"
+    },
+    {
+      "name": "Super-Soldier Slam",
+      "slot": "ability",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/0261fd68-7164-4852-a86a-a5d02f914b2a.png",
+      "description": "Slam down from the sky onto the targeted area, Launching Up enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Targeted",
+        "Maximum Distance": "20m (horizontal)",
+        "Damage": "30",
+        "Cooldown": "12s"
+      },
+      "icon_file": "captain-america/abilities/06_ability_left-click_super-soldier-slam.png"
+    },
+    {
+      "name": "Living Legend",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/97a1851f-7f3d-4297-a8ba-3d4650422a58.png",
+      "description": "Raise the shield to deflect incoming projectiles, sending them ricocheting in random directions",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Channeled",
+        "Maximum Shield Value": "350",
+        "Recovery Shield Value": "50/s",
+        "Delayed Recovery After Release": "4s",
+        "Cooldown After Destroyed": "5s",
+        "Cooldown": "1s",
+        "Ricochet Damage Falloff": "50%"
+      },
+      "icon_file": "captain-america/abilities/07_ability_right-click_living-legend.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Captain's Spirit",
+        "icon": "https://r.res.easebar.com/pic/20250410/c34a6f5c-8be1-4bcb-a0f0-f5572a64e6e9.png",
+        "description": "Inspired by Captain America's resolve, Winter Soldier can leap to the aid of a designated ally, slamming the ground with his mechanical arm to deal damage to nearby foes. Additionally, Captain America and Winter Soldier can interact with each other once both parties confirm. The duo collides and unleashes a shockwave that deals damage and inflicts slow on enemies",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "Captain America gain 100 Max Health"
+        },
+        "icon_file": "captain-america/teamups/received_01_captain-s-spirit.png"
+      },
+      {
+        "name": "VIBRANIUM BASTION",
+        "icon": "https://r.res.easebar.com/pic/20260416/dba9f061-232b-4cca-8797-cf61c520201e.png",
+        "description": "Black Cat shares her luck with her allies. When White Fox embraces her newfound fortune, she unleashestracking Spirit Tails to grant Healing and Speed to allies, while damaging and Slowing foes. When Captain America enjoys his luck, his shield's block radius expands and allows him to aim deflectedProjectiles directly toward his target",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "15s",
+          "Ability Duration": "10s",
+          "Summon Radius Increase": "1m",
+          "Special Effect": "Within the duration, deflect Projectiles ricochet directly toward his target direction."
+        },
+        "icon_file": "captain-america/teamups/received_02_vibranium-bastion.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "STARS ALIGNED",
+        "icon": "https://r.res.easebar.com/pic/20260707/ecbafd0e-a207-4e4c-889f-f33de7a3d490.png",
+        "partner": "Winter Soldier",
+        "base": {
+          "description": "Captain America can leap directly to a teammate, providing Bonus Health to both himself and the ally, while redirecting a portion of their incoming damage to himself.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Bonus Health": "150",
+            "Damage Sharing Duration": "2s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Winter Soldier, the duo can trigger a mutual rally. Upon confirmation, they charge at one another, slamming together to grant Bonus Health and Movement Speed to all nearby friends. The original effect remains, now additionally granting a Speed Boost to the targeted teammate.",
+          "stats": {
+            "Key": "C",
+            "Movement Boost": "1.5 m/s"
+          }
+        },
+        "icon_file": "captain-america/teamups/provided_01_stars-aligned.png"
+      },
+      {
+        "name": "VOLTAIC UNION",
+        "icon": "https://r.res.easebar.com/pic/20260707/1c2a60b5-1651-4f9d-972a-ee19834c289c.png",
+        "partner": "Thor",
+        "base": {
+          "description": "Modifies Sentinel Strike into a Lightning Shield projectile. After landing two hits, Captain America launches the piercing Lightning Shield four times.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Ability Duration": "7s",
+            "Thunderous Shield Damage": "45"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Thor, the lightning energy imbued in the shield intensifies. Each hit from the Lightning Shield triggers an extra burst of damage in the surrounding area.",
+          "stats": {
+            "Key": "C",
+            "AoE Damage": "5",
+            "Damage Range": "3m spherical radius"
+          }
+        },
+        "icon_file": "captain-america/teamups/provided_02_voltaic-union.png"
+      }
+    ]
+  },
+  "source_name": "CAPTAIN AMERICA",
+  "uuid": "b3e3bc0b-0a15-4fa8-8139-e08f7fcd9beb",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195652.html",
+  "portrait_files": [
+    "captain-america/portraits/portrait_1.png",
+    "captain-america/portraits/portrait_2.png"
+  ]
+}

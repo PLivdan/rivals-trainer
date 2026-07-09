@@ -1,0 +1,221 @@
+{
+  "name": "INVISIBLE WOMAN",
+  "real_name": "SUSAN STORM",
+  "role": "STRATEGIST",
+  "description": "The Invisible Woman is able to slip in and out of sight without a trace. No matter how intense the battle may be, Susan Richards always keeps her cool, conjuring up impenetrable force fields to protect herself and her team.",
+  "lore": "Cosmic rays altered Susan Storm on a cellular level, granting her the ability to generate impenetrable force fields and to make herself fade from sight in an instant. Despite her frequent lack of visibility, it has always been perfectly clear that Sue is the force holding her family — the Fantastic Four — together. After the Timestream Entanglement, the Invisible Woman has taken full advantage of her powers, using stealth to explore locations too dangerous for her fellow heroes, especially going on rescue missions for civilians trapped by the creatures of the night.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250109/1e5ca954-a254-4a51-b866-f7a8b7b590dc.png",
+    "https://r.res.easebar.com/pic/20250109/46a28514-414c-4609-b72b-ea63fcfdc7c5.png"
+  ],
+  "forms": [
+    {
+      "name": "INVISIBLE WOMAN",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250109/1e5ca954-a254-4a51-b866-f7a8b7b590dc.png",
+        "https://r.res.easebar.com/pic/20250109/46a28514-414c-4609-b72b-ea63fcfdc7c5.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Orb Projection",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250110/79e037c4-353c-46a1-abb1-1188ff3f98e3.png",
+      "description": "Launch a force field orbs that can pierce heroes, flying to maximum distance before returning to Invisible Woman; damaging enemies and healing teammates",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile with delayed impact.",
+        "Special Effect": "Orbs can pierce heroes and return to Invisible Woman after reaching their maximum distance. They damage enemies and heal teammates",
+        "Damage": "Deal 30 damage per hit upon being shot out and 15 damage per hit on its return journey.",
+        "Damage Falloff": "No falloff",
+        "Healing Amount": "Heal 50 health per hit upon being shot out and 40 health per hit on its return journey.",
+        "Fire Rate": "0.5s per hit",
+        "Projectile Speed": "150 m/s",
+        "Maximum Flight Distance": "35m",
+        "Ammo": "10",
+        "Critical Hit": "No"
+      },
+      "icon_file": "invisible-woman/abilities/01_primary_left-click_orb-projection.png"
+    },
+    {
+      "name": "Guardian Shield",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250108/af32c3d3-713a-4faf-90f7-1be2dcfa8cbd.png",
+      "description": "Generate a force shield in front of a selected ally or in front of you. The shield can block damage and provide Healing Over Time to nearby allies. Enemies that pass through the shield are slowed",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Targeted",
+        "Healing Amount": "50/sec, self 15/sec",
+        "Range": "3m radius",
+        "Slow Rate": "35%",
+        "Slow Duration": "3s",
+        "Maximum Shield Value": "200",
+        "Special Effect 1": "Before the shield is destroyed, Invisible Woman can choose to reproject the shield onto a selected teammate at any time",
+        "Special Effect 2": "After the shield has been damaged, Invisible Woman can press the F key to reclaim the shield and restore its value",
+        "Special Effect 3": "If no Guardian Shield is present, pressing the recall key now deploys a shield in front of Invisible Woman",
+        "Recovery Shield Value Per Second": "34",
+        "Cooldown After Destroyed": "6s"
+      },
+      "icon_file": "invisible-woman/abilities/02_ability_right-click_guardian-shield.png"
+    },
+    {
+      "name": "Psionic Vortex",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20250108/308c5ab3-2b3f-4f53-9eb6-05c171ad4863.png",
+      "description": "Gather psionic energy and then cast it, upon impact or pressing the Ability key again, it erupts into a psionic vortex, continuously drawing in enemies and causing damage",
+      "stats": {
+        "Key": "Shift",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Projectile Speed": "80 m/s",
+        "Spell Field Range": "5m radius",
+        "Spell Field Damage": "35/sec",
+        "Spell Field Duration": "4s",
+        "Special Effect": "Applies a slow effect to enemies within the spell field; the closer they are to the center of the field, the greater the slow effect",
+        "Slow Rate": "Center 50%, Edge 0",
+        "Cooldown": "12s"
+      },
+      "icon_file": "invisible-woman/abilities/03_ability_shift_psionic-vortex.png"
+    },
+    {
+      "name": "Force Physics",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250108/0d7893e9-e90e-483f-8b90-414535d6f133.png",
+      "description": "Manipulate psionic energy to push or pull enemies in front of her",
+      "stats": {
+        "Key": "E",
+        "Casting": "Cylindrical Spell Field",
+        "Range": "1.5m radius, 35m length",
+        "Damage": "50",
+        "Push Range": "10m",
+        "Pull-Range": "7m",
+        "Cooldown": "10s"
+      },
+      "icon_file": "invisible-woman/abilities/04_ability_e_force-physics.png"
+    },
+    {
+      "name": "Invisible Boundary",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250108/c10fa2f1-64e5-417a-abbe-0092e98b0afb.png",
+      "description": "Manifest an unseen force field within a chosen area, rendering allies inside undetectable by enemies and provide Healing Over Time. Enemies that pass through the field are slowed",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Targeted, generates a cylindrical spell field",
+        "Pass-Through Slow Rate": "55%",
+        "Slow Duration": "1s",
+        "Healing Amount": "180/sec",
+        "Range": "10m radius, 40m height",
+        "Duration": "8s",
+        "Special Effect": "Slows enemies within range by 20%",
+        "Energy Cost": "4500"
+      },
+      "icon_file": "invisible-woman/abilities/05_ability_q_invisible-boundary.png"
+    },
+    {
+      "name": "Covert Advance",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20250108/d273333c-e1da-4d98-925d-b7ce8601144c.png",
+      "description": "Enter Invisible state some time after disengaging from combat and grant yourself Healing Over Time",
+      "stats": {
+        "Key": "Passive",
+        "Healing Amount": "30/sec"
+      },
+      "icon_file": "invisible-woman/abilities/06_passive_passive_covert-advance.png"
+    },
+    {
+      "name": "Veiled Step",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20250108/eb7b6f46-9d82-4df8-a513-8d94c07546e9.png",
+      "description": "Generate a force field at your feet, stepping on it propels her into the Invisible state",
+      "stats": {
+        "Key": "Space",
+        "Cooldown": "6s"
+      },
+      "icon_file": "invisible-woman/abilities/07_ability_space_veiled-step.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Fantasti-Force",
+        "icon": "https://r.res.easebar.com/pic/20250109/053365f9-0714-4d9c-a51f-2fd1c173a7f3.png",
+        "description": "The Invisible Woman taps into her powers, channeling Psionic Might to fortify Mr.Fantastic. This formidable force bolsters Mr.Fantastic, granting damage resistance. Once activated, they can continually generate Bonus Health, making up for lost Health",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "15% Healing Boost"
+        },
+        "icon_file": "invisible-woman/teamups/received_01_fantasti-force.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "UNITED SIBLINGS",
+        "icon": "https://r.res.easebar.com/pic/20260707/4411d0ff-03e8-4813-b1e6-21bedc6ae521.png",
+        "partner": "Human Torch",
+        "base": {
+          "description": "Generate a Flame Shield for a targeted ally that blocks incoming damage while providing a Continuous Healing aura to everyone nearby. Projectiles from teammates shot through the Flame Shield receive a Damage Boost. Enemies that pass though the shield are Slowed",
+          "stats": {
+            "Key": "Right Click",
+            "Piercing Damage Boost Rate": "20%",
+            "Maximum Shield Value": "300"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Human Torch, the Flame Shield boasts a larger radius and heavily increased shield value.",
+          "stats": {
+            "Key": "Right Click",
+            "Maximum Shield Value": "400"
+          }
+        },
+        "icon_file": "invisible-woman/teamups/provided_01_united-siblings.png"
+      },
+      {
+        "name": "FIRST FAMILY",
+        "icon": "https://r.res.easebar.com/pic/20260707/ffb2c0b7-fc06-4907-98f7-226b6be5d1d5.png",
+        "partner": "Mister Fantastic",
+        "base": {
+          "description": "Invisible Woman and surrounding allies enter Invisible state, gaining healing and a Speed Boost. The effect ends if they take damage or the duration expires. Disengaging from combat for a duration will reenter the Invisible state.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Ability Duration": "4s",
+            "Healing Amount": "15/s",
+            "Movement Boost": "1.2m/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Mister Fantastic, the healing and Speed Boost effects are enhanced, and the Invisible state duration is increased",
+          "stats": {
+            "Key": "C",
+            "Ability Duration": "6s",
+            "Healing Amount": "25/s",
+            "Movement Boost": "1.8m/s"
+          }
+        },
+        "icon_file": "invisible-woman/teamups/provided_02_first-family.png"
+      }
+    ]
+  },
+  "source_name": "INVISIBLE WOMAN",
+  "uuid": "9cc13662-5669-460f-adbf-f53aba63bb46",
+  "article_url": "https://www.marvelrivals.com/20250108/41360_1205353.html",
+  "portrait_files": [
+    "invisible-woman/portraits/portrait_1.png",
+    "invisible-woman/portraits/portrait_2.png"
+  ]
+}

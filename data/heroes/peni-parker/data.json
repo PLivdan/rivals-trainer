@@ -1,0 +1,239 @@
+{
+  "name": "PENI PARKER",
+  "real_name": "PENI PARKER",
+  "role": "VANGUARD",
+  "description": "Peni Parker may be young, but she bravely stands on the frontlines to protect the Web of Life and Destiny. Together, this teen prodigy and her state-of-the-art mech, the sensational SP//dr, make for the most thrilling duo on the battlefield!",
+  "lore": "After the death of her father, Peni Parker inherited the experimental mech-suit known as SP//dr. In order to control the suit, Peni had to allow herself to be bitten by the irradiated arachnid that controls its CPU, forming a psychic bond between them. Now, Peni and SP//dr keep the people of Tokyo Webworld safe, just like her father did before her. But their mission is bigger than just one city. Since the Timestream Entanglement, Peni and SP//dr have devoted themselves to the protection of the Web of Life and Destiny and the countless realities it connects.",
+  "base_stats": {
+    "Health": "650",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/2c0a6adf-b3c8-4882-b1cf-0a818cf0ee8f.png",
+    "https://r.res.easebar.com/pic/20241122/fe2a71bc-4e1a-466b-96b7-205f45885eb1.png"
+  ],
+  "forms": [
+    {
+      "name": "PENI PARKER",
+      "stats": {
+        "Health": "650",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/2c0a6adf-b3c8-4882-b1cf-0a818cf0ee8f.png",
+        "https://r.res.easebar.com/pic/20241122/fe2a71bc-4e1a-466b-96b7-205f45885eb1.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Cyber-Web Cluster",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/2b24b421-99cf-4e20-b584-8f8e755911af.png",
+      "description": "Launch forward a Cyber-Web Cluster",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Rapid-fire, delayed projectile that is accompanied by a spell field",
+        "Projectile Speed": "150m/s",
+        "Range": "1.5m spherical radius",
+        "Fire Rate": "3.33 rounds per second",
+        "Damage": "Projectile Damage: 15; Spell Field Damage: 15",
+        "Critical Hit": "Yes",
+        "Special Effect": "20% slowdown on release"
+      },
+      "icon_file": "peni-parker/abilities/01_primary_left-click_cyber-web-cluster.png"
+    },
+    {
+      "name": "Spider-Sweeper",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/bcccc074-f210-4239-a6e1-05ae478859a6.png",
+      "description": "Enhance the SP//dr suit, launching up enemies in its path and deploying Arachno-Mines, Spider-Drones, and Cyber-Webs repeatedly",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Enhancement",
+        "Sweep Range": "5m",
+        "Attack Interval": "1s",
+        "Spider-Drone Generation Interval": "0.5s",
+        "Arachno-Mine Attack Interval": "0.7s",
+        "Maximum Arachno-Mine Quantity": "7",
+        "Range": "4m spherical radius",
+        "Duration": "12s",
+        "Damage": "Sweep Attack Damage: 60",
+        "Energy Cost": "3400",
+        "Special Effect": "Gain 450 Bonus Health and a 70% Movement Boost"
+      },
+      "icon_file": "peni-parker/abilities/02_ability_q_spider-sweeper.png"
+    },
+    {
+      "name": "Bionic Spider-Nest",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/b0a9458d-2a87-483c-a165-c362bf34d179.png",
+      "description": "Generate a Bionic Spider-Nest at a targeted area, periodically spawning Spider-Drones and creating Cyber-Webs. While in the Cyber-Web, Peni and allies gain Healing Over Time and a Movement Boost. Excess healing converts into Bonus Health. Spider-Drones inflict a Slow effect on hit, which can stack and refresh its effect period with multiple hits",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Targeted",
+        "Maximum Distance": "10m",
+        "Spider-Nest Health": "350",
+        "Range": "12m spherical radius",
+        "Damage": "Each Spider-Drone inflicts 40 damage",
+        "Cooldown": "15s",
+        "Special Effect": "Two Spider-Drones are generated every 3s, slows hit enemies by 8% for 2s, each hit stacks the effect and resets the slow period, stacking up to 40%"
+      },
+      "icon_file": "peni-parker/abilities/03_ability_shift_bionic-spider-nest.png"
+    },
+    {
+      "name": "Arachno-Mine",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/a0c17f1d-4984-4961-af7a-515078b751a4.png",
+      "description": "Deploy Arachno-Mines that can be concealed within the confines of a Cyber-Web",
+      "stats": {
+        "Key": "E",
+        "Casting": "Single-cast Spell Field",
+        "Range": "3m spherical radius",
+        "Damage": "100",
+        "Cooldown": "4 charges, with each charge taking 4s to recharge"
+      },
+      "icon_file": "peni-parker/abilities/04_ability_e_arachno-mine.png"
+    },
+    {
+      "name": "Cyber-Bond",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/6146023c-4c46-4135-aba6-79eff6014d3b.png",
+      "description": "Shoot a web strand that links to the targeted area or Cyber-Web. If stretched too far, it will trigger a pullback",
+      "stats": {
+        "Key": "F",
+        "Casting": "Dash",
+        "Pull-back Distance": "10m",
+        "Maximum Cyber-Bond Distance": "19m, with the possibility to exceed this distance if descending",
+        "Projectile Speed": "100m/s",
+        "Minimum Dash Distance": "10m",
+        "Maximum Dash Distance": "30m",
+        "Cooldown": "3s"
+      },
+      "icon_file": "peni-parker/abilities/05_ability_f_cyber-bond.png"
+    },
+    {
+      "name": "Wall Crawl",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/a812a9bf-dcaa-443a-870f-79586813d558.png",
+      "description": "HOLD Jump to crawl on vertical surfaces",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "7.2m/s"
+      },
+      "icon_file": "peni-parker/abilities/06_ability_space_wall-crawl.png"
+    },
+    {
+      "name": "Cyber-Web Snare",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/036e9648-779e-48a7-ab8b-0e60bc0c5bd1.png",
+      "description": "Cast futuristic webbing that Immobilizes enemies or creates a Cyber-Web. While in the Cyber-Web, Peni and allies gain Healing Over Time and a Movement Boost. Excess healing converts into Bonus Health",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile with delayed impact",
+        "Projectile Speed": "60 m/s",
+        "Range": "3m spherical radius",
+        "Damage": "5",
+        "Cooldown": "3s",
+        "Special Effect 1": "Enemies hit are ensnared for 0.7s. While trapped in the Cyber-Web, Peni Parker receives 25 healing per second. Any excess healing is converted into Bonus Health, up to a maximum of 200 Health, and grants a 25% Movement Boost",
+        "Special Effect 2": "Allies in Peni's Cyber-Webs now receive the same Healing Over Time and a Movement Boost effects as her. Movement Boost for allies is 25%, Healing is 15/s. Ally excess healing converts into Bonus Health, up to 25"
+      },
+      "icon_file": "peni-parker/abilities/07_ability_right-click_cyber-web-snare.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "ARMORIZED SPIDER-NEST",
+        "icon": "https://r.res.easebar.com/pic/20250531/b2250054-6ee6-4b3e-8062-57ef69717686.png",
+        "description": "Enhanced by Rocket Raccoon, Peni Parker’s Bionic Spider-Nest regularly generates strengthened armor packs. Each armor pack grants bonus health to the hero who picks up the pack. Peni Parker can deploy Bionic Spider-Nest and Armored Spider-Nest at the same time",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "30",
+          "Spider-Nest Health": "250",
+          "Spider-Drone Generate Interval": "3s",
+          "Spider-Drone Generate Quantity": "2",
+          "Spider-Drone Explosion Range": "1m spherical radius spell field",
+          "Spider-Drone Damage": "40",
+          "Armor Pack Generate Interval": "3s",
+          "Bonus Health From Armor Pack": "50"
+        },
+        "icon_file": "peni-parker/teamups/received_01_armorized-spider-nest.png"
+      },
+      {
+        "name": "Cyber-Spiders",
+        "icon": "https://r.res.easebar.com/pic/20260117/99aa4398-a29a-4cac-8935-2542feff88f6.png",
+        "description": "Peni Parker whips up a Sticky Bomb for Spider-Man! Prime it, then toss it before the timer's up for a blast that damages nearby enemies and attaches a Spider-Tracer to them. If not thrown in time, it explodes on Spider-Man, recharging a Web-Cluster shot and granting Bonus Health",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "+50 Max Health"
+        },
+        "icon_file": "peni-parker/teamups/received_02_cyber-spiders.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "VIBRANIUM MECH",
+        "icon": "https://r.res.easebar.com/pic/20260707/46bad4a0-7f6b-4ea1-b324-7b10d743df05.png",
+        "partner": "Black Panther",
+        "base": {
+          "description": "Upon activation, briefly grants Cyber-Web Clusteran Attack Speedand DamageBoost.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Duration": "5s",
+            "Barrier Health": "300",
+            "Attack Interval": "0.2s per shot"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Black Panther, activating the ability deploys a frontal Vibranium Shield, while reducing the Vibranium Energy cost of Cyber-Web Cluster.",
+          "stats": {
+            "Key": "C",
+            "Barrier Health": "400"
+          }
+        },
+        "icon_file": "peni-parker/teamups/provided_01_vibranium-mech.png"
+      },
+      {
+        "name": "ROCKET NETWORK",
+        "icon": "https://r.res.easebar.com/pic/20260707/d90c3467-fd24-4f64-967e-b7c4966314d0.png",
+        "partner": "Rocket Raccoon",
+        "base": {
+          "description": "Deploy an Armored Spider-Nestthat periodically drops Spider-Dronesand Armor Packsthat grant Bonus Health.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "25s",
+            "Spider-Nest Health": "250",
+            "Armor Pack Generate Interval": "3s",
+            "Bonus Health From Armor Pack": "50"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Rocket Raccoon, the Armored Spider-Nestpassively regenerates its own Health. Furthermore, Rocket's B.R.B.will generate Cyber-Webs, and spawn both Spider-Dronesand Arachno-Mines.",
+          "stats": {
+            "Key": "C",
+            "Spider-Drone self healing": "25",
+            "Spider-Drone Damage": "40",
+            "Spider-Drone Generate Interval": "8s"
+          }
+        },
+        "icon_file": "peni-parker/teamups/provided_02_rocket-network.png"
+      }
+    ]
+  },
+  "source_name": "PENI PARKER",
+  "uuid": "3929765b-c856-44c9-b97a-eb965f3fbdf6",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195656.html",
+  "portrait_files": [
+    "peni-parker/portraits/portrait_1.png",
+    "peni-parker/portraits/portrait_2.png"
+  ]
+}

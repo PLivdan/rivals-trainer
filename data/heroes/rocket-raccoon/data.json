@@ -1,0 +1,222 @@
+{
+  "name": "ROCKET RACCOON",
+  "real_name": "ROCKET RACCOON",
+  "role": "STRATEGIST",
+  "description": "Rocket may not look like a tech genius or an expert tactician, but anyone who's ever made his hit list has quickly regretted underestimating him. This savvy space soldier is equally eager to boost his teammates and to collect bounties on his foes.",
+  "lore": "He may look cute and fuzzy at first glance, but the space ranger known as Rocket has a bite just as nasty as his attitude. Fortunately, he puts his uncanny technical aptitude to use for good as a member of the Guardians of the Galaxy. When Star-Lord signed on for a mission to explore Klyntar, Rocket tagged along for some easy target practice shooting symbiotes. But when their ship crashed, Rocket unexpectedly found himself in a fight for his life, trying to keep his fellow Guardians safe until help arrived.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/9f7eb30c-16b6-419c-870d-bff592cb532d.png",
+    "https://r.res.easebar.com/pic/20241122/4a5cdada-f8f7-497e-83de-669f78d04ded.png"
+  ],
+  "forms": [
+    {
+      "name": "ROCKET RACCOON",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/9f7eb30c-16b6-419c-870d-bff592cb532d.png",
+        "https://r.res.easebar.com/pic/20241122/4a5cdada-f8f7-497e-83de-669f78d04ded.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Bombard Mode",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/6d5fc9e6-f194-494f-bcb9-a0eea60e7f60.png",
+      "description": "Fire energy projectiles that deal damage",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Rapid-fire, delayed projectile",
+        "Damage": "16 damage per round",
+        "Projectile Speed": "180 m/s",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 40% at 20m",
+        "Fire Rate": "12.05 rounds per second",
+        "Ammo": "45",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "rocket-raccoon/abilities/01_primary_left-click_bombard-mode.png"
+    },
+    {
+      "name": "Repair Mode",
+      "slot": "primary",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/8e83a73c-dbc6-4d8b-bf0e-2f6fbffe20a4.png",
+      "description": "Shoot bouncing spheres to heal allies",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Healing Amount (Ally)": "50/s",
+        "One-time Healing Amount": "55",
+        "Healing Amount (Self)": "30/s",
+        "Projectile Speed": "80 m/s",
+        "Range": "5m spherical radius",
+        "Fire Rate": "2 rounds per second",
+        "Ammo": "8",
+        "Duration": "5s",
+        "Special Effect": "One-time healing for allies when projectile hits them，Bouncing Spheres will bounce off surfaces upon contact, with a maximum of 10 bounces. When they approach injured allies, their speed will reduce",
+        "Projectile Speed Reduction": "7 m/s"
+      },
+      "icon_file": "rocket-raccoon/abilities/02_primary_right-click_repair-mode.png"
+    },
+    {
+      "name": "C.Y.A.",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/8fa6c871-fb91-4115-bf94-a1ccf6f12d2c.png",
+      "description": "Deploy a Cosmic Yarn Amplifier that grants allies a Damage Boost",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Targeted ability that, when activated, summons a creature and detects allies within the area.",
+        "Damage Boost": "40%",
+        "Bonus Health": "100/s",
+        "Bonus Max Health": "150",
+        "Range": "20m radius",
+        "Duration": "12s",
+        "Summons' Health": "800",
+        "Special Effect": "During the ability's duration, linked allies will receive an additional 100 Bonus Health points per second, capping at 150. After breaking the link, this bonus starts to falloff after 1 second at a rate of 75 per/s",
+        "Energy Cost": "4300"
+      },
+      "icon_file": "rocket-raccoon/abilities/03_ability_q_c-y-a.png"
+    },
+    {
+      "name": "Jetpack Dash",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/66c6ccca-0e2b-4c87-87c3-29fddfa3b4c1.png",
+      "description": "Dash forward",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Dash Direction": "Crosshair Direction",
+        "Dash Distance": "8m",
+        "Cooldown": "2 charges, with each charge taking 10s to recharge"
+      },
+      "icon_file": "rocket-raccoon/abilities/04_ability_shift_jetpack-dash.png"
+    },
+    {
+      "name": "B.R.B.",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/f5f99d54-aeaa-4dc8-bad1-7c0e390434cf.png",
+      "description": "Deploy a Battle Rebirth Beacon that revives a fallen ally and periodically produces armor packs and rocket jet packs",
+      "stats": {
+        "Key": "E",
+        "Casting": "Summons",
+        "Special Effect": "Generate an item every 3s, including Armor Pack and Rocket Boots",
+        "Maximum Revive Distance": "50m",
+        "Bonus Health From Armor Pack": "25",
+        "Duration": "300s",
+        "Cooldown": "40s. You can reclaim the beacon by pressing E. When reclaimed, the cooldown will be reduced based on the beacon's remaining health. If you reclaim a full-health beacon, the minimum cooldown will be 5s"
+      },
+      "icon_file": "rocket-raccoon/abilities/05_ability_e_b-r-b.png"
+    },
+    {
+      "name": "Wild Crawl",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/2bf79c26-d564-4a9e-8148-85e5b44add4f.png",
+      "description": "Hold Space to run on a wall",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "8m/s"
+      },
+      "icon_file": "rocket-raccoon/abilities/06_ability_space_wild-crawl.png"
+    },
+    {
+      "name": "Flying Ace",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/75456c26-a53f-4d7e-955f-b663d7dd337a.png",
+      "description": "Hold Space to fall slowly",
+      "stats": {
+        "Key": "Space",
+        "Descending Speed": "3.5m/s"
+      },
+      "icon_file": "rocket-raccoon/abilities/07_ability_space_flying-ace.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Old Friends",
+        "icon": "https://r.res.easebar.com/pic/20241120/8f92cf82-a9bb-4c40-bb3c-2aa6aebc9c6d.png",
+        "description": "Jeff the Land Shark and Rocket Raccoon can ride on Groot's shoulders, receiving Damage Reduction",
+        "stats": {
+          "Key": "C",
+          "Casting": "Targeted",
+          "Range": "Up to 12m",
+          "Special Effect": "Pressing SHIFT will exit the Team-Up status with Groot",
+          "Damage Reduction": "0.35"
+        },
+        "icon_file": "rocket-raccoon/teamups/received_01_old-friends.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "MAMMALIAN BOND",
+        "icon": "https://r.res.easebar.com/pic/20260707/d9a55697-7db3-4bc5-8b71-8b9e384a6013.png",
+        "partner": "Squirrel Girl",
+        "base": {
+          "description": "Tosses out a scattered batch of augmented Vitality Acorns. Acorns that hit the floor can be collected. Whether struck directly or picked up, teammates receive a burst of healing and global cooldown reduction.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "2 charges, with each charge taking 20s to recharge.",
+            "Vitality Acorn Amount": "5",
+            "Vitality Acorn Healing Amount": "20 per acorn",
+            "Ability Cooldown Reduction": "0.5s per acorn"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Squirrel Girl, the maximum charge count for this ability is increased.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "3 charges, with each charge taking 20s to recharge."
+          }
+        },
+        "icon_file": "rocket-raccoon/teamups/provided_01_mammalian-bond.png"
+      },
+      {
+        "name": "PLANET X PALS",
+        "icon": "https://r.res.easebar.com/pic/20260707/c506d414-5fd0-4f1a-9f55-83d10b980b01.png",
+        "partner": "Groot",
+        "base": {
+          "description": "Converts Bombard Mode to launch Thorny Spores. Upon impact, they deal continuous damage to enemies within the radius while healing and granting Bonus Health to allies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Ability Duration": "8s",
+            "Spore Fire Rate": "0.2s per shot",
+            "Spore Damage": "18 per hit",
+            "Damage Over Time": "5 per round for 1 second",
+            "Healing Amount": "15 per round",
+            "Bonus Health": "20 damage per round",
+            "Spell Field Range": "5m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Groot, Rocket can ride on Groot's shoulders, and the active duration of the Thorny Spores field is extended.",
+          "stats": {
+            "Key": "X",
+            "Duration:": "4s"
+          }
+        },
+        "icon_file": "rocket-raccoon/teamups/provided_02_planet-x-pals.png"
+      }
+    ]
+  },
+  "source_name": "ROCKET RACCOON",
+  "uuid": "e1fb7cc4-a1a0-473b-8809-68b04dcc9420",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195663.html",
+  "portrait_files": [
+    "rocket-raccoon/portraits/portrait_1.png",
+    "rocket-raccoon/portraits/portrait_2.png"
+  ]
+}

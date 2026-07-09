@@ -1,0 +1,397 @@
+{
+  "name": "HULK",
+  "real_name": "BRUCE BANNER",
+  "role": "VANGUARD",
+  "description": "Brilliant scientist Dr. Bruce Banner has finally found a way to coexist with his monstrous alter ego, the Hulk. By accumulating gamma energy over multiple transformations, he can become a wise and strong Hero Hulk or a fierce and destructive Monster Hulk – a true force of fury on the battlefield!",
+  "lore": "Caught in the detonation of a powerful weapon of his own invention, Dr. Bruce Banner absorbed gamma radiation that transforms him into a massive green monster whenever his emotions rage out of control. As Banner, he's still a genius. But as the Hulk, he's the strongest one there is! Banner developed a special Gamma Belt to control his transformations and temper the Hulk's fury. But when the Timestream Entanglement transformed Los Diablos Missile Base into a demonic battleground, he realized that the best way to fight monsters was to let out the one within.",
+  "base_stats": {
+    "Health": "200",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/79d488f7-f0bd-4a53-99b2-ff8d0a068f3d.png",
+    "https://r.res.easebar.com/pic/20241122/506d11a8-6840-43c3-b496-6d4df43face1.png"
+  ],
+  "forms": [
+    {
+      "name": "Bruce Banner",
+      "stats": {
+        "Health": "200",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/79d488f7-f0bd-4a53-99b2-ff8d0a068f3d.png",
+        "https://r.res.easebar.com/pic/20241122/506d11a8-6840-43c3-b496-6d4df43face1.png"
+      ]
+    },
+    {
+      "name": "Hero Hulk",
+      "stats": {
+        "Health": "400+300 Regenerative Shield",
+        "Movement Speed": "6.5m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/c7c24bf7-5550-43f9-a793-39f36da55c83.png",
+        "https://r.res.easebar.com/pic/20241122/81712001-4b25-44ef-84fa-91a9ef5e8228.png"
+      ]
+    },
+    {
+      "name": "Monster Hulk",
+      "stats": {
+        "Health": "1400",
+        "Movement Speed": "6.5m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/a3d253c4-1842-4136-abf8-1dbb44ed8639.png",
+        "https://r.res.easebar.com/pic/20241122/68ab310d-3e53-40e9-96d7-726d01268ccb.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Gamma Ray Gun",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/8cb6a38e-5f26-483e-8b6c-92ff443084d1.png",
+      "description": "Fire with a Gamma Ray Gun",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile with delayed impact",
+        "Projectile Speed": "80m/s",
+        "Damage": "16",
+        "Fire Rate": "5 rounds per second",
+        "Ammo": "25",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "hulk/abilities/01_primary_left-click_gamma-ray-gun.png"
+    },
+    {
+      "name": "Puny Banner",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/9a3b272b-318b-45e2-a863-274aa7bcf288.png",
+      "description": "Transform from Bruce Banner into Hero Hulk",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Transformation",
+        "Energy Cost": "600",
+        "Special Effect": "The caster is immobilized during the transformation process and gains Invincibility"
+      },
+      "icon_file": "hulk/abilities/02_ability_q_puny-banner.png"
+    },
+    {
+      "name": "Gamma Grenade",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/3187b7a0-06b5-4e1c-babe-796554bc2430.png",
+      "description": "Launch a Gamma Grenade to inflict damage and Launch Up enemies",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Single-cast projectile with a downward delay that creates a spell field upon impact",
+        "Damage": "40",
+        "Range": "3m spherical radius",
+        "Cooldown": "8s",
+        "Special Effect": "When the caster enters the spell field, it restores 50 gamma energy"
+      },
+      "icon_file": "hulk/abilities/03_ability_shift_gamma-grenade.png"
+    },
+    {
+      "name": "Heavy Blow",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/cc774c86-d162-462f-95d0-1b11d36eed83.png",
+      "description": "Swing fists forward to punch enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast Spell Field",
+        "Damage": "45",
+        "Range": "4.5m",
+        "Attack Interval": "0.467s"
+      },
+      "icon_file": "hulk/abilities/04_primary_left-click_heavy-blow.png"
+    },
+    {
+      "name": "HULK SMASH!",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/a3a3990b-5005-4616-abc2-96e48a971420.png",
+      "description": "Unleash stored gamma energy, transforming from Hero Hulk into Monster Hulk for a limited time period",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Transformation",
+        "Duration": "12s",
+        "Energy Cost": "3700",
+        "Special Effect": "The caster is immobilized during the transformation process and gains Invincibility"
+      },
+      "icon_file": "hulk/abilities/05_ability_q_hulk-smash.png"
+    },
+    {
+      "name": "Indestructible Guard",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/4879fdb5-3227-4af4-9264-dd04c12941b4.png",
+      "description": "Generate gamma shields for Hero Hulk and nearby allies, absorbing and converting damage into energy for HULK SMASH",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Single-cast spell field that surrounds the caster",
+        "Range": "5m spherical radius",
+        "Cooldown": "10s",
+        "Caster's Shield Value": "200",
+        "Ally's Shield Value": "100",
+        "Max Shield Duration": "2.5s",
+        "Special Effect": "When the caster's shield takes damage, 130% of the damage is converted into gamma energy. When an ally's shield takes damage, 10% of the damage is converted into gamma energy"
+      },
+      "icon_file": "hulk/abilities/06_ability_shift_indestructible-guard.png"
+    },
+    {
+      "name": "Radioactive Lockdown",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/172254e3-9768-4dec-9157-76b456d5383d.png",
+      "description": "Emit gamma energy to irradiate enemies and render them immobilize and immune to all ability effects. Using Heavy Blow or Gamma Burst will prematurely remove this status",
+      "stats": {
+        "Key": "E",
+        "Casting": "Single-cast projectile.",
+        "Projectile Speed": "100m/s",
+        "Damage": "5",
+        "Cooldown": "15s",
+        "Max Duration": "2s",
+        "Special Effect": "Heavy Blow and Gamma Burst can detect and damage irradiated enemies, and prematurely remove the status"
+      },
+      "icon_file": "hulk/abilities/07_ability_e_radioactive-lockdown.png"
+    },
+    {
+      "name": "Incredible Leap",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/b74339de-5816-4639-ba7f-d32d39f620cd.png",
+      "description": "HOLD Space to perform a charged leap that allows Hero Hulk to Knock a flying enemy to the ground",
+      "stats": {
+        "Key": "Space",
+        "Casting": "Charged Dash",
+        "Minimum Charge Time": "0.4s",
+        "Maximum Charge Time": "1.7s",
+        "Speed at Minimum Charge Time": "19m/s",
+        "Speed at Maximum Charge Time": "25m/s",
+        "Special Effect": "Press Space during the Incredible Leap to cling to the wall you encounter"
+      },
+      "icon_file": "hulk/abilities/08_ability_space_incredible-leap.png"
+    },
+    {
+      "name": "Gamma Burst",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/c55bb9d3-8b8b-44ad-ac43-4fb9bcf02130.png",
+      "description": "Emit gamma-ray bursts to inflict damage. Reduce Indestructible Guard cooldown upon hit",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile that can pierce through enemies",
+        "Projectile Speed": "80m/s",
+        "Damage": "65",
+        "Cooldown": "Basic Cooldown 2s, with a charge of 6s per use.",
+        "Special Effect": "Each direct hit reduces Indestructible Guard cooldown by 1s"
+      },
+      "icon_file": "hulk/abilities/09_ability_right-click_gamma-burst.png"
+    },
+    {
+      "name": "Heavy Blow",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/cc774c86-d162-462f-95d0-1b11d36eed83.png",
+      "description": "Swing fists forward to punch and launch up enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast Spell Field",
+        "Damage": "70",
+        "Range": "5m",
+        "Attack Interval": "0.52s"
+      },
+      "icon_file": "hulk/abilities/04_primary_left-click_heavy-blow.png"
+    },
+    {
+      "name": "World Breaker",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/e2c65ff1-2180-4f19-b7b0-1cf08ad1b1c4.png",
+      "description": "Grab and smash the enemy in front",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Targeted",
+        "Damage": "Delivers 5 hits, each dealing 40 damage",
+        "Duration": "5s",
+        "Range": "5m",
+        "Special Effect": "While performing the smash, Hulk gains a 30% Damage Reduction"
+      },
+      "icon_file": "hulk/abilities/11_ability_q_world-breaker.png"
+    },
+    {
+      "name": "Radioactive Lockdown",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/5965d229-691b-42be-859e-bc83191b3d1d.png",
+      "description": "Emit gamma energy to irradiate enemies and render them immobilize and immune to all ability effects. Using Heavy Blow or Gamma Burst will prematurely remove this status",
+      "stats": {
+        "Key": "E",
+        "Casting": "Single-cast projectile",
+        "Projectile Speed": "150m/s",
+        "Damage": "5",
+        "Cooldown": "5s",
+        "Max Duration": "2s",
+        "Special Effect": "Heavy Blow and Gamma Burst can detect and damage irradiated enemies, and prematurely remove the status"
+      },
+      "icon_file": "hulk/abilities/12_ability_e_radioactive-lockdown.png"
+    },
+    {
+      "name": "Incredible Leap",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/b74339de-5816-4639-ba7f-d32d39f620cd.png",
+      "description": "HOLD Space to perform a charged leap that allows Monster Hulk to Knock a flying enemy to the ground",
+      "stats": {
+        "Key": "Space",
+        "Casting": "Charged Dash",
+        "Minimum Charge Time": "0.7s",
+        "Maximum Charge Time": "1.5s",
+        "Speed at Minimum Charge Time": "19.4m/s",
+        "Speed at Maximum Charge Time": "25m/s",
+        "Special Effect": "Press Space during the Incredible Leap to cling to the wall you encounter"
+      },
+      "icon_file": "hulk/abilities/08_ability_space_incredible-leap.png"
+    },
+    {
+      "name": "Gamma Burst",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/0ac60cf3-6b01-485b-b205-900f7ac674a4.png",
+      "description": "Emit gamma-ray bursts to inflict damage",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile that can pierce through enemies",
+        "Projectile Speed": "60m/s",
+        "Damage": "125",
+        "Cooldown": "1s"
+      },
+      "icon_file": "hulk/abilities/14_ability_right-click_gamma-burst.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Gamma Boost",
+        "icon": "https://r.res.easebar.com/pic/20241120/101d8739-0c74-4e34-bbbc-207cfef95ce0.png",
+        "description": "Hulk charges Iron Man and Namor with gamma radiation. When Iron Man uses Armor Overdrive, he will initiate a gamma upgrade. When Namor receives the radiation, he will summon an extra Gamma Monstro which will continuously fire gamma rays at locked-on enemies. The longer the rays hit, the higher the damage",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "Hero Hulk and Monster Hulk gain 100 Max Health"
+        },
+        "icon_file": "hulk/teamups/received_01_gamma-boost.png"
+      },
+      {
+        "name": "Gamma Boost",
+        "icon": "https://r.res.easebar.com/pic/20241120/101d8739-0c74-4e34-bbbc-207cfef95ce0.png",
+        "description": "Hulk charges Iron Man and Namor with gamma radiation. When Iron Man uses Armor Overdrive, he will initiate a gamma upgrade. When Namor receives the radiation, he will summon an extra Gamma Monstro which will continuously fire gamma rays at locked-on enemies. The longer the rays hit, the higher the damage",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "Hero Hulk and Monster Hulk gain 100 Max Health"
+        },
+        "icon_file": "hulk/teamups/received_01_gamma-boost.png"
+      },
+      {
+        "name": "Gamma Fastball",
+        "icon": "https://r.res.easebar.com/pic/20241205/cb438e5d-7e3c-47ff-af80-0b776f860874.png",
+        "description": "Wolverine, Hulk can interact with each other. Once both parties confirm, Hulk can lift Wolverine and press the key to hurl him forward",
+        "stats": {
+          "Key": "C",
+          "Casting": "Targeted",
+          "Maximum Distance": "20m",
+          "Cooldown": "3s when not thrown, 15s when thrown"
+        },
+        "icon_file": "hulk/teamups/received_03_gamma-fastball.png"
+      },
+      {
+        "name": "Gamma Boost",
+        "icon": "https://r.res.easebar.com/pic/20241120/101d8739-0c74-4e34-bbbc-207cfef95ce0.png",
+        "description": "Hulk charges Iron Man and Namor with gamma radiation. When Iron Man uses Armor Overdrive, he will initiate a gamma upgrade. When Namor receives the radiation, he will summon an extra Gamma Monstro which will continuously fire gamma rays at locked-on enemies. The longer the rays hit, the higher the damage",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "Hero Hulk and Monster Hulk gain 100 Max Health"
+        },
+        "icon_file": "hulk/teamups/received_01_gamma-boost.png"
+      },
+      {
+        "name": "Gamma Fastball",
+        "icon": "https://r.res.easebar.com/pic/20241205/cb438e5d-7e3c-47ff-af80-0b776f860874.png",
+        "description": "Wolverine, Hulk can interact with each other. Once both parties confirm, Hulk can lift Wolverine and press the key to hurl him forward",
+        "stats": {
+          "Key": "C",
+          "Casting": "Targeted",
+          "Maximum Distance": "20m",
+          "Cooldown": "3s when not thrown, 15s when thrown"
+        },
+        "icon_file": "hulk/teamups/received_03_gamma-fastball.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SAVAGE SLAM",
+        "icon": "https://r.res.easebar.com/pic/20260707/614cc845-3ecf-4d29-ad68-7c5da02e69f4.png",
+        "partner": "Captain America",
+        "base": {
+          "description": "Leap high and smash the ground, dealing damage to enemies and reducing the cooldowns of other abilities based on remaining Health.",
+          "stats": {
+            "Key": "C",
+            "Launch Speed": "60 m/s",
+            "Landing Damage Range": "8m spherical radius spell field",
+            "Landing Damage": "40",
+            "Gamma Burst CD Reduction": "1s, up to 3s at 400 HP",
+            "Radioactive Lockdown CD Reduction": "1s, up to 3s at 400 HP",
+            "Indestructible Guard CD Reduction": "2s, up to 5s at 400 HP",
+            "Cooldown": "20s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Captain America, the ground slam additionally applies Vulnerability to enemies hit.",
+          "stats": {
+            "Key": "C",
+            "Landing Damage": "50",
+            "Vulnerability Rate": "20% for 3s"
+          }
+        },
+        "icon_file": "hulk/teamups/provided_01_savage-slam.png"
+      },
+      {
+        "name": "GAMMA FASTBALL",
+        "icon": "https://r.res.easebar.com/pic/20260707/6fc04295-5b37-4d9d-90eb-6e2bb2b66721.png",
+        "partner": "Wolverine",
+        "base": {
+          "description": "Enter a Furious state upon activation, gaining Speed Boost and Attack Speed for a duration. Also unlocks the Dances With Werewolves ability, granting Unstoppable for a period when Health drops to a certain threshold.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Furious Duration": "6s",
+            "Movement Speed Boost": "20%",
+            "Attack Speed Boost": "20%",
+            "Unstoppable Threshold": "300",
+            "Unstoppable Duration": "6s",
+            "Unstoppable CD": "60s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Wolverine, unlocks the Fastball Special. Upon mutual confirmation, Hulk hurls Wolverine forward",
+          "stats": {
+            "Key": "X",
+            "Cooldown": "15s"
+          }
+        },
+        "icon_file": "hulk/teamups/provided_02_gamma-fastball.png"
+      }
+    ]
+  },
+  "source_name": "HULK",
+  "uuid": "9471f35c-3f81-4ae2-9726-b2944dd431e9",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195678.html",
+  "portrait_files": [
+    "hulk/portraits/portrait_1.png",
+    "hulk/portraits/portrait_2.png"
+  ]
+}

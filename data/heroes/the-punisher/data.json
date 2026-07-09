@@ -1,0 +1,258 @@
+{
+  "name": "THE PUNISHER",
+  "real_name": "FRANK CASTLE",
+  "role": "DUELIST",
+  "description": "Expertly wielding a full arsenal of futuristic weapons, Frank Castle is a formidable one-man army. With a steadfast resolve to deliver justice to his enemies, The Punisher won't cease in his mission until every last round is fired!",
+  "lore": "Caught in the crossfire of a mob hit that killed his family, Frank Castle clung to life through sheer force of will and his unquenchable thirst for vengeance. Unwilling to let more innocents suffer at the hands of criminals, Castle took the law into his own hands as the Punisher. Thanks to an experimental serum that vastly extended his lifespan, the Punisher’s war has continued into the far-flung future. As a member of the New Marvel Knights, his impressive arsenal has become a vital part of Black Widow’s crusade against Doom 2099.",
+  "base_stats": {
+    "Health": "300",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/b47bfacc-9e39-4486-8622-7df5b7f4eeea.png",
+    "https://r.res.easebar.com/pic/20241122/883ab85c-1620-4754-9b7e-5a118d907cd1.png"
+  ],
+  "forms": [
+    {
+      "name": "THE PUNISHER",
+      "stats": {
+        "Health": "300",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/b47bfacc-9e39-4486-8622-7df5b7f4eeea.png",
+        "https://r.res.easebar.com/pic/20241122/883ab85c-1620-4754-9b7e-5a118d907cd1.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Adjudication",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/e755fe97-976b-43f7-90d8-e791ca310df1.png",
+      "description": "Fire at enemies with Adjudication, his Automatic Rifle",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Rapid-fire projectile",
+        "Damage": "19 damage per round",
+        "Damage Falloff": "Falloff begins at 20m, decreasing to 85% at 40m",
+        "Crosshair Spread Radius (at 10m)": "Up to a 0.075m radius.",
+        "Fire Rate": "10 rounds per second",
+        "Ammo": "40",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "the-punisher/abilities/01_primary_left-click_adjudication.png"
+    },
+    {
+      "name": "Deliverance",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/b420c662-6d55-438d-932a-d2947005b6de.png",
+      "description": "Fire at enemies with Deliverance, his Shotgun",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Shotgun projectiles that hit instantly",
+        "Damage": "9.5 damage per round",
+        "Damage Falloff": "Falloff begins at 8m, decreasing to 40% at 15m",
+        "Bullets Fired Each Cast": "16",
+        "Crosshair Spread Radius (at 10m)": "0.6m",
+        "Fire Rate": "1.43 rounds per second",
+        "Ammo": "8",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "the-punisher/abilities/02_primary_left-click_deliverance.png"
+    },
+    {
+      "name": "Final Judgement",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/6695cf9f-352c-4bf3-aab1-1824ecf39c95.png",
+      "description": "Unleash two Gatling guns and missiles to attack enemies",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Rapid-fire projectiles that hit instantly and have a tracking trajectory",
+        "Duration": "10s",
+        "Slow Rate While Idling": "-10%",
+        "Slow Rate While Shooting": "-30%",
+        "Energy Cost": "3400",
+        "Gatling Gun": "",
+        "Damage": "50",
+        "Damage Falloff": "Falloff begins at 20m, decreasing to 70% at 40m",
+        "Crosshair Spread Radius (at 10m)": "Start with a spread radius of 0.6m, which reduces to 0.3m after 50 shots, and further decreases to 0.15m after 100 shots",
+        "Fire Rate": "33.33 rounds per second",
+        "Ammo": "Infinite",
+        "Critical Hit": "Yes",
+        "Shoulder-mounted Missiles": "",
+        "Projectile Speed": "60 m/s",
+        "Interval Between Volleys": "3s",
+        "Interval Between Missiles": "0.3s",
+        "Maximum Number of Missiles Per Volley": "8",
+        "Maximum Number of Locked-on Missiles Per Target": "3",
+        "Maximum Locking Distance": "40m"
+      },
+      "icon_file": "the-punisher/abilities/03_ability_q_final-judgement.png"
+    },
+    {
+      "name": "Vantage Connection",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/e39565ca-3dfd-4794-bb51-23ec19256130.png",
+      "description": "Launch a hook to generate a cable that enables the Punisher to move rapidly by pressing F",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Cable Attachment Angle": "20° - 160°",
+        "Cable Length": "5m - 35m",
+        "Dash Speed": "25 m/s",
+        "Cooldown": "20s"
+      },
+      "icon_file": "the-punisher/abilities/04_ability_shift_vantage-connection.png"
+    },
+    {
+      "name": "Culling Turret",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/3806a440-7ae1-4a86-8b75-09c34be080fd.png",
+      "description": "Deploy a Culling Turret that grounds Punisher and blocks damage from the front while dealing massive damage",
+      "stats": {
+        "Key": "E",
+        "Casting": "Rapid-fire projectiles that create a spell field upon impact",
+        "Damage": "10 damage per round",
+        "Explosion Damage": "10 damage per round",
+        "Explosion Range": "3m spherical radius",
+        "Crosshair Spread Radius (at 10m)": "Start with a spread radius of 0.2m, which reduces to 0.1m after 10 shots, and further decreases to 0.05m after 20 shots",
+        "Fire Rate": "12.5 rounds per second",
+        "Ammo": "200",
+        "Turret Health": "600",
+        "Cooldown": "20s"
+      },
+      "icon_file": "the-punisher/abilities/05_ability_e_culling-turret.png"
+    },
+    {
+      "name": "Scourge Grenade",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/d9b61f83-54c3-42e7-9ac1-aadb46562237.png",
+      "description": "Throw a smoke grenade forward to obscure enemy vision and leap backward",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Projectile with an arced trajectory",
+        "Projectile Speed": "40 m/s",
+        "Range": "5m spherical radius",
+        "Damage": "45",
+        "Backward Jump Distance": "9m",
+        "Cooldown": "8s",
+        "Special Effect": "Create a temporary smokescreen that obstructs vision"
+      },
+      "icon_file": "the-punisher/abilities/06_ability_right-click_scourge-grenade.png"
+    },
+    {
+      "name": "Warrior's Gaze",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/c121a9dc-8597-45f7-8495-4dea1b7c043b.png",
+      "description": "Retain vision of enemies that disappear from view for a short duration",
+      "stats": {
+        "Key": "Passive",
+        "Special Effect": "Retain vision of enemies that disappear from view for a short duration",
+        "Range": "30m spherical radius",
+        "Duration": "3s"
+      },
+      "icon_file": "the-punisher/abilities/07_passive_passive_warrior-s-gaze.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "CUTTING-EDGE TECH",
+        "icon": "https://r.res.easebar.com/pic/20250530/91bfb861-f201-4aa4-b40e-88860849e6a5.png",
+        "description": "The Punisher upgrades Black Widow's arsenal, adding a Pulse Mode to her Red Room Rifle. While the ability is active, using Straight Shooter fires a pulse beam that deals piercing damage",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "+25 Max Health, +5% Damage Boost"
+        },
+        "icon_file": "the-punisher/teamups/received_01_cutting-edge-tech.png"
+      },
+      {
+        "name": "JUSTICE SENSE",
+        "icon": "https://r.res.easebar.com/pic/20251011/6d08d915-d30d-4aad-9203-9055f7efab8c.png",
+        "description": "Daredevil shares the location of his Sonic Pursuit target with The Punisher. At the same time, The Punisher can launch a devil-infused shock grenade to damage and blind enemies",
+        "stats": {
+          "Key": "C",
+          "Casting": "Projectile with an arced trajectory",
+          "Projectile Speed": "40 m/s",
+          "Range": "5m spherical radius",
+          "Damage": "45",
+          "Cooldown": "15s",
+          "Blind Effect Duration": "1.5s"
+        },
+        "icon_file": "the-punisher/teamups/received_02_justice-sense.png"
+      },
+      {
+        "name": "Ancient Judgement",
+        "icon": "https://r.res.easebar.com/pic/20260518/c3b4a2ac-36b7-4335-a08e-3af594773db7.png",
+        "description": "The Punisher rides atop Devil Dinosaur, restricting him to only Adjudication/Deliverance and Scourge Grenade while disabling other abilities. While mounted, Devil Dinosaur absorbs a portion of all damage inflicted on The Punisher",
+        "stats": {
+          "Key": "X",
+          "Damage Reduction": "25%",
+          "Conversion Ratio": "50%"
+        },
+        "icon_file": "the-punisher/teamups/received_03_ancient-judgement.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "BESTIAL HUNT",
+        "icon": "https://r.res.easebar.com/pic/20260707/f5637ce5-ca6c-4a71-a414-60984a0fb858.png",
+        "partner": "Daredevil",
+        "base": {
+          "description": "Shoot piercing bullets that carry a Damage Boost effect.",
+          "stats": {
+            "Key": "PASSIVE",
+            "Adjudication Piercing Beam Damage": "20 damage per round",
+            "Deliverance Piercing Beam Damage": "10 damage per round"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Daredevil, the bullets break enemy summoned walls and shields more quickly.",
+          "stats": {
+            "Key": "PASSIVE",
+            "Bonus Damage to Barriers": "40%"
+          }
+        },
+        "icon_file": "the-punisher/teamups/provided_01_bestial-hunt.png"
+      },
+      {
+        "name": "AMMO OVERLOAD",
+        "icon": "https://r.res.easebar.com/pic/20260707/8f9ea31f-44f0-4da2-a237-79e2576f0525.png",
+        "partner": "Rocket Raccoon",
+        "base": {
+          "description": "Throw an Ammo Overload Device in the target direction. Upon entering the device's range, receive Faster Firing.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "25s",
+            "Device Effect Range": "5m radius",
+            "Adjudication Fire Rate Boost": "35%",
+            "Deliverance Fire Rate Boost": "40%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Rocket Raccoon, the device grants Infinite Ammo.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "Adds unlimited ammo on top of the base effect"
+          }
+        },
+        "icon_file": "the-punisher/teamups/provided_02_ammo-overload.png"
+      }
+    ]
+  },
+  "source_name": "THE PUNISHER",
+  "uuid": "77ad32c5-b42c-405d-afeb-bd452681b8e8",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195673.html",
+  "portrait_files": [
+    "the-punisher/portraits/portrait_1.png",
+    "the-punisher/portraits/portrait_2.png"
+  ]
+}

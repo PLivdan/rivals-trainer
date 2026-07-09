@@ -1,0 +1,248 @@
+{
+  "name": "THE THING",
+  "real_name": "BEN GRIMM",
+  "role": "VANGUARD",
+  "description": "Benjamin J. Grimm is unquestionably the rock star of any team he's on. Always at the forefront of the fight, the Thing shields his allies with his unbreakable form, selflessly fending off any harm that comes their way.",
+  "lore": "When Ben Grimm signed up to pilot an experimental spacecraft for his pal Reed Richards, he never imagined he'd return from the flight transformed into a monster. Even though cosmic rays turned him into the Thing, Ben still has a heart of gold beneath his rocky exterior. Since New York City plunged into eternal night, Ben has devoted himself to protecting his home from the monsters plaguing it.",
+  "base_stats": {
+    "Health": "750",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250220/5d5fa4b2-547c-400f-a5a2-475d3d8df587.png",
+    "https://r.res.easebar.com/pic/20250220/4b59bef5-98ad-4ec0-a743-a0a3d96e486d.png"
+  ],
+  "forms": [
+    {
+      "name": "THE THING",
+      "stats": {
+        "Health": "750",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250220/5d5fa4b2-547c-400f-a5a2-475d3d8df587.png",
+        "https://r.res.easebar.com/pic/20250220/4b59bef5-98ad-4ec0-a743-a0a3d96e486d.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Rocky Jab",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250220/274bfd5f-02b6-4513-a80e-3f7685dc8556.png",
+      "description": "Rapidly punch forward",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast Spell Field",
+        "Damage": "Double strike, 40 per hit",
+        "Attack Range": "4m",
+        "Attack Interval": "Double strike 0.33s between attacks, 1s between sets."
+      },
+      "icon_file": "the-thing/abilities/01_primary_left-click_rocky-jab.png"
+    },
+    {
+      "name": "Stone Haymaker",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250220/745e0798-e37f-431b-82d5-bc3d29f97d9b.png",
+      "description": "Deliver a devastating Heavy Blow. Can Knock Down flying enemies.",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast Spell Field",
+        "Damage": "55+10% of enemies' max Health per hit",
+        "Attack Range": "8m",
+        "Special Effect": "Move forward 3 meters while punching; gain Bonus Health equal to damage dealt (up to 150); once hit, this ability can knock down flying enemies to the ground"
+      },
+      "icon_file": "the-thing/abilities/02_ability_right-click_stone-haymaker.png"
+    },
+    {
+      "name": "Yancy Street Charge",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20250220/824cffd2-00d5-43a7-8e88-3c72d432ca92.png",
+      "description": "Continuously charge forward, launching up enemies and leaving behind a zone at the final position that prevents the use of mobility abilities",
+      "stats": {
+        "Key": "SHIFT",
+        "Movement Boost": "100%",
+        "Duration": "5s",
+        "Damage": "Charge: 30; ground slam: 20; immobilization zone: 15 per/s",
+        "Spell Field Range": "Ground slam: 8m radius, 2.5m high cylindrical spell field. Immobilization zone: 8m radius, 4m high cylindrical spell field",
+        "Cooldown": "10s",
+        "Special Effect": "Gain 200 Bonus Health during skill activation"
+      },
+      "icon_file": "the-thing/abilities/03_ability_shift_yancy-street-charge.png"
+    },
+    {
+      "name": "Embattled Leap",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250220/59664e33-bdbf-4243-b93a-7583f1712cad.png",
+      "description": "Jump toward an ally and apply damage reduction to yourself and allies within the landing area",
+      "stats": {
+        "Key": "E",
+        "Casting": "Targeted",
+        "Maximum Distance": "20m",
+        "Cooldown": "Basic Cooldown 3s, with a charge of 10s per use",
+        "Special Effect": "Apply a 20% damage reduction effect to self and 20% damage reduction to all allies within 5m of his landing point for 3s"
+      },
+      "icon_file": "the-thing/abilities/04_ability_e_embattled-leap.png"
+    },
+    {
+      "name": "Battle Blitz",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20251104/22edee34-cf90-486d-9f16-4959ca72aec6.png",
+      "description": "Jump toward an enemy and apply Vulnerability to enemies within the landing area",
+      "stats": {
+        "Key": "F",
+        "CASTING": "Targeted",
+        "MAXIMUM DISTANCE": "20m",
+        "COOLDOWN": "Basic Cooldown 3s, with a charge of 10s per use, shares the same Cooldown with the E Key ability",
+        "SPECIAL EFFECT": "Apply a 20% Vulnerability to all enemies within 5m of his landing point for 3s"
+      },
+      "icon_file": "the-thing/abilities/05_ability_f_battle-blitz.png"
+    },
+    {
+      "name": "Clobberin' Time",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250220/27486433-769b-4aec-ba7b-d7da3cabd52f.png",
+      "description": "Use immense power to launch up all enemies in front of the Thing into the air",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "2800",
+        "Range": "Step spell field: 3m high, 10m wide, advancing 2m every 0.1 seconds, up to a maximum of 18m",
+        "Damage": "100",
+        "Special Effect": "Stun duration 2.5s"
+      },
+      "icon_file": "the-thing/abilities/06_ability_q_clobberin-time.png"
+    },
+    {
+      "name": "Unyielding Will",
+      "slot": "passive",
+      "key": "PASSIVE",
+      "icon": "https://r.res.easebar.com/pic/20250220/3898e125-f9bf-4d44-8b4d-9aeec6873187.png",
+      "description": "Immune to launch-up, knock-back, and other displacement effects",
+      "stats": {
+        "Key": "PASSIVE",
+        "Special Effect": "Immune to launch-up, knock-back, and other displacement effects"
+      },
+      "icon_file": "the-thing/abilities/07_passive_passive_unyielding-will.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Cosmic Fastball",
+        "icon": "https://nie.res.netease.com/r/pic/20241205/c290e460-174c-412b-b05e-a28a3c60219b.png",
+        "description": "Wolverine and The Thing can interact with each other. Once both parties confirm, The Thing can lift Wolverine and press the key to hurl him forward",
+        "stats": {
+          "Key": "Z",
+          "Casting": "Targeted",
+          "Maximum Distance": "20m",
+          "Cooldown": "3s when not thrown, 15s when thrown"
+        },
+        "icon_file": "the-thing/teamups/received_01_cosmic-fastball.png"
+      },
+      {
+        "name": "GAMMA CHARGE",
+        "icon": "https://r.res.easebar.com/pic/20260213/b18fc9a2-fa11-4a9d-8c0c-266b5fb5d79b.png",
+        "description": "Hulk charges Black Panther and The Thing with gamma radiation. When Black Panther's health is low, he gains a gamma shield, becoming Unstoppable and blocking attacks. The Thing gains Gamma Gauntlets, boosting Damage and range of his Rocky Jab and Stone Haymaker. Dealing damage with these attacks grants Bonus Health, and maximum Bonus Health cap is increased",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "25s",
+          "Ability Duration": "8s",
+          "Left Click Spell Field Max Distance": "5m",
+          "Left Click Spell Field Damage": "45",
+          "Right Click Spell Field Max Distance": "9m",
+          "Right Click Spell Field Damage": "60+11% of enemy's maximum health",
+          "Max Bonus Health": "120",
+          "Damage/Health Conversion": "1"
+        },
+        "icon_file": "the-thing/teamups/received_02_gamma-charge.png"
+      },
+      {
+        "name": "Flying Thing",
+        "icon": "https://r.res.easebar.com/pic/20250730/7048ff41-7f0a-4cff-8469-49b1e18160cf.png",
+        "description": "Human Torch can lift The Thing into the air and slam him down, dealing damage, launching enemies, and creating a zone that disables mobility abilities",
+        "stats": {
+          "Key": "X",
+          "Cooldown": "Successfully interacted: 30s; fail to interact: 3s",
+          "Maximum Distance": "20m",
+          "Flight Speed": "15m/s",
+          "Slam Down Initial Horizontal Velocity": "15m/s",
+          "Maximum Flight Duration": "8s",
+          "Damage": "Launch-up spell field causes 30 damage; mobility abilities disabling spell field causes 15 damage per second",
+          "Launch Up Range": "A cylindrical spell field with a radius of 8m and a height of 1m",
+          "Mobility Abilities Disabling Range": "A cylindrical spell field with a radius of 8m and a height of 8m"
+        },
+        "icon_file": "the-thing/teamups/received_03_flying-thing.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "TWO IN ONE",
+        "icon": "https://r.res.easebar.com/pic/20260707/0dab571d-1849-4c2f-b5aa-223b7eda3aee.png",
+        "partner": "Human Torch",
+        "base": {
+          "description": "Enter an enhanced state upon activation. For the duration, The Thing's fists are violently engulfed in flames. Every Rocky Jab deals splash damage, and every Stone Haymaker creates an explosion, dealing damage in a frontal cone.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Rock Jab Max Attack Range": "6m",
+            "Stone Haymaker Max Attack Range": "9.5m",
+            "Ability Duration": "10s",
+            "Special Effect": "Increases the cast speed of Rock Jab and Stone Haymaker"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Human Torch, Human Torch can lift The Thing into the air and slam him down, dealing damage and Stun to enemies. The Thing then automatically enters his flaming enhanced state upon landing.",
+          "stats": {
+            "Key": "X",
+            "Cooldown": "30s",
+            "Spell Field Range": "8m spherical radius",
+            "Damage": "45",
+            "Stun Duration": "1s",
+            "Flight Speed": "12 m/s"
+          }
+        },
+        "icon_file": "the-thing/teamups/provided_01_two-in-one.png"
+      },
+      {
+        "name": "UNBREAKABLE FORCES",
+        "icon": "https://r.res.easebar.com/pic/20260707/72cfeea0-4643-4a97-a61f-e71b78ad42fa.png",
+        "partner": "",
+        "base": {
+          "description": "Generate a layer of Psionic Armor upon activation, granting Bonus Health scaling off currently missing Health.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Duration": "5s",
+            "Bonus Health Recovery": "15/hit",
+            "Bonus Health Generation Frequency": "5 times per second",
+            "Special Effect": "When Health reaches 50%, Bonus Health generation frequency increases by 100%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up Invisible Woman, the Psionic Armor is fortified. While active, every time The Thing takes a set amount of damage, the armor pulses out a wave of area healing for allies. Furthermore, the conversion ratio for missing Health into Bonus Health is increased.",
+          "stats": {
+            "Key": "C",
+            "Bonus Health Recovery": "20 per hit",
+            "Damage Taken Required to Trigger Healing": "150",
+            "Healing Amount": "80",
+            "Healing Spell Field Range": "8m radius"
+          }
+        },
+        "icon_file": "the-thing/teamups/provided_02_unbreakable-forces.png"
+      }
+    ]
+  },
+  "source_name": "THE THING",
+  "uuid": "10bfa106-6a69-4dac-85f5-8b327e98e566",
+  "article_url": "https://www.marvelrivals.com/20250220/41360_1213067.html",
+  "portrait_files": [
+    "the-thing/portraits/portrait_1.png",
+    "the-thing/portraits/portrait_2.png"
+  ]
+}

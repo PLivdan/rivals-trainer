@@ -1,0 +1,280 @@
+{
+  "name": "CLOAK&DAGGER",
+  "real_name": "TYRONE JOHNSON AND TANDY BOWEN",
+  "role": "STRATEGIST",
+  "description": "Tyrone Johnson and Tandy Bowen are nearly inseparable, like two sides of the same coin. Intertwined by forces of shadow and light, Cloak & Dagger fight as a united front, dealing havoc and healing allies across the arena.",
+  "lore": "When teenage runaways Tandy Bowen and Tyrone Johnson were exposed to an experimental drug against their will, they unexpectedly gained extraordinary powers. Tandy generates piercing blades of pure, healing light, while Ty can teleport himself and others through the Darkforce Dimension. Together, they illuminate New York's deepest shadows as Cloak and Dagger. The Timestream Entanglement struck while Cloak and Dagger were traversing the Darkforce Dimension. The pair emerged to find New York under the control of Dracula. They soon joined the heroic resistance fighting against the Empire of Eternal Night.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241205/4c2abfa0-3941-410e-9921-fac39b2dc556.png",
+    "https://r.res.easebar.com/pic/20241205/45702641-2432-4189-9bff-f84677ee49cf.png"
+  ],
+  "forms": [
+    {
+      "name": "Cloak",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241205/4c2abfa0-3941-410e-9921-fac39b2dc556.png",
+        "https://r.res.easebar.com/pic/20241205/45702641-2432-4189-9bff-f84677ee49cf.png"
+      ]
+    },
+    {
+      "name": "Dagger",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241205/179a411d-591b-4df8-a781-6c942d503f1f.png",
+        "https://r.res.easebar.com/pic/20241205/f99f6305-a491-4b63-ab13-eaae211722d1.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Darkforce Cloak",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/94227f4c-02fd-4954-900c-f149b05b5cea.png",
+      "description": "Inflict continuous damage on an enemy",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Cylindrical Spell Field",
+        "Special Effect": "Attacks will target the nearest enemy to the crosshair, dealing damage",
+        "Damage": "80/s",
+        "Range": "20m",
+        "Ammo": "∞",
+        "Critical Hit": "No"
+      },
+      "icon_file": "cloak-and-dagger/abilities/01_primary_left-click_darkforce-cloak.png"
+    },
+    {
+      "name": "Eternal Bond",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241205/9791de0a-9b39-4111-a535-77a8fccaef5a.png",
+      "description": "Perform four rapid dashes, healing allies and damaging enemies along the path",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Persistent Spell Field",
+        "Damage": "30/s",
+        "Healing Amount": "250/s",
+        "Range": "A cylindrical spell field with a 4m radius and 15m in length",
+        "Duration": "11s",
+        "Energy Cost": "4500"
+      },
+      "icon_file": "cloak-and-dagger/abilities/02_ability_q_eternal-bond.png"
+    },
+    {
+      "name": "Light's Embrace",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241205/d79fe95c-03cf-4d39-97ce-a2af95dd180b.png",
+      "description": "Switch to Dagger",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Instant Cast"
+      },
+      "icon_file": "cloak-and-dagger/abilities/03_ability_shift_light-s-embrace.png"
+    },
+    {
+      "name": "Terror Cape",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241205/a57ebbc2-dcf5-4511-8a5e-7291aefbaf3f.png",
+      "description": "Deploy a Veil of Darkforce to damage enemies upon touch, applying Blind to narrow their sight and Vulnerability to amplify damage received",
+      "stats": {
+        "Key": "E",
+        "Casting": "Spell Field",
+        "Special Effect": "The spell field advances along the casting path",
+        "Damage": "55",
+        "Blinding Duration": "1.5s",
+        "Range": "Width: 6m, Height: 4.5m",
+        "Vulnerability": "28%",
+        "Vulnerability Duration": "3s",
+        "Movement Speed": "20m/s",
+        "Maximum Distance": "25m",
+        "Cooldown": "12s"
+      },
+      "icon_file": "cloak-and-dagger/abilities/04_ability_e_terror-cape.png"
+    },
+    {
+      "name": "Dark Teleportation",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/08104768-56d7-4bda-84ae-bd4cd7245223.png",
+      "description": "Enshroud nearby allies in the Darkforce Dimension, plunging them into the Phased state, making them untargetable and invisible to enemies and granting them a Movement Boost",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Persistent Spell Field",
+        "Special Effect": "Allies within the area gain Invisibility and Movement Boost",
+        "Duration": "2s",
+        "Range": "10m spherical radius",
+        "Cooldown": "Veil of Lightforce & Terror Cape share charges, capped out at 2 with each taking 10s to recharge. After using either, both abilities enter a 2s cooldown"
+      },
+      "icon_file": "cloak-and-dagger/abilities/05_ability_right-click_dark-teleportation.png"
+    },
+    {
+      "name": "Lightforce Dagger",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/5211b159-6fa8-4589-829f-facb1c455241.png",
+      "description": "Unleash a bouncing Lightforce Dagger to damage enemies and heal nearby allies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile that generates a spell area upon impact",
+        "Special Effect": "The projectile features an attraction effect, pulling in the closest target to the crosshair and creating a spell field upon impact. This spell field provides healing effects",
+        "Damage": "18 damage per round",
+        "Healing Per Hit": "15 per hit",
+        "Area of Effect Healing": "25 per hit",
+        "Range": "8m spherical radius",
+        "Fire Rate": "2.27 hits per second",
+        "Ammo": "12",
+        "Critical Hit": "No"
+      },
+      "icon_file": "cloak-and-dagger/abilities/06_primary_left-click_lightforce-dagger.png"
+    },
+    {
+      "name": "Eternal Bond",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241205/9791de0a-9b39-4111-a535-77a8fccaef5a.png",
+      "description": "Perform four rapid dashes, healing allies and damaging enemies along the path",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Persistent Spell Field",
+        "Damage": "30/s",
+        "Healing Amount": "250/s",
+        "Range": "A cylindrical spell field with a 4m radius and 15m in length",
+        "Duration": "13s",
+        "Energy Cost": "4500"
+      },
+      "icon_file": "cloak-and-dagger/abilities/02_ability_q_eternal-bond.png"
+    },
+    {
+      "name": "Shadow's Embrace",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241205/3e810039-6b5c-43e0-b1c6-22808f1ee3cf.png",
+      "description": "Switch to Cloak",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Instant Cast"
+      },
+      "icon_file": "cloak-and-dagger/abilities/08_ability_shift_shadow-s-embrace.png"
+    },
+    {
+      "name": "Veil of Lightforce",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241205/b2149229-d3c4-4056-9fa4-04704c96c3af.png",
+      "description": "Deploy a Veil of Lightforce to heal allies upon touch and grant them a Healing Boost",
+      "stats": {
+        "Key": "E",
+        "Casting": "Spell Field",
+        "Special Effect": "The spell field advances along the casting path",
+        "Healing Amount": "50",
+        "Healing Boost": "20%",
+        "Duration": "4s",
+        "Range": "Width: 6m, Height: 4.5m",
+        "Movement Speed": "20m/s",
+        "Maximum Distance": "25m",
+        "Cooldown": "12s"
+      },
+      "icon_file": "cloak-and-dagger/abilities/09_ability_e_veil-of-lightforce.png"
+    },
+    {
+      "name": "Dagger Storm",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/a106ebc0-80b0-4dd9-bf68-0c19f464e8bc.png",
+      "description": "Launch a volley of daggers, creating a Healing Over Time field in the impact area",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Healing Amount": "50/s",
+        "Duration": "6s",
+        "Range": "5m spherical radius",
+        "Cooldown": "Veil of Lightforce & Terror Cape share charges, capped out at 2 with each taking 10s to recharge. After using either, both abilities enter a 2s cooldown",
+        "Special Effect": "When a Spell Field is created, allies in range get a One-Time Healing of 60"
+      },
+      "icon_file": "cloak-and-dagger/abilities/10_ability_right-click_dagger-storm.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "FROM SHADOW TO LIGHT",
+        "icon": "https://r.res.easebar.com/pic/20251115/9a215533-35d3-4b33-b726-f9696b57259c.png",
+        "description": "Cloak & Dagger inject light and dark energy into Hawkeye's katana. When Hawkeye uses Crescent Slash, enemies hit are launched back, and a blade wave filled with light and energy sweeps forward. This wave passes through both allies and enemies: it heals and boosts healing for allies, while damaging enemies and applying Vulnerability",
+        "stats": {
+          "Key": "Passive",
+          "Team-up Bonus": "15% Healing Boost"
+        },
+        "icon_file": "cloak-and-dagger/teamups/received_01_from-shadow-to-light.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "OBLIVION SHROUD",
+        "icon": "https://r.res.easebar.com/pic/20260707/b557fdff-bff2-4e77-bf87-4b5d2fd58f33.png",
+        "partner": "The Hood",
+        "base": {
+          "description": "Veil of Lightforce and Terror Cape are warped by hellfire energy, changing into Veil of Light and Veil of Darkness while retaining their original effects. After traveling a set distance, the veils halt in place. Enemy damage passing through the Veil of Light is weakened, while enemy healing passing through the Veil of Darkness suffers Healing Reduction.",
+          "stats": {
+            "Key": "E",
+            "Light Veil Enemy Damage Reduction": "20%",
+            "Dark Veil Enemy Healing Reduction": "20%",
+            "Veil Duration": "4s",
+            "Veil Range": "6m wide, 4.5m tall"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with The Hood, the width of both the Veil of Light and Veil of Darkness expands. Additionally, allies passing through the veils are empowered by hellfire energy, gaining Damage Boost for a duration.",
+          "stats": {
+            "Key": "E",
+            "Damage Boost": "15%",
+            "Veil Range": "8m wide, 6m tall"
+          }
+        },
+        "icon_file": "cloak-and-dagger/teamups/provided_01_oblivion-shroud.png"
+      },
+      {
+        "name": "FROZEN HAVEN",
+        "icon": "https://r.res.easebar.com/pic/20260707/3a33c010-28d8-48f8-9741-4fc2d4ae9637.png",
+        "partner": "Luna Snow",
+        "base": {
+          "description": "Channel frost energy outward to encase yourself in an absolute block of ice. This offers great protection, but Freezes you in place. While frozen, you can be healed and emit a weak healing aura to nearby allies.",
+          "stats": {
+            "Key": "C",
+            "Ability Duration": "2.5s",
+            "Spell Field Range": "8m radius",
+            "Healing Amount": "50/s",
+            "Cooldown": "20s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Luna Snow, the healing aura provided to allies while Frozen becomes significantly stronger.",
+          "stats": {
+            "Key": "C",
+            "Healing Amount": "90/s"
+          }
+        },
+        "icon_file": "cloak-and-dagger/teamups/provided_02_frozen-haven.png"
+      }
+    ]
+  },
+  "source_name": "CLOAK & DAGGER",
+  "uuid": "5b5a8c7a-c9c0-4f4c-89a3-dae465db8c7f",
+  "article_url": "https://www.marvelrivals.com/20241204/41360_1198095.html",
+  "portrait_files": [
+    "cloak-and-dagger/portraits/portrait_1.png",
+    "cloak-and-dagger/portraits/portrait_2.png"
+  ]
+}

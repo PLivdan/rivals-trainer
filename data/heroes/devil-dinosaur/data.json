@@ -1,0 +1,225 @@
+{
+  "name": "DEVIL DINOSAUR",
+  "real_name": "DEVIL DINOSAUR",
+  "role": "VANGUARD",
+  "description": "Don't let his name scare you — Devil Dinosaur is actually a gentle giant. But with razor-sharp fangs, a mighty sweeping tail, a thunderous roar, and a force-field shield gifted by his human partner Moon Girl, it's no wonder why heroes and villains alike are intimidated by this prehistoric powerhouse!",
+  "lore": "Ripped across dimensions from a prehistoric world, Devil Dinosaur found a best friend in the young genius Moon Girl. This dino-riffic duo keeps Manhattan's Lower East Side safe with the perfect balance of brains and brawn. When the Timestream Entanglement hit, Devil was sucked into a temporal anomaly and ended up on display in the Collector's Gallery. Devil eventually escaped and found sanctuary in Deadpool's Monster Kingdom on Staten Island. Upon receiving Moon Girl's distress signal from inside the time-tossed Alchemax HQ, Devil stomped into action to save his BFF.",
+  "base_stats": {
+    "Health": "850",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260514/14b76066-a2b7-4767-8f21-197fb238f4dc.png",
+    "https://r.res.easebar.com/pic/20260514/389790bb-b2e4-49f6-9837-e1c40b350c6f.png"
+  ],
+  "forms": [
+    {
+      "name": "DEVIL DINOSAUR",
+      "stats": {
+        "Health": "850",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260514/14b76066-a2b7-4767-8f21-197fb238f4dc.png",
+        "https://r.res.easebar.com/pic/20260514/389790bb-b2e4-49f6-9837-e1c40b350c6f.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Primal Bite",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260514/115176f7-366a-4c84-a53e-5cb01ce83315.png",
+      "description": "Bite forward. Applies a Bleed that deals continuous Percentage Damage",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "75",
+        "Maximum Distance": "4m",
+        "Attack Interval": "1st and 3rd attacks: 1s; 2nd attack: 0.9s",
+        "Bleed Damage": "0.75% Maximum Health",
+        "Bleed Duration": "4s",
+        "Bleed Tick Rate": "2 times per second"
+      },
+      "icon_file": "devil-dinosaur/abilities/01_primary_left-click_primal-bite.png"
+    },
+    {
+      "name": "Impact Beam",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260514/8deeb802-0265-45e5-8ea0-8ac836bf938e.png",
+      "description": "Unleash a devastating beam of energy that inflicts a Bleed and Slow.",
+      "stats": {
+        "Key": "Right Click",
+        "Ability Duration": "3.3s",
+        "Attack Range": "17m",
+        "Spell Field Damage": "40/s",
+        "Spell Field Radius": "1.2m",
+        "Slow Effect": "15% for 2s"
+      },
+      "icon_file": "devil-dinosaur/abilities/02_ability_right-click_impact-beam.png"
+    },
+    {
+      "name": "Buddy Barrier",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260514/5262ea98-9407-49e5-92c3-4630ededb30d.png",
+      "description": "Activate the heart-shaped generator to expand a spherical shield that blocks incoming damage. Enemies caught within are Slowed",
+      "stats": {
+        "Key": "E",
+        "Cooldown": "12s",
+        "Summons Max Health": "450",
+        "Maximum Duration for Summons": "6s",
+        "Slow Effect": "15% for 2s"
+      },
+      "icon_file": "devil-dinosaur/abilities/03_ability_e_buddy-barrier.png"
+    },
+    {
+      "name": "Savage Predation",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260514/d5b729a9-bd0a-4e51-9bd4-a4bf2b40b5ef.png",
+      "description": "Dash and pounce on your prey with a vicious bite, applying a Bleed. If the target is already Bleeding, clamp down before hurling them away",
+      "stats": {
+        "Key": "Shift",
+        "Cooldown": "10s",
+        "Dash Duration": "2s",
+        "Dashing Speed": "15m/s",
+        "Bite Damage": "50"
+      },
+      "icon_file": "devil-dinosaur/abilities/04_ability_shift_savage-predation.png"
+    },
+    {
+      "name": "Frenzied Feast",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260514/e3644601-c665-47c0-b70b-eff7718330c8.png",
+      "description": "Unleash a flurry of continuous bites, converting the damage dealt into Bonus Health. Deals extra damage against Bleeding targets",
+      "stats": {
+        "Key": "F",
+        "Cooldown": "8s",
+        "Bite Damge": "First 4 hits: 15 each; 5th hit: 30",
+        "Bonus Damage": "First 4 hits: 5% Maximum Health each; 5th hit: 10% Maximum Health"
+      },
+      "icon_file": "devil-dinosaur/abilities/05_ability_f_frenzied-feast.png"
+    },
+    {
+      "name": "Prehistoric Plating",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260514/c9b874b3-dde9-4453-9fb8-e49f5ecdec9d.png",
+      "description": "Take reduced damage from headshots. Immune to launch-up, knock-back, and other displacement effects. Enemies and allies generate less Ultimate Ability Energy when damaging or healing him",
+      "stats": {
+        "Key": "Passive",
+        "Headshot Damage Taken Reduction": "60%",
+        "Ultimate Energy Gain Reduction from Damage/Healing Him": "40%"
+      },
+      "icon_file": "devil-dinosaur/abilities/06_passive_passive_prehistoric-plating.png"
+    },
+    {
+      "name": "Apex Advantage",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260515/750da25f-7267-479e-9161-ad9109a5209c.png",
+      "description": "Gain Bonus Health when you inflict Bleeding upon an enemy",
+      "stats": {
+        "Key": "Passive",
+        "Bonus Health": "150% of Bleed Damage Dealt"
+      },
+      "icon_file": "devil-dinosaur/abilities/07_passive_passive_apex-advantage.png"
+    },
+    {
+      "name": "Devil-Beast Rampage",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260514/6acd3e0f-759b-44c1-b1bc-b42dd520aa74.png",
+      "description": "Erupt in primal fury! Gain a massive Movement Speed Boost while unleashing earth-shattering stomps that Launch enemies and applies a Bleed. Thunderous roars also emit sonic waves that Slow enemies hit",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3400",
+        "Stomp Field Spawn Interval": "0.3",
+        "Frenzied Feast Cooldown Reduction": "1s",
+        "Savage Predation Cooldown Reduction": "4s",
+        "Speed Boost During Ultimate": "70%",
+        "Stomp Field Range": "8m radius spherical spell field",
+        "Stomp Field Damage": "10",
+        "Stomp Field Launch-up Interval": "0.8s"
+      },
+      "icon_file": "devil-dinosaur/abilities/08_ability_q_devil-beast-rampage.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Prehistoric Partner",
+        "icon": "https://r.res.easebar.com/pic/20260514/f043428e-f28d-45a2-9ea9-54f04059d9aa.png",
+        "description": "The Punisher rides atop Devil Dinosaur, restricting him to only Adjudication/Deliverance and Scourge Grenade while disabling other abilities. While mounted, Devil Dinosaur absorbs a portion of all damage inflicted on The Punisher",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "Maximum Health +100"
+        },
+        "icon_file": "devil-dinosaur/teamups/received_01_prehistoric-partner.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "PRIMAL PUNISHMENT",
+        "icon": "https://r.res.easebar.com/pic/20260707/7b979ce0-c677-4f98-9ecb-25b338f5026f.png",
+        "partner": "The Punisher",
+        "base": {
+          "description": "Adds a new ability. Upon activation, Primal Bite is replaced. Devil Dinosaur gains 2 magnetic cannons that can be fired forward; the cannonballs detonate when hitting enemies or the environment.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Duration": "8s",
+            "Fire Rate": "0.25s per hit",
+            "Projectile Damage": "5",
+            "Spell Field Damage": "20",
+            "Spell Field Range": "3m spherical radius",
+            "Special Effect": "The explosion applies a Bleed effect to targets"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with The Punisher, the duo can request an interaction. Once accepted, The Punisher rides atop Devil Dinosaur, restricting him to only Adjudication/Deliverance and Scourge Grenade while disabling other abilities. While mounted, The Punisher gains Damage Reduction; Devil Dinosaur absorbs a portion of all damage inflicted on The Punisher.",
+          "stats": {
+            "Key": "X",
+            "Damage Reduction": "25%",
+            "Damage Conversion Rate": "50%"
+          }
+        },
+        "icon_file": "devil-dinosaur/teamups/provided_01_primal-punishment.png"
+      },
+      {
+        "name": "SURF & TURF",
+        "icon": "https://r.res.easebar.com/pic/20260707/1a73f365-869f-45ea-88ec-955364e9efe3.png",
+        "partner": "Jeff the Land Shark",
+        "base": {
+          "description": "Impact Beam is replaced by a frontal water spray. This stream damages enemies while providing healing to teammates.",
+          "stats": {
+            "Key": "Right Click",
+            "Maximum Duration": "4s",
+            "Max Attack Range": "20m",
+            "Healing Amount": "40/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Jeff the Land Shark, Jeff can ride atop Devil Dinosaur's head. While riding, both gain some Damage Reduction and are swirled in therapeutic waters, receiving Continuous Healing. Jeff can only cast Joyful Splash, Aqua Burst, and Healing Bubble during this time.",
+          "stats": {
+            "Key": "X",
+            "Damage Reduction": "12.5%",
+            "Healing Amount": "15/s"
+          }
+        },
+        "icon_file": "devil-dinosaur/teamups/provided_02_surf-and-turf.png"
+      }
+    ]
+  },
+  "source_name": "DEVIL DINOSAUR",
+  "uuid": "d579e90a-46a7-45fd-975f-4d63c7755d27",
+  "article_url": "https://www.marvelrivals.com/20260514/41360_1300391.html",
+  "portrait_files": [
+    "devil-dinosaur/portraits/portrait_1.png",
+    "devil-dinosaur/portraits/portrait_2.png"
+  ]
+}

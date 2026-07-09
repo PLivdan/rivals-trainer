@@ -1,0 +1,211 @@
+{
+  "name": "VENOM",
+  "real_name": "EDWARD \"EDDIE\" BROCK",
+  "role": "VANGUARD",
+  "description": "Using his symbiote-enhanced body as the perfect living weapon, Eddie Brock and his alien ally stand ever-ready to unleash vicious attacks upon anyone he deems an enemy. Those ensnared by Venom's tentacles have no choice but to surrender to this insatiable predator.",
+  "lore": "When Spider-Man rejected a symbiotic alien that he had once believed to be a mere costume, the creature formed a new bond with a man who shared its disdain for Peter Parker. Together, the symbiote and Eddie Brock became the lethal protector known as Venom. While displaced in time and fighting in the occult wars, Venom glimpsed the horrific future awaiting this timeline. To prevent that future from happening, Venom knows he has only two options — kill the dark god Knull or imprison him on Klyntar and take his throne.",
+  "base_stats": {
+    "Health": "500+250可恢复护盾",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/35111160-46c9-4ba0-b44f-311311ba6229.png",
+    "https://r.res.easebar.com/pic/20241122/ad646d4f-e7ae-48c7-96c7-1e912749f5e1.png"
+  ],
+  "forms": [
+    {
+      "name": "VENOM",
+      "stats": {
+        "Health": "500+250可恢复护盾",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/35111160-46c9-4ba0-b44f-311311ba6229.png",
+        "https://r.res.easebar.com/pic/20241122/ad646d4f-e7ae-48c7-96c7-1e912749f5e1.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Dark Predation",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/bc30fb5a-7d0a-4acb-9cc7-68d9ce23471f.png",
+      "description": "Unleash tentacles forward to attack enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Quad-cast delayed spell field",
+        "Range": "15m",
+        "Attack Interval": "0.9s, with a 0.1s interval between each tendril",
+        "Damage": "20",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "venom/abilities/01_primary_left-click_dark-predation.png"
+    },
+    {
+      "name": "Feast of the Abyss",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/8d6946a4-fdcd-4260-a36b-4d6367c22910.png",
+      "description": "Burrow underground for free movement. After a duration or by left-clicking, devour enemies above to deal damage based on the enemy's current health and generate equivalent Bonus Health. Devoured enemies suffer Reduced Healing",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Single-cast spell field that surrounds the caster",
+        "Movement Boost": "80%",
+        "Range": "7m spherical radius",
+        "Maximum Duration": "4s",
+        "Damage": "Inflict damage equal to 50% of the target's health, followed by an additional 50 damage",
+        "Energy Cost": "2500",
+        "Special Effect": "130% of damage dealt is converted into Bonus Health",
+        "HEALING REDUCTION PROPORTION": "30%",
+        "HEALING REDUCTION DURATION": "4s"
+      },
+      "icon_file": "venom/abilities/02_ability_q_feast-of-the-abyss.png"
+    },
+    {
+      "name": "Venom Swing",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/e3d5d3b0-9605-4bdd-8e7d-5b10a96f6fdc.png",
+      "description": "Launch webbing forward, allowing for a singular swing in the desired direction",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Maximum Webbing Length": "30m",
+        "Cooldown": "8s"
+      },
+      "icon_file": "venom/abilities/03_ability_shift_venom-swing.png"
+    },
+    {
+      "name": "Symbiotic Resilience",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/6cbe943b-e6aa-46d3-9c54-bff3d7264fcc.png",
+      "description": "Generate Bonus Health against damage. The lower Venom's Health, the greater the Bonus Health generated",
+      "stats": {
+        "Key": "E",
+        "Casting": "Instant Cast",
+        "Cooldown": "15s",
+        "Special Effect": "Grant 100 Bonus Health and convert 120% of lost Health into Bonus Health"
+      },
+      "icon_file": "venom/abilities/04_ability_e_symbiotic-resilience.png"
+    },
+    {
+      "name": "Frenzied Arrival",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/bd5d9e69-ca07-465d-aafa-c7225d6a6f7f.png",
+      "description": "Dash to the target location from a certain height. Upon landing, damage nearby enemies, launching them up toward the landing point",
+      "stats": {
+        "Key": "F",
+        "Casting": "Targeted",
+        "Maximum Distance": "40m",
+        "Minimum Distance": "3m",
+        "Range": "6m spherical radius",
+        "Damage": "65 damage, with damage falloff starting at 2m from the center of the spell field and decreasing to 40% at 6m",
+        "Cooldown": "8s",
+        "Special Effect": "Knocks enemies inward, with an inward knockback angle of 75°"
+      },
+      "icon_file": "venom/abilities/05_ability_f_frenzied-arrival.png"
+    },
+    {
+      "name": "Cellular Corrosion",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/67d47ae7-0b50-42ec-98d4-b704e68e8c0d.png",
+      "description": "Unleash tentacles to Slow enemies within reach. Enemies unable to break free in time will suffer damage",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Spell field that surrounds the caster",
+        "Range": "8m spherical radius",
+        "Damage": "The spell field deals 5 damage, increasing to 80 damage if the target remains in the area for a duration",
+        "CoolDown": "8s",
+        "Special Effect": "Tendrils apply a 25% Slow on the target and take 3s to inflict damage. If the distance from Venom exceeds 11m, the tendrils will detach"
+      },
+      "icon_file": "venom/abilities/06_ability_right-click_cellular-corrosion.png"
+    },
+    {
+      "name": "Alien Biology",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/5ac60cab-09a4-4f2a-8236-75b82ed43c39.png",
+      "description": "Press Space to wall crawl, and while crawling, left-click to sprint",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "3 m/s",
+        "Sprinting Speed": "9 m/s"
+      },
+      "icon_file": "venom/abilities/07_ability_space_alien-biology.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "HEALING TENDRILS",
+        "icon": "https://r.res.easebar.com/pic/20250531/1ad044d0-1743-4ae9-8a7c-1cd92bef69a1.png",
+        "description": "Venom shares his symbiotes with Jeff and Hela. Jeff's Guardian of the Deep links with nearby allies, providing continuous healing. When the effect ends, it releases a powerful healing burst, converting any excess into Bonus Health. Hela's Hel Tendrils unleash a symbiotic Hel Sphere. Upon hit, it pulls nearby enemies toward the impact point and links them, slowing enemies that try to escape.",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "+150 Max Health"
+        },
+        "icon_file": "venom/teamups/received_01_healing-tendrils.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "BLOOD LEECH",
+        "icon": "https://r.res.easebar.com/pic/20260707/db4763ae-616a-4015-94c5-e67a1344f326.png",
+        "partner": "Blade",
+        "base": {
+          "description": "Cellular Corrosion new effect: while tethered to enemies, continuously siphon health from every linked target, restoring Venom's Health.",
+          "stats": {
+            "Key": "Right Click",
+            "Damage Over Time": "2/hit, 10 times per second",
+            "Damage over Time to Healing Conversion Rate": "100%",
+            "Tentacle Explosion Damage to Healing Conversion Rate": "50%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Blade, Venom gains a burst of one-time healing when using certain specific abilities.",
+          "stats": {
+            "Key": "Passive",
+            "One-time Healing Amount": "40"
+          }
+        },
+        "icon_file": "venom/teamups/provided_01_blood-leech.png"
+      },
+      {
+        "name": "ABYSSAL FLAMES",
+        "icon": "https://r.res.easebar.com/pic/20260707/d9173ae8-5133-4b8e-8ca2-8b59ac4cab37.png",
+        "partner": "Phoenix",
+        "base": {
+          "description": "Ignites the symbiote with Phoenix Flames for a duration, replacing Dark Predation with a sweeping Phoenix Touch frontal slash.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Duration": "8s",
+            "Attack Range": "10m",
+            "Damage": "55",
+            "Attack Interval": "0.8s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Phoenix, Venom's Phoenix Force is enhanced: every Phoenix Touch applies Sparks. Upon reaching three stacks, the Sparks detonate.",
+          "stats": {
+            "Key": "C",
+            "Explosion Range": "3m spherical radius",
+            "Explosion Damage": "20"
+          }
+        },
+        "icon_file": "venom/teamups/provided_02_abyssal-flames.png"
+      }
+    ]
+  },
+  "source_name": "VENOM",
+  "uuid": "fa12017d-641d-4734-b459-187c2a6cdeb1",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195654.html",
+  "portrait_files": [
+    "venom/portraits/portrait_1.png",
+    "venom/portraits/portrait_2.png"
+  ]
+}

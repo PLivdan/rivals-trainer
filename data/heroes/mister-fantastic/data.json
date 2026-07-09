@@ -1,0 +1,224 @@
+{
+  "name": "MISTER FANTASTIC",
+  "real_name": "REED RICHARDS",
+  "role": "DUELIST",
+  "description": "Reed Richards believes that true strength comes from remaining flexible, both mentally and physically. Mister Fantastic's elastic body, which can twist and stretch into any form with ease, is almost as impressive as his brilliant mind.",
+  "lore": "Reed Richards has one of the universe's most brilliant minds, but even a genius of his magnitude couldn't have predicted the interstellar incident that bombarded his friends and family with cosmic rays, granting them each extraordinary abilities. Mister Fantastic's cellular elasticity allows him to stretch his body beyond all physical limits. But now he'll have to stretch his mind further than ever to build the Timestream Reintegration Device and end this cross-dimensional crisis...",
+  "base_stats": {
+    "Health": "375",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250109/b6bc67e9-a5f5-4bc2-bd20-a71048d7768e.png",
+    "https://r.res.easebar.com/pic/20250109/536b4fb6-e301-4b16-b5a7-3d9d2b16b315.png"
+  ],
+  "forms": [
+    {
+      "name": "MISTER FANTASTIC",
+      "stats": {
+        "Health": "375",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250109/b6bc67e9-a5f5-4bc2-bd20-a71048d7768e.png",
+        "https://r.res.easebar.com/pic/20250109/536b4fb6-e301-4b16-b5a7-3d9d2b16b315.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Stretch Punch",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250110/6ca25ced-20ea-495c-b403-d84fa949b02a.png",
+      "description": "Stretch out a forward punch to attack enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Straight Spell Field",
+        "Spell Field Damage": "70",
+        "Spell Field Range": "15m",
+        "Attack Interval": "1.1s per hit",
+        "Ammo": "Infinite",
+        "Critical Hit": "None",
+        "Gained Elasticity": "8",
+        "Special Mechanic": "Swinging your arms can attack multiple targets"
+      },
+      "icon_file": "mister-fantastic/abilities/01_primary_left-click_stretch-punch.png"
+    },
+    {
+      "name": "Distended Grip",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250108/f2a1a063-eb4b-4274-a9b8-fac92c4abeba.png",
+      "description": "Extend arms forward to entangle an enemy, then press Primary Attack to pull the hit enemy toward him, or select and yank another enemy, Knocking Them Airborne against each other. Hit targets are Immobilized",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Projectile Speed": "60 m/s",
+        "Initial Projectile Range": "20m",
+        "Secondary Release Maximum Distance": "25m",
+        "Initial Projectile Damage": "20",
+        "Secondary Projectile Damage": "20",
+        "Single-Target Pull Range": "10m",
+        "Single-Target Pull Damage": "50",
+        "Dual-Target Pull Damage": "30",
+        "Gained Elasticity": "30",
+        "Cooldown": "6s",
+        "Special Effect": "After successfully pulling an enemy with Distended Grip, the target is afflicted with a 1-second immobilize effect"
+      },
+      "icon_file": "mister-fantastic/abilities/02_ability_right-click_distended-grip.png"
+    },
+    {
+      "name": "Flexible Elongation",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250108/014f9fc0-5b64-4c2d-afb1-4669b7b5369c.png",
+      "description": "Gain a Shield, select a target and dash towards them, dealing damage to enemies or granting a Shield to allies",
+      "stats": {
+        "Key": "E",
+        "Maximum Select Distance": "15m",
+        "Bonus Health (Self)": "75",
+        "Bonus Health (Ally)": "75",
+        "Damage": "30",
+        "Cooldown": "6s",
+        "Gained Elasticity": "20",
+        "Charges": "2"
+      },
+      "icon_file": "mister-fantastic/abilities/03_ability_e_flexible-elongation.png"
+    },
+    {
+      "name": "Reflexive Rubber",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20250108/d152620a-90bc-407e-a3f1-b137503624d0.png",
+      "description": "Stretch the body to absorb damage before launching stored damage in the targeted direction",
+      "stats": {
+        "Key": "SHIFT",
+        "Shield Value": "300",
+        "Maximum Duration": "3s",
+        "Self Slow Rate": "-35%",
+        "Damage Absorbed - Damage Reflected Conversion Rate": "60%",
+        "Reflected Projectile Speed": "80 m/s",
+        "Cooldown": "12s"
+      },
+      "icon_file": "mister-fantastic/abilities/04_ability_shift_reflexive-rubber.png"
+    },
+    {
+      "name": "Brainiac Bounce",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250108/05dcb43c-4de3-483a-afc6-d06c6e76e4ff.png",
+      "description": "Leap upward and smash the ground, slowing enemies within range. Mister Fantastic can leap again upon landing a hit",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Spherical Spell Field",
+        "Range": "10m spherical radius",
+        "Spell Field Damage": "Initial 70, Each Additional Leap +14, Max 140",
+        "Damage Falloff": "Start at 3m, 71.4% falloff at 10m",
+        "Slow Rate": "Per Leap -10%, Can Stack, Max -60%",
+        "Slow Duration": "3s",
+        "Minimum Leaps": "3",
+        "Maximum Leaps": "6",
+        "Energy Cost": "3100",
+        "Special Mechanic": "When Mister Fantastic uses Brainiac Bounce (Ultimate Ability), immediately gain Bonus Health equal to that gained when entering inflated state"
+      },
+      "icon_file": "mister-fantastic/abilities/05_ability_q_brainiac-bounce.png"
+    },
+    {
+      "name": "Elastic Strength",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20250108/25010c9f-083e-4097-a443-544e0eeaa0ab.png",
+      "description": "Using abilities generates Elasticity, boosting attack power. Reaching full Elasticity triggers an Inflated state that increases Maximum Health, further boosts damage, and enables the use of Reflexive Rubber",
+      "stats": {
+        "Key": "Passive",
+        "Max Elasticity": "100",
+        "Inflated Duration": "6s",
+        "Damage": "80",
+        "Maximum Distance": "8m",
+        "Attack Interval": "0.92s per hit",
+        "Special Effect": "gain 350 Maximum Health and a one-time heal of 350, which is removed upon exiting the Inflated state",
+        "Movement Boost": "20%"
+      },
+      "icon_file": "mister-fantastic/abilities/06_passive_passive_elastic-strength.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "FANTASTIC AMPLIFIER",
+        "icon": "https://r.res.easebar.com/pic/20260213/eeb353f6-40cf-4c6d-b787-db7a4d316868.png",
+        "description": "Rocket Raccoon upgrades his B.R.B. for Star-Lord and Mister Fantastic. Star-Lord gets an Astral Jump device, allowing him to teleport to its deployment point from anywhere on the map. Mister Fantastic receives a Fantastic Amplifier, removing his Elasticity limit and letting him actively enter Inflation state",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "25s",
+          "Ability Duration": "10s",
+          "Energy Consumed Per Second During Inflation State": "16.67"
+        },
+        "icon_file": "mister-fantastic/teamups/received_01_fantastic-amplifier.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "FANTASTIC AMPLIFIER",
+        "icon": "https://r.res.easebar.com/pic/20260707/ae2c3da8-080a-4710-bb06-6c3a84c05ba4.png",
+        "partner": "Rocket Raccoon",
+        "base": {
+          "description": "Equips the Fantastic Amplifier. For the duration, Mister Fantastic's maximum Elasticity is increased, and he can actively enter Inflation State.",
+          "stats": {
+            "Key": "F",
+            "Active Inflation Cooldown": "8s",
+            "Max Elasticity": "200",
+            "Inflation State Elasticity Decay": "12.5 per second"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Rocket Raccoon, Brainiac Bounce Launches hit enemies.",
+          "stats": {
+            "Key": "Q",
+            "Special Effect": "Brainiac Bounce knocks enemies airborne"
+          }
+        },
+        "icon_file": "mister-fantastic/teamups/provided_01_fantastic-amplifier.png"
+      },
+      {
+        "name": "CLOBBERIN' RESEARCH DEPT.",
+        "icon": "https://r.res.easebar.com/pic/20260707/de757a5f-a580-488f-9d00-4f0bc721f0ef.png",
+        "partner": "The Thing",
+        "base": {
+          "description": "In brawler stance, Stretch Punch becomes a charged ability, firing a forward Brawling Punch. Hitting an enemy grants Bonus Health scaling with damage, and a full charge Launches hit enemies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Ability Duration": "10s",
+            "Brawling Punch Damage": "55, 100 when fully charged",
+            "Time to Full Charge": "1s",
+            "Max Hold Time": "1s",
+            "Bonus Health Conversion Rate from Damage": "0.75",
+            "Max Bonus Health": "75"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with The Thing, while in the brawling stance, Distended Grip also becomes a charged ability, slamming down a Distended Hammer. Hitting enemies grants Bonus Health based on damage, and Launches enemies at full charge.",
+          "stats": {
+            "Key": "C",
+            "Distended Hammer Cooldown": "3s",
+            "Distended Hammer Damage": "70, 100 when fully charged",
+            "Time to Full Charge": "1s",
+            "Max Hold Time": "1s",
+            "Bonus Health Conversion Rate from Damage": "0.75",
+            "Max Bonus Health": "75"
+          }
+        },
+        "icon_file": "mister-fantastic/teamups/provided_02_clobberin-research-dept.png"
+      }
+    ]
+  },
+  "source_name": "MISTER FANTASTIC",
+  "uuid": "fccfe09c-c34c-40d6-b546-a34386612729",
+  "article_url": "https://www.marvelrivals.com/20250108/41360_1205352.html",
+  "portrait_files": [
+    "mister-fantastic/portraits/portrait_1.png",
+    "mister-fantastic/portraits/portrait_2.png"
+  ]
+}

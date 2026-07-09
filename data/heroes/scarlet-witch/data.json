@@ -1,0 +1,220 @@
+{
+  "name": "SCARLET WITCH",
+  "real_name": "WANDA MAXIMOFF",
+  "role": "DUELIST",
+  "description": "Wanda Maximoff is adept at harnessing formidable chaos magic, casting hexes with the power to twist and reshape reality itself. Energy, space, and matter are mere playthings in the hands of Scarlet Witch!",
+  "lore": "Wanda Maximoff's ability to manipulate chaos magic makes her one of the most powerful living beings in the universe. As the Scarlet Witch, she seeks to harness that chaos, restoring some semblance of order to a world that is constantly on the brink of destruction. Since the Timestream Entanglement, chaos magic is one of the few forces holding the threads of reality together. Should her powers fail, the Scarlet Witch truly believes that this universe will disintegrate, along with everyone in it. It is a fate she refuses to allow… no matter the cost…",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260615/187b245f-8d15-4044-ba2e-0860d872a92a.png",
+    "https://r.res.easebar.com/pic/20260615/12c8c7e4-9509-4719-957a-0be94cb8569b.png"
+  ],
+  "forms": [
+    {
+      "name": "SCARLET WITCH",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260615/187b245f-8d15-4044-ba2e-0860d872a92a.png",
+        "https://r.res.easebar.com/pic/20260615/12c8c7e4-9509-4719-957a-0be94cb8569b.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Chaos Control",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/9df1d11b-6486-4f0e-83a8-b7e5dca461b6.png",
+      "description": "Unleash Chaos Magic on enemies to deal damage and restore Chaos Energy",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Cylindrical Spell Field",
+        "Range": "A cylindrical spell field with a radius of 3m and a height of 20m",
+        "Fire Rate": "0.1s per hit",
+        "Damage": "8.5 per hit",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 90% at 20m",
+        "Chthonian Burst Recharge Per Hit": "0.15 per hit",
+        "Ammo": "Infinite",
+        "Critical Hit": "No",
+        "Special Effect 1": "Attack the nearest enemy within range",
+        "Special Effect 2": "Hitting with Chaos Control charges Chthonian Burst"
+      },
+      "icon_file": "scarlet-witch/abilities/01_primary_left-click_chaos-control.png"
+    },
+    {
+      "name": "Reality Erasure",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/9fe279e3-1ca1-4202-b925-4eaddc649f14.png",
+      "description": "Engage in free-flight while charging energy, then unleash it to deal massive damage",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Spherical Spell Field",
+        "Range": "15m spherical radius",
+        "Damage": "9999",
+        "Charge Time": "4s",
+        "Slow Rate": "Begin to slow down by 1.5s, with the effect gradually increasing to -25% by 3.5s",
+        "Bonus Health (Self)": "100",
+        "Special Effect": "During this period, Scarlet Witch enters a Free-flight state, pulls in nearby enemies (within 15m radius) during cast charge. Max pull speed up to 3m/s",
+        "Energy Cost": "3400"
+      },
+      "icon_file": "scarlet-witch/abilities/02_ability_q_reality-erasure.png"
+    },
+    {
+      "name": "Mystic Projection",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/a1bd056d-4040-4dda-a79a-c1c721718e2b.png",
+      "description": "Enter the Phased state for free-flight. Press again to exit early",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Duration": "1.5s",
+        "Movement Boost": "50%",
+        "Charges": "2",
+        "Recharge Speed": "10s per charge",
+        "Special Effect": "During this period, Scarlet Witch enters the Projection state, can be healed by teammates"
+      },
+      "icon_file": "scarlet-witch/abilities/03_ability_shift_mystic-projection.png"
+    },
+    {
+      "name": "Dark Seal",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/06d393d2-e8b7-443c-8e04-3696ecefac86.png",
+      "description": "Land a hit on a target or the scene, or press E to generate a Force Field that periodically Stuns enemies within range",
+      "stats": {
+        "Key": "E",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Projectile Speed": "60 m/s",
+        "Spell Field Generation Delay": "0.8s",
+        "Range": "3m spherical radius",
+        "Spell Field Duration": "4.5s",
+        "Detection Interval": "1.25s",
+        "Stun Duration Per Detection": "0.5s",
+        "Cooldown": "12s"
+      },
+      "icon_file": "scarlet-witch/abilities/04_ability_e_dark-seal.png"
+    },
+    {
+      "name": "Telekinesis",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/2893e078-cc3e-49ec-8447-4ff73a549139.png",
+      "description": "Hold Space to fall slowly",
+      "stats": {
+        "Key": "Space",
+        "Horizontal Movement Speed": "6 m/s",
+        "Descending Speed": "3.5 m/s"
+      },
+      "icon_file": "scarlet-witch/abilities/05_ability_space_telekinesis.png"
+    },
+    {
+      "name": "Chthonian Burst",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/97e67269-1308-46d2-aef0-99ef179d9748.png",
+      "description": "Consume Chaos Energy to fire explosive magic missiles, damaging enemies",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Projectile Speed": "120 m/s",
+        "Projectile Damage": "40",
+        "Range": "3m spherical radius",
+        "Spell Field Damage": "40",
+        "Charges": "4",
+        "Default Charging Speed": "0.2/s"
+      },
+      "icon_file": "scarlet-witch/abilities/06_ability_right-click_chthonian-burst.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Sorcery Surge",
+        "icon": "https://r.res.easebar.com/pic/20250410/99eb7c66-a521-4b6b-aa54-1048db609e28.png",
+        "description": "Doctor Strange shares his arcane mastery, replacing Scarlet Witch's Chthonian Burst with Mystic Burst upon activation. Hold down the attack button to unleash a rapid, relentless salvo of magical missiles in the target direction",
+        "stats": {
+          "Key": "Right Click",
+          "Casting": "Straight-line projectile that generates a spell field upon impact",
+          "Projectile Speed": "120 m/s",
+          "Projectile Damage": "10",
+          "Spell Field Range": "1.5m spherical radius",
+          "Spell Field Damage": "6",
+          "Fire Rate": "0.15s per round",
+          "Duration": "10s",
+          "Cooldown": "30s",
+          "Special Mechanic": "Chaos Control can released during the Sorcery Surge"
+        },
+        "icon_file": "scarlet-witch/teamups/received_01_sorcery-surge.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SORCERERS SUPREME",
+        "icon": "https://r.res.easebar.com/pic/20260707/fc8a06cd-3325-40ff-b51f-80d208b0c5ce.png",
+        "partner": "Doctor Strange",
+        "base": {
+          "description": "Chthonian Burst is replaced with Mystic Burst upon activation. Hold down the attack button to unleash a rapid, relentless salvo of magical missiles in the target direction.",
+          "stats": {
+            "Key": "Right Click",
+            "Projectile Firing Interval": "0.12s/shot",
+            "Ability Energy": "300",
+            "Natural Recovery per Second": "15",
+            "Natural Decay per Second": "50",
+            "Energy Required to Activate": "15"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Doctor Strange, Scarlet Witch's maximum total Chaos Energy pool increases, and Chaos Control generates energy much faster when attacking.",
+          "stats": {
+            "Key": "Right Click",
+            "Ability Energy": "450",
+            "Natural Recovery per Second": "22.5",
+            "Natural Decay per Second": "56.5",
+            "Energy Required to Activate": "22.5",
+            "Charge per Enemy Detected by Magic Mastery": "9"
+          }
+        },
+        "icon_file": "scarlet-witch/teamups/provided_01_sorcerers-supreme.png"
+      },
+      {
+        "name": "HEX FIREWORKS",
+        "icon": "https://r.res.easebar.com/pic/20260707/e9c4b2ad-8757-424a-afe8-353ef874a21c.png",
+        "partner": "Jubilee",
+        "base": {
+          "description": "Infuse firework energy into the Dark Seal forcefield, turning it into a Plasmoid Seal, allowing for a secondary blast. After expanding the Plasmoid Seal, pressing the {Ability1} key again while it persists will detonate the fireworks, dealing damage and inflicting Vulnerability.",
+          "stats": {
+            "Key": "E",
+            "Cooldown": "12s",
+            "Explosion Damage": "52",
+            "Vulnerability": "15%",
+            "Vulnerability Duration": "2s",
+            "Explosion Range": "6m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Jubilee, Scarlet Witch receives constant healing from the firework energy while using Mystic Projection.",
+          "stats": {
+            "Key": "SHIFT",
+            "Healing Amount": "4.2/hit, 10 times per second"
+          }
+        },
+        "icon_file": "scarlet-witch/teamups/provided_02_hex-fireworks.png"
+      }
+    ]
+  },
+  "source_name": "SCARLET WITCH",
+  "uuid": "1d3f08cf-abee-4eb9-b2fd-31ce9947e5a1",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195684.html",
+  "portrait_files": [
+    "scarlet-witch/portraits/portrait_1.png",
+    "scarlet-witch/portraits/portrait_2.png"
+  ]
+}

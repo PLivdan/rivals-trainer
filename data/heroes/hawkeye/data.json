@@ -1,0 +1,245 @@
+{
+  "name": "HAWKEYE",
+  "real_name": "CLINT BARTON",
+  "role": "DUELIST",
+  "description": "Despite his lack of superpowers, Hawkeye's unparalleled skills as a marksman have earned him a spot alongside earth's mightiest heroes. With a cool head and steady hand, Clint Barton never misses a target… so enemies best stay out of his sights!",
+  "lore": "Clint Barton is one of the greatest marksmen alive. He may not have superpowers, but his natural ability to hit virtually any target earned him a place alongside Earth’s mightiest heroes. As Hawkeye, he's been known to take down an entire enemy fleet with nothing more than a quiver full of arrows. For a time, Clint distanced himself from the Avengers, setting off on a quest for vengeance as the assassin called Ronin. He returned to the fold older and wiser, just in time to infiltrate Hydra’s Erebus Base and rescue the captured Winter Soldier.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241124/97ad39c1-c972-46d7-bb75-675472a42c17.png",
+    "https://r.res.easebar.com/pic/20241124/d9e9917b-41b2-412e-87e4-9536acd57454.png"
+  ],
+  "forms": [
+    {
+      "name": "HAWKEYE",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241124/97ad39c1-c972-46d7-bb75-675472a42c17.png",
+        "https://r.res.easebar.com/pic/20241124/d9e9917b-41b2-412e-87e4-9536acd57454.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Piercing Arrow",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241124/9107db4e-f275-49aa-87bf-96c697157a15.png",
+      "description": "Shoot a powerful arrow",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Charged projectile with an arced trajectory",
+        "Slow Rate While Charging": "-20%",
+        "Minimum Charge Time": "0.7s",
+        "Projectile Speed": "130 - 195 m/s (Maximum speed is achieved after 0.9s of charging)",
+        "Damage": "28 - 70 (Maximum damage is achieved after 0.9s of charging)",
+        "Ammo": "Infinite",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "hawkeye/abilities/01_primary_left-click_piercing-arrow.png"
+    },
+    {
+      "name": "Blast Arrow",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241124/b54fcda9-4e31-4a7b-87c7-c7e8fd675434.png",
+      "description": "Shoot three explosive arrows",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Arced projectile that generates a spell field upon impact",
+        "Slow Rate While Charging": "-20%",
+        "Projectile Speed": "60 m/s",
+        "Projectile Damage": "16",
+        "Range": "3m spherical radius",
+        "Spell Field Damage": "34",
+        "Blast Arrows Per Cast": "3",
+        "Spread Angle": "11.3°",
+        "Cooldown": "0.5s",
+        "Charges": "3"
+      },
+      "icon_file": "hawkeye/abilities/02_primary_left-click_blast-arrow.png"
+    },
+    {
+      "name": "Hunter's Sight",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241124/15af78f7-6723-402d-916e-0e17ebf4b6df.png",
+      "description": "Capture Afterimages of enemies in his view. Damage dealt to an Afterimage is transferred to the corresponding enemy",
+      "stats": {
+        "Key": "Q",
+        "Duration": "10s",
+        "Afterimage Generation Interval": "0.5s",
+        "Afterimage Duration": "3s",
+        "Draw Speed Boost Multiplier": "1.5",
+        "Energy Cost": "3100",
+        "Special Mechanic": "While Hunter's Sight is active, bow draw speed is increased"
+      },
+      "icon_file": "hawkeye/abilities/03_ability_q_hunter-s-sight.png"
+    },
+    {
+      "name": "Crescent Slash",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241124/a598cd3c-e1d2-4403-8d48-13bf9dcf1b39.png",
+      "description": "Unsheathe a katana and slash forward, launching up enemies hit",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Melee",
+        "Maximum Distance": "8m",
+        "Damage": "40",
+        "Cooldown": "12s"
+      },
+      "icon_file": "hawkeye/abilities/04_ability_shift_crescent-slash.png"
+    },
+    {
+      "name": "Hypersonic Arrow",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241124/96e35f6b-b42a-461a-9cd9-554ed05e3470.png",
+      "description": "Shoot a Hypersonic Arrow, dealing two instances of damage to enemies in its path and inflicting them with Slow. This ability can Knock Down flying heroes",
+      "stats": {
+        "Key": "E",
+        "Casting": "Straight-line projectile that is accompanied by a spell field",
+        "Projectile Speed": "150 m/s",
+        "First Spell Field Range": "Length: 3m, Width: 3m, Height: 2.7m",
+        "First Damage": "55",
+        "Second Spell Field Range": "Length: 3m, Width: 5m, Height: 1.6m",
+        "Second Damage": "55",
+        "Slow Rate": "-40%",
+        "Slow Duration": "1s",
+        "Cooldown": "12s"
+      },
+      "icon_file": "hawkeye/abilities/05_ability_e_hypersonic-arrow.png"
+    },
+    {
+      "name": "Ronin Slash",
+      "slot": "ability",
+      "key": "V",
+      "icon": "https://r.res.easebar.com/pic/20241124/d8d9cc33-6737-4481-b442-ce0375138806.png",
+      "description": "Swing a wakizashi to strike frontal enemies, deflecting all incoming projectiles",
+      "stats": {
+        "Key": "V",
+        "Casting": "Melee",
+        "Maximum Distance": "3m",
+        "Special Effect": "This ability cannot block explosions or effects created by projectiles on hit"
+      },
+      "icon_file": "hawkeye/abilities/06_ability_v_ronin-slash.png"
+    },
+    {
+      "name": "Skyward Leap",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241124/83892ce1-2db5-4c6c-a0f2-a4117ab86aab.png",
+      "description": "Perform a double jump in the direction of movement",
+      "stats": {
+        "Key": "Space",
+        "Cooldown": "6s"
+      },
+      "icon_file": "hawkeye/abilities/07_ability_space_skyward-leap.png"
+    },
+    {
+      "name": "Archer's Focus",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241124/54419864-579b-4029-bc38-150d604b96c2.png",
+      "description": "Aim at an enemy to improve focus, enhancing the damage inflicted by Piercing Arrow",
+      "stats": {
+        "Key": "Passive",
+        "Bonus Damage": "0 - 90 (Maximum damage is achieved after 0.9s of aiming)",
+        "Triggering Distance": "40m",
+        "Critical Hit": "Yes",
+        "Special Mechanic": "Apply bonus damage to the base damage of Piercing Arrow"
+      },
+      "icon_file": "hawkeye/abilities/08_passive_passive_archer-s-focus.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "MOONLIT SLASH",
+        "icon": "https://r.res.easebar.com/pic/20251115/51eb0c6d-b829-4f42-8254-63a45af24047.png",
+        "description": "Cloak & Dagger inject light and dark energy into Hawkeye's katana. When Hawkeye uses Crescent Slash, enemies hit are launched back, and a blade wave filled with light and energy sweeps forward. This wave passes through both allies and enemies: it heals and boosts healing for allies, while damaging enemies and applying Vulnerability",
+        "stats": {
+          "Key": "Shift",
+          "Cooldown": "12s",
+          "Blade Wave Speed": "60 m/s",
+          "Blade Wave Range": "Length: 2m, Width: 6m, Height: 2m",
+          "Blade Wave Damage": "60",
+          "Vulnerability Ratio": "0.15",
+          "Vulnerability Duration": "4s",
+          "Blade Wave Healing": "60",
+          "Healing Boost": "0.15",
+          "Healing Boost Duration": "4s"
+        },
+        "icon_file": "hawkeye/teamups/received_01_moonlit-slash.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SENBONZAKURA STRIKE",
+        "icon": "https://r.res.easebar.com/pic/20260707/3cc3be52-a0d3-424e-904e-6f6a23ba6b20.png",
+        "partner": "Psylocke",
+        "base": {
+          "description": "Upgrade Blast Arrow to Psionic Arrow. While drawn, Hawkeye can continuously bank extra Psionic Arrows. Releasing the bowstring rapidly fires all accumulated arrows forward in sequence.",
+          "stats": {
+            "Key": "Left Click",
+            "Charge Time per Arrow (s)": "0.09",
+            "Spread Type": "Fixed spread",
+            "Psionic Arrows Fired": "5",
+            "Psionic Arrow Damage": "32/shot"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Psylocke, the nocking speed for each Psionic Arrow is significantly quickened, and they explode upon hitting enemies or the environment.",
+          "stats": {
+            "Key": "Left Click",
+            "Charge Time per Arrow (s)": "0.07",
+            "Psionic Arrow Damage": "24/shot",
+            "Psionic Arrow Explosion Damage": "8 damage per round",
+            "Explosion Range": "2m spherical radius spell field"
+          }
+        },
+        "icon_file": "hawkeye/teamups/provided_01_senbonzakura-strike.png"
+      },
+      {
+        "name": "MOONLIT SLASH",
+        "icon": "https://r.res.easebar.com/pic/20260707/1eee6096-6a2d-4a5b-ad5c-5c3ef293f85f.png",
+        "partner": "Cloak & Dagger",
+        "base": {
+          "description": "Upgrade Crescent Slash to Moonlit Slash, projecting a radiant slash outward. It heals and boosts healing for allies, while damaging enemies and applying Vulnerability.",
+          "stats": {
+            "Key": "Shift",
+            "Light Blade Damage": "65",
+            "Vulnerability Rate": "15% for 4s",
+            "Light Blade Healing": "65",
+            "Healing Boost Rate": "15% for 4s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Cloak & Dagger, Moonlit Slash can be chained into a three-hit combo, firing off three consecutive sweeping light blades.",
+          "stats": {
+            "Key": "Shift",
+            "Light Blade Damage": "35/shot, 3 shots total",
+            "Vulnerability Rate": "15% for 4s",
+            "Sword Aura Healing": "35/shot, 3 shots total",
+            "Healing Boost Rate": "15% for 4s"
+          }
+        },
+        "icon_file": "hawkeye/teamups/provided_02_moonlit-slash.png"
+      }
+    ]
+  },
+  "source_name": "HAWKEYE",
+  "uuid": "e7e0573d-ac83-4d1e-b286-7c7e4c79fc81",
+  "article_url": "https://www.marvelrivals.com/20241124/41360_1195753.html",
+  "portrait_files": [
+    "hawkeye/portraits/portrait_1.png",
+    "hawkeye/portraits/portrait_2.png"
+  ]
+}

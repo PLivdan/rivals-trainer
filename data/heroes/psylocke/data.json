@@ -1,0 +1,205 @@
+{
+  "name": "PSYLOCKE",
+  "real_name": "SAI",
+  "role": "DUELIST",
+  "description": "The psychic warrior known as Sai has the Mutant ability to conjure a variety of weapons with the power of her mind. Gracefully gliding across the battlefield, this trained ninja can shatter the enemy's defenses with a single thought.",
+  "lore": "A wandering warrior in feudal Japan, the telepathic ninja known as Sai has devoted herself to striking down ancient demons and monsters. With her wolf Logan by her side, Psylocke won't rest until all Yokai have fallen by her psychic blade. Sai was ripped from her reality by the Timestream Entanglement and put on display by the Collector. Alongside newfound allies, she escaped her cage and learned that other familiar warriors might still be out there. Her new quest is to gather those heroes, end this conflict, and return home.",
+  "base_stats": {
+    "Health": "150+100 Regenerative Shield",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241125/c3be43a1-dc15-492c-ac91-c44fd28d5a4e.png",
+    "https://r.res.easebar.com/pic/20241125/0b39e41f-4579-435f-bc28-c00c962665cf.png"
+  ],
+  "forms": [
+    {
+      "name": "Psylocke",
+      "stats": {
+        "Health": "150+100 Regenerative Shield",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241125/c3be43a1-dc15-492c-ac91-c44fd28d5a4e.png",
+        "https://r.res.easebar.com/pic/20241125/0b39e41f-4579-435f-bc28-c00c962665cf.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Psionic Crossbow",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241127/95719d81-365d-4ad7-bf6b-026166c95aed.png",
+      "description": "Unleash bolts with psionic crossbows to damage enemies and reduce the cooldowns of all her abilities",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Double projectile with spread",
+        "Damage": "13 damage per round",
+        "Damage Falloff": "Falloff begins at 15m, decreasing to 70% at 30m",
+        "Bullets Fired Each Cast": "4",
+        "Crosshair Spread Radius (at 10m)": "0.2m",
+        "Fire Rate": "The firing interval between shots is 0.2s, with an interval of 0.6s between each round of shooting",
+        "Ammo": "16",
+        "Critical Hit": "Yes",
+        "Critical Damage": "150%",
+        "Cooldown Reduction On Hit": "0.3s per hit"
+      },
+      "icon_file": "psylocke/abilities/01_primary_left-click_psionic-crossbow.png"
+    },
+    {
+      "name": "Dance of the Butterfly",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241127/dabcc1e3-5490-4fa4-87ab-b9440a74b69b.png",
+      "description": "Slash nearby enemies with a psionic katana, dealing massive damage",
+      "stats": {
+        "Key": "Q",
+        "Range": "10m spherical radius",
+        "Duration": "4s",
+        "Slow Rate": "-15%",
+        "Attack Interval": "2 hits per second",
+        "Damage": "160 damage per hit",
+        "Energy Cost": "3400",
+        "Special Mechanic": "Psylocke will slash a random enemy, giving priority to the one who has been hit the least"
+      },
+      "icon_file": "psylocke/abilities/02_ability_q_dance-of-the-butterfly.png"
+    },
+    {
+      "name": "Psi-Blade Dash",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20241127/af147052-f9a1-416b-8bfc-0143471b18c1.png",
+      "description": "Dash forward and slice through enemies along the path with psionic blades",
+      "stats": {
+        "Key": "Shift",
+        "Average Speed": "43 m/s",
+        "Maximum Distance": "12m",
+        "Damage": "50",
+        "Cooldown": "12s",
+        "Charges": "2",
+        "Special Mechanic": "Casting this ability will automatically recall the Wing Shurikens. The shurikens will first travel to Psylocke's starting position before returning to her"
+      },
+      "icon_file": "psylocke/abilities/03_ability_shift_psi-blade-dash.png"
+    },
+    {
+      "name": "Psychic Stealth",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241127/55b04754-bda5-4bcf-8a95-44479c836508.png",
+      "description": "Enter stealth and gain a Movement Boost",
+      "stats": {
+        "Key": "E",
+        "Duration": "2s",
+        "Movement Boost": "50%",
+        "Cooldown": "15s",
+        "Special Mechanic": "When attacked while in stealth, Psylocke will remain in stealth but will briefly become visible for a short duration"
+      },
+      "icon_file": "psylocke/abilities/04_ability_e_psychic-stealth.png"
+    },
+    {
+      "name": "Wing Shurikens",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241127/90b85285-ea24-4fb2-8ec4-b60d3f177569.png",
+      "description": "Launch a volley of psionic shurikens that stick to enemies, dealing damage and granting herself Bonus Health. Press again to recall the shurikens",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Projectile that fires in a straight trajectory.",
+        "Number of Projectiles": "5",
+        "Recall Window": "3s",
+        "Bonus Health": "10 bonus health per round",
+        "Cooldown": "8s",
+        "Special Mechanic": "When the projectile is recalled, it will move 20s toward the crosshair before returning to Psylocke",
+        "Firing Phase": "",
+        "Damage": "9 per hit",
+        "Projectile Speed": "120 m/s",
+        "Spread Angle": "0.86°",
+        "Maximum Distance": "25m",
+        "Damage Falloff": "Falloff begins at 15m, decreasing to 80% at 25m",
+        "Recall Phase": ""
+      },
+      "icon_file": "psylocke/abilities/05_ability_right-click_wing-shurikens.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "LIGHT & DARK DARTS",
+        "icon": "https://r.res.easebar.com/pic/20251212/67962d9c-35dd-4d15-9e06-5f85ea2c0aff.png",
+        "description": "Cloak & Dagger share light and dark energy with Hawkeye and Psylocke. When Hawkeye uses Crescent Slash, he also releases a blade wave that heals and boosts healing for teammates, while inflicting damage and Vulnerability on enemies. Psylocke can launch a Light Boomerang Dart that heals allies, harms enemies, and provides her with temporary healing upon return. She can also unleash a ring of Dark Darts that slow enemies while she briefly enters a Phased state",
+        "stats": {
+          "Key": "Right Click",
+          "Cooldown": "20s",
+          "Light Boomerang Dart": "",
+          "Projectile Damage": "Deal 50 damage. Affect a single target at most once.",
+          "Projectile Healing": "Heal 60 health upon unleashing and 30 health when retrieved.",
+          "Projectile Speed": "100 m/s",
+          "Projectile Maximum Flight Duration": "30m",
+          "Self Healing": "35/s",
+          "Self Healing Duration": "Grant 2s of self healing for each target hit",
+          "Dark Darts": "",
+          "Slow Rate": "35%",
+          "Slow Duration": "3s",
+          "Phased State Duration": "2s"
+        },
+        "icon_file": "psylocke/teamups/received_01_light-and-dark-darts.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "MENTAL PROJECTION",
+        "icon": "https://r.res.easebar.com/pic/20260707/eba8851b-232b-40ee-a87e-08327f087e49.png",
+        "partner": "Emma Frost",
+        "base": {
+          "description": "Create an illusory projection that automatically dashes forward to use Psi-Blade Dash, while Psylocke enters Stealth. If Psylocke attacks, the illusion mimics her strikes.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "FLEX UP": "0.5",
+            "Illusion Damage": "30%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Emma Frost, Psylocke's mental powers are elevated, allowing her to reactivate the ability to instantly swap places with her illusion.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "While the illusion exists, reactivate the ability to swap places with the Psionic Illusion, up to once"
+          }
+        },
+        "icon_file": "psylocke/teamups/provided_01_mental-projection.png"
+      },
+      {
+        "name": "LIGHT & DARK DARTS",
+        "icon": "https://r.res.easebar.com/pic/20260707/37c29fd1-fe94-467f-bc70-9ef71cb566e3.png",
+        "partner": "Cloak & Dagger",
+        "base": {
+          "description": "Unleash a ring of Light Darts in all directions that damage enemies and restore Psylocke's Health upon impact, leaving behind a Shadow Domain. Staying inside the domain for a short time will re-enter Stealth.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Projectile Damage": "30",
+            "Healing Amount": "20",
+            "Field Duration": "5s",
+            "Field Range": "6m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Cloak & Dagger, the radius of the Shadow Domain expands, and each time re-entering Stealth, the Light Darts are fired in all directions again.",
+          "stats": {
+            "Key": "C",
+            "Field Range": "8m spherical radius"
+          }
+        },
+        "icon_file": "psylocke/teamups/provided_02_light-and-dark-darts.png"
+      }
+    ]
+  },
+  "source_name": "PSYLOCKE",
+  "uuid": "1c8d092c-74b9-4988-82ba-151a4b4f1308",
+  "article_url": "https://www.marvelrivals.com/20241124/41360_1195754.html",
+  "portrait_files": [
+    "psylocke/portraits/portrait_1.png",
+    "psylocke/portraits/portrait_2.png"
+  ]
+}

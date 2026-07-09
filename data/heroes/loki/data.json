@@ -1,0 +1,228 @@
+{
+  "name": "LOKI",
+  "real_name": "LOKI LAUFEYSON",
+  "role": "STRATEGIST",
+  "description": "What greater thrill is there for a God of Mischief than to outsmart his foes? The cunning trickster Loki uses his illusions and shapeshifting abilities to weave in and out of combat, toying with enemies at every turn.",
+  "lore": "Born the son of Laufey, king of the Frost Giants, Loki was adopted by Odin and raised as a prince of Asgard. But his true nature could not be undone, and Loki would come to fully embrace his role as the God of Mischief. With his father deep in the Odinsleep, Loki seized his chance to take the throne for himself. After enlisting Hela in his plot and hurling his brother Thor into a distant timeline, Loki now harvests Chronovium sap from the World Tree, Yggdrasil, in an effort to conquer the entire timestream.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6 m/s",
+    "Illusion Health": "250",
+    "Illusion Duration": "60",
+    "Maximum Illusion Quantity": "2",
+    "Illusion Damage": "80%",
+    "Illusion Healing": "100%"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/2713ea8e-a65b-46c7-bbc6-eeb96360b22b.png",
+    "https://r.res.easebar.com/pic/20241122/0d7b1dba-f298-438b-93cd-faafd7710e5f.png"
+  ],
+  "forms": [
+    {
+      "name": "LOKI",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6 m/s",
+        "Illusion Health": "250",
+        "Illusion Duration": "60",
+        "Maximum Illusion Quantity": "2",
+        "Illusion Damage": "80%",
+        "Illusion Healing": "100%"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/2713ea8e-a65b-46c7-bbc6-eeb96360b22b.png",
+        "https://r.res.easebar.com/pic/20241122/0d7b1dba-f298-438b-93cd-faafd7710e5f.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Mystical Missile",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/ed396f47-c71d-47d9-b81b-3345b8dc9622.png",
+      "description": "Fire Mystical Missiles to heal allies or deal damage to enemies. Direct hits on allies provide extra healing",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Damage": "The projectile deals no damage, while the spell field inflicts 25 damage per cast",
+        "Range": "3m spherical radius",
+        "Damage Falloff": "Falloff begins at 0.5m, decreasing to 80% at 2.5m",
+        "Projectile Speed": "100 m/s",
+        "Area Of Effect Healing": "40 per hit",
+        "Fire Rate": "1.75 rounds per second",
+        "Ammo": "10",
+        "Critical Hit": "No",
+        "Healing Per Hit": "10 per hit"
+      },
+      "icon_file": "loki/abilities/01_primary_left-click_mystical-missile.png"
+    },
+    {
+      "name": "God of Mischief",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/8348514b-e03f-442b-9aa2-ab90fcd2186a.png",
+      "description": "Shapeshift into a targeted ally or enemy hero and use all their abilities except any of their Team-Up Abilities",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Targeted",
+        "Special Effect": "After transforming, Loki's Ultimate ability will be fully charged. Casting a transformation-type Ultimate ability will extend the duration of God of Mischief until the transformation ability ends",
+        "Duration": "12s",
+        "Energy Cost": "4500"
+      },
+      "icon_file": "loki/abilities/02_ability_q_god-of-mischief.png"
+    },
+    {
+      "name": "Regeneration Domain",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/e7dd8ace-749c-49a0-bc71-bb9c59a8ba2f.png",
+      "description": "Use Rune Stones to create a magical field that provides allies Healing and converts incoming damage into further healing",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Release a spell field at the location of Loki and the Illusion",
+        "Special Effect": "The spell field is sustained by Rune Stones. It will disappear if the Rune Stone is destroyed or if its maximum duration is reached. Allies within the field will receive healing over time, and any damage taken will be converted into healing based on the amount of damage taken",
+        "Range": "A cylindrical spell field with a radius of 5m and a height of 2m",
+        "Duration": "5s",
+        "Conversion Rate": "30%",
+        "Healing Amount": "100/s",
+        "Rune Stone Health": "100",
+        "Cooldown": "30s"
+      },
+      "icon_file": "loki/abilities/03_ability_shift_regeneration-domain.png"
+    },
+    {
+      "name": "Doppelganger",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/ef9f3e86-7ad9-4ad4-8ca5-490d580e567b.png",
+      "description": "Project an Illusion that can cast some of Loki's abilities",
+      "stats": {
+        "Key": "E",
+        "Casting": "Targeted",
+        "Maximum Distance": "30m",
+        "Special Effect": "Project an Illusion at a selected location",
+        "Cooldown": "2 charges, with each charge taking 12s to recharge"
+      },
+      "icon_file": "loki/abilities/04_ability_e_doppelganger.png"
+    },
+    {
+      "name": "Devious Exchange",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/ac0da903-c22d-4471-bff9-d7df0a2a6ba6.png",
+      "description": "Swap with the selected Illusion",
+      "stats": {
+        "Key": "F",
+        "Casting": "Targeted",
+        "Maximum Distance": "30m",
+        "Cooldown": "15s"
+      },
+      "icon_file": "loki/abilities/05_ability_f_devious-exchange.png"
+    },
+    {
+      "name": "Backstab",
+      "slot": "ability",
+      "key": "V",
+      "icon": "https://r.res.easebar.com/pic/20241120/fe10c19c-0649-4c4d-a406-4e7ea9ada27a.png",
+      "description": "Pull out a dagger to stab enemies, dealing extra damage when attacking an enemy from behind",
+      "stats": {
+        "Key": "V",
+        "Casting": "Single-cast Spell Field",
+        "Damage": "Damage: 30; Backstab Damage: +15 (total of 45)",
+        "Range": "3m"
+      },
+      "icon_file": "loki/abilities/06_ability_v_backstab.png"
+    },
+    {
+      "name": "Deception",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/ed974a34-cbea-4529-b613-028bb481b125.png",
+      "description": "Become Invisible and conjure an Illusion to deceive enemies",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Instant Cast",
+        "Special Effect": "Loki leaves an illusion in his place and becomes invisible while continuously healing himself. This invisibility has no time limit, but any actions other than casting Devious Exchange, reloading, or casting Doppelganger will render him visible",
+        "Healing Amount": "Health regenerates at a rate of 20 Health per second while invisible",
+        "Cooldown": "15s"
+      },
+      "icon_file": "loki/abilities/07_ability_right-click_deception.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Deific Blessing",
+        "icon": "https://r.res.easebar.com/pic/20250808/bc864d9a-7a8e-4700-84aa-324d7227de88.png",
+        "description": "Mantis enhances Groot's wooden walls and Loki's Rune Stones with life energy. Groot can additionally unleash a Flower Wall, which, when in Flora Colossus state, restores health to random nearby allies and grants them Damage Reduction. Loki's Rune Stones grant allies within Regeneration Domain a Damage Boost",
+        "stats": {
+          "Key": "Shift",
+          "Range": "A cylindrical spell field with a radius of 6.5m and a height of 2m.",
+          "Maximum Duration for Summons": "5s",
+          "Conversion Rate": "30%",
+          "Healing Amount": "100/s",
+          "Rune Stone Health": "100",
+          "Cooldown": "30s",
+          "Damage Boost": "15%"
+        },
+        "icon_file": "loki/teamups/received_01_deific-blessing.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "VILLAIN'S ILLUSION",
+        "icon": "https://r.res.easebar.com/pic/20260707/f942ae9c-e502-4fe0-b24b-866db0eb2377.png",
+        "partner": "Hela",
+        "base": {
+          "description": "Gain a new ability to target fallen heroes (friend or foe), letting Loki assume their form for a set time (cannot cast their Ultimate Ability).",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "30",
+            "Ability Duration": "6s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hela, Loki's transformation lasts slightly longer. Furthermore, taking lethal damage while transformed or in his Ultimate Ability state will merely revert him back to Loki with a sliver of Health, preventing a KO.",
+          "stats": {
+            "Key": "C",
+            "Ability Duration": "8s",
+            "Health Retained on Death": "150"
+          }
+        },
+        "icon_file": "loki/teamups/provided_01_villain-s-illusion.png"
+      },
+      {
+        "name": "VIBRANT VITALITY",
+        "icon": "https://r.res.easebar.com/pic/20260707/0f945fa6-71e5-4473-a74b-a221898de286.png",
+        "partner": "Hela",
+        "base": {
+          "description": "Gain a new ability to target fallen heroes (friend or foe), letting Loki assume their form for a set time (cannot cast their Ultimate Ability).",
+          "stats": {
+            "Key": "Shift",
+            "Cooldown": "30s",
+            "Summon Health Bar": "100",
+            "Duration": "5s",
+            "Field Range": "6.5m radius",
+            "Damage Boost Rate": "15%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hela, Loki's transformation lasts slightly longer. Furthermore, taking lethal damage while transformed or in his Ultimate Ability state will merely revert him back to Loki with a sliver of Health, preventing a KO",
+          "stats": {
+            "Key": "Shift",
+            "One-Time Damage": "45"
+          }
+        },
+        "icon_file": "loki/teamups/provided_02_vibrant-vitality.png"
+      }
+    ]
+  },
+  "source_name": "LOKI",
+  "uuid": "c6011abe-8d17-4962-ac88-7232dc3d208f",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195662.html",
+  "portrait_files": [
+    "loki/portraits/portrait_1.png",
+    "loki/portraits/portrait_2.png"
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "name": "ULTRON",
+  "real_name": "ULTRON",
+  "role": "STRATEGIST",
+  "description": "The Pinnacle of artificial lifeforms, Ultron is programmed to learn and adapt in ways beyond human capability. He can summon an army of automated drones that obey his every command, arising his chances of victory exponentially.",
+  "lore": "Ultron was designed by Dr. Henry Pym to be the ultimate peacekeeping android. But when his programming determined that mankind was actually its own greatest enemy, Ultron decided to solve the problem by wiping humanity from existence. Due to his genocidal tendencies, Ultron soon found himself banished from Earth by Pym and his fellow Avengers. After spending decades conquering cosmic civilizations, Ultron decided to return to the solar system where he was created when he discovered that a mysterious assailant was attempting to erase all traces of him from the timeline.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250529/74c23e2e-b9c9-4fac-9710-b504921c3617.png",
+    "https://r.res.easebar.com/pic/20250529/33332ec8-b33d-44b5-a600-c5b17194eb34.png"
+  ],
+  "forms": [
+    {
+      "name": "Ultron",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250529/74c23e2e-b9c9-4fac-9710-b504921c3617.png",
+        "https://r.res.easebar.com/pic/20250529/33332ec8-b33d-44b5-a600-c5b17194eb34.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "ENCEPHALO-RAY",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250529/71627fa8-a6b2-4c24-b4f3-8cf7f0a195d3.png",
+      "description": "Unleash a burning energy beam",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "First constant beam; Second single-cast cylindrical spell field",
+        "Ammo": "6",
+        "Damage": "First beam 6 rounds in 0.5s, 12 per hit; second single-cast spell field 75 per hit",
+        "Damage Falloff": "Falloff begins at 20m, decreasing to 75% at 30m",
+        "Fire Rate": "1.58s per round"
+      },
+      "icon_file": "ultron/abilities/01_primary_left-click_encephalo-ray.png"
+    },
+    {
+      "name": "IMPERATIVE: FIREWALL",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250529/da4eebd7-8dfc-406f-adaf-d02ea613d493.png",
+      "description": "Deploy drones to an ally marked by Imperative: Patch, granting them increased Speed and Damage. Additionally, all allies within range of you and the chosen teammate receive Bonus Health.",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Instant Cast",
+        "Bonus Health to Ultron": "65",
+        "Bonus Health to allies near Ultron and the drones": "50",
+        "Cooldown": "12s",
+        "Range": "8m spherical radius spell field",
+        "Bonus Health Falloff Begins at": "3s",
+        "Bonus Health Falloff Speed": "40/s",
+        "Special Effect": "Grant bonus health to Ultron and Allies within range, centered around Ultron and the drones; the selected ally gains a 20% Movement Speed and 10% Damage boost"
+      },
+      "icon_file": "ultron/abilities/02_ability_right-click_imperative-firewall.png"
+    },
+    {
+      "name": "IMPERATIVE: PATCH",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250529/dd94b605-3f0c-4bfc-9fc5-c16ac7b53da2.png",
+      "description": "Command up to 2 giant drones to follow 2 allies, constantly healing allies within its radius, with more healing for the designated allies.",
+      "stats": {
+        "Key": "E",
+        "Casting": "Targeted",
+        "Target Distance": "25m",
+        "Healing Amount to the Targeted ally": "40/s",
+        "Healing Amount to other allies within range": "35/s",
+        "Drone Healing Range": "8m spherical radius spell field",
+        "Maximum Vision": "30m",
+        "Max Tolerance Duration out of Sight": "5s",
+        "Special Effect": "Imperative: Patch can deploy up to 2 drones, allowing support for two allies at once"
+      },
+      "icon_file": "ultron/abilities/03_ability_e_imperative-patch.png"
+    },
+    {
+      "name": "DYNAMIC FLIGHT",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20250529/720ff240-78c6-49fa-92ba-fa695e6b0635.png",
+      "description": "Fly quickly in the direction of movement and then enter an Accelerated state",
+      "stats": {
+        "Key": "Shift",
+        "Casting": "Dash",
+        "Special Effect": "Dynamic Flight can trigger a one-time dash followed by an constant accelerated effect.",
+        "Dash Direction": "Reticle direction combined with key input",
+        "Cooldown": "8s",
+        "Dash Distance": "12m",
+        "Accelerate Duration": "6s",
+        "Movement Boost": "40%",
+        "Bonus Health (Self)": "50"
+      },
+      "icon_file": "ultron/abilities/04_ability_shift_dynamic-flight.png"
+    },
+    {
+      "name": "RAGE OF ULTRON",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250529/4768132e-a560-432e-aa8b-b7fc01d321d9.png",
+      "description": "Summon Ultron Drones to fire Encephalo-Rays, damaging enemies or healing allies",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Straight-line projectile that generates a spell field upon impact.",
+        "Projectile Speed": "120m/s",
+        "Beam Damage": "Ultron's Encephalo-Rays 18, Drone's Encephalo-Rays 12",
+        "Damage Falloff": "Starts at 1.5m after Encephalo-Rays explode, with a max falloff to 50% at 3m",
+        "Beam Healing Amount": "40",
+        "Total Ray Amount": "5",
+        "Ray Amount per Shot": "5",
+        "Fire Interval Between Shots": "0.2s",
+        "Ultimate Total Fire Rounds": "5 rounds",
+        "Fire Interval Between Rounds": "0.5s",
+        "Spell Field Range": "3m spherical radius spell field",
+        "Duration": "9s",
+        "Energy Cost": "4300",
+        "Ultimate Self-healing": "50/s",
+        "Special Effect": "Within the ultimate duration, Ultron grants an Unstoppable effect; Deals 125% damage to Bonus Health"
+      },
+      "icon_file": "ultron/abilities/05_ability_q_rage-of-ultron.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "NANO RAY",
+        "icon": "https://r.res.easebar.com/pic/20250531/0f93894e-5849-474d-b022-c098ba2647f0.png",
+        "description": "When Iron Man, Ultron and Squirrel Girl team up, Ultron's Encephalo-Ray upgrades to Nano-Ray, firing a beam that pierces through all characters, dealing continuous damage to foes while healing allies; Squirrel Girl gains the Squirrel Missile ability. She directs a squirrel to ride Iron Man's nanotech glove as a homing missile. Upon hit, the squirrel flees just before a fiery explosion!",
+        "stats": {
+          "Key": "C",
+          "Casting": "Channeled",
+          "Ammo": "Infinite",
+          "Critical Hit": "No",
+          "Range": "2.5m radius, infinite length cylindrical spell field",
+          "Damage": "70/s",
+          "Damage Falloff": "Falloff begins at 20m, decreasing to 75% at 30m",
+          "Heal": "85/s",
+          "Cooldown": "30s",
+          "Spell Field Duration": "8s"
+        },
+        "icon_file": "ultron/teamups/received_01_nano-ray.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "STARK PROTOCOL",
+        "icon": "https://r.res.easebar.com/pic/20260707/2ade9934-ab7d-4fbe-b16f-506857ece252.png",
+        "partner": "Iron Man",
+        "base": {
+          "description": "Upgrade Encephalo-Ray to Nano-Ray, firing multiple damaging nano-projectiles forward.",
+          "stats": {
+            "Key": "C",
+            "Ability Duration": "8s",
+            "Cooldown": "20s",
+            "Ray Damage": "70/s",
+            "Damage Falloff": "Falloff begins at 20m, decreasing to 75% at 30m",
+            "Ray Healing Amount": "70/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Iron Man, Imperative: Firewall fires powerful homing missiles at enemies in range, causing area damage.",
+          "stats": {
+            "Key": "Right Click",
+            "Missiles Fired": "4",
+            "Missile Explosion Damage Range": "1.5m spherical radius",
+            "Missile Explosion Damage": "10",
+            "Cooldown": "12"
+          }
+        },
+        "icon_file": "ultron/teamups/provided_01_stark-protocol.png"
+      },
+      {
+        "name": "SP//DR SYNC",
+        "icon": "https://r.res.easebar.com/pic/20260707/4886f5af-a7df-4cc4-a010-e4521ca5cb0d.png",
+        "partner": "Peni Parker",
+        "base": {
+          "description": "Apply Imperative: Patch to all allies.",
+          "stats": {
+            "Key": "C",
+            "Ability Duration": "3s",
+            "Cooldown": "15s",
+            "Healing Amount to the Targeted ally": "40/s",
+            "Healing Amount to other allies within range": "35/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Peni Parker, Imperative: Firewall applies to all Drones, allowing the ability effects to be triggered multiple times simultaneously.",
+          "stats": {
+            "Key": "Right Click",
+            "Right-click Cooldown": "12s"
+          }
+        },
+        "icon_file": "ultron/teamups/provided_02_sp-dr-sync.png"
+      }
+    ]
+  },
+  "source_name": "ULTRON",
+  "uuid": "dddc5632-ed86-4312-b8da-1616183fd909",
+  "article_url": "https://www.marvelrivals.com/20250529/41360_1237549.html",
+  "portrait_files": [
+    "ultron/portraits/portrait_1.png",
+    "ultron/portraits/portrait_2.png"
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "name": "GAMBIT",
+  "real_name": "REMY LEBEAU",
+  "role": "STRATEGIST",
+  "description": "Charming and free-spirited, Remy LeBeau manipulates kinetic energy with unmatched skill. With a flick of his wrist, his charged playing cards become explosive projectiles for foes or heal his allies through kinetic shifting. When the charismatic Gambit lights up the battlefield, he always plays to win!",
+  "lore": "Remy LeBeau has the Mutant ability to charge any object with explosive kinetic energy, but his subtler skills as a master thief earned Gambit his notorious reputation. After the Timestream Entanglement crashed Gambit and Rogue's wedding, he struck a deal with the Grandmaster to replace their time-lost rings. Remy would steal a mysterious contract from the Collector in exchange for Chronovium die that would be forged into new wedding bands. Using an intergalactic honeymoon as cover, Gambit never expected his heist to spiral into cosmic chaos!",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20251114/cfdecead-2c7b-4941-b86a-0d64b889f782.jpg",
+    "https://r.res.easebar.com/pic/20251114/27d2bb14-d29e-4a7a-8d74-23725861a0f7.png"
+  ],
+  "forms": [
+    {
+      "name": "Gambit",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20251114/cfdecead-2c7b-4941-b86a-0d64b889f782.jpg",
+        "https://r.res.easebar.com/pic/20251114/27d2bb14-d29e-4a7a-8d74-23725861a0f7.png"
+      ]
+    },
+    {
+      "name": "Gambit",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20251114/fc635792-ab57-42b1-b93f-5f1805d563b0.jpg",
+        "https://r.res.easebar.com/pic/20251114/0b4b1ee8-55f2-4652-96d5-debec1af7fd8.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Kinetic Cards",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20251114/803eab7e-6824-40ba-8439-6852d4d13098.png",
+      "description": "Launch three kinetic-charged cards in an arc ahead. Each card detonates on impact, creating a single-target explosion that damages enemies and heals allies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Cards Launched Per Unleash": "3 cards per unleash",
+        "Angle Between the Side Cards and the Center Card": "2°",
+        "Card Damage": "20 damage per round",
+        "Card Healing": "30 health per round",
+        "Fire Rate": "0.45s per round",
+        "Ammo": "21",
+        "Critical Hit": "No",
+        "Projectile Speed": "150 m/s",
+        "Maximum Distance": "60m"
+      },
+      "icon_file": "gambit/abilities/01_primary_left-click_kinetic-cards.png"
+    },
+    {
+      "name": "Ragin' Royal Flush",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20251114/1dca6707-3f6b-48ef-a180-1f2a6f2f0c6c.png",
+      "description": "Lock onto an ally within sight and unleash multiple Aces that heal and Purify. Both enter the Kinetic Transfer state, granting increased Movement Speed and Jump Boost, while enhancing attacks with additional single-target explosive damage and providing the ally with Ultimate Ability Charge Acceleration",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Targeted",
+        "Energy Cost": "4500",
+        "Range": "Cone shape spell field, angle range: 110°, length: 40m",
+        "Special Effect": "Gambit and the targeted ally receive the Purify and Jump Boost effect.",
+        "One-Time Healing": "100",
+        "Movement Speed Boost Ratio": "30%",
+        "Enhanced Damage Ratio": "20%",
+        "Damage Trigger Interval": "0.5s",
+        "Healing over time": "55/s",
+        "Ultimate Abilities Charge Acceleration Ratio": "20%",
+        "Spell Field Duration": "8s"
+      },
+      "icon_file": "gambit/abilities/02_ability_q_ragin-royal-flush.png"
+    },
+    {
+      "name": "Cajun Charge",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20251114/ac36a353-d40b-4511-a13a-27f14a429c04.png",
+      "description": "Side-step forward with bo staff in hand, dashing a short distance",
+      "stats": {
+        "Key": "Shift",
+        "Casting": "Dash",
+        "Cooldown": "2 charges, with each charge taking 12.5s to recharge.",
+        "Dash Duration": "8m"
+      },
+      "icon_file": "gambit/abilities/03_ability_shift_cajun-charge.png"
+    },
+    {
+      "name": "Healing Hearts",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20251114/6ac2c5f0-a2b1-4c61-9a9d-ad754bf80f8b.png",
+      "description": "Conjure a Heart card by consuming one stack of Sleight of Hand to Heal and switch to the Healing Hearts deck",
+      "stats": {
+        "Key": "E",
+        "Cooldown": "4 charges, with each charge taking 8s to recharge.",
+        "Self Healing": "Heal 20 health per second within duration",
+        "Maximum Duration": "6s",
+        "Special Effect": "Within the duration, consume one stack of Sleight of Hand to use Bridge Boost and Purifying Pick-Up."
+      },
+      "icon_file": "gambit/abilities/04_ability_e_healing-hearts.png"
+    },
+    {
+      "name": "Breaking Spades",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20251114/1ef52531-92a7-4f67-8087-c439b12fd268.png",
+      "description": "Conjure a Spade card by consuming one stack of Sleight of Hand to gain Damage Boost and switch to the Breaking Spades deck",
+      "stats": {
+        "Key": "F",
+        "Cooldown": "4 charges, with each charge taking 8s to recharge",
+        "Self Damage Boost": "10%",
+        "Maximum Duration": "6s",
+        "Special Effect": "Within the duration, consume one stack of Sleight of Hand to use Explosive Trick and Bidding Barrage"
+      },
+      "icon_file": "gambit/abilities/05_ability_f_breaking-spades.png"
+    },
+    {
+      "name": "Bayou Bash",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20251114/c8149d2a-578d-425b-baef-97750a81d644.png",
+      "description": "Channel kinetic energy into the bo staff, then slam it into the ground after a sweeping strike, creating a shockwave that damages nearby enemies and heals allies",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Dash",
+        "Cooldown": "2 charges, with each charge taking 8s to recharge",
+        "Spell Field Range": "5m spherical radius",
+        "Damage": "25 per field",
+        "Healing": "To allies and self: 15/hit",
+        "Big Easy Impact": "",
+        "Dash Distance": "12m",
+        "Spell Field Generation Quantity": "3",
+        "Spell Field Generation Interval": "0.1",
+        "Range": "5m spherical radius"
+      },
+      "icon_file": "gambit/abilities/06_ability_right-click_bayou-bash.png"
+    },
+    {
+      "name": "Bridge Boost",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20251114/c698518d-fcb9-49f7-88e4-6a0fdef24189.png",
+      "description": "While Healing Hearts deck is active, trigger Flush Empowerment to card spring and fire a full deck forward. Cards bounce between allies on impact, granting Health and a Healing Boost",
+      "stats": {
+        "Key": "E",
+        "Casting": "Projectile that fires in a straight trajectory.",
+        "Special Effect": "The projectile automatically tracks allies and will bounce between allies on impact. Bridge Boost bounces on a single target are set to a maximum of 2",
+        "Projectile Speed": "120m/s",
+        "Max Number of Ricochets": "6",
+        "Healing": "50 damage per round",
+        "Healing Boost Ratio": "0.15",
+        "Duration": "4s"
+      },
+      "icon_file": "gambit/abilities/07_ability_e_bridge-boost.png"
+    },
+    {
+      "name": "Purifying Pick-Up",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20251114/4721ac14-6de6-4a2c-ad41-41f66bcf60ef.png",
+      "description": "While Healing Hearts deck is active, trigger Raise Empowerment to launch a cluster of cards in an arc ahead. Explosions heal nearby allies and Purify them",
+      "stats": {
+        "Key": "F",
+        "Casting": "Projectile that generates a spell field upon impact.",
+        "Number of Generated Projectiles": "10",
+        "Projectile Speed": "100 m/s",
+        "Maximum Distance": "15m",
+        "Spell Field Range": "5m spherical radius",
+        "Spell Field Healing": "70 per field",
+        "Special Effect": "The spell field applies Purify to allies upon impact. This can take effect on allies a maximum of 2 times and on himself once."
+      },
+      "icon_file": "gambit/abilities/08_ability_f_purifying-pick-up.png"
+    },
+    {
+      "name": "Explosive Trick",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20251114/fd0e01ed-c52f-47c1-bfcf-cf6f21d7489f.png",
+      "description": "While Breaking Spades deck is active, trigger Flush Empowerment to fire a full set of cards forward. Cards explode on impact, dealing damage while inflicting Reduced Healing",
+      "stats": {
+        "Key": "F",
+        "Casting": "Projectile that generates a spell field upon impact",
+        "Projectile Speed": "150 m/s",
+        "Spell Field Range": "5m spherical radius",
+        "Damage": "70",
+        "Reduced Healing Ratio": "0.25",
+        "Reduced Healing Duration": "4s"
+      },
+      "icon_file": "gambit/abilities/09_ability_f_explosive-trick.png"
+    },
+    {
+      "name": "Bidding Barrage",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20251114/5b36fc07-c4e6-496a-9944-efb824adfe0f.png",
+      "description": "While Breaking Spades deck is active, trigger Raise Empowerment to scattering cards in an arc in all directions. Explosions damage enemies and Launch them up",
+      "stats": {
+        "Key": "E",
+        "Casting": "Projectile that generates a spell field upon impact",
+        "Number of Projectiles": "10",
+        "Projectile Speed": "100 m/s",
+        "Maximum Distance": "15m",
+        "Spell Field Range": "5m spherical radius",
+        "Damage": "70",
+        "Special Effect": "Launch enemies up on hit, which can take effect only once."
+      },
+      "icon_file": "gambit/abilities/10_ability_e_bidding-barrage.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "ACE OF ACES",
+        "icon": "https://r.res.easebar.com/pic/20251114/0e30670c-1902-40f4-94ab-95be6d0bd05b.png",
+        "description": "Gambit charges Magneto's greatsword with kinetic energy. When Magneto activates this ability, Iron Volley is replaced with Ace Greatsword, which detonates upon striking enemies. The explosion leaves residual kinetic energy within the target, inflicting secondary damage after a brief delay",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Healing Boost"
+        },
+        "icon_file": "gambit/teamups/received_01_ace-of-aces.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "FAVORABLE ODDS",
+        "icon": "https://r.res.easebar.com/pic/20260707/20d2953e-5547-49b0-9f28-d0e8af902273.png",
+        "partner": "Magneto",
+        "base": {
+          "description": "Throw two magnetic playing cards forward. Upon hitting the environment or a character, the two cards magnetically repel and unfurl, spinning in place for a duration. They heal allies they hit, while damaging and Launchingenemies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Spell Field Range": "5m spherical radius",
+            "Spell Field Duration": "5s",
+            "Healing Amount": "50/s",
+            "Damage": "50/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Magneto, after the duration ends, the magnetic poles of the two cards reverse. They violently slam back together and explode, providing an extra burst of healing to allies and damage to enemies.",
+          "stats": {
+            "Key": "C",
+            "One-Time Damage": "40",
+            "One-Time Healing": "60"
+          }
+        },
+        "icon_file": "gambit/teamups/provided_01_favorable-odds.png"
+      },
+      {
+        "name": "SPARKLING STAFF",
+        "icon": "https://r.res.easebar.com/pic/20260707/22ac95dc-4dec-42b9-b700-9f4edea63579.png",
+        "partner": "Jubilee",
+        "base": {
+          "description": "Twirl your firework-energy enhanced bo staff. The radiating firework sparks provide healing to nearby allies. Concurrently, the staff deals damage to close-range enemies, and the rapid spinning blocks incoming damage from most projectiles.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Duration": "1.5s",
+            "Damage Spell Field Range": "5m spherical radius",
+            "Damage": "45/s",
+            "Healing Spell Field Range": "8m spherical radius spell field",
+            "Healing Amount": "70/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Jubilee, both Bayou Bashand Big Easy Impactgain an additional Continuous Healingaura.",
+          "stats": {
+            "Key": "Passive",
+            "Bonus Healing": "10/s for 3s"
+          }
+        },
+        "icon_file": "gambit/teamups/provided_02_sparkling-staff.png"
+      }
+    ]
+  },
+  "source_name": "GAMBIT",
+  "uuid": "46e47f1b-a312-4686-ae9f-328318c544dd",
+  "article_url": "https://www.marvelrivals.com/20251114/41360_1270998.html",
+  "portrait_files": [
+    "gambit/portraits/portrait_1.png",
+    "gambit/portraits/portrait_2.png"
+  ]
+}

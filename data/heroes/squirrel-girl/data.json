@@ -1,0 +1,189 @@
+{
+  "name": "SQUIRREL GIRL",
+  "real_name": "DOREEN GREEN",
+  "role": "DUELIST",
+  "description": "Possessing only the powers of a common squirrel, somehow Doreen Green manages to defeat seemingly invincible enemies in the most unexpected ways. Any foe who counts her out is bound to fall at the hands of the Unbeatable Squirrel Girl!",
+  "lore": "Doreen Green is more than just a computer science student at Empire State University. She also happens to have the powers of a squirrel AND the powers of a girl! With her BFFF (Best Furry Friend Forever) Tippy-Toe by her side, Doreen eats nuts and kicks butts as the unbeatable Squirrel-Girl! After the Timestream Entanglement, things got weird…er. With all of New York City under attack by creatures of the night, Squirrel Girl assembled an adorable army to reclaim Central Park from the clutches of Dracula. Here’s hoping vampires don’t like the taste of squirrel!",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241129/43d7e201-1208-47c9-87b3-d8e071aef2da.png",
+    "https://r.res.easebar.com/pic/20241129/c85c73e6-758c-486b-b167-2db9f64593de.png"
+  ],
+  "forms": [
+    {
+      "name": "SQUIRREL GIRL",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241129/43d7e201-1208-47c9-87b3-d8e071aef2da.png",
+        "https://r.res.easebar.com/pic/20241129/c85c73e6-758c-486b-b167-2db9f64593de.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Burst Acorn",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/662dd801-7b3c-4929-bca7-4696b104811d.png",
+      "description": "Shoot bouncing Burst Acorns",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Arced projectile that generates a spell field upon impact",
+        "Projectile Speed": "80 m/s",
+        "Spell Field Range": "3m spherical radius",
+        "Spell Field Damage": "110",
+        "Damage Falloff": "70% falloff at 3m",
+        "Fire Rate": "1.49 acorns per second",
+        "Ammo": "12",
+        "Critical Hit": "No"
+      },
+      "icon_file": "squirrel-girl/abilities/01_primary_left-click_burst-acorn.png"
+    },
+    {
+      "name": "Unbeatable Squirrel Tsunami",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241205/f87d8f38-b7d1-4a62-9aaa-eb00423c38d2.png",
+      "description": "Summon a horde of squirrels to charge forward, dealing damage while bouncing against structures",
+      "stats": {
+        "Key": "Q",
+        "Duration": "10s",
+        "Range": "Length: 3m, Width: 5m, Height: 1.75m",
+        "Damage": "150",
+        "Squirrel Horde Health": "300",
+        "Squirrel Horde Movement Speed": "9 m/s",
+        "Energy Cost": "2800",
+        "Special Mechanic": "The squirrels will rush towards the nearest enemy after bouncing instead of bouncing randomly"
+      },
+      "icon_file": "squirrel-girl/abilities/02_ability_q_unbeatable-squirrel-tsunami.png"
+    },
+    {
+      "name": "Tail Bounce",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241205/cc6be0d3-f369-4fcf-861d-5e0f2594af1a.png",
+      "description": "Rocket upwards with a bounce of her tail",
+      "stats": {
+        "Key": "SHIFT",
+        "Jump Height": "9m",
+        "Cooldown": "8s"
+      },
+      "icon_file": "squirrel-girl/abilities/03_ability_shift_tail-bounce.png"
+    },
+    {
+      "name": "Mammal Bond",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241205/5714be78-0962-47d3-b231-1a3b6d8d98d3.png",
+      "description": "Reload Burst Acorns and can use an ability without cooldown once in a short duration",
+      "stats": {
+        "Key": "E",
+        "Maximum Duration": "5s",
+        "Cooldown": "12s"
+      },
+      "icon_file": "squirrel-girl/abilities/04_ability_e_mammal-bond.png"
+    },
+    {
+      "name": "Squirrel Blockade",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241205/403af848-dda8-42f7-a2a0-b3d0959eeefe.png",
+      "description": "Launch an acorn to unleash Squirrel Guards, Imprisoning the first hit enemy",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Charged projectile with an arced trajectory",
+        "Maximum Charge Time": "1.5s",
+        "Projectile Speed": "20 - 60 m/s (Maximum speed is achieved after 0.7s of charging)",
+        "Damage": "50",
+        "Imprison Duration": "1.33s",
+        "Cooldown": "8s"
+      },
+      "icon_file": "squirrel-girl/abilities/05_ability_right-click_squirrel-blockade.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Squirrel Missile",
+        "icon": "https://r.res.easebar.com/pic/20250711/6a1bbb2e-7ee1-436e-87f0-f23f25f5799e.png",
+        "description": "When Iron Man, Ultron and Squirrel Girl team up, Ultron's Encephalo-Ray upgrades to Nano-Ray, firing a beam that pierces through all characters, dealing continuous damage to foes while healing allies; Squirrel Girl gains the Squirrel Missile ability. She directs a squirrel to ride Iron Man's nanotech glove as a homing missile. Upon hit, the squirrel flees just before a fiery explosion!",
+        "stats": {
+          "Key": "C",
+          "Damage": "75",
+          "Damage Falloff": "Falloff begins at 4m, decreasing to 50% at 8m",
+          "Explosion Range": "8m spherical radius spell field",
+          "Projectile Speed": "40 m/s",
+          "Projectile Radius": "0.5m",
+          "Special Effect": "Automatically track enemies within a horizontal angle of 60°, a vertical angle of 60°, and a maximum distance of 60m",
+          "Cooldown": "20"
+        },
+        "icon_file": "squirrel-girl/teamups/received_01_squirrel-missile.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SQUIRREL MISSILE",
+        "icon": "https://r.res.easebar.com/pic/20260707/6898130b-7de8-4643-8b35-d0e7ce161298.png",
+        "partner": "Iron Man",
+        "base": {
+          "description": "Squirrel Girl gains the Squirrel Missile ability. She directs a squirrel to ride Iron Man's nanotech glove as a homing missile. Upon hit, the squirrel flees just before a fiery explosion.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15",
+            "Damage": "70",
+            "Flight Speed": "40 m/s",
+            "Explosion Range": "8m radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Iron Man, using Squirrel Blockade simultaneously fires a Squirrel Missile.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "When Squirrel Girl uses Squirrel Blockade, she simultaneously launches Squirrel Missiles"
+          }
+        },
+        "icon_file": "squirrel-girl/teamups/provided_01_squirrel-missile.png"
+      },
+      {
+        "name": "ESU ALUMNUS",
+        "icon": "https://r.res.easebar.com/pic/20260707/60a6de26-b98a-4e19-9f2d-557c2c7122c2.png",
+        "partner": "Spider-Man",
+        "base": {
+          "description": "Spider-Man gives Squirrel Girl a web bomb. She can launch it to unleash an explosion upon contact with the environment or an enemy, briefly Slowing and damaging enemies caught in the blast.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Spell Field Range": "4m spherical radius",
+            "Spell Field Damage": "65",
+            "Slow Duration": "3s",
+            "Slow Rate": "35%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Spider-Man, Squirrel Girl receives more Web Fluid. After throwing Webbed Acorn, viscous web fluid coats the ground alongside the explosion, leaving behind a sticky Web Area. Enemies within suffer a continuous Slow that scales into a Stun if they linger too long.",
+          "stats": {
+            "Key": "C",
+            "Web Area Range": "4m spherical radius",
+            "Web Area Damage": "2.5/hit, 10 times per second",
+            "Web Area Duration": "3s",
+            "Special Effect": "Stunned after remaining in the web zone for 2s"
+          }
+        },
+        "icon_file": "squirrel-girl/teamups/provided_02_esu-alumnus.png"
+      }
+    ]
+  },
+  "source_name": "SQUIRREL GIRL",
+  "uuid": "4ed51741-f094-46ef-b5ca-bb2025b15c50",
+  "article_url": "https://www.marvelrivals.com/20241205/41360_1198132.html",
+  "portrait_files": [
+    "squirrel-girl/portraits/portrait_1.png",
+    "squirrel-girl/portraits/portrait_2.png"
+  ]
+}

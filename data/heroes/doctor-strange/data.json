@@ -1,0 +1,226 @@
+{
+  "name": "DOCTOR STRANGE",
+  "real_name": "STEPHEN STRANGE",
+  "role": "VANGUARD",
+  "description": "As the Sorcerer Supreme, Doctor Stephen Strange gracefully wields ancient spells to turn the tide of even the most impossible battle. However, magic always comes at a cost, and each use of his arcane abilities gradually awakens the darkness within him.",
+  "lore": "Respected surgeon Stephen Strange was forced to seek a different path when his hands were injured in a terrible accident. Devoting himself to the mystic arts, Strange became this dimension's first line of defense against supernatural threats — the Sorcerer Supreme. Sensing a massive temporal disturbance, Doctor Strange performed an arcane ritual to protect his reality. The spell failed, and Strange and his Sanctum Sanctorum became trapped within the Mirror Dimension. Lost in the timestream, Strange uses his mystic mastery to free himself for short spans of time in order to join the fight.",
+  "base_stats": {
+    "Health": "650",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/c5e4c859-8b01-48da-9b8f-eb011337b42e.png",
+    "https://r.res.easebar.com/pic/20241122/97cae405-1959-40c2-b401-2be3ff5a7cd6.png"
+  ],
+  "forms": [
+    {
+      "name": "DOCTOR STRANGE",
+      "stats": {
+        "Health": "650",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/c5e4c859-8b01-48da-9b8f-eb011337b42e.png",
+        "https://r.res.easebar.com/pic/20241122/97cae405-1959-40c2-b401-2be3ff5a7cd6.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Daggers of Denak",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/005933a8-1d97-42c6-aac7-27e1bc018038.png",
+      "description": "Cast Daggers of Denak forward",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Five-round delayed hit projectiles",
+        "Projectile Speed": "60 m/s",
+        "Damage": "16",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 80% at 20m",
+        "Fire Rate": "5.56 rounds per second, with a 0.03-second interval between every two rounds",
+        "Ammo": "10 (1 dagger per release)",
+        "Critical Hit": "No"
+      },
+      "icon_file": "doctor-strange/abilities/01_primary_left-click_daggers-of-denak.png"
+    },
+    {
+      "name": "Eye of Agamotto",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/0fd358bd-cf3c-4029-9455-3693bc12cbb5.png",
+      "description": "Separate nearby enemies' Souls from their bodies. Damage dealt to these Souls is transferred to their physical bodies",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Single-cast spell field that surrounds the caster",
+        "Range": "10m spherical radius",
+        "Damage": "60",
+        "Soul Separation Duration": "3s",
+        "Energy Cost": "3100"
+      },
+      "icon_file": "doctor-strange/abilities/02_ability_q_eye-of-agamotto.png"
+    },
+    {
+      "name": "Cloak of Levitation",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/bcd20b65-6414-40bd-9f37-524652c0ed5b.png",
+      "description": "Ascend and then enter a brief state of sustained flight",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Instant Cast",
+        "Dash Distance": "8m",
+        "Free-Flight Duration": "6s",
+        "Cooldown": "12s"
+      },
+      "icon_file": "doctor-strange/abilities/03_ability_shift_cloak-of-levitation.png"
+    },
+    {
+      "name": "Maelstrom of Madness",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/fc0621cc-3ee2-490c-bd45-28986775291c.png",
+      "description": "Release Dark Magic to deal damage to nearby enemies",
+      "stats": {
+        "Key": "E",
+        "Casting": "Single-cast spell field that surrounds the caster",
+        "Range": "8m spherical radius",
+        "Damage": "Each point of Dark Magic deals 1.3 damage",
+        "Cooldown": "6s"
+      },
+      "icon_file": "doctor-strange/abilities/04_ability_e_maelstrom-of-madness.png"
+    },
+    {
+      "name": "Pentagram of Farallah",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/9161c8ab-2eb3-4546-b454-c9d18e0ddad5.png",
+      "description": "Open portals between two locations, enabling all units to travel through them",
+      "stats": {
+        "Key": "F",
+        "Casting": "Multi-segment release",
+        "Duration": "20s",
+        "Cooldown": "180s"
+      },
+      "icon_file": "doctor-strange/abilities/05_ability_f_pentagram-of-farallah.png"
+    },
+    {
+      "name": "Shield of the Seraphim",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/9a8c0b57-316f-42da-bcca-9923be81d771.png",
+      "description": "Create a protective barrier against damage",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Channeled",
+        "Maximum Shield Value": "850",
+        "Recovery Speed": "60/s",
+        "Delayed Recovery After Release": "1s",
+        "Cooldown After Destroyed": "3s"
+      },
+      "icon_file": "doctor-strange/abilities/06_ability_right-click_shield-of-the-seraphim.png"
+    },
+    {
+      "name": "Price of Magic",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/14622714-9438-4212-8a0b-738f282a64bc.png",
+      "description": "Dark Magic accumulates with every hit on an enemy. If Dark Magic peaks for too long, Doctor Strange will be cursed with Anti-Heal",
+      "stats": {
+        "Key": "Passive",
+        "Anti-Heal Activation Delay at Peak Dark Magic": "3s",
+        "Anti-Heal Duration": "2s",
+        "Generate Dark Magic": "Daggers of Denak: Each hit generates 3.5 Dark Magic. When using the V key, every enemy hit generates 10 Dark Magic"
+      },
+      "icon_file": "doctor-strange/abilities/07_passive_passive_price-of-magic.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Enchanted Enhancement",
+        "icon": "https://r.res.easebar.com/pic/20250410/99eb7c66-a521-4b6b-aa54-1048db609e28.png",
+        "description": "Doctor Strange shares his arcane mastery, replacing Scarlet Witch's Chthonian Burst with Mystic Burst upon activation. Hold down the attack button to unleash a rapid, relentless salvo of magical missiles in the target direction",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "Doctor Strange gain 100 Max Health"
+        },
+        "icon_file": "doctor-strange/teamups/received_01_enchanted-enhancement.png"
+      },
+      {
+        "name": "PSIONIC VORTEX",
+        "icon": "https://r.res.easebar.com/pic/20260213/b0dacbcf-e7ec-4ddf-9e37-cc7a6c38d97b.png",
+        "description": "Invisible Woman enhances Doctor Strange's Maelstrom of Madness with a psionic explosion. The explosion damages and pulls enemies toward Doctor Strange. Based on the explosion's damage, Doctor Strange and nearby allies gain Bonus Health",
+        "stats": {
+          "Key": "E",
+          "Cooldown": "6s",
+          "Damage": "Each point of energy deals 1.3 damage.",
+          "Range": "8m spherical radius spell field",
+          "Self Bonus Health Conversion": "0.3",
+          "Ally Bonus Health Conversion": "0.2",
+          "Bonus Max Health": "75",
+          "Special Effect": "The spell field pulls enemies in range toward Doctor Strange"
+        },
+        "icon_file": "doctor-strange/teamups/received_02_psionic-vortex.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "GAMMA MAELSTROM",
+        "icon": "https://r.res.easebar.com/pic/20260707/0cababd3-9e74-4e76-8616-854565db3e76.png",
+        "partner": "Hulk",
+        "base": {
+          "description": "Upgrade Maelstrom of Madness to Gamma Maelstrom. This drastically boosts energy charge rates and removes the Anti-Heal curse.",
+          "stats": {
+            "Key": "E",
+            "Damage": "Each point of Dark Magic deals 1.3 damage.",
+            "Range": "10m spherical radius spell field",
+            "Damage Falloff": "Falloff begins at 6m, decreasing to 75% at 10m",
+            "Cooldown": "8s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hulk, releasing Gamma Maelstrom retains some energy, and stored Gamma energy doesn't decay over time.",
+          "stats": {
+            "Key": "E",
+            "Minimum Energy": "50"
+          }
+        },
+        "icon_file": "doctor-strange/teamups/provided_01_gamma-maelstrom.png"
+      },
+      {
+        "name": "PSIONIC VORTEX",
+        "icon": "https://r.res.easebar.com/pic/20260707/140e1742-13ce-4abf-87a4-cbe44d9c5ff0.png",
+        "partner": "Invisible Woman",
+        "base": {
+          "description": "Upgrade Maelstrom of Madness to Psionic Vortex. Enemies caught in are Launched toward you. Shield of the Seraphim also gains increased shield value.",
+          "stats": {
+            "Key": "E",
+            "Damage": "Each point of Dark Magic deals 1.3 damage.",
+            "Range": "8m spherical radius spell field",
+            "Cooldown": "6s",
+            "Shield of the Seraphim Health Boost": "150",
+            "Special Effect": "The spell field pulls enemies within range toward itself"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Invisible Woman, any damage dealt by Psionic Vortex provides proportional Bonus Health for Doctor Strange.",
+          "stats": {
+            "Key": "E",
+            "Bonus Health (Self)": "0.5",
+            "Ally Bonus Health Conversion Factor": "0.3",
+            "Max Bonus Health": "150"
+          }
+        },
+        "icon_file": "doctor-strange/teamups/provided_02_psionic-vortex.png"
+      }
+    ]
+  },
+  "source_name": "DOCTOR STRANGE",
+  "uuid": "692c786c-08f4-4502-9803-a55f3bc8f83b",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195649.html",
+  "portrait_files": [
+    "doctor-strange/portraits/portrait_1.png",
+    "doctor-strange/portraits/portrait_2.png"
+  ]
+}

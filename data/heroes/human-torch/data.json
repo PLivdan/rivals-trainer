@@ -1,0 +1,247 @@
+{
+  "name": "HUMAN TORCH",
+  "real_name": "JOHNNY STORM",
+  "role": "DUELIST",
+  "description": "The Fantastic Four's resident heartthrob, Johnny Storm, adds an intense flare to every battle he fights. Shrouded in roaring flames, the Human Torch always manages to look cool while turning up the heat!",
+  "lore": "Teenager Johnny Storm joined his sister on the crew of an experimental space mission in hopes of visiting the stars. Instead, he became one, gaining powers and popularity as a member of the world famous Fantastic Four. Able to generate scorching flames, Johnny is the hottest hero in town – the Human Torch. Since darkness fell on New York City, Johnny has been busy burning Dracula's legions with flames brighter than the sun.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6m/s",
+    "Movement Mode": "Flight"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250220/5e03fbf8-d7af-4b59-bd8f-4104cf51236b.png",
+    "https://r.res.easebar.com/pic/20250220/a967317b-f0aa-4598-ae96-c3b97f7c68d7.png"
+  ],
+  "forms": [
+    {
+      "name": "Human Torch",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6m/s",
+        "Movement Mode": "Flight"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250220/5e03fbf8-d7af-4b59-bd8f-4104cf51236b.png",
+        "https://r.res.easebar.com/pic/20250220/a967317b-f0aa-4598-ae96-c3b97f7c68d7.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Fire Cluster",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250220/2afdfcab-b55a-4a18-a47e-9c2a6bb175b8.png",
+      "description": "Launch forward a splittable fireball",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Burst Projectile",
+        "Charges": "6",
+        "Charge Speed": "Instantly recover all Fire Cluster energy after not using Fire Cluster for 1s",
+        "Fire Rate": "0.5s per round",
+        "Projectile Speed": "150m/s",
+        "Shot Damage": "5.5 per round",
+        "Damage Falloff": "Falloff begins at 15m, decreasing to 60% at 20m.",
+        "Crosshair Spread Radius (at 10m)": "0.33m",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "human-torch/abilities/01_primary_left-click_fire-cluster.png"
+    },
+    {
+      "name": "Blazing Blast",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250220/af838642-8301-4f48-b5ea-5c3413c7cb7f.png",
+      "description": "Launch a fireball to create a Flame Field at the targeted area",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Straight-line projectile that generates a spherical spell field upon impact.",
+        "Charges": "3",
+        "Charge Speed": "2.5s per strike",
+        "Blazing Blast Projectile Speed": "80m/s",
+        "Blazing Blast Damage": "45",
+        "Flame Field Range": "3m spherical radius",
+        "Flame Field Duration": "6s",
+        "Flame Field Continuous Damage": "20/s"
+      },
+      "icon_file": "human-torch/abilities/02_ability_right-click_blazing-blast.png"
+    },
+    {
+      "name": "Flaming Meteor",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20250220/e3c91a9a-e174-4309-b2c6-975f0671805a.png",
+      "description": "Dive towards the ground, dealing damage to enemies and detonating any Flame Fields hit",
+      "stats": {
+        "Key": "F",
+        "Max Dash Speed": "80m/s",
+        "Range": "5m spherical radius",
+        "Damage": "40",
+        "Flame Field Detonation Range": "3m spherical radius",
+        "Flame Field Detonation Damage": "55",
+        "Bonus Health": "50",
+        "Cooldown": "15s"
+      },
+      "icon_file": "human-torch/abilities/03_ability_f_flaming-meteor.png"
+    },
+    {
+      "name": "Plasma Body",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20250220/bed6bb7e-ac4e-4b83-b75f-32b4c02b3249.png",
+      "description": "Enter a state of accelerated ascent",
+      "stats": {
+        "Key": "SHIFT",
+        "Movement Boost": "2.5m/s",
+        "Duration": "4s",
+        "Maximum Distance": "10m",
+        "Cooldown": "2 charges, with each charge taking 8s to recharge"
+      },
+      "icon_file": "human-torch/abilities/04_ability_shift_plasma-body.png"
+    },
+    {
+      "name": "Pyro-Prison",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250220/d20f2e24-4f10-4fd8-a3a9-73b2920b27ee.png",
+      "description": "Form a fire wall between Fire Fields to burn enemies",
+      "stats": {
+        "Key": "E",
+        "Max Link Distance": "40m",
+        "Max Link Height": "2m",
+        "Fire Wall Duration": "5s",
+        "Fire Wall Damage": "65",
+        "Pyro-Prison Continuous Damage": "40/s",
+        "Cooldown": "15s"
+      },
+      "icon_file": "human-torch/abilities/05_ability_e_pyro-prison.png"
+    },
+    {
+      "name": "Supernova",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250220/49ec9ee0-bff0-41c5-944f-ff679966e4d4.png",
+      "description": "Explode with cosmic fire to deal damage to enemies within range. Upon skill activation, all Flame Fields will transform into Flame Tornadoes, dealing extra damage",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3400",
+        "Duration": "8s",
+        "Activation Shock Wave Range": "20m spherical radius",
+        "Activation Wave Damage": "75",
+        "Flame Tornado Unleash Speed": "0.7s per use",
+        "Flame Tornado Range": "3m spherical radius; 8m high capsule-shaped spell field.",
+        "Flame Tornado Continuous Damage": "110/s",
+        "Supernova Damage Reduction": "-30%"
+      },
+      "icon_file": "human-torch/abilities/06_ability_q_supernova.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Storm Siblings",
+        "icon": "https://r.res.easebar.com/pic/20250220/d6c32fd9-64ab-4b65-9092-0f7c95ebe95a.png",
+        "description": "The Invisible Woman taps into her powers, channeling Psionic Might to fortify the entire Fantastic Four team, granting damage resistance. Once activated, they can continually generate Bonus Health, making up for lost Health",
+        "stats": {
+          "Key": "C",
+          "Duration": "5s",
+          "Cooldown": "25s",
+          "Bonus Health Growth": "Generate 5 Bonus Health per 0.1s",
+          "Bonus Max Health": "100",
+          "Team-Up Target": "Invisible Woman"
+        },
+        "icon_file": "human-torch/teamups/received_01_storm-siblings.png"
+      },
+      {
+        "name": "Pyrokinetic Energy",
+        "icon": "https://r.res.easebar.com/pic/20250712/b61ccad0-a950-4723-ae31-1f4e52f0d330.png",
+        "description": "Human Torch stores Pyrokinetic Energy in Spider-Man's suit, enabling him to unleash an Inferno Blast that sprays a fiery web while performing a backflip to create distance. The flames damage enemies and apply a Burn-Tracer. Detonating these Burn-Tracers inflicts Damage Over Time",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Damage Boost"
+        },
+        "icon_file": "human-torch/teamups/received_02_pyrokinetic-energy.png"
+      },
+      {
+        "name": "Two In One",
+        "icon": "https://r.res.easebar.com/pic/20250730/99129fb5-1ec9-4589-99b4-9df1d892ab9b.png",
+        "description": "Human Torch can lift The Thing into the air and slam him down, dealing damage, launching enemies, and creating a zone that disables mobility abilities",
+        "stats": {
+          "Key": "X",
+          "Cooldown": "Successfully interacted: 30s; fail to interact: 3s",
+          "Maximum Distance": "20m",
+          "Flight Speed": "15m/s",
+          "Slam Down Initial Horizontal Velocity": "15m/s",
+          "Maximum Flight Duration": "8s",
+          "Damage": "Launch-up spell field causes 30 damage; mobility abilities disabling spell field causes 15 damage per second",
+          "Launch Up Range": "A cylindrical spell field with a radius of 8m and a height of 1m",
+          "Mobility Abilities Disabling Range": "A cylindrical spell field with a radius of 8m and a height of 8m"
+        },
+        "icon_file": "human-torch/teamups/received_03_two-in-one.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "FIERY SPARKS",
+        "icon": "https://r.res.easebar.com/pic/20260707/ab39a06d-c3b7-4350-9276-d4d275bf8ad8.png",
+        "partner": "Jubilee",
+        "base": {
+          "description": "Passively detect enemies in the immediate vicinity and launch tracking Sparks to chip away their health.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Ability Duration": "5s",
+            "Spell Field Range": "10m spherical radius",
+            "Tick Rate": "0.1s per use",
+            "Spark Damage": "9 per round"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Jubilee, successfully landing a Firework Spark on an enemy grants Human Torch Bonus Health.",
+          "stats": {
+            "Key": "C",
+            "Bonus Health Gain through Sparks": "4 per round"
+          }
+        },
+        "icon_file": "human-torch/teamups/provided_01_fiery-sparks.png"
+      },
+      {
+        "name": "STORMING IGNITION",
+        "icon": "https://r.res.easebar.com/pic/20260707/fe0fe0de-af81-46a9-91e1-9316cb519c2d.png",
+        "partner": "Storm",
+        "base": {
+          "description": "Unleash a storm-driven blaze of fire forward, generating a persistent Fire Vortex upon impact that continuously damages and pulls in enemies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Single-cast Spell Field": "30",
+            "Damage Over Time": "5/hit, 5 times per second",
+            "Spell Field Duration": "4s",
+            "Spell Field Range": "5m radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Storm, her Omega Hurricane ignites into a Burning Hurricane if it crosses a Flame Tornado. Furthermore, any Omega Hurricane, Jeff-Nado, or Flame Tornado that sweeps across a Flame Field left by Human Torch will instantly generate a new Flame Tornado.",
+          "stats": {
+            "Key": "Passive",
+            "Flame Nado Damage": "35/hit, 2 times per second",
+            "Flame Tornado Range": "3m radius, 6m height",
+            "Burning Hurricane Damage": "75 damage per hit, 2 hits per second",
+            "Duration Increase from Passing Through Flame Field": "3s",
+            "Burning Hurricane Max Duration": "11s",
+            "Burning Hurricane Radius": "10m"
+          }
+        },
+        "icon_file": "human-torch/teamups/provided_02_storming-ignition.png"
+      }
+    ]
+  },
+  "source_name": "HUMAN TORCH",
+  "uuid": "f0ec2612-649f-48bb-a18b-48ef1fe9ba56",
+  "article_url": "https://www.marvelrivals.com/20250220/41360_1213050.html",
+  "portrait_files": [
+    "human-torch/portraits/portrait_1.png",
+    "human-torch/portraits/portrait_2.png"
+  ]
+}

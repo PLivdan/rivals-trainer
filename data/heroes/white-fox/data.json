@@ -1,0 +1,292 @@
+{
+  "name": "WHITE FOX",
+  "real_name": "AMI HAN",
+  "role": "STRATEGIST",
+  "description": "Ami Han, the last of the legendary Kumiho, can summon her ancestral Nine-Tailed Power to fortify herself and heal her allies on the battlefield. As the calm and capable Director of Tiger Division, she is any team's unwavering backbone, no matter the foe.",
+  "lore": "As the last in a long line of Kumiho, Ami Han was gifted with the mystical abilities of the legendary nine-tailed fox. She uses her powers as both the super hero codenamed White Fox and the Director of South Korea's superhuman intelligence agency, Tiger Division. While working to contain the Timestream Entanglement, White Fox attempted to collaborate with New York's Mayor, Wilson Fisk. But when Fisk started arresting heroes, including White Fox's ally Luna Snow, he crossed a line. Determined to stop Fisk, White Fox set her sights on New York.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260320/58155295-3cd7-4c75-a1fc-954e0d274abe.jpg",
+    "https://r.res.easebar.com/pic/20260320/7962ef7e-a722-41f0-a050-b80bf0ad95b0.png"
+  ],
+  "forms": [
+    {
+      "name": "White Fox",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260320/58155295-3cd7-4c75-a1fc-954e0d274abe.jpg",
+        "https://r.res.easebar.com/pic/20260320/7962ef7e-a722-41f0-a050-b80bf0ad95b0.png"
+      ]
+    },
+    {
+      "name": "White Fox",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260320/f39b3026-df3c-4738-bb69-fa278f281189.jpg",
+        "https://r.res.easebar.com/pic/20260320/0a86c37d-285f-4ff6-82d0-9c4b13b359e5.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "YEOWOO GUSEUL",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260320/c58d434c-4789-4937-961d-d27e5a1f80ef.png",
+      "description": "Fire a Fox Marble forward that bounces off terrain or heroes, then homes in on nearby heroes. It damages enemies, heals allies, and restores Spirit Tail energy",
+      "stats": {
+        "Key": "Left Click",
+        "Projectile Speed": "120m/s",
+        "Bounce Projectile Speed": "80m/s",
+        "Maximum Distance": "35m",
+        "Bounce Projectile Max Distance": "6m",
+        "Healing Amount": "Direct hit: 50 per round; bounce hit: 35 per round",
+        "Damage": "Direct hit: 40 per round; bounce hit: 25 per round",
+        "Fire Rate": "0.45s per round"
+      },
+      "icon_file": "white-fox/abilities/01_primary_left-click_yeowoo-guseul.png"
+    },
+    {
+      "name": "CLAW STRIKE",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260320/e738e469-d755-4bf3-93ae-0b5a252443ca.png",
+      "description": "While Awakened, slash forward with a flurry of attacks",
+      "stats": {
+        "Key": "Left Click",
+        "Attack Interval": "0.45s per use",
+        "Damage": "35 per hit",
+        "Attack Range": "4m"
+      },
+      "icon_file": "white-fox/abilities/02_primary_left-click_claw-strike.png"
+    },
+    {
+      "name": "SPECTRAL SURGE",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260320/19bc9c00-28b2-4cb5-810c-183a9635f49b.png",
+      "description": "Consume one Spirit Tail to send a spectral fox forward. It heals and grants invulnerability to allies it passes through, damages and Charms enemies, forcing foes to move toward White Fox",
+      "stats": {
+        "Key": "Right Click",
+        "Projectile Speed": "60m/s",
+        "Damage/Healing Radius": "3m",
+        "Charm/Invincibility Radius": "0.6m",
+        "Damage": "65",
+        "Healing Amount": "65",
+        "Cooldown": "6s",
+        "Charm Duration": "0.4s",
+        "Allies' Invincibility Duration": "0.4s",
+        "Maximum Distance": "35m",
+        "Self Healing Amount": "50"
+      },
+      "icon_file": "white-fox/abilities/03_ability_right-click_spectral-surge.png"
+    },
+    {
+      "name": "FOX FORM AWAKENING",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260320/72a48398-8002-4dfa-9056-24f73c76bc01.png",
+      "description": "Enter Awakened state, transforming Spirit Tails into physical tails. While active, continuously drain Spirit Tail energy and heal nearby allies. Striking enemies provides additional area healing",
+      "stats": {
+        "Key": "E",
+        "Cooldown": "15s",
+        "Attack Generated Healing Spell Field Range": "10m radius spherical spell field",
+        "Healing Amount": "25/s",
+        "Healing Spell Field That Surrounds the Caster": "10m radius spherical spell field",
+        "Ability Duration": "Transform 3 tails: 9s; 2 tails: 8s; 1 tail: 7s"
+      },
+      "icon_file": "white-fox/abilities/04_ability_e_fox-form-awakening.png"
+    },
+    {
+      "name": "SPIRIT SANCTUARY",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260320/a69660c4-0140-4d93-b09e-88695bef6c4b.png",
+      "description": "Teleport to a chosen ally, instantly healing allies in the area while generating a shield",
+      "stats": {
+        "Key": "Shift",
+        "Cooldown": "15s",
+        "Summon Health": "200",
+        "One-time Healing Amount": "50",
+        "Maximum Distance": "30m",
+        "Healing Spell Field Range": "5m radius spherical spell field",
+        "MAXIMUM DURATION FOR SUMMONS": "5s",
+        "Special Effect": "While the shield is active, it provides 20/s Healing Over Time to allies (including White Fox) within the shield's range"
+      },
+      "icon_file": "white-fox/abilities/05_ability_shift_spirit-sanctuary.png"
+    },
+    {
+      "name": "TAIL SWEEP",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260320/5c67a6c1-758c-467c-a4de-62f8fcf8ac11.png",
+      "description": "While Awakened, sweep forward tails to launch up hit enemies",
+      "stats": {
+        "Key": "Right Click",
+        "Cooldown": "3s",
+        "Attack Range": "5m",
+        "DAMAGE": "50"
+      },
+      "icon_file": "white-fox/abilities/06_ability_right-click_tail-sweep.png"
+    },
+    {
+      "name": "Predatory Pounce",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260320/5f574241-b3e7-46e1-83c5-658beb3885c9.png",
+      "description": "While Awakened, dash forward. Hit an enemy to slow them, enabling a second dash that knocks back enemies",
+      "stats": {
+        "Key": "Shift",
+        "Cooldown": "6s",
+        "Dash Duration": "15m",
+        "Damage": "40",
+        "Predatory Pounce Second Unleash": ""
+      },
+      "icon_file": "white-fox/abilities/07_ability_shift_predatory-pounce.png"
+    },
+    {
+      "name": "KUMIHO UNLEASHED",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260320/b089d7a9-c6dd-46d3-a000-4c0954353ad4.png",
+      "description": "Manifest the full Nine-Tailed Fox form and continuously heal nearby allies. Cannot receive healing effects from others while in this form",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "4800",
+        "Maximum Health": "1200",
+        "Continuous Healing Spell Field Range": "10m radius spherical spell field",
+        "Healing Amount": "85/s"
+      },
+      "icon_file": "white-fox/abilities/08_ability_q_kumiho-unleashed.png"
+    },
+    {
+      "name": "NINEFOLD SLAM",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260320/246d56d8-a7ff-40e7-ace5-01c0fd4b9a66.png",
+      "description": "In Kumiho Form, slam the ground, causing an explosive shockwave. Hitting enemies or summons grants One-Time Healing to self and nearby allies",
+      "stats": {
+        "Key": "Left Click",
+        "Max Attack Range": "5m",
+        "Damage": "50 per hit",
+        "Explosion Damage": "50 per hit",
+        "Attack Interval": "1 per second",
+        "Attack Generated Healing Spell Field Range": "10m radius spherical spell field",
+        "Explosion Spell Field Range": "6m radius spherical spell field",
+        "Healing Amount": "100 per hit"
+      },
+      "icon_file": "white-fox/abilities/09_primary_left-click_ninefold-slam.png"
+    },
+    {
+      "name": "BLESSED BY THE NINE",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260320/36acf930-5edb-4ccb-b782-333bc20b2050.png",
+      "description": "In Kumiho Form, select an ally to grant Continuous Healing, Unstoppable, and Life-Steal for a short time",
+      "stats": {
+        "Key": "Right Click",
+        "Maximum Select Distance": "50m",
+        "Healing Over Time Amount": "40/s",
+        "Unstoppable State Duration": "3s",
+        "Life-steal Ratio": "0.25",
+        "Cooldown": "2s"
+      },
+      "icon_file": "white-fox/abilities/10_ability_right-click_blessed-by-the-nine.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "SPIRIT FOX WARD",
+        "icon": "https://r.res.easebar.com/pic/20260320/4e7caa04-0fb0-4310-87b4-4754473e6016.png",
+        "description": "White Fox grants Luna Snow a spirit fox for protection. Luna can activate it for a burst of speed and fire it forward, healing allies in its path while applying Charm to enemies",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "10% Healing Boost"
+        },
+        "icon_file": "white-fox/teamups/received_01_spirit-fox-ward.png"
+      },
+      {
+        "name": "NINE-TAILED AURA",
+        "icon": "https://r.res.easebar.com/pic/20260416/dba9f061-232b-4cca-8797-cf61c520201e.png",
+        "description": "Black Cat shares her luck with her allies. When White Fox embraces her newfound fortune, she unleashestracking Spirit Tails to grant Healing and Speed to allies, while damaging and Slowing foes. When Captain America enjoys his luck, his shield's block radius expands and allows him to aim deflectedProjectiles directly toward his target",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "20",
+          "Range": "10m spherical radius spell field",
+          "Movement Boost": "30% for 2s",
+          "Slow Effect": "30% for 2s",
+          "One-Time Healing": "60",
+          "One-Time Damage": "40",
+          "Passive Energy Recover": "1"
+        },
+        "icon_file": "white-fox/teamups/received_02_nine-tailed-aura.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "LUCKY LOAN",
+        "icon": "https://r.res.easebar.com/pic/20260707/c24c30e5-4565-426b-9057-4f364141e8d8.png",
+        "partner": "",
+        "base": {
+          "description": "White Fox receives an Orb of Life from Black Cat. Upon use, it recovers Spirit Tail energy and converts life energy into Nine-Tailed Aura that shoots out in all directions. This automatically tracks nearby allies and enemies, granting Speed and Healing to allies while damaging and Slowing enemies. nhanced Effect: When teaming up with Black Cat, using the Orb triggers a state where Spirit Tail Energy is no longer consumed for a duration, allowing free use of Spectral Surge and Fox Form Awakening.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "25s",
+            "Spell Field Duration": "5s",
+            "Damage": "10/s",
+            "Healing Amount": "15/s",
+            "Slow Rate": "20% for 2s",
+            "Movement Boost": "20% for 2s",
+            "Passive Energy Recover": "1"
+          }
+        },
+        "enhanced": {
+          "description": "",
+          "stats": {
+            "Key": "C",
+            "Duration": "6s"
+          }
+        },
+        "icon_file": "white-fox/teamups/provided_01_lucky-loan.png"
+      },
+      {
+        "name": "PSIONIC FOX",
+        "icon": "https://r.res.easebar.com/pic/20260707/4024cb41-c977-4e64-abc3-f57f3763888e.png",
+        "partner": "Psylocke",
+        "base": {
+          "description": "Activating Fox Form Awakening no longer consumes Spirit Tail energy, and grants the maximum possible duration immediately upon use.",
+          "stats": {
+            "Key": "Passive",
+            "Fox Form Awakening CD": "15s",
+            "Duration": "10s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Psylocke, the cooldown for Fox Form Awakening is drastically reduced.",
+          "stats": {
+            "Key": "Passive",
+            "Fox Form Awakening CD": "12s"
+          }
+        },
+        "icon_file": "white-fox/teamups/provided_02_psionic-fox.png"
+      }
+    ]
+  },
+  "source_name": "WHITE FOX",
+  "uuid": "bff0c7c6-3042-4384-8735-7ec6354baa1e",
+  "article_url": "https://www.marvelrivals.com/20260320/41360_1292187.html",
+  "portrait_files": [
+    "white-fox/portraits/portrait_1.png",
+    "white-fox/portraits/portrait_2.png"
+  ]
+}

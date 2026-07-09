@@ -1,0 +1,257 @@
+{
+  "name": "ELSA BLOODSTONE",
+  "real_name": "ELSA BLOODSTONE",
+  "role": "DUELIST",
+  "description": "Born into a line of legendary monster hunters, Elsa Bloodstone boasts incredible physical prowess and an innate talent for subduing the creepiest of creatures. The instinct to hunt is in her blood, and every foe she faces inevitably becomes prey ensnared in her traps!",
+  "lore": "\"Born into a long line of monster hunters, Elsa Bloodstone uses her mystic Bloodgem to boost her strength and longevity as she attempts to live up to her family's proud legacy. After what seemed like an eternity hunting demons and monsters in her own collapsing timeline, Elsa was recruited by the Collector to capture rare and dangerous creatures from other realities. When her new partner, Deadpool, went rogue, Elsa was sent to restore order… only to discover that Deadpool had unleashed all the monsters in the Collector's Museum. What fun!",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260210/8673c2ec-3c57-478e-9591-c57a637a9841.jpg",
+    "https://r.res.easebar.com/pic/20260211/f3a5d2df-b4d8-49e0-a413-c763e10b3cb2.png"
+  ],
+  "forms": [
+    {
+      "name": "ELSA BLOODSTONE",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260210/8673c2ec-3c57-478e-9591-c57a637a9841.jpg",
+        "https://r.res.easebar.com/pic/20260211/f3a5d2df-b4d8-49e0-a413-c763e10b3cb2.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "DOUBLE-BARREL BLASTER",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260210/8a132243-9cec-4ed8-aa27-f374bc58d1a7.png",
+      "description": "Fire your shotgun forward",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Shotgun projectiles that hit instantly",
+        "Damage": "4.5 per round",
+        "Damage Falloff": "Falloff begins at 20m, decreasing to 70% at 30m",
+        "Bullets Fired Each Cast": "10",
+        "Crosshair Spread Radius(at 10m)": "0.13m",
+        "Fire Rate": "The firing interval between shots is 0.12s, with an interval of 0.8s between each round of shooting",
+        "Ammo": "12",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "elsa-bloodstone/abilities/01_primary_left-click_double-barrel-blaster.png"
+    },
+    {
+      "name": "MONSTER-PIERCER",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260210/ff430438-d356-492c-bd28-2c68160d3a7a.png",
+      "description": "Unleash your elephant gun forward. Bullets pierce enemies and deal high damage",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Shotgun projectiles that hit instantly",
+        "Damage": "13+0.8% of enemy's maximum health",
+        "Bullets Fired Each Cast": "5",
+        "Crosshair Spread Radius (at 10m)": "6m",
+        "Critical Hit": "No"
+      },
+      "icon_file": "elsa-bloodstone/abilities/02_primary_left-click_monster-piercer.png"
+    },
+    {
+      "name": "INHERITED INSTINCT",
+      "slot": "passive",
+      "key": "PASSIVE",
+      "icon": "https://r.res.easebar.com/pic/20260210/4b228e3f-c80f-4bd7-903f-c38148164bd9.png",
+      "description": "Dealing damage increases hunting Instinct. Defeating enemies caught by Smoky Snare grants additional Instinct. Higher Instinct reduces the cooldown of Helix Advance",
+      "stats": {
+        "Key": "PASSIVE",
+        "Instinct from KOs": "100",
+        "Additional Instinct from KOs Caught by Smoky Snare": "200",
+        "Damage/Instinct Conversion Rate": "0.009",
+        "Special Effect 1": "Instinct levels up when it reaches 100, up to 3 levels",
+        "Special Effect 2": "For each Instinct level gained, reduce the cooldown of Helix Advance by 2s"
+      },
+      "icon_file": "elsa-bloodstone/abilities/03_passive_passive_inherited-instinct.png"
+    },
+    {
+      "name": "RUTHLESS PURSUIT",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260210/d3e00685-1ad7-4e9d-a9cc-4d176abfdf09.png",
+      "description": "Dash forward, gaining Bonus Health and launching enemies hit. Follow up with a Double-Barrel Blaster shot that propels you backward and Slows enemies. Using either stage empowers your next Double-Barrel Blaster, transforming it into Monster-Piercer",
+      "stats": {
+        "Key": "E",
+        "Casting": "Movement-based damage ability",
+        "Max Dash Speed": "40m/s",
+        "Max Dash Duration": "0.3s",
+        "Damage": "30",
+        "Cooldown": "8s",
+        "Special Effect 1": "Launch up enemies hit, and activate the follow up in 5s",
+        "Special Effect 2": "Using either stage empowers your next Double-Barrel Blaster, transforming it into Monster-Piercer",
+        "Bonus Health": "Every unleash of Ruthless Pursuit and Helix Advance grants 30 bonus health. Max bonus health is 75",
+        "Follow Up": "",
+        "Max Damage Distance": "8m",
+        "Dash Speed": "15 m/s"
+      },
+      "icon_file": "elsa-bloodstone/abilities/04_ability_e_ruthless-pursuit.png"
+    },
+    {
+      "name": "HELIX ADVANCE",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260210/d5490ea6-b478-4c97-9ef7-20621038e83e.png",
+      "description": "Dash forward. Your next Double-Barrel Blaster becomes Monster-Piercer",
+      "stats": {
+        "Key": "Shift",
+        "Max Dash Speed": "27.5m/s",
+        "Max Dash Duration": "0.28s",
+        "Special Effect": "In 6s after unleashing Helix Advance, the next Double-Barrel Blaster becomes Monster-Piercer",
+        "Special Effect 2": "Every unleash of Ruthless Pursuit and Helix Advance grants 30 bonus health. Max bonus health is 75",
+        "Cooldown": "11s"
+      },
+      "icon_file": "elsa-bloodstone/abilities/05_ability_shift_helix-advance.png"
+    },
+    {
+      "name": "LIVING BULLET",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260210/4931ed8c-267e-4117-bc98-174750ceebdf.png",
+      "description": "Fire a Living Bullet round that splits upon impact, seeking nearby enemies and marking each with a Spectral Sigil. Hitting marked targets with Double-Barrel Blaster or Monster-Piercer grants Elsa a brief Speed boost. Living Bullets deal extra damage to shields and enemies with Bonus Health",
+      "stats": {
+        "Key": "Right Click",
+        "Projectile Speed": "60m/s",
+        "Projectile Damage": "60",
+        "Special Effect 1": "After hits an enemy, the projectile splits to several bullets to trace the enemies in range",
+        "Tracing Range": "8m radius spherical spell field",
+        "Maximum Splits": "3",
+        "Cooldown": "8s",
+        "Special Effect 2": "Projectile deals 40 extra damage to shields and enemies with bonus health",
+        "Speed Boost": "Increase movement speed by 40% for 1s"
+      },
+      "icon_file": "elsa-bloodstone/abilities/06_ability_right-click_living-bullet.png"
+    },
+    {
+      "name": "SMOKY SNARE",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260210/a23b9d06-1993-42ec-91af-c2e44696ba07.png",
+      "description": "Launch a trap containing the monster Diablo. Once deployed, it becomes Invisible and Invulnerable. When an enemy triggers it, Diablo Immobilizes and Damages them. Use to dash to the trapped enemy. Enemies can destroy Diablo to break free",
+      "stats": {
+        "Key": "F",
+        "Cooldown": "12s",
+        "Trap Health": "100",
+        "Maximum Immobilizing Duration": "1.2s",
+        "Special Effect 1": "The trap becomes Invisible and Invulnerable after one-second deployment",
+        "Triggered Trap Damage": "Cause 5 damage every 0.2s, last 1.2s",
+        "Summons' Health": "50",
+        "Special Effect 2": "Defeat the summon to end the Immobolized state early",
+        "Special Effect 3": "Elsa can dash to the enemy who triggers the trap",
+        "Maximum Select Distance": "30m",
+        "Maximum Dash Duration": "0.25s",
+        "Maximum Dash Speed": "60m/s"
+      },
+      "icon_file": "elsa-bloodstone/abilities/07_ability_f_smoky-snare.png"
+    },
+    {
+      "name": "APEX PREDATOR",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260210/baae636a-b026-4d93-b08f-3185544fbeb3.png",
+      "description": "Summon the Glartrox to charge forward. The Glartrox can be recalled to charge back toward Elsa. When colliding with terrain or upon return, it bites fiercely, dealing heavy damage",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3400",
+        "Glartrox Health": "400",
+        "Glartrox Seize Damage": "75",
+        "Glartrox Bite Damage": "125",
+        "Special Effect 1": "Enemies seized by Glartrox cannot use their abilities until it stops moving",
+        "Special Effect 2": "Elsa can recall Glartrox at any time",
+        "Special Effect 3": "When the Glartrox collides with terrain, returns, or reaches its maximum dash duration, it bites fiercely, dealing massive damage. If Glartrox is defeated, the bite will not be triggered",
+        "Glartrox Movement Speed": "15m/s",
+        "Glartrox Maximum Dash Duration": "Maximum durations for dashing and returning are 3.5s each",
+        "Special Effect": "Glartrox cannot be critical hit. Drag 8 targets at most"
+      },
+      "icon_file": "elsa-bloodstone/abilities/08_ability_q_apex-predator.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "BLOODSTONE'S BOOMBOX BULLETS",
+        "icon": "https://r.res.easebar.com/pic/20260210/ef8a763c-f6b0-4c09-9217-37d1796495c2.png",
+        "description": "Deadpool hands Jeff the Land Shark a plushie. Jeff can spit it ahead where it'll continuously Taunt nearby enemies and Block Vision, while allies in range are healed! Elsa Bloodstone's Living Bullet changes to special rounds that Taunt targets with Deadpool's chatter, while Slowing, and damaging nearby enemies over time. Elsa can recall the rounds to heal based on damage dealt",
+        "stats": {
+          "Key": "Right Click",
+          "Projectile Speed": "60m/s",
+          "Projectile Damage": "First hit: 60; second hit: 40",
+          "Second Hit Damage Over Time": "20/s for 2s",
+          "Slow Effect": "Reduce movement speed by 35% for 2s",
+          "Taunt Duration": "2s",
+          "Damage/Healing Conversion Rate": "30%"
+        },
+        "icon_file": "elsa-bloodstone/teamups/received_01_bloodstone-s-boombox-bullets.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "PREHISTORIC TRAP",
+        "icon": "https://r.res.easebar.com/pic/20260707/7b140954-fe5f-460d-8dac-dcd7117a1d72.png",
+        "partner": "Devil Dinosaur",
+        "base": {
+          "description": "After deploying the Smoky Snare trap, Diablo will monitor the area. If enemies approach, Diablo Immobilizes and Damages them. He also releases a lethal gas, causing continuous area damage.",
+          "stats": {
+            "Key": "F",
+            "Trap Trigger Range": "5m radius",
+            "Trap Damage": "30",
+            "Lethal Gas Range": "3m radius",
+            "Lethal Gas Duration": "2s",
+            "Lethal Gas Damage": "35/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Devil Dinosaur, Elsa can store and deploy two Smoky Snares.",
+          "stats": {
+            "Key": "F",
+            "Special Effect": "Up to 2 Smoky Snares can exist on the field simultaneously"
+          }
+        },
+        "icon_file": "elsa-bloodstone/teamups/provided_01_prehistoric-trap.png"
+      },
+      {
+        "name": "LOUDMOUTH MERCS",
+        "icon": "https://r.res.easebar.com/pic/20260707/af656e28-bd0f-4774-944e-35f8234caa2c.png",
+        "partner": "Deadpool",
+        "base": {
+          "description": "Living Bullet changes to special rounds that Taunt targets with Deadpool's chatter, while Slowing, and damaging nearby enemies over time. After a timer, the bullet auto-recalls, healing Elsa based on the damage dealt while adding one extra gauge block to her Inherited Instinct passive cap.",
+          "stats": {
+            "Key": "Right Click",
+            "Cooldown": "8s",
+            "Projectile Damage": "60",
+            "Split Bullet Damage": "40",
+            "Damage Over Time": "20/s for 2s",
+            "Slow Effect": "25% for 2s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Deadpool, Deadpool breaks the fourth wall, significantly boosting Instinct acquisition rate.",
+          "stats": {
+            "Key": "Passive",
+            "Energy Gain Multiplier from Damage": "0.0012"
+          }
+        },
+        "icon_file": "elsa-bloodstone/teamups/provided_02_loudmouth-mercs.png"
+      }
+    ]
+  },
+  "source_name": "ELSA BLOODSTONE",
+  "uuid": "91b586e3-4d55-455c-bd7d-69fbe0563d26",
+  "article_url": "https://www.marvelrivals.com/20260212/41360_1286981.html",
+  "portrait_files": [
+    "elsa-bloodstone/portraits/portrait_1.png",
+    "elsa-bloodstone/portraits/portrait_2.png"
+  ]
+}

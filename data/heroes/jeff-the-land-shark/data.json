@@ -1,0 +1,254 @@
+{
+  "name": "JEFF THE LAND SHARK",
+  "real_name": "JEFF",
+  "role": "STRATEGIST",
+  "description": "Most landsharks are vicious creatures of the deep... but not Jeff! This adorable and mischievous little landshark brings splashes of joy and healing to every battle. But if the tide turns, Jeff can morph into a voracious beast, swallowing an army of foes in one giant gulp!",
+  "lore": "What's more huggable than a puppy, but hungrier than a great white? It's Jeff! This baby landshark may be one of the most unusual and adorable creatures to ever waddle his way out of the ocean. But anyone who's crossed Jeff's path can tell you that behind his sweet little bark is one nasty bite! After getting captured and displayed as a curiosity at the Collector's Theme Park, Jeff broke free when the Timestream Entanglement scrambled reality. Now's his chance to prove he's a hero, one chomp at a time!",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/4a4adb77-1007-4330-9f2e-624c5c5a134f.png",
+    "https://r.res.easebar.com/pic/20241122/ad7e925a-c7ea-425a-b9e4-523724591116.png"
+  ],
+  "forms": [
+    {
+      "name": "JEFF THE LAND SHARK",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/4a4adb77-1007-4330-9f2e-624c5c5a134f.png",
+        "https://r.res.easebar.com/pic/20241122/ad7e925a-c7ea-425a-b9e4-523724591116.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Joyful Splash",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/404c171f-9a95-4341-8313-b2f6d16fd6f1.png",
+      "description": "Unleash a healing splash",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Rapid-fire, delayed projectile",
+        "Projectile Speed": "100m/s",
+        "Healing Amount": "130/s",
+        "Damage": "70/s",
+        "Damage Falloff": "Damage falloff starts at 15m to a maximum of 65% at 30m",
+        "Fire Rate": "20 rounds per second",
+        "Ammo": "100"
+      },
+      "icon_file": "jeff-the-land-shark/abilities/01_primary_left-click_joyful-splash.png"
+    },
+    {
+      "name": "Aqua Burst",
+      "slot": "primary",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/247fc32e-57f7-4bc3-a52a-ed9e9a46e49e.png",
+      "description": "Launch a high-speed water sphere that bursts upon impact, dealing damage to enemies within range",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Damage": "Projectile Damage: 25 damage per round, Spell Field Damage: 45 damage per cast",
+        "Range": "3m spherical radius",
+        "Damage Falloff": "Falloff begins at 1m, decreasing to 50% at 3m (projectile damage has no falloff)",
+        "Projectile Speed": "100m/s",
+        "Fire Rate": "1.75 rounds per second",
+        "Cooldown": "3 charges, with each charge taking 3s to recharge",
+        "Special Effect": "Direct hits can launch enemies up",
+        "Critical Hit": "No"
+      },
+      "icon_file": "jeff-the-land-shark/abilities/02_primary_right-click_aqua-burst.png"
+    },
+    {
+      "name": "It's Jeff!",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/25d707ba-9f22-4b05-bb8e-d2eb22a8f1f5.png",
+      "description": "Deep dive into the scene and resurface to swallow both enemies and allies within range, activating Hide and Seek for a brief duration before ejecting the swallowed heroes forward",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Targeted",
+        "Special Effect1": "After swallowing allies and enemies, Jeff will deal damage to enemies and heal allies for the duration of the effect, during which they will also benefit from Hide and Seek",
+        "Special Effect2": "It's Jeff! (Ultimate Ability) leaves an 8m radius Healing Pool at the point of activation that heals allies within range by 100/s. Healing Pool lasts for 8s",
+        "Range": "10m radius,5m high cylindrical spell field",
+        "Damage": "25/s",
+        "Healing Amount": "225/s",
+        "Bonus Health (Ally)": "Overflow healing on swallowed allies grants 45 Health per second as Bonus Health, up to 150",
+        "Duration": "6s",
+        "Energy Cost": "4500"
+      },
+      "icon_file": "jeff-the-land-shark/abilities/03_ability_q_it-s-jeff.png"
+    },
+    {
+      "name": "Hide and Seek",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/ef573d4e-d703-4015-982f-e171765bc65f.png",
+      "description": "Dive into the scene with only his dorsal fin exposed, granting himself a Movement Boost. Jeff can heal while submerged and gains the wall-crawl ability",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Instant Cast",
+        "Special Effect": "During the dive, gain Unstoppable, healing over time, and a Movement Boost, while Jeff's hitbox is reduced",
+        "Movement Boost": "60%",
+        "Maximum Energy": "120",
+        "Energy Cost": "20/s",
+        "Energy Recovery Speed": "15/s",
+        "Healing Amount": "35/s"
+      },
+      "icon_file": "jeff-the-land-shark/abilities/04_ability_shift_hide-and-seek.png"
+    },
+    {
+      "name": "Healing Bubble",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/4d341032-2db5-4cb1-84eb-2ecaa167bd2f.png",
+      "description": "Spit a bubble that heals the ally who collects it, granting them Healing Boost and Movement Boost while also launching up nearby enemies",
+      "stats": {
+        "Key": "E",
+        "Casting": "Summons",
+        "Special Effect": "Touching the bubble will immediately activate its effect",
+        "Healing Amount": "30/s",
+        "Healing Boost": "15%",
+        "Movement Boost": "60%",
+        "Buff Duration": "4s",
+        "Duration": "180s",
+        "Cooldown": "3 charges, with each charge taking 6s to recharge"
+      },
+      "icon_file": "jeff-the-land-shark/abilities/05_ability_e_healing-bubble.png"
+    },
+    {
+      "name": "Oblivious Cuteness",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/d976ea1f-f15a-4b12-8a47-edbb88304548.png",
+      "description": "Reduce damage taken from critical hits",
+      "stats": {
+        "Key": "Passive",
+        "Critical Hit Damage Reduction": "50%"
+      },
+      "icon_file": "jeff-the-land-shark/abilities/06_passive_passive_oblivious-cuteness.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "IT'S JEFF-NADO!",
+        "icon": "https://r.res.easebar.com/pic/20250531/50deaa25-2f90-439c-a1fb-15c9597ff6ab.png",
+        "description": "When Storm activates Omega Hurricane and Jeff the Land Shark's It's Jeff is ready, they can unleash a powerful Team-Up Ability. During this period, Storm's Omega Hurricane merges with Jeff to form a Jeff-nado",
+        "stats": {
+          "Key": "Z",
+          "Select Range": "60m radius, 90° fan-shaped area in front of Jeff",
+          "Swallow Time Required": "1.5s",
+          "Warning before Swallow": "0.1",
+          "Swallow Range": "10m spherical radius spell field centered around Storm",
+          "Swallow Damage": "80",
+          "Attack Interval": "2 hits per second"
+        },
+        "icon_file": "jeff-the-land-shark/teamups/received_01_it-s-jeff-nado.png"
+      },
+      {
+        "name": "GUARDIAN OF THE DEEP",
+        "icon": "https://r.res.easebar.com/pic/20250531/e2e11f8b-69d4-4412-adec-b3ad76c55446.png",
+        "description": "Venom shares his symbiotes with Jeff and Hela. Jeff's Guardian of the Deep links with nearby allies, providing continuous healing. When the effect ends, it releases a powerful healing burst, converting any excess into Bonus Health.",
+        "stats": {
+          "Key": "X",
+          "Cooldown": "20s",
+          "Range": "10m spherical radius spell field",
+          "Continuous Healing Duration": "5s",
+          "Continuous Healing Efficiency": "60/s",
+          "One-time Healing Amount": "70",
+          "Bonus Health": "50",
+          "Bonus Health Falloff": "Falloff begins at 3s and decreases by 30/s"
+        },
+        "icon_file": "jeff-the-land-shark/teamups/received_02_guardian-of-the-deep.png"
+      },
+      {
+        "name": "New Friends",
+        "icon": "https://r.res.easebar.com/pic/20241123/87222dcb-ebbb-4edc-a8f0-f7123ee5f61b.png",
+        "description": "Jeff the Land Shark and Rocket Raccoon can ride on Groot's shoulders, receiving Damage Reduction",
+        "stats": {
+          "Key": "None",
+          "Casting": "Targeted",
+          "Range": "Up to 12m",
+          "Damage Reduction": "35%"
+        },
+        "icon_file": "jeff-the-land-shark/teamups/received_03_new-friends.png"
+      },
+      {
+        "name": "Jeff's Cuddle Buddy",
+        "icon": "https://r.res.easebar.com/pic/20260117/8d44e8d8-40a4-4d9f-9647-8450a01bb368.png",
+        "description": "Jeff the Land Shark and Rocket Raccoon can ride on Groot's shoulders, receiving Damage Reduction",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "35",
+          "Spell Field Range": "A cylindrical spell field with a 6m radius and a height of 6m.",
+          "Healing": "50/s",
+          "Duration": "5s"
+        },
+        "icon_file": "jeff-the-land-shark/teamups/received_04_jeff-s-cuddle-buddy.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "GUARDIAN OF THE DEEP",
+        "icon": "https://r.res.easebar.com/pic/20260707/8107b4cc-8665-49e0-af75-7654a896a7bd.png",
+        "partner": "Venom",
+        "base": {
+          "description": "Shoot out healing tendrils; linked allies receive Continuous Healing, and excess healing is converted into Bonus Health.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20",
+            "Spell Field Range": "15m spherical radius",
+            "Healing Amount": "45/s",
+            "Overhealing to Bonus Health Conversion Rate": "0.5",
+            "Ability Duration": "5s",
+            "One-Time Healing": "45"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Venom, symbiote tendrils can also lash out at nearby enemies within range, inflicting continuous damage.",
+          "stats": {
+            "Key": "C",
+            "Damage Over Time": "35/s"
+          }
+        },
+        "icon_file": "jeff-the-land-shark/teamups/provided_01_guardian-of-the-deep.png"
+      },
+      {
+        "name": "MR. POOL'S INTERDIMENSIONAL TOY BOX",
+        "icon": "https://r.res.easebar.com/pic/20260707/228a9d31-8b76-4168-8e0e-235701a73306.png",
+        "partner": "Deadpool",
+        "base": {
+          "description": "Gain a new ability to spit out a Deadpool Plushie. The plushie continuously Taunts nearby enemies while spraying a healing mist onto surrounding allies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15",
+            "Deadpool Plushie Duration": "5s",
+            "Deadpool Plushie Range": "6m radius",
+            "Healing Amount": "30/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Deadpool, the Deadpool Plushie asserts a much stronger Taunt while concurrently damaging enemies caught in its radius.",
+          "stats": {
+            "Key": "C",
+            "Damage": "30/s"
+          }
+        },
+        "icon_file": "jeff-the-land-shark/teamups/provided_02_mr-pool-s-interdimensional-toy-box.png"
+      }
+    ]
+  },
+  "source_name": "JEFF THE LAND SHARK",
+  "uuid": "49e078be-c0c3-4efc-ad01-9c6f4b4f043e",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195674.html",
+  "portrait_files": [
+    "jeff-the-land-shark/portraits/portrait_1.png",
+    "jeff-the-land-shark/portraits/portrait_2.png"
+  ]
+}

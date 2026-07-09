@@ -1,0 +1,233 @@
+{
+  "name": "EMMA FROST",
+  "real_name": "EMMA FROST",
+  "role": "VANGUARD",
+  "description": "For Emma Frost, war is the purest form of art. With her formidable telepathic abilities, she intricately weaves a deadly mental web that ensnares her foes, while her indestructible diamond form lets her lead her teammates fearlessly into the fray. Forever elegant and composed, Emma reigns as the one true queen of the battlefield!",
+  "lore": "Emma Frost is a wealthy socialite, a fashion icon, and a powerful telepath. Though she once used her Mutant abilities to influence others for her own personal gain, she now devotes her talents to Charles Xavier's dream of coexistence between Mutants and mankind. After Krakoa was transported to the year 2099 through a temporal storm, Emma and her Hellfire Trading Company defended the island nation against multiple hostile corporations. She then convinced the Quiet Council to approve a new Hellfire Gala to chart her people's future in this new timeline.",
+  "base_stats": {
+    "Health": "600",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250408/51820efd-a267-4fe7-9dbd-a0470e1161ce.png",
+    "https://r.res.easebar.com/pic/20250408/bd230653-6766-4218-b816-811d0a242d64.png"
+  ],
+  "forms": [
+    {
+      "name": "Emma Frost",
+      "stats": {
+        "Health": "600",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250408/51820efd-a267-4fe7-9dbd-a0470e1161ce.png",
+        "https://r.res.easebar.com/pic/20250408/bd230653-6766-4218-b816-811d0a242d64.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "TELEPATHIC PULSE",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250409/af9f583d-3891-4929-afe5-f41651b71edb.png",
+      "description": "Fire a psionic beam to deal damage; the longer the beam hits, the higher the damage",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Channeled",
+        "Ammo": "70",
+        "Damage": "Damage increases with energy: 0 - 70/s, 99 - 110/s, full energy - 140/s",
+        "Attack Range": "18m",
+        "Ammo Consumption": "10/s",
+        "Special Effect": "Energy gain: Hero hit: 12/s; Sentience hit: 18/s; Common summons hit: 5/s; Shield hit: 6/s. Falloff begins 4s after not hitting an enemy, at a rate of 30/s"
+      },
+      "icon_file": "emma-frost/abilities/01_primary_left-click_telepathic-pulse.png"
+    },
+    {
+      "name": "MIND'S AEGIS",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250409/32c4bdf3-c6de-4131-b202-db95bbd1fc07.png",
+      "description": "Create a levitating barrier at the designated location",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Deployable Shield",
+        "Maximum Shield Value": "400",
+        "Recovery Speed": "80/s",
+        "Delayed Recovery After Release": "2s",
+        "Reposition Cooldown": "1s",
+        "Cooldown After Destroyed": "4s"
+      },
+      "icon_file": "emma-frost/abilities/02_ability_right-click_mind-s-aegis.png"
+    },
+    {
+      "name": "PSYCHIC SPEAR",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250409/091083f4-aa98-4bf7-8b9e-318798ee4939.png",
+      "description": "Seize control of an enemy's sentience—damage dealt to the sentience cascades to the physical form and can be pierced by Telepathic Pulse. When the sentience shatters, it unleashes extra damage on its owner",
+      "stats": {
+        "Key": "E",
+        "Casting": "Single-cast delayed projectile",
+        "Projectile Speed": "80m/s",
+        "Maximum Distance": "24m",
+        "Sentience Health": "Target's 25% Current Health",
+        "Damage": "Deal 5 damage per direct hit. When the sentience shatters, it deals damage to the target, which is equal to 25% of the target's maximum health",
+        "Special Effect": "When the distance between the target and its sentience is more than 15m, their linkage can be broken"
+      },
+      "icon_file": "emma-frost/abilities/03_ability_e_psychic-spear.png"
+    },
+    {
+      "name": "DIAMOND FORM",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20250409/139006e1-78e5-443f-9b1e-271c3f6bc276.png",
+      "description": "Activate Diamond Form to transform your attack style while gaining Damage Reduction and becoming Unstoppable",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Switch Form",
+        "Duration": "8s",
+        "Special Effect": "25% Damage Reduction in Diamond form",
+        "Cooldown": "15s"
+      },
+      "icon_file": "emma-frost/abilities/04_ability_shift_diamond-form.png"
+    },
+    {
+      "name": "FACETED FURY",
+      "slot": "ability",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250409/a5598975-b4ab-49a5-b99c-a9a4d044f37c.png",
+      "description": "In Diamond Form, deliver a crushing double-fisted strike to enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast Spell Field",
+        "Damage": "First & second hit: 50; third hit: 70; fourth hit: 80",
+        "Attack Range": "4m"
+      },
+      "icon_file": "emma-frost/abilities/05_ability_left-click_faceted-fury.png"
+    },
+    {
+      "name": "CRYSTAL KICK",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250409/dd86d9de-5844-4759-9692-5e0fac76579a.png",
+      "description": "In Diamond Form, unleash a flying kick forward and knock back enemies; extra damage is dealt if they're propelled into a wall",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast Spell Field",
+        "Hit Range": "5m",
+        "Damage": "Hit damage: 40; damage increases to 90 when the target is knocked into walls",
+        "Cooldown": "2s",
+        "Special Effect": "Maximum knockback distance: 10m"
+      },
+      "icon_file": "emma-frost/abilities/06_ability_right-click_crystal-kick.png"
+    },
+    {
+      "name": "CARBON CRUSH",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250409/a30a134d-c77a-48c3-a212-ea7704c72453.png",
+      "description": "In Diamond Form, lunge forward to grab an enemy, then execute a back slam to inflict damage",
+      "stats": {
+        "Key": "E",
+        "Casting": "Dash Based Control",
+        "Damage": "30",
+        "Maximum Distance": "7m",
+        "Cooldown": "6s",
+        "Special Effect": "Control effect duration: 1.6s"
+      },
+      "icon_file": "emma-frost/abilities/07_ability_e_carbon-crush.png"
+    },
+    {
+      "name": "PSIONIC SEDUCTION",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250409/f186ffef-db20-4cce-ac54-f3963738fa64.png",
+      "description": "Project a forward psychic assault that stuns foes and prevents them from unleashing their Ultimate Abilities; if the effect lingers, it gradually commandeers their mind, forcing them to move toward Emma Frost",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Large-ranged Persistent Spell Field",
+        "Duration": "6s",
+        "Range": "Cone shape spell field, angle range: 80°, length: 30m",
+        "Damage": "Basic damage 80/s; distance falloff: falloff begins at 10m, decreasing to 70% at 30m; angle falloff: falloff begins at 7° from the center of view, decreasing to 80% at 20°",
+        "Energy Cost": "3100",
+        "Special Effect": "When exposed to the ability, enemies accumulate 10 stacks per second, and the stacks decrease by 10 stacks per second when they leave the exposure. At 15 stacks, a control effect is triggered. Each enemy can only be controlled once per ultimate activation. Gain 25% Damage Reduction during the ability."
+      },
+      "icon_file": "emma-frost/abilities/08_ability_q_psionic-seduction.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "ICED OUT DIAMOND",
+        "icon": "https://r.res.easebar.com/pic/20250409/f7eaa483-8960-4b6f-b427-c9568e54e110.png",
+        "description": "Luna Snow grants Winter's Chill to Iron Fist and Emma Frost. When Iron Fist activates Harmony Recovery, he can heal nearby allies with Lunar Chi. Emma Frost can project ice energy forward, dealing damage and slowing enemies. She can also enhance her diamond form, condensing frost into an Absolute Zero Diamond barrier that blocks enemy attacks and movement",
+        "stats": {
+          "Key": "C",
+          "Summons' Health": "250",
+          "Spell Field Range": "A fan-shaped spell field with a radius of 12m, a height of 3m, and an angle of 60°",
+          "Spell Field Damage": "60",
+          "Slow Rate": "45%",
+          "Slow Duration": "3s",
+          "Cooldown": "20s"
+        },
+        "icon_file": "emma-frost/teamups/received_01_iced-out-diamond.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SPIRIT BREAKER",
+        "icon": "https://r.res.easebar.com/pic/20260707/da533989-4f5d-4a7a-a86d-26b708881e78.png",
+        "partner": "",
+        "base": {
+          "description": "Deals damage to the summoned Soul Crystal, which can be converted into Bonus Healthfor yourself.",
+          "stats": {
+            "Key": "E",
+            "Bonus Health Conversion Rate from Damage": "150%"
+          }
+        },
+        "enhanced": {
+          "description": "When Emma Frost teams up with Mantis, shattering the Soul Crystalgrants a one-time Bonus Healthand reduces the cooldown of Mind Control.",
+          "stats": {
+            "Key": "E",
+            "Mind Control CD Reduction": "2s",
+            "One-time Bonus Health": "100"
+          }
+        },
+        "icon_file": "emma-frost/teamups/provided_01_spirit-breaker.png"
+      },
+      {
+        "name": "ICED OUT DIAMOND",
+        "icon": "https://r.res.easebar.com/pic/20260707/046299ea-4183-4338-a045-02b98fa37648.png",
+        "partner": "",
+        "base": {
+          "description": "Emma Frost releases winter energy forward, dealing damage and Slowto enemies. She can also enhance her diamond form, condensing frost in front of her to form Zero Diamondthat blocks enemy attacks and movement.",
+          "stats": {
+            "Key": "C",
+            "Summons' Health": "350",
+            "Spell Field Range": "8m radius, 3m tall, 60° cone spell field",
+            "Spell Field Damage": "50",
+            "Slow Rate": "25% for 2s",
+            "Cooldown": "12s"
+          }
+        },
+        "enhanced": {
+          "description": "When Emma Frost teams up with Luna Snow, after activating Diamond Form, all ability damage applies Slow, and Soul Wavealso applies Slow.",
+          "stats": {
+            "Key": "Passive",
+            "Diamond Form Damage Slow Amount": "20% for 2s",
+            "Telepathic Pulse Added Slow Effect": "Scales with energy, up to 10% at 100 energy"
+          }
+        },
+        "icon_file": "emma-frost/teamups/provided_02_iced-out-diamond.png"
+      }
+    ]
+  },
+  "source_name": "EMMA FROST",
+  "uuid": "011f4b5b-f020-4187-93f5-8a64df44ad48",
+  "article_url": "https://www.marvelrivals.com/20250408/41360_1225547.html",
+  "portrait_files": [
+    "emma-frost/portraits/portrait_1.png",
+    "emma-frost/portraits/portrait_2.png"
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "name": "MAGNETO",
+  "real_name": "MAX EISENHARDT",
+  "role": "VANGUARD",
+  "description": "The Master of Magnetism bends even the strongest metal to his whims, shielding his allies and striking at his foes. Whether he calls himself Max Eisenhardt, Erik Lehnsherr, or simply Magneto, the hardships this warrior has endured have made him as unbreakable as the steel he brandishes.",
+  "lore": "Max Eisenhardt was born with a near-limitless Mutant ability to manipulate magnetic fields. Suffering a lifetime of persecution, Magneto made it his mission to ensure the survival of Mutantkind, no matter the cost. His uncompromising crusade often puts him at odds with other Mutants who seek more peaceful ways to coexist with humanity. Magneto led the campaign to gather the planet's Mutant population and transport them decades into the future to a safe haven on the sentient island Krakoa, protecting his brethren from the growing dangers of the wider world.",
+  "base_stats": {
+    "Health": "650",
+    "Movement Speed": "6m/s",
+    "Iron Ring Charging Speed": "3s per charge"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/a5fda0de-668f-46fc-9af0-c4c2e2ec4b90.png",
+    "https://r.res.easebar.com/pic/20241122/38fec759-8ced-45db-83ca-36380320ed1f.png"
+  ],
+  "forms": [
+    {
+      "name": "MAGNETO",
+      "stats": {
+        "Health": "650",
+        "Movement Speed": "6m/s",
+        "Iron Ring Charging Speed": "3s per charge"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/a5fda0de-668f-46fc-9af0-c4c2e2ec4b90.png",
+        "https://r.res.easebar.com/pic/20241122/38fec759-8ced-45db-83ca-36380320ed1f.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Iron Volley",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/3401f142-e87e-40ad-8ff2-3a749a6f4984.png",
+      "description": "Fire a volley of magnetic orbs forward. The range of the resulting explosion increases based on distance flown",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Projectile Speed": "80m/s",
+        "Charges": "10",
+        "Maximum Distance": "25m",
+        "Range": "Initially, it produces a spell field with a 1m spherical radius; when the projectile reaches maximum distance, the explosion radius expands to a spell field with a 3m spherical radius",
+        "Attack Interval": "0.8s",
+        "Damage": "Projectile Damage: 40. The spell field deals 40 damage at its center, reducing to 50% within a 3m radius from the center"
+      },
+      "icon_file": "magneto/abilities/01_primary_left-click_iron-volley.png"
+    },
+    {
+      "name": "Meteor M",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/9cd870bb-e876-438b-9416-b230d990d3e8.png",
+      "description": "Draw in all materials around to forge an iron meteor that deals massive damage upon impact. Absorbing enemy projectiles can enhance the meteor's power, yet overloading will cause it to self-destruct",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Create a persistent spell field that launches a projectile upon completion, which generates another spell field on impact",
+        "Projectile Absorption Range": "15m spherical radius",
+        "Projectile Speed": "45m/s",
+        "Explosion Range": "Initially, the ability has a spherical range with a radius of 5m. After charging for 4s, it expands to an 8m radius",
+        "Maximum Duration": "5s",
+        "Damage": "The projectile deals no damage. The base damage at the center of the spell field starts at 100 and increases to 350 when fully charged. Each point of Energy adds an extra 3 points of damage to the spell field, with damage reducing to 50% at a distance of 6m from the center",
+        "Energy Cost": "3400",
+        "Special Effect": "For each point of projectile damage absorbed, the power increases by 0.125, with a maximum absorption of 800 projectile damage"
+      },
+      "icon_file": "magneto/abilities/02_ability_q_meteor-m.png"
+    },
+    {
+      "name": "Metallic Curtain",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/e834f5cc-ab25-4c64-8c84-4fc1e19f4f7c.png",
+      "description": "Change the magnetic field around to form a metallic curtain, blocking all incoming projectiles",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Shield",
+        "Maximum Energy": "100",
+        "Energy Cost": "65/s",
+        "Energy Recovery Delay": "1s",
+        "Energy Recovery Speed": "11/s",
+        "Cooldown": "3s"
+      },
+      "icon_file": "magneto/abilities/03_ability_shift_metallic-curtain.png"
+    },
+    {
+      "name": "Metal Bulwark",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/3b28340a-e0b8-4801-98b5-32ca9934bb01.png",
+      "description": "Conjure a metal shield around a chosen ally. Damage taken will transform into rings on Magneto's back",
+      "stats": {
+        "Key": "E",
+        "Casting": "Targeted",
+        "Maximum Distance": "20m",
+        "Shield Value": "200",
+        "Max Shield Duration": "2.5s",
+        "Cooldown": "15s",
+        "Special Effect": "The shield grants one charge of Iron Ring for every 100 damage it absorbs"
+      },
+      "icon_file": "magneto/abilities/04_ability_e_metal-bulwark.png"
+    },
+    {
+      "name": "Iron Bulwark",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/02e7eb06-6242-43ba-bd8d-3ae7e124f774.png",
+      "description": "Conjure an iron shield around himself. Damage taken will transform into rings on Magneto's back",
+      "stats": {
+        "Key": "F",
+        "Shield Value": "200",
+        "Max Shield Duration": "2.5s",
+        "Cooldown": "10s",
+        "Special Effect": "The shield grants one charge of Iron Ring for every 100 damage it absorbs"
+      },
+      "icon_file": "magneto/abilities/05_ability_f_iron-bulwark.png"
+    },
+    {
+      "name": "Mag-Cannon",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/fa0cf0a3-32cc-4104-8c74-4fe98a7b8628.png",
+      "description": "Convert the iron rings on Magneto's back into a Mag-Cannon and launch a metallic mass forward. Higher stacks of rings increase damage, and full stacks knock back enemies",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile with delayed impact",
+        "Projectile Speed": "120m/s",
+        "Damage": "Iron Rings' first charge deals 40 damage, the second charge deals 65 damage, and the third charge deals 90 damage",
+        "Cooldown": "No cooldown, but the ability can only be activated when the Iron Ring has at least one charge",
+        "Critical Hit": "No",
+        "Special Effect": "When fully charged, the Iron Ring has a 6m knockback distance"
+      },
+      "icon_file": "magneto/abilities/06_ability_right-click_mag-cannon.png"
+    },
+    {
+      "name": "Magnetic Descent",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/d59de34f-22d9-459b-9469-8a2bb8ce714c.png",
+      "description": "Hold Space to fall slowly",
+      "stats": {
+        "Key": "Space",
+        "Horizontal Movement Speed": "6m/s",
+        "Descending Speed": "3.5m/s"
+      },
+      "icon_file": "magneto/abilities/07_ability_space_magnetic-descent.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "ROYAL BLADE",
+        "icon": "https://r.res.easebar.com/pic/20251115/76aaa2b5-ba1a-44b7-a584-82b904800075.png",
+        "description": "Gambit charges Magneto's greatsword with kinetic energy. When Magneto activates this ability, Iron Volley is replaced with Ace Greatsword, which detonates upon striking enemies. The explosion leaves residual kinetic energy within the target, inflicting secondary damage after a brief delay",
+        "stats": {
+          "Key": "C",
+          "Cooldown": "30s",
+          "Duration": "10s",
+          "Shoot Interval": "First hit 0.6s, second hit 1s",
+          "Projectile Speed": "80m/s",
+          "Projectile Damage": "40",
+          "Spell Field Range": "3m spherical radius spell field",
+          "Spell Field Damage": "30",
+          "Explosion Delay": "0.5s",
+          "Delay Explosion Damage": "25"
+        },
+        "icon_file": "magneto/teamups/received_01_royal-blade.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "METALLIC CHAOS",
+        "icon": "https://r.res.easebar.com/pic/20260707/da114e20-f34f-407b-871d-61376d18a609.png",
+        "partner": "Scarlet Witch",
+        "base": {
+          "description": "Summons a Chaos Greatsword that deals damage to enemies in front.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Ability Duration": "8s",
+            "Projectile Hit Damage": "45",
+            "Spell Field Explosion Damage": "40",
+            "Projectile Damage Falloff": "Falloff starts at 20m, down to 70% at 30m",
+            "Spell Field Damage Falloff": "Falloff starts at 0m, down to 70% at 3m",
+            "Projectile Speed": "120m/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Scarlet Witch, Magnetic Cannon becomes a charged ability. Charging consumes passive energy, and each energy segment consumed fires a Chaos Greatsword that deals damage to enemies.",
+          "stats": {
+            "Key": "C",
+            "Charge Interval": "0.33s per use",
+            "Projectile Hit Damage": "20",
+            "Spell Field Explosion Damage": "25",
+            "Projectile Speed": "120m/s"
+          }
+        },
+        "icon_file": "magneto/teamups/provided_01_metallic-chaos.png"
+      },
+      {
+        "name": "MAGNETIC RESONANCE",
+        "icon": "https://r.res.easebar.com/pic/20260707/470e9afa-7d7d-44e7-a4e7-239460fd79a7.png",
+        "partner": "Emma Frost",
+        "base": {
+          "description": "Cast a magnetic projection that mimics Magneto's movement and ability casts perfectly from the enemy's perspective.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Magnetic Projection Max Damage Absorbed": "300",
+            "Magnetic Projection Damage Dealt Ratio": "45%",
+            "Magnetic Projection Max Duration": "5s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Emma Frost, the magnetic projection receives a massive Health bump and will persist indefinitely unless destroyed or manually recalled.",
+          "stats": {
+            "Key": "C",
+            "Magnetic Projection Max Damage Absorbed Increase": "150"
+          }
+        },
+        "icon_file": "magneto/teamups/provided_02_magnetic-resonance.png"
+      }
+    ]
+  },
+  "source_name": "MAGNETO",
+  "uuid": "2dffcc89-3280-4d43-907a-646eea9d3a74",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195655.html",
+  "portrait_files": [
+    "magneto/portraits/portrait_1.png",
+    "magneto/portraits/portrait_2.png"
+  ]
+}

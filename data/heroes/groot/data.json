@@ -1,0 +1,218 @@
+{
+  "name": "GROOT",
+  "real_name": "GROOT",
+  "role": "VANGUARD",
+  "description": "A flora colossus from Planet X, the alien known as Groot exhibits enhanced vitality and the ability to manipulate all forms of vegetation. As sturdy as a towering tree, Groot forges his own way, serving as the team's silent but reliable pathfinder.",
+  "lore": "He is Groot, a flora colossus from the branch world of Planet X capable of manipulating plant matter and regrowing his damaged body from a single splinter. The hero at the heart of the Guardians of the Galaxy, Groot may not have many words to say, but his actions always speak for themselves. Groot accompanied Star-Lord and Rocket on a scouting mission to Klyntar, where they became stranded after their ship was shot down. Klyntar's dark king, Knull, now seeks to corrupt Groot's regenerative powers in an effort to cultivate the ultimate symbiote.",
+  "base_stats": {
+    "Health": "850",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/d345b6b9-49aa-497b-a79f-d949d4f0c2c3.png",
+    "https://r.res.easebar.com/pic/20241122/51018599-9ef9-4d2f-9a05-5105d32fcd02.png"
+  ],
+  "forms": [
+    {
+      "name": "GROOT",
+      "stats": {
+        "Health": "850",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/d345b6b9-49aa-497b-a79f-d949d4f0c2c3.png",
+        "https://r.res.easebar.com/pic/20241122/51018599-9ef9-4d2f-9a05-5105d32fcd02.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Vine Strike",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/b1e08b7f-2364-45cb-9ebc-6b73214d8529.png",
+      "description": "Launch vines to attack enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile with delayed impact",
+        "Projectile Speed": "120m/s",
+        "Maximum Distance": "22m",
+        "Attack Interval": "0.7s",
+        "Damage": "65",
+        "Critical Hit": "No"
+      },
+      "icon_file": "groot/abilities/01_primary_left-click_vine-strike.png"
+    },
+    {
+      "name": "Strangling Prison",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/72a68f64-ac6b-4b4d-a6c2-a96d8ba932f2.png",
+      "description": "Fire a massive vine cluster that pulls nearby enemies to its center and Imprisons them",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Single-cast projectile with a downward delay that creates a spell field upon impact",
+        "Projectile Speed": "60m/s",
+        "Range": "8m spherical radius",
+        "Damage": "The projectile deals 10 damage, while the spell field deals 70 damage. While imprisoning enemies, it deals 20 damage every 0.5s",
+        "Energy Cost": "2800",
+        "Special Effect": "Imprison enemies for 3.5s"
+      },
+      "icon_file": "groot/abilities/02_ability_q_strangling-prison.png"
+    },
+    {
+      "name": "Thornlash Wall",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/22175d18-5214-4a59-a1a2-b20d042ac46c.png",
+      "description": "Target a location and grow a Thornlash Wall. When Awakened, it strikes nearby enemies attacked by Groot and his allies",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Targeted",
+        "Maximum Distance": "18m",
+        "Thornlash Wall Health": "250",
+        "Cooldown": "2 charges, with each charge taking 6s to recharge",
+        "Special Effect": "Thornlash Wall deals 60 damage every 0.5s"
+      },
+      "icon_file": "groot/abilities/03_ability_shift_thornlash-wall.png"
+    },
+    {
+      "name": "Ironwood Wall",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/6b671ac4-7312-4702-8062-5f3d93cdbcd4.png",
+      "description": "Target a location and grow an Ironwood Wall. When the wall is Awakened, damage dealt by Groot and nearby allies grants Groot Bonus Health. Groot gains Unstoppable while near Ironwood Walls",
+      "stats": {
+        "Key": "E",
+        "Casting": "Targeted",
+        "Maximum Distance": "10m",
+        "Thornlash Wall Health": "600",
+        "Cooldown": "12s",
+        "Special Effect": "Ironwood Wall heals 40 Bonus Health per second, up to 250 Bonus Health; gain Unstoppable status when within 15m of Awakened Ironwood Walls"
+      },
+      "icon_file": "groot/abilities/04_ability_e_ironwood-wall.png"
+    },
+    {
+      "name": "Spore Bomb",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/bba9fe65-f6c7-46de-807c-0ba36c78e505.png",
+      "description": "Throw an explosive Spore Bomb that splits into multiple small explosive spores",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Single-cast projectile with a downward delay that creates a spell field upon impact",
+        "Projectile Speed": "60m/s",
+        "Range": "Spore Bomb generates a spell field with a 5m spherical radius, while small explosive spores create a spell field with a 1.5m spherical radius",
+        "Damage": "The projectile itself deals no damage, while Spore Bomb deals 55 damage and explosive spores deal 10 damage",
+        "Cooldown": "6s",
+        "Special Effect": "Spore Bomb explodes into 6 explosive spores"
+      },
+      "icon_file": "groot/abilities/05_ability_right-click_spore-bomb.png"
+    },
+    {
+      "name": "Flora Colossus",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/9a004657-cc4f-47c9-8f81-a4d3471a03bb.png",
+      "description": "Wooden walls near Groot will Awaken, activating an extra effect. Right-click while building a wooden wall to continue building additional walls",
+      "stats": {
+        "Key": "Passive",
+        "Casting": "Persistent spell field that surrounds the caster",
+        "Range": "A cylindrical spell field with a 24m radius and a height of 40m"
+      },
+      "icon_file": "groot/abilities/06_passive_passive_flora-colossus.png"
+    },
+    {
+      "name": "Furious Flora",
+      "slot": "ability",
+      "key": "V",
+      "icon": "https://r.res.easebar.com/pic/20241125/32653d8e-2a57-460d-af0a-72f35b84b607.png",
+      "description": "Perform a combo with his arms, and the third strike will slightly Launch Up the hit enemy airborne",
+      "stats": {
+        "Key": "V",
+        "Range": "The first two strikes can reach 3m, while the third strike can reach 4m"
+      },
+      "icon_file": "groot/abilities/07_ability_v_furious-flora.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Wild Wall",
+        "icon": "https://r.res.easebar.com/pic/20250808/1c89933e-1908-4b71-80d1-9074582fa726.png",
+        "description": "Mantis enhances Groot's wooden walls and Loki's Rune Stones with life energy. Groot can additionally unleash a Flower Wall, which, when in Flora Colossus state, restores health to random nearby allies and grants them Damage Reduction. Loki's Rune Stones grant allies within Regeneration Domain a Damage Boost",
+        "stats": {
+          "Key": "C",
+          "Casting": "Targeted",
+          "Cooldown": "10s",
+          "Flower Wall Health": "150",
+          "Range": "10m spherical radius spell field",
+          "Maximum Unleash Distance": "7m",
+          "Healing Amount": "40/s"
+        },
+        "icon_file": "groot/teamups/received_01_wild-wall.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "WILD WALL",
+        "icon": "https://r.res.easebar.com/pic/20260707/7ce8c561-6190-41d3-b3e7-cf724c3ab7cd.png",
+        "partner": "Mantis",
+        "base": {
+          "description": "Summon a Wild Wall that provides Continuous Healing and Bonus Health to allies within its range.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "10s",
+            "Wild Wall Range": "15m radius",
+            "Buff Frequency": "Once per second",
+            "Buff Duration per Application": "6s",
+            "Healing Amount": "20/s",
+            "Bonus Health": "10/hit",
+            "Wild Wall Health": "200"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Mantis, the Wild Wall evolves after providing a certain amount of healing, increasing its healing",
+          "stats": {
+            "Key": "C",
+            "Healing Required to Enhance": "200",
+            "Enhanced Healing": "35/s",
+            "Health Increase per Upgrade": "50"
+          }
+        },
+        "icon_file": "groot/teamups/provided_01_wild-wall.png"
+      },
+      {
+        "name": "BUBBLE BUDDIES",
+        "icon": "https://r.res.easebar.com/pic/20260707/8a69723f-b317-4b06-aa7c-206ae3d1fee8.png",
+        "partner": "Jeff the Land Shark",
+        "base": {
+          "description": "Retreat inside a Bubble Shield to enter an Invincible state, granting self-targeted Continuous Healing.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Shield Value": "400",
+            "Maximum Duration": "4s",
+            "Healing Amount": "40/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Jeff the Land Shark, the healing effect inside the bubble is enhanced, and any excess healing converts into Bonus Health.",
+          "stats": {
+            "Key": "X",
+            "Increase Healing Amount": "40/s",
+            "Overhealing to Bonus Health Conversion Rate": "50%"
+          }
+        },
+        "icon_file": "groot/teamups/provided_02_bubble-buddies.png"
+      }
+    ]
+  },
+  "source_name": "GROOT",
+  "uuid": "f29f3cf1-e8dd-4188-acce-e519dd94206d",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195653.html",
+  "portrait_files": [
+    "groot/portraits/portrait_1.png",
+    "groot/portraits/portrait_2.png"
+  ]
+}

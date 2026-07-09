@@ -1,0 +1,227 @@
+{
+  "name": "MANTIS",
+  "real_name": "MANTIS",
+  "role": "STRATEGIST",
+  "description": "Mantis uses her impressive mental abilities and her penchant for plant control to anchor any team she fights alongside. Her powers tap into a limitless flow of life energy, gently nourishing everything she touches.",
+  "lore": "Mantis always knows exactly how you're feeling, thanks to her strong empathic powers. Her alien ability to alter the emotions of others comes in handy on the battlefield, but Mantis only finds true happiness for herself when she is with her fellow Guardians of the Galaxy. After being captured by the Collector and put on display at his theme park, Mantis managed to escape with the help of her fellow captives, Sai and Jeff. Now, Mantis travels the spaceways in hopes of reuniting with her team, while welcoming other displaced souls into the Guardians' found family.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6m/s",
+    "Life Orb Cooldown": "4 charges, with each charge taking 3s to recharge"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/d3197f4e-4ca2-4292-8957-f469addf8da1.png",
+    "https://r.res.easebar.com/pic/20241122/35bb8aeb-aad6-4818-b1c6-775008f7e654.png"
+  ],
+  "forms": [
+    {
+      "name": "MANTIS",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6m/s",
+        "Life Orb Cooldown": "4 charges, with each charge taking 3s to recharge"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/d3197f4e-4ca2-4292-8957-f469addf8da1.png",
+        "https://r.res.easebar.com/pic/20241122/35bb8aeb-aad6-4818-b1c6-775008f7e654.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Life Energy Blast",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/53a8b0e2-f33b-4630-a318-b11feeb63da7.png",
+      "description": "Fire an energy thorn and regain one Life Orb after a critical hit.",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Single-cast projectile with delayed impact",
+        "Damage": "55 damage per round",
+        "Projectile Speed": "150m/s",
+        "Damage Falloff": "No falloff",
+        "Fire Rate": "2.5 rounds per second",
+        "Ammo": "15",
+        "Critical Hit": "Yes",
+        "Special Effect": "Critical hit generates 1 Life Orb"
+      },
+      "icon_file": "mantis/abilities/01_primary_left-click_life-energy-blast.png"
+    },
+    {
+      "name": "Soul Resurgence",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/6185722d-c92f-4eab-8a8c-106168ad6e1a.png",
+      "description": "Release energy around her while moving, providing Healing Over Time and Movement Boosts for surrounding allies. Excess healing converts to Bonus Health",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Persistent spell field that surrounds the caster",
+        "Healing Amount": "150",
+        "Caster & Ally One-time Healing Amount": "200",
+        "Movement Boost": "3m/s",
+        "Excess Healing/Bonus Health Conversion": "100%",
+        "Excess Healing/Max Health Conversion": "150",
+        "Range": "15m spherical radius",
+        "Duration": "8s",
+        "Energy Cost": "4300"
+      },
+      "icon_file": "mantis/abilities/02_ability_q_soul-resurgence.png"
+    },
+    {
+      "name": "Spore Slumber",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/297739c8-b9b1-4d0c-9578-0ba4d2cede4e.png",
+      "description": "Throw a spore to Sedate the nearest enemy",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Single-cast projectile with delayed impact that also generates a spell field",
+        "Damage": "10",
+        "Range": "3m spherical radius",
+        "Sedation Duration": "3.5s",
+        "Special Effect": "A Mantis illusions will manifest beside the sedated heroes. Allies can attack this illusion to awaken the affected hero",
+        "Illusion Health": "100",
+        "Cooldown": "15s"
+      },
+      "icon_file": "mantis/abilities/03_ability_shift_spore-slumber.png"
+    },
+    {
+      "name": "Allied Inspiration",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/c43c7aff-d641-4b43-829b-ddf53bf2b3e7.png",
+      "description": "Consume Life Orbs to grant allies a Damage Boost",
+      "stats": {
+        "Key": "E",
+        "Casting": "Targeted",
+        "Damage Boost": "8%",
+        "Movement Boost": "1m/s",
+        "Duration": "8s (16s maximum duration)",
+        "Cooldown": "Consume 1 Life Orb"
+      },
+      "icon_file": "mantis/abilities/04_ability_e_allied-inspiration.png"
+    },
+    {
+      "name": "Natural Anger",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/a414ebec-b637-44c3-83dd-4db27749575b.png",
+      "description": "Consume Life Orbs to grant herself a Damage Boost",
+      "stats": {
+        "Key": "F",
+        "Casting": "Instant Cast",
+        "Damage Boost": "12%",
+        "Duration": "8s (the duration cannot stack; repeatedly casting will only refresh the duration)",
+        "Cooldown": "Consume 1 Life Orb"
+      },
+      "icon_file": "mantis/abilities/05_ability_f_natural-anger.png"
+    },
+    {
+      "name": "Healing Flower",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/cd2771ec-d276-4a64-91fd-faa67a121da6.png",
+      "description": "Consume Life Orbs to grant allies Healing Over Time",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Targeted",
+        "Special Effect": "Healing Flower provides two types of healing effects: One-time Healing and Healing Over Time",
+        "One-time Healing Amount": "60",
+        "Healing Over Time Amount": "10 + 2.5% of the target's maximum Health per second",
+        "Duration": "8s (16s maximum duration)",
+        "Cooldown": "Consume 1 Life Orb"
+      },
+      "icon_file": "mantis/abilities/06_ability_right-click_healing-flower.png"
+    },
+    {
+      "name": "Nature's Favor",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/b921470f-e723-4129-847e-be24fd974552.png",
+      "description": "Receive a Movement Boost when not injured and Healing Over Time when consuming Life Orbs",
+      "stats": {
+        "Key": "Passive",
+        "Time Required to Leave Combat": "3s",
+        "Out-of-Combat Movement Speed": "7.5m/s",
+        "Special Effect": "Consume Life Orbs to receive Healing Over Time",
+        "Healing Amount": "12.5 per second",
+        "Duration": "8s"
+      },
+      "icon_file": "mantis/abilities/07_passive_passive_nature-s-favor.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Heavenly Guardian",
+        "icon": "https://r.res.easebar.com/pic/20250808/d0ee6b57-7475-4e57-a5c1-f02c357545d4.png",
+        "description": "Mantis enhances Groot's wooden walls and Loki's Rune Stones with life energy. Groot can additionally unleash a Flower Wall, which, when in Flora Colossus state, restores health to random nearby allies and grants them Damage Reduction. Loki's Rune Stones grant allies within Regeneration Domain a Damage Boost",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "10% Healing Boost"
+        },
+        "icon_file": "mantis/teamups/received_01_heavenly-guardian.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "STAR BLOSSOM",
+        "icon": "https://r.res.easebar.com/pic/20260707/70291efd-74b4-4391-86fa-9227674836b9.png",
+        "partner": "Star-Lord",
+        "base": {
+          "description": "Recasting Healing Flower on a teammate with the effect enhances and spreads the healing aura.",
+          "stats": {
+            "Key": "Right Click",
+            "Healing Flower Healing Amount": "15+Target's 3% Maximum Health/s",
+            "Spread Spell Field Range": "8m radius",
+            "Spread Healing": "7.5+Targe's 1.75% Maximum Health/s",
+            "Enhanced Heal Bonus Healing": "17.5+Target's 3.5% Maximum Health/s",
+            "Spread Spell Field One-time Healing": "10, 15 when enhanced",
+            "Special effect": "When Star-Lord is selected as her Team-Up partner, enhance the healing output of Healing Flower from 10 + 2.5% of target's max Health/s to 15 + 3% of target's max Health/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Star-Lord, using Healing Flower on any teammate instantly triggers the enhanced Spell Field and healing effect.",
+          "stats": {
+            "Key": "Right Click",
+            "Special Effect": "Casting Healing Flower on any ally enhances and spreads the healing effect",
+            "Special effect": "When Star-Lord is selected as her Team-Up partner, enhance the healing output of Healing Flower from 10 + 2.5% of target's max Health/s to 15 + 3% of target's max Health/s"
+          }
+        },
+        "icon_file": "mantis/teamups/provided_01_star-blossom.png"
+      },
+      {
+        "name": "VITALITY PACT",
+        "icon": "https://r.res.easebar.com/pic/20260707/191f6589-7a79-4bee-83dc-cc0af430d956.png",
+        "partner": "Adam Warlock",
+        "base": {
+          "description": "Upon defeat, Mantis can freely move as a soul, healing nearby allies, and reforge her body at a chosen spot. After using Natural Anger, the effect of Nature's Favor is enhanced, increasing the amount of healing provided.",
+          "stats": {
+            "Key": "Passive",
+            "Cooldown": "90",
+            "Area of Effect Healing": "5/s",
+            "Nature's Favor Bonus Healing Amount": "5/s",
+            "Special effect": "When Adam Warlock is selected as her Team-Up partner, the Nature's Favor passive effect is enhanced. After casting Natural Anger (and ONLY while Natural Anger is active), increase her self-healing from 12.5/s to 17.5/s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Adam Warlock, her soul state can forge Soul Bond with nearby teammates, granting Healing Over Timeand distributing damage taken across the bond.",
+          "stats": {
+            "Key": "Passive",
+            "Max Damage Shared per Character": "300",
+            "Range": "15m radius",
+            "Special effect": "When Adam Warlock is selected as her Team-Up partner, the Nature's Favor passive effect is enhanced. After casting Natural Anger (and ONLY while Natural Anger is active), increase her self-healing from 12.5/s to 17.5/s"
+          }
+        },
+        "icon_file": "mantis/teamups/provided_02_vitality-pact.png"
+      }
+    ]
+  },
+  "source_name": "MANTIS",
+  "uuid": "bbb138f7-80d3-4db4-a608-4ee2d29c5fc0",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195661.html",
+  "portrait_files": [
+    "mantis/portraits/portrait_1.png",
+    "mantis/portraits/portrait_2.png"
+  ]
+}

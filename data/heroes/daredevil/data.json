@@ -1,0 +1,243 @@
+{
+  "name": "DAREDEVIL",
+  "real_name": "MATT MURDOCK",
+  "role": "DUELIST",
+  "description": "A tragic accident transformed Matt Murdock, blinding him, but awakening his incredible Radar Sense. When darkness falls, Daredevil wields his billy clubs in place of a gavel, doling out justice and purging the world of evil!",
+  "lore": "Matt Murdock has always fought for the innocent, both as a lawyer and as Daredevil, protector of Hell's Kitchen. With superhuman senses that compensate for his lack of vision, this Man Without Fear leaps into action without hesitation. After Daredevil conquered the demon known as \"The Beast,\" he found himself with a true devil inside. One of The Beast's captives, Yinglong, offered to help Daredevil harness this demonic power. Following Yinglong to the Eighth City, Daredevil transformed the prison realm into a refugee sanctuary, earning himself a new name: \"Dizang.\"",
+  "base_stats": {
+    "Health": "150+150 Regenerative Shield",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20251009/9e665b05-ee44-45eb-bea0-2055404cc829.png",
+    "https://r.res.easebar.com/pic/20251009/b53b2886-7fbd-4adb-a85c-52be67783f55.png"
+  ],
+  "forms": [
+    {
+      "name": "DAREDEVIL",
+      "stats": {
+        "Health": "150+150 Regenerative Shield",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20251009/9e665b05-ee44-45eb-bea0-2055404cc829.png",
+        "https://r.res.easebar.com/pic/20251009/b53b2886-7fbd-4adb-a85c-52be67783f55.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "JUSTICE JAB",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20251010/9a0c9bf6-2e70-4a7a-8aac-92e1a9691ecb.png",
+      "description": "Swing Billy Clubs forward. Gain Fury on hit",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "35",
+        "Maximum Distance": "4.5m",
+        "Special Effect": "Gain 15 Fury on hit"
+      },
+      "icon_file": "daredevil/abilities/01_primary_left-click_justice-jab.png"
+    },
+    {
+      "name": "RIGHTEOUS CROSS",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20251010/ee03f218-5394-415f-b11a-3a4858128d81.png",
+      "description": "Cross your Billy Clubs and surge forward. Gain Fury on hit",
+      "stats": {
+        "Key": "Left Click",
+        "Maximum Dash Distance": "6m",
+        "Spell Field Damage": "50",
+        "Spell Field Maximum Distance": "6m",
+        "Special Effect": "Gain 15 Fury on hit"
+      },
+      "icon_file": "daredevil/abilities/02_primary_left-click_righteous-cross.png"
+    },
+    {
+      "name": "OBJECTION!",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20251010/0d23a7fb-886a-4f9c-91ef-22eddd0352a9.png",
+      "description": "Whirl billy clubs in a tight guard to block frontal damage and reflect projectiles, becoming immune to all incoming harm during this stance and gain Fury",
+      "stats": {
+        "Key": "Right Click",
+        "Duration": "1.2s",
+        "Cooldown": "12s",
+        "Special Effect": "Block frontal damage and reflect projectiles, becoming immune to all incoming harm during this stance. Gain 60 Fury when successfully blocking an attack."
+      },
+      "icon_file": "daredevil/abilities/03_ability_right-click_objection.png"
+    },
+    {
+      "name": "DEVIL'S LATCH",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20251010/39ffe656-8f28-43c4-be3d-cc79ed2df6a5.png",
+      "description": "Fire a grappling line that reels Daredevil and his target toward each other. On completion, gain Fury and temporarily enables Cross Interrogation",
+      "stats": {
+        "Key": "SHIFT",
+        "Cooldown": "12",
+        "Maximum Distance": "25m",
+        "Projectile Speed": "180m/s",
+        "Special Effect": "Enable Righteous Cross within 5 seconds after using this ability. Gain 30 Fury"
+      },
+      "icon_file": "daredevil/abilities/04_ability_shift_devil-s-latch.png"
+    },
+    {
+      "name": "INFERNAL FURY",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20251010/e0e39493-ba93-4947-a38f-7d86f314b48b.png",
+      "description": "Expend Fury to unleash Devil's Chain or Devil's Throw. Devil's Chain converts damage into Bonus Health, while Devil's Throw Slows enemies on hit and temporarily enables Cross Interrogation",
+      "stats": {
+        "Key": "Right Click",
+        "Special Effect": "Devil's Throw slows enemies on hit",
+        "Fury Required for Activation": "60",
+        "Bonus Max Health": "100",
+        "Bonus Health Falloff": "Falloff begins at 5s and decreases by 30/s",
+        "DEVIL'S CHAIN": "",
+        "Spell Field Range": "Box shaped spell field. Length: 8m; Width: 4m; Height: 4m",
+        "High Damage Spell Field Range": "2m spherical radius spell field at the end",
+        "Damage/Bonus Health Conversion": "0.7",
+        "Bonus Health Gained": "50",
+        "Damage": "40. Cause 65 damage when the target caught in the high damage range",
+        "DEVIL'S THROW": "",
+        "Projectile Speed": "150m/s",
+        "Projectile Damage": "30",
+        "Max Number of Ricochets": "4. Up to 2 ricochets if there are no targets",
+        "Slow Rate": "20%"
+      },
+      "icon_file": "daredevil/abilities/05_ability_right-click_infernal-fury.png"
+    },
+    {
+      "name": "Sonic Pursuit",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20251010/041a40d0-92c7-4a69-9ddd-92af7dbaf73f.png",
+      "description": "Locks onto a target, gaining increased Speed; and Damage Reduction when attacked. While in range, dash to the target, Blinding them and restore Fury",
+      "stats": {
+        "Key": "F",
+        "Movement Boost": "2.1m/s. Falloff begins at 10m away from the target, decreasing to 0.9m/s at 40m from the target",
+        "Self Damage Reduction": "10%",
+        "Select Range": "40m",
+        "Dash Cooldown": "15s",
+        "Dash Select Range": "12m",
+        "Max Dash Speed": "100m/s",
+        "Dash Damage Range": "1m spherical radius spell field",
+        "Dash Damage": "20",
+        "Special Effect": "If Daredevil defeats the target, refresh the cooldown. Gain 60 Fury after the dash"
+      },
+      "icon_file": "daredevil/abilities/06_ability_f_sonic-pursuit.png"
+    },
+    {
+      "name": "RADAR SENSE",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20251010/1dd21aa7-df86-4264-9861-76e20570a272.png",
+      "description": "Detect enemy movements within a set radius",
+      "stats": {
+        "Key": "Passive",
+        "Maximum Detection Distance": "40m"
+      },
+      "icon_file": "daredevil/abilities/07_passive_passive_radar-sense.png"
+    },
+    {
+      "name": "BLIND ASCENT",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20251010/ce9cbf4e-0c10-4fbe-bd57-af7eada7b84e.png",
+      "description": "Run along walls and spring off them to reposition",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "10 m/s"
+      },
+      "icon_file": "daredevil/abilities/08_ability_space_blind-ascent.png"
+    },
+    {
+      "name": "LET THE DEVIL OUT",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20251010/0aa73672-4753-4c5d-9f39-e501bd6dbbae.png",
+      "description": "Embrace the Beast within. Enemies in Daredevil's line of sight take damage and suffer a ramping Blind effect. Continually gain Fury while active",
+      "stats": {
+        "Key": "Q",
+        "Time Required to Reach the Maximum Blind Range and Damage": "3s",
+        "Spell Field Duration": "8s",
+        "Maximum Distance": "15m",
+        "Energy Cost": "3400",
+        "Damage": "50/s. Cause 85 damage per second when reaching the max damage",
+        "Blind Effect": "Visual range 35m, decreasing to 10m when the Blind effect reaches its maximum",
+        "Fury Recovery Speed": "30/s"
+      },
+      "icon_file": "daredevil/abilities/09_ability_q_let-the-devil-out.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "BLIND VERDICT",
+        "icon": "https://r.res.easebar.com/pic/20251010/b101bc7c-3d49-48dc-a02a-7e13cba90108.png",
+        "description": "Daredevil shares the location of his Sonic Pursuit target with The Punisher. At the same time, The Punisher can launch a devil-infused shock grenade to damage and blind enemies",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% damage boost"
+        },
+        "icon_file": "daredevil/teamups/received_01_blind-verdict.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "COMPREHENSIVE DEFENSE",
+        "icon": "https://r.res.easebar.com/pic/20260707/fb345bf3-9533-4a81-b605-6643d6048197.png",
+        "partner": "Iron Fist",
+        "base": {
+          "description": "Objection! is enhanced. Whirling billy clubs now damage all enemies in range while deflecting Projectiles from all directions. Successfully deflecting attacks recovers Fury.",
+          "stats": {
+            "Key": "Right Click",
+            "Special Effect": "Deflects projectiles from all directions while becoming invincible"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Iron Fist, Daredevil passively recovers Health for the entire duration of the ability.",
+          "stats": {
+            "Key": "Right Click",
+            "Healing Amount": "60/s"
+          }
+        },
+        "icon_file": "daredevil/teamups/provided_01_comprehensive-defense.png"
+      },
+      {
+        "name": "DEVILISH AFFAIR",
+        "icon": "https://r.res.easebar.com/pic/20260707/e51c66c6-9074-4477-9462-84b213a9206e.png",
+        "partner": "Black Widow",
+        "base": {
+          "description": "Swings Devil's Chain in a criss-cross pattern, dealing damage to enemies in front and inflicting a Slow.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "12s",
+            "Spell Field Range": "8.5m radius, 5m tall, 120° cone spell field",
+            "Damage": "55",
+            "Slow Rate": "40% for 1.5s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Black Widow, the damage radius is expanded, and landing hits recovers Fury.",
+          "stats": {
+            "Key": "C",
+            "Spell Field Range": "8.5m radius, 5m tall, 180° cone spell field"
+          }
+        },
+        "icon_file": "daredevil/teamups/provided_02_devilish-affair.png"
+      }
+    ]
+  },
+  "source_name": "DAREDEVIL",
+  "uuid": "043108d4-fd6b-4884-aee1-1ccbefb79790",
+  "article_url": "https://www.marvelrivals.com/20251009/41360_1263889.html",
+  "portrait_files": [
+    "daredevil/portraits/portrait_1.png",
+    "daredevil/portraits/portrait_2.png"
+  ]
+}

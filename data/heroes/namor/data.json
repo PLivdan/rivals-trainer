@@ -1,0 +1,218 @@
+{
+  "name": "NAMOR",
+  "real_name": "NAMOR MCKENZIE",
+  "role": "DUELIST",
+  "description": "The unrivaled King of the Seas, Namor surfs into battle on a mighty wave with an army of fierce aquatic creatures in his wake. When ancient horns of war blare, devastation soon follows as deadly waters engulf the arena.",
+  "lore": "Born of a union between a human and an Atlantean, Namor has always been a man of two worlds. But while he proudly rules those who dwell beneath the waves, those who live on the surface have long earned Namor's ire. After decades of simmering tension, Namor has finally decided that the time is right to strike at the surface world. He has sought the aid of his Mutant allies living in the future on Krakoa to aid him as he sets his sights on a new prize: Jeju Island.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/a7126c5c-bffe-411e-bf20-76a4683d109d.png",
+    "https://r.res.easebar.com/pic/20241122/410b439e-696d-40a3-b8f9-f028c63cf70a.png"
+  ],
+  "forms": [
+    {
+      "name": "NAMOR",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/a7126c5c-bffe-411e-bf20-76a4683d109d.png",
+        "https://r.res.easebar.com/pic/20241122/410b439e-696d-40a3-b8f9-f028c63cf70a.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Trident of Neptune",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/cc74a8d7-aa7a-4bef-9777-6f2499ece5a4.png",
+      "description": "Throw the trident forward, reducing Aquatic Dominion's cooldown upon enemy impact. Critical hits cause Monstro Spawn to enter a berserk state, gaining increased Attack Speed",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Projectile with an arced trajectory",
+        "Damage": "75",
+        "Projectile Speed": "150 m/s",
+        "Fire Rate": "1.09 rounds per second",
+        "Ammo": "Infinite",
+        "Critical Hit": "Yes",
+        "Aquatic Dominion Charge Per Hit": "0.13"
+      },
+      "icon_file": "namor/abilities/01_primary_left-click_trident-of-neptune.png"
+    },
+    {
+      "name": "Horn of Proteus",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/41fb388d-1b2c-433f-ab04-3a02562c5b19.png",
+      "description": "Summon Giganto to leap atop enemies within range, disabling their mobility abilities",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Cylindrical Spell Field",
+        "Maximum Distance": "30m",
+        "Range": "A cylindrical spell field with an inner circle radius of 3.5m, an outer circle radius of 9m, and a height of 3m",
+        "Hit Delay": "1.5s",
+        "Damage": "Inner Circle Damage: 500; Outer Circle Damage: 180",
+        "Immobilize Duration": "1.5s",
+        "Energy Cost": "3100"
+      },
+      "icon_file": "namor/abilities/02_ability_q_horn-of-proteus.png"
+    },
+    {
+      "name": "Blessing of the Deep",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/e301578f-ee43-42c9-a95a-f162259d62fb.png",
+      "description": "Summon a protective barrier while flying upwards",
+      "stats": {
+        "Key": "SHIFT",
+        "Vertical Moving Distance": "7m",
+        "Maximum Duration": "3s",
+        "Cooldown": "20s"
+      },
+      "icon_file": "namor/abilities/03_ability_shift_blessing-of-the-deep.png"
+    },
+    {
+      "name": "Aquatic Dominion",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/4bf22127-5c87-4163-82d7-ba90c1edae57.png",
+      "description": "Summon a Monstro Spawn that can autonomously attack enemies",
+      "stats": {
+        "Key": "E",
+        "Casting": "Arced Trajectory (Summon Monstro Spawn), Direct Hit (Monstro Spawn)",
+        "Projectile Speed (Summon Monstro Spawn)": "30 m/s",
+        "Monstro Spawn Maximum Duration": "8s",
+        "Monstro Spawn Health": "125",
+        "Monstro Spawn Attack Range": "40m",
+        "Monstro Spawn Maximum Quantity": "2",
+        "Charges": "2",
+        "Default Charging Speed": "0.1/s",
+        "Default": "",
+        "Monstro Spawn Fire Rate": "5 rounds per second",
+        "Monstro Spawn Damage": "12",
+        "Monstro Spawn Damage Falloff": "Falloff begins at 20m, decreasing to 30% at 40m",
+        "Enhanced": "",
+        "Duration": "2s"
+      },
+      "icon_file": "namor/abilities/04_ability_e_aquatic-dominion.png"
+    },
+    {
+      "name": "Wrath of the Seven Seas",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/0e8f873c-9edf-43ff-87f8-1db24dcb4500.png",
+      "description": "Launch the trident forward to damage nearby enemies, then direct all Monstro Spawn to perform an enhanced attack on the nearest hit enemy. When the trident hits an enemy, Monstro Spawn to enter a berserk state, gaining increased Attack Speed",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Arced projectile that generates a spell field upon impact",
+        "Projectile Damage": "40",
+        "Projectile Speed": "150 m/s",
+        "Range": "3m spherical radius",
+        "Spell Field Damage": "60",
+        "Spell Field Damage Falloff": "50% falloff at 3m",
+        "Enhanced Monstro Spawn Projectile Damage": "60",
+        "Enhanced Monstro Spawn Projectile Speed": "120 m/s",
+        "Cooldown": "6s"
+      },
+      "icon_file": "namor/abilities/05_ability_right-click_wrath-of-the-seven-seas.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "TIDAL DIRGE",
+        "icon": "https://r.res.easebar.com/pic/20251011/e1e60d27-462f-41da-90cb-96f47ef58548.png",
+        "description": "Hela channels energy of the undead to empower Namor. When Namor strikes with his trident, a spectral water column erupts at the target area, slowing enemies hit. Whenever Hela or Namor assist in a KO, an invulnerable Undead Monstro spawns at the fallen enemy's position, automatically attacking the nearest foe for a short time before vanishing",
+        "stats": {
+          "Key": "Passive",
+          "Inner Circle Spell Field Range": "A cylindrical spell field with a radius of 3m and a height of 13m",
+          "Outer Circle Spell Field Range": "A cylindrical spell field with a radius of 6m and a height of 11m",
+          "Inner Circle Damage": "65",
+          "Outer Circle Damage": "45",
+          "Reduced Healing Rate": "20%",
+          "Slow Rate": "35%",
+          "Outer Circle Generate Delay": "0.5s",
+          "Cooldown": "30s",
+          "Undead Monstro": "",
+          "Undead Monstro Duration": "3s",
+          "Undead Monstro Damage": "10",
+          "Undead Monstro Fire Rate": "0.5s per hit",
+          "Undead Monstro Rage Damage": "6",
+          "Undead Monstro Rage Fire Rate": "5 rounds per second",
+          "Undead Monstro Maximum Amount": "2",
+          "Rage Duration": "2s",
+          "Damage Falloff": "Falloff begins at 20m, decreasing to 50% at 40m",
+          "Special Effect": "Undead Monstro is untargetable"
+        },
+        "icon_file": "namor/teamups/received_01_tidal-dirge.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "GAMMA MONSTRO",
+        "icon": "https://r.res.easebar.com/pic/20260707/3e2d976a-4517-4124-929e-37d807771a24.png",
+        "partner": "Hulk",
+        "base": {
+          "description": "Summon an extra Gamma Monstro that continuously damages the nearest enemy. Upon landing critical hits, the Gamma Monstro gains increased Attack Speed. Hitting an enemy with Wrath of the Seven Seas prompts it to fire a powerful beam.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "30",
+            "Gamma Monstro Attack Interval": "0.1s per use",
+            "Gamma Monstro Attack Damage": "5 per hit",
+            "Gamma Monstro Damage Growth Rate over Time": "10% per second",
+            "Gamma Monstro Health": "150",
+            "Gamma Monstro Frenzy Attack Damage": "3.5",
+            "Gamma Monstro Frenzy Attack Interval": "0.05"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hulk, casting Blessing of the Deep creates a water barrier infused with Gamma energy. Standing inside accelerates the Gamma Monstro cooldown and grants it a Damage Boost.",
+          "stats": {
+            "Key": "C",
+            "Cooldown Recovery Speed Boost": "200%",
+            "Gamma Octopus Damage Boost Rate": "25%"
+          }
+        },
+        "icon_file": "namor/teamups/provided_01_gamma-monstro.png"
+      },
+      {
+        "name": "CHILLING CHARISMA",
+        "icon": "https://r.res.easebar.com/pic/20260707/990a7ad7-ccf0-4824-96c7-0be83535d89d.png",
+        "partner": "Luna Snow",
+        "base": {
+          "description": "Gain a new ability to summon a Frost Tide forward. The wave damages, Pushes Back, and inflicts a Slow on all enemies hit.",
+          "stats": {
+            "Key": "C",
+            "Frost Tide Damage": "75",
+            "Slow Rate": "25% for 2s",
+            "Cooldown": "15s",
+            "Frost Tide Movement Speed": "17.5m/s",
+            "Frost Tide Max Travel Time": "1s",
+            "Frost Tide Range": "6m wide, 3m tall"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Luna Snow, the Frost Tide gains 1 charge and crashes down upon reaching its maximum range, dealing area damage and Slowing enemies caught near the endpoint.",
+          "stats": {
+            "Key": "C",
+            "Frost Wave Damage at Max Distance": "50",
+            "Slow Rate": "40% for 2s"
+          }
+        },
+        "icon_file": "namor/teamups/provided_02_chilling-charisma.png"
+      }
+    ]
+  },
+  "source_name": "NAMOR",
+  "uuid": "afbd915c-3505-4660-9815-bebe2c96370b",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195686.html",
+  "portrait_files": [
+    "namor/portraits/portrait_1.png",
+    "namor/portraits/portrait_2.png"
+  ]
+}

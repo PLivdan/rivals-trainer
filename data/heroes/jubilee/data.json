@@ -1,0 +1,204 @@
+{
+  "name": "JUBILEE",
+  "real_name": "JUBILATION LEE",
+  "role": "STRATEGIST",
+  "description": "Jubilation Lee has the Mutant ability to generate bursts of pyrotechnic plasma. She shapes radiant energy into vibrant projectiles that shimmer with brilliant, colorful light. Combined with her vampiric powers, every one of Jubilee's fireworks is an invigorating celebration on the battlefield!",
+  "lore": "Thanks to her Mutant ability to generate pyrotechnic plasmoids, Jubilation Lee creates firework displays that are almost as explosive as her personality. Jubilee was with her fellow X-Men when a temporal storm relocated Krakoa to the year 2099. Unfortunately, the effects of the Timestream Entanglement caused her adopted son Shogo to become trapped in his dragon-form. Jubilee traveled to Thebes in the Collapsed Timeline, hoping Apocalypse could help her find a solution. In exchange, she became his Horseman of Famine, vowing to help him absorb the faith of the gods.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260707/df73ea89-c5ff-4493-8f0d-dd16a339f531.png",
+    "https://r.res.easebar.com/pic/20260707/d4af5a32-500d-4d8f-a286-490528285fef.png"
+  ],
+  "forms": [
+    {
+      "name": "JUBILEE",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260707/df73ea89-c5ff-4493-8f0d-dd16a339f531.png",
+        "https://r.res.easebar.com/pic/20260707/d4af5a32-500d-4d8f-a286-490528285fef.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Energy Plasmoids",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260707/a5b1d5f1-4fb5-4181-8bb2-67857d31b837.png",
+      "description": "Fire lumikinetic explosive light blasts forward to heal friends and damage foes. Triggering a Sparkle Mark briefly boosts Attack Speed and enables firing without consuming energy",
+      "stats": {
+        "Key": "Left Click",
+        "Fire Rate": "8 per second",
+        "Projectile Speed": "200m/s",
+        "Damage": "10 per hit",
+        "Healing": "14 per hit",
+        "Energy": "48",
+        "Speed Boost: Fire Rate": "20 per second",
+        "Speed Boost: Damage": "5 per hit",
+        "Speed Boost: Healing": "6.5 per hit",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 70% at 30m",
+        "Attack Speed Boost Duration Per Sparkle Mark Triggered": "6s"
+      },
+      "icon_file": "jubilee/abilities/01_primary_left-click_energy-plasmoids.png"
+    },
+    {
+      "name": "Blooming Ball",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260707/9b787ce0-b3bc-432c-a29c-926d8d1f8da8.png",
+      "description": "Launch a tracking orb of vampiric energy that damages enemies and heals allies in its radius. Striking the orb or hitting targets near it charges it up, increasing both its size and healing power. Press {Interactive} to manually recall it.",
+      "stats": {
+        "Key": "Right Click",
+        "Fire Rate": "8 per second",
+        "Projectile Speed": "200m/s",
+        "Damage": "10 per hit",
+        "Healing": "14 per hit",
+        "Energy": "48",
+        "Speed Boost: Fire Rate": "20 per second",
+        "Speed Boost: Damage": "5 per hit",
+        "Speed Boost: Healing": "6.5 per hit",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 70% at 30m",
+        "Attack Speed Boost Duration Per Sparkle Mark Triggered": "6s"
+      },
+      "icon_file": "jubilee/abilities/02_ability_right-click_blooming-ball.png"
+    },
+    {
+      "name": "Sparking Sprint",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260707/7c12355a-46aa-45ba-b9d1-b5e3147d3579.png",
+      "description": "Wrap yourself in vampiric energy to gain a Speed Boost. While active, jump height and Attack Speed are increased, and Energy Blasts can be fired at no cost",
+      "stats": {
+        "Key": "Shift",
+        "Speed Boost Multiplier": "40%",
+        "Maximum Energy": "12",
+        "Energy Cost": "4/s",
+        "Energy Recovery": "1/s",
+        "Cooldown": "4s",
+        "Spell Field Range": "5m spherical radius",
+        "Damage": "45",
+        "Healing Amount": "30"
+      },
+      "icon_file": "jubilee/abilities/03_ability_shift_sparking-sprint.png"
+    },
+    {
+      "name": "Dazzling Detonation",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260707/8209ad6b-5369-49a5-9479-4f02893b7a9a.png",
+      "description": "Detonate a firework energy orb, dealing damage to enemies in the area and applying a Blind effect. The energy can also be transferred to an ally, granting them healing and a Speed Boost",
+      "stats": {
+        "Key": "E",
+        "Cooldown": "12s",
+        "Spell Field Range": "Matches current range of selected orb",
+        "Damage": "50",
+        "Blind Duration": "1.5s",
+        "Vulnerability": "10% for 3s",
+        "Healing Spell Field Generation Interval": "0.2s",
+        "One-time Healing Amount": "65",
+        "Healing Over Time Amount": "25/sec for 3s",
+        "Speed Boost Multiplier": "40% for 3s"
+      },
+      "icon_file": "jubilee/abilities/04_ability_e_dazzling-detonation.png"
+    },
+    {
+      "name": "Sparkle Mark",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260707/856e249b-ea9e-4fc9-8f8f-11e9ad0d3d3e.png",
+      "description": "Hitting targets with Dazzling Detonation and Firework Finale applies a Sparkle Mark. Energy Plasmoids can detonate marks, granting allies a Healing Boost and Bonus Health, while dealing burst damage and inflicting Vulnerability to enemies",
+      "stats": {
+        "Key": "Passive",
+        "Bonus Health": "50",
+        "Healing Boost": "20% for 3s",
+        "One-Time Damage": "25"
+      },
+      "icon_file": "jubilee/abilities/05_passive_passive_sparkle-mark.png"
+    },
+    {
+      "name": "Firework Finale",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260707/14872c10-8520-4914-b9ca-8d6e0536cba5.png",
+      "description": "Charge up and unleash a massive ring of outward-flying firework clusters, Knocking Back nearby enemies. These clusters then orbit you, creating a field that damages enemies and heals allies. Expanding the cluster radius outward will Launch Up struck enemies",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "5500",
+        "Ability Duration": "10s",
+        "Spell Field Range": "Inner circle radius 6m; Outer circle radius 10m",
+        "Spell Field Damage": "20/s",
+        "Spell Field Healing": "150/s",
+        "Firework Cluster Range": "2m radius",
+        "Firework Cluster Healing Amount": "40 per hit",
+        "Firework Cluster Damage": "25 per hit",
+        "Firework Cluster": "20 m/s",
+        "Firework Cluster Amount": "5"
+      },
+      "icon_file": "jubilee/abilities/06_ability_q_firework-finale.png"
+    }
+  ],
+  "team_ups": {
+    "received": [],
+    "provided": [
+      {
+        "name": "HELLFIRE SPARKS",
+        "icon": "https://r.res.easebar.com/pic/20260707/2114804d-8467-4973-8bb9-48174b7fac01.png",
+        "partner": "The Hood",
+        "base": {
+          "description": "When Attack Speed is enhanced, Energy Plasmoids transform into a hitscan attack that grants self-healing on hit and is capable of dealing critical hits.",
+          "stats": {
+            "Key": "PASSIVE",
+            "Hitscan Attack Damage": "5 per use",
+            "Hitscan Attack Healing": "6.5 damage per use",
+            "Damage Falloff": "Falloff starts at 10m, down to 70% at 30m",
+            "Healing on Hit": "2/shot"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with The Hood, the Void Magic Mark is never cleared, allowing her to indefinitely sustain the hitscan attack form.",
+          "stats": {
+            "Key": "PASSIVE",
+            "Special Effect": "The Void Magic mark is never cleared"
+          }
+        },
+        "icon_file": "jubilee/teamups/provided_01_hellfire-sparks.png"
+      },
+      {
+        "name": "VAMPIRIC KIN",
+        "icon": "https://r.res.easebar.com/pic/20260707/755c70bc-d48c-460f-95ae-6450bf47017c.png",
+        "partner": "Blade",
+        "base": {
+          "description": "Deploy a Vampiric Field. Allies standing within the field gain Life Steal when attacking enemies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Field Range": "12m spherical radius spell field",
+            "Ability Duration": "6s",
+            "Lifesteal Rate": "25%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Blade, allies inside the field receive an additional Continuous Healing effect.",
+          "stats": {
+            "Key": "C",
+            "Healing Over Time": "25/s"
+          }
+        },
+        "icon_file": "jubilee/teamups/provided_02_vampiric-kin.png"
+      }
+    ]
+  },
+  "source_name": "JUBILEE",
+  "uuid": "dc1d68ab-9f3f-465a-80c0-e77bb51a66bc",
+  "article_url": "https://www.marvelrivals.com/20260707/41360_1306826.html",
+  "portrait_files": [
+    "jubilee/portraits/portrait_1.png",
+    "jubilee/portraits/portrait_2.png"
+  ]
+}

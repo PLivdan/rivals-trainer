@@ -1,0 +1,235 @@
+{
+  "name": "ROGUE",
+  "real_name": "ANNA MARIE",
+  "role": "VANGUARD",
+  "description": "Anna Marie possesses the Mutant ability to absorb the powers of others with a touch. Her ever-adaptable arsenal of superhuman abilities helps turn the tide of any fight. After touching Raw Chronovium, Rogue's strength soared to new heights, allowing her to overwhelm enemies with unstoppable force!",
+  "lore": "Rogue's Mutant power to absorb any superhuman ability with a simple touch left her isolated for years, until she met her true love: fellow X-Man, Gambit. Traveling the galaxy together and helping lost Mutants find their way home to Krakoa seemed like a perfect honeymoon. But when they reached the Grandmaster's Garden, Rogue discovered Gambit's secret plan… and the energy she absorbed from his Chronovium die made her powers go haywire! Now, Rogue and Gambit are the Universe's Most Wanted and must fight side-by-side to escape the Elders' cosmic domain.",
+  "base_stats": {
+    "Health": "350+225 Regenerative Shield",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20251212/5bcea3b0-10d9-4df6-a909-57fa21826fe1.jpg",
+    "https://r.res.easebar.com/pic/20251212/8e4779f9-af24-4e96-b2c4-aabd030b1e5c.png"
+  ],
+  "forms": [
+    {
+      "name": "ROGUE",
+      "stats": {
+        "Health": "350+225 Regenerative Shield",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20251212/5bcea3b0-10d9-4df6-a909-57fa21826fe1.jpg",
+        "https://r.res.easebar.com/pic/20251212/8e4779f9-af24-4e96-b2c4-aabd030b1e5c.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Power Surge Punch",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20251212/60a3fc70-a087-4e74-a818-74f20c3764b6.png",
+      "description": "Punch forward with both fists",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "The first two strikes deal 35 damage, while the third strike deals 45 damage",
+        "Maximum Distance": "4.5m",
+        "Attack Speed": "The first two strikes: 0.33s/hit; the third strike: 0.73s/hit"
+      },
+      "icon_file": "rogue/abilities/01_primary_left-click_power-surge-punch.png"
+    },
+    {
+      "name": "Defensive Stance",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20251212/6df4eb8d-f7ba-4808-8680-073c0f1286af.png",
+      "description": "Absorb nearby projectiles and reduce incoming damage; absorbed damage powers up your next Southern Brawl",
+      "stats": {
+        "Key": "Right Click",
+        "Damage Reduction": "55%",
+        "Maximum Energy": "100",
+        "Energy Recovery Speed": "15/s",
+        "Energy Consumption": "50/s",
+        "Energy Required to Activate the Ability": "30",
+        "Special Effect": "The reduced damage transforms into backlash energy that powers up the next Southern Brawl.",
+        "Reduced Damage-Backlash Energy Conversion Ratio": "0.55",
+        "Maximum Backlash Energy": "100",
+        "Maximum Backlash Energy Falloff": "20/s"
+      },
+      "icon_file": "rogue/abilities/02_ability_right-click_defensive-stance.png"
+    },
+    {
+      "name": "Southern Brawl",
+      "slot": "ability",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20251212/965eb4f6-cddc-4a8d-8c72-8be39286bc1a.png",
+      "description": "While in Defensive Stance, dash forward and slam enemies in front, dealing area damage",
+      "stats": {
+        "Key": "Left Click",
+        "Dash Distance": "8m",
+        "Base Damage": "40",
+        "Backlash Energy-Extra Damage Conversion Ratio": "0.75",
+        "Special Effect": "Launch up the enemies hit",
+        "Maximum Distance": "8m",
+        "Cooldown": "6s"
+      },
+      "icon_file": "rogue/abilities/03_ability_left-click_southern-brawl.png"
+    },
+    {
+      "name": "Chrono Kick Combo",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20251212/f4b1d6b3-447e-47fd-bc18-9585ca699b80.png",
+      "description": "Dash forward and launch the enemy, entering flight; activate again to Knock Down nearby enemies. Your next two Power Surge Punch attacks become ranged, piercing enemies and granting Bonus Health",
+      "stats": {
+        "Key": "E",
+        "Spell Field Range": "Box shaped spell field. Length: 6.5m; Width: 4.5m; Height: 2m",
+        "Spell Field Damage": "30",
+        "Special Effect": "Launch up the enemy hit, entering flight. The next two Power Surge Punch attacks become ranged, and Chrono Kick Combo can be unleashed again.",
+        "Maximum Flight Duration": "3s",
+        "Knock Down Spell Field Damage": "30",
+        "Knock Down Spell Field Range": "6m radius spherical spell field",
+        "Projectile Damage": "60",
+        "Projectile Speed": "100 m/s",
+        "Projectile Maximum Flying Distance": "20m",
+        "Cooldown": "10s"
+      },
+      "icon_file": "rogue/abilities/04_ability_e_chrono-kick-combo.png"
+    },
+    {
+      "name": "Fatal Attraction",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20251212/922413ba-afba-4475-b0f1-97e46caec2a3.png",
+      "description": "Dash forward. Press again to unleash a burst of Chronovium Power, dealing continuous damage to nearby foes; after a delay, the energy retracts, pulling all enemies towards Rogue",
+      "stats": {
+        "Key": "SHIFT",
+        "Dash Distance": "10m",
+        "Dash Damage": "30",
+        "Special Effect": "Launch up enemies hit",
+        "Spreading Spell Field Range": "Cylindrical Spell Field with a height of 3m, whose radius will expand to 8m after 0.8s",
+        "Spreading Spell Field Damage": "40/s",
+        "Retrieve Spell Field Damage": "30",
+        "Cooldown": "12s"
+      },
+      "icon_file": "rogue/abilities/05_ability_shift_fatal-attraction.png"
+    },
+    {
+      "name": "Ability Absorption",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20251212/20a291b6-507e-4d9b-bd23-b215f1feb887.png",
+      "description": "Dash forward to knock down your target and absorb their energy; after absorbing, replace Ability Absorption with one of their abilities or refresh Fatal Attraction. Also absorb Health and stats based on their role",
+      "stats": {
+        "Key": "F",
+        "Dash Distance": "10m",
+        "Special Effect": "After absorbing, replace Ability Absorption with one of their abilities or refresh Fatal Attraction.",
+        "Absorption Damage Over Time": "30/s",
+        "Absorption Healing Over Time": "60/s",
+        "Absorbed Ability Duration": "10s",
+        "Boost from Vanguard Ability Absorption": "125 Maximum Health",
+        "Debuff to the Vanguard Absorption Target": "Reduce 20 Maximum Health",
+        "Boost from Duelist Ability Absorption": "20% Damage Boost",
+        "Debuff to the Duelist Absorption Target": "Reduce 3% damage dealt",
+        "Boost from Strategist Ability Absorption": "Self healing 20/s",
+        "Debuff to the Strategist Absorption Target": "Reduce 4% healing dealt",
+        "Absorption Process": "0.75s",
+        "Cooldown": "25s"
+      },
+      "icon_file": "rogue/abilities/06_ability_f_ability-absorption.png"
+    },
+    {
+      "name": "Heartbreaker",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20251212/c5ba783e-9ca3-436c-bcaa-a1dc284b6355.png",
+      "description": "Continuously absorb Ultimate Ability Energy from nearby enemies and steal stats based on their role",
+      "stats": {
+        "Key": "Q",
+        "Duration": "8s",
+        "Energy Cost": "3400",
+        "Ultimate Ability Energy Absorption Speed": "Absorb 4% of ultimate ability energy per second",
+        "Maximum Stats Stolen from Vanguards": "400 maximum health",
+        "Maximum Stats Stolen from Duelists": "35% damage boost",
+        "Maximum Stats Stolen from Strategists": "Self healing 75/s",
+        "Spell Field Range": "8m radius spherical spell field",
+        "Spell Field Damage": "15/s"
+      },
+      "icon_file": "rogue/abilities/07_ability_q_heartbreaker.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "HEARTS AS ONE",
+        "icon": "https://r.res.easebar.com/pic/20251212/c5b731bf-5102-4caf-96d1-ba09c16e4e87.png",
+        "description": "Gambit shares kinetic energy with Magneto and Rogue. When Magneto activates this ability, Iron Volley is replaced with Ace Greatsword, which detonates upon striking enemies. The explosion leaves residual kinetic energy within the target, inflicting secondary damage after a brief delay. When Rogue activates the ability, each of her attacks causes a kinetic explosion that damages nearby enemies and heals nearby allies",
+        "stats": {
+          "Key": "C",
+          "Spell Field Duration": "8s",
+          "Cooldown": "30s",
+          "Spell Field Damage": "5+targets' 2% Maximum Health",
+          "Spell Field Healing": "25",
+          "Spell Field Range": "8m radius spherical spell field"
+        },
+        "icon_file": "rogue/teamups/received_01_hearts-as-one.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "MR. & MRS. X",
+        "icon": "https://r.res.easebar.com/pic/20260707/2b73e364-467f-4fbc-8fd1-2642aa4a33b2.png",
+        "partner": "Gambit",
+        "base": {
+          "description": "After activation, every attack triggers a kinetic explosion, dealing area damage to surrounding enemies while simultaneously healing nearby allies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "30s",
+            "Duration": "8s",
+            "Spell Field Range": "8m spherical radius",
+            "Damage": "5+Target's 1% Maximum Health",
+            "Healing": "15"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Gambit, Rogue remains permanently locked in the \"Hearts as One\" state.",
+          "stats": {
+            "Key": "Passive",
+            "Special Effect": "Permanently maintains the Hearts as One state"
+          }
+        },
+        "icon_file": "rogue/teamups/provided_01_mr-and-mrs-x.png"
+      },
+      {
+        "name": "EXPLOSIVE ENTANGLEMENT",
+        "icon": "https://r.res.easebar.com/pic/20260707/853cc8cd-4100-443a-b73c-df0b3b9809b2.png",
+        "partner": "Magneto",
+        "base": {
+          "description": "Defensive Stance is fortified. Activating the ability expands a magnetic field, drastically boosting the Damage Reduction ratio of Defensive Stance. Furthermore, all damage absorbed by the field is converted directly into damage for Southern Brawl.",
+          "stats": {
+            "Key": "Passive",
+            "Damage Reduction": "75%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Magneto, Southern Brawl Knocks back enemies. Extra damage is dealt if they're propelled into a wall.",
+          "stats": {
+            "Key": "Passive",
+            "Wall Collision Bonus Damage": "60"
+          }
+        },
+        "icon_file": "rogue/teamups/provided_02_explosive-entanglement.png"
+      }
+    ]
+  },
+  "source_name": "ROGUE",
+  "uuid": "deb6b426-c97e-4449-b345-4d7131336a64",
+  "article_url": "https://www.marvelrivals.com/20251212/41360_1276333.html",
+  "portrait_files": [
+    "rogue/portraits/portrait_1.png",
+    "rogue/portraits/portrait_2.png"
+  ]
+}

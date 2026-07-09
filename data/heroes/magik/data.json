@@ -1,0 +1,348 @@
+{
+  "name": "MAGIK",
+  "real_name": "ILLYANA RASPUTIN",
+  "role": "DUELIST",
+  "description": "Trained in the dark arts and wielding her mighty Soulsword, Magik leaps through portals to navigate the arena with ease. Once Illyana transforms into the demonic Darkchild, all who dare stand against her will fall before her merciless blade.",
+  "lore": "Born with the Mutant ability to create portals that allow her to teleport through the nether realm called Limbo, Illyana Rasputin augmented her natural gifts with powerful sorcery and an arcane sword fueled by souls to become the warrior known as Magik. As the ruler of Limbo, Magik has been serving as a general in a timeline-spanning war across dimensions, battling malevolent gods and demons. She frequently confers with her Mutant allies on Krakoa, discussing their species' best chances for survival in the wake of the Timestream Entanglement.",
+  "base_stats": {
+    "Health": "150+125 Regenerative Shield",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/c3113998-d97a-4e52-a1fc-022e1e438f0a.png",
+    "https://r.res.easebar.com/pic/20241122/8c62f273-d9ca-437f-a9e2-b0120729c673.png"
+  ],
+  "forms": [
+    {
+      "name": "MAGIK",
+      "stats": {
+        "Health": "150+125 Regenerative Shield",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/c3113998-d97a-4e52-a1fc-022e1e438f0a.png",
+        "https://r.res.easebar.com/pic/20241122/8c62f273-d9ca-437f-a9e2-b0120729c673.png"
+      ]
+    },
+    {
+      "name": "MAGIK",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/a20d5e83-8266-4a3c-ba7a-4b6bb0700391.png",
+        "https://r.res.easebar.com/pic/20241122/e0e7900c-e11f-40dc-9a28-95bec7f5448d.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Soulsword",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/3c254667-aec0-4d1f-bac8-8f74e5c7ec57.png",
+      "description": "Slash forward with the Soulsword",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "75",
+        "Maximum Distance": "6.5m",
+        "Damage Falloff": "Falloff begins at 4.5m, decreasing to 50% at 6.5m",
+        "Attack Interval": "0.83s per hit"
+      },
+      "icon_file": "magik/abilities/01_primary_left-click_soulsword.png"
+    },
+    {
+      "name": "Darkchild",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/54ceb957-f089-4149-9b6e-f19b0b434f76.png",
+      "description": "Transform into Darkchild, gaining enhancements to all her abilities",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Transformation",
+        "Duration": "12s",
+        "Energy Cost": "3400",
+        "Special Effect": "When in the Darkchild state, all of Magik's abilities are enhanced"
+      },
+      "icon_file": "magik/abilities/02_ability_q_darkchild.png"
+    },
+    {
+      "name": "Stepping Discs",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/83bdc026-b6c1-4c72-8a4e-b82036d06a5b.png",
+      "description": "Jump through a Stepping Disc, teleporting a short distance in the direction of movement. Become Invincible while teleporting",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Average Speed": "12m/s",
+        "Maximum Distance": "10m",
+        "Combo Ability Casting Window": "3s",
+        "Cooldown": "6s",
+        "Charges": "2",
+        "Special Effect 1": "Magik is invincible while moving",
+        "Special Effect 2": "Magik can perform a combo ability within a certain time frame, choosing between Eldritch Whirl or Demon's Rage"
+      },
+      "icon_file": "magik/abilities/03_ability_shift_stepping-discs.png"
+    },
+    {
+      "name": "Umbral Incursion",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/23e2f98e-b25d-465f-8aca-92772da73677.png",
+      "description": "Dash forward and launch up enemies",
+      "stats": {
+        "Key": "E",
+        "Casting": "Movement-based damage ability",
+        "Average Speed": "46m/s",
+        "Maximum Distance": "16m",
+        "Upward Slash Damage": "85",
+        "Cooldown": "8s"
+      },
+      "icon_file": "magik/abilities/04_ability_e_umbral-incursion.png"
+    },
+    {
+      "name": "Eldritch Whirl",
+      "slot": "ability",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/a360c242-9475-4d7b-ba43-efb57fdbc44a.png",
+      "description": "Spin while swinging the Soulsword after exiting a Stepping Disc",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "A cylindrical spell field in melee range",
+        "Damage": "50",
+        "Range": "A cylindrical spell field with a radius of 6m and a height of 5m"
+      },
+      "icon_file": "magik/abilities/05_ability_left-click_eldritch-whirl.png"
+    },
+    {
+      "name": "Magik Slash",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/ddcc3be2-0a9f-4588-bbeb-b6ecc289d8cf.png",
+      "description": "Strike forward an air slash",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Charged projectile that travels in a straight trajectory",
+        "Maximum Charge Time": "2s",
+        "Projectile Speed": "80m/s",
+        "Damage": "45 - 81 (Maximum damage is achieved after 1.2s of charging)",
+        "Special Effect": "Projectile pierces enemies and reduces Stepping Discs cooldown by 1s per enemy pierced",
+        "Cooldown": "6s"
+      },
+      "icon_file": "magik/abilities/06_ability_right-click_magik-slash.png"
+    },
+    {
+      "name": "Demon's Rage",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/a9c67524-0a71-4106-8a95-f26d78aa15e1.png",
+      "description": "Summon a Limbo demon that attacks enemies after exiting a Stepping Disc",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "A cuboid spell field in melee range",
+        "Damage": "20 damage per hit",
+        "Attack Speed": "0.25s per hit",
+        "Range": "Length: 6.5m, Width: 3m, Height: 3m",
+        "Maximum Duration for Summons": "4s",
+        "Summons' Health": "100"
+      },
+      "icon_file": "magik/abilities/07_ability_right-click_demon-s-rage.png"
+    },
+    {
+      "name": "Limbo's Might",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/ca2c47d6-8349-4bae-b6bc-58436c47776b.png",
+      "description": "Convert damage inflicted on enemies into Bonus Health to herself",
+      "stats": {
+        "Key": "Passive",
+        "Conversion Rate": "30%",
+        "Bonus Max Health": "150",
+        "Energy Cost Special Effect": "Convert damage taken into Bonus Health"
+      },
+      "icon_file": "magik/abilities/08_passive_passive_limbo-s-might.png"
+    },
+    {
+      "name": "Soulsword",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/1429fdcf-3e9f-4dd9-873e-4ccf6f758cfd.png",
+      "description": "Slash forward with the Soulsword",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "Deals 3 hits at intervals of 0.15s, with each hit dealing 35 damage",
+        "Maximum Distance": "10m",
+        "Damage Falloff": "Falloff begins at 6m, decreasing to 25% at 10m",
+        "Attack Interval": "1 hit per second"
+      },
+      "icon_file": "magik/abilities/09_primary_left-click_soulsword.png"
+    },
+    {
+      "name": "Stepping Discs",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/77738b7f-79a1-4eae-8d72-8bbda393bd5e.png",
+      "description": "Jump through a Stepping Disc, teleporting a short distance in the direction of movement. Become Invincible while teleporting",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Average Speed": "17m/s",
+        "Maximum Distance": "10m",
+        "Combo Ability Casting Window": "3s",
+        "Cooldown": "3s",
+        "Charges": "2",
+        "Special Effect 1": "Magik is invincible while moving",
+        "Special Effect 2": "Magik can perform a combo ability within a certain time frame, choosing between Eldritch Whirl or Demon's Rage"
+      },
+      "icon_file": "magik/abilities/10_ability_shift_stepping-discs.png"
+    },
+    {
+      "name": "Umbral Incursion",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/d5f0b817-5275-4e8f-a1cf-7674cfe5e077.png",
+      "description": "Dash forward and launch up enemies",
+      "stats": {
+        "Key": "E",
+        "Casting": "Movement-based damage ability",
+        "Average Speed": "60m/s",
+        "Maximum Distance": "20m",
+        "Upward Slash Damage": "140",
+        "Cooldown": "6s"
+      },
+      "icon_file": "magik/abilities/11_ability_e_umbral-incursion.png"
+    },
+    {
+      "name": "Eldritch Whirl",
+      "slot": "ability",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/ab4444b3-e2b2-4855-bce8-ac5e4aadec45.png",
+      "description": "Spin while swinging the Soulsword after exiting a Stepping Disc",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "A cylindrical spell field in melee range",
+        "Damage": "Deals 3 hits at intervals of 0.25s, each dealing 45 damage",
+        "Range": "A cylindrical spell field with a radius of 12m and a height of 5m"
+      },
+      "icon_file": "magik/abilities/12_ability_left-click_eldritch-whirl.png"
+    },
+    {
+      "name": "Magik Slash",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/055e35e2-253d-45da-ae04-82984115f741.png",
+      "description": "Strike forward an air slash",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Maximum Charge Time": "2s",
+        "Projectile Speed": "100m/s",
+        "Damage": "90 - 180 (Maximum damage is achieved after 1.8s of charging)",
+        "Cooldown": "3s"
+      },
+      "icon_file": "magik/abilities/13_ability_right-click_magik-slash.png"
+    },
+    {
+      "name": "Demon's Rage",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/7c8271e5-5e8c-4394-a7d5-7a9e6f578295.png",
+      "description": "Summon a Limbo demon that attacks enemies after exiting a Stepping Disc",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "A cuboid spell field in melee range",
+        "Damage": "25 damage per hit",
+        "Attack Speed": "0.25s per hit",
+        "Range": "Length: 6m, Width: 4m, Height: 4m",
+        "Maximum Duration for Summons": "4s",
+        "Summons' Health": "200"
+      },
+      "icon_file": "magik/abilities/14_ability_right-click_demon-s-rage.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "CHAIN OF CYTTORAK",
+        "icon": "https://r.res.easebar.com/pic/20250912/d6385e94-02b9-4890-b366-46e7194f8ade.png",
+        "description": "Doctor Strange shares his arcane mastery with Scarlet Witch and Magik. Scarlet Witch's Chthonian Burst is replaced with Mystic Burst upon activation. Hold down the attack button to unleash a rapid, relentless salvo of magical missiles in the target direction. Magik can unleash a Chain of Cyttorak that links two enemies and slows them; the farther they are apart, the greater the Slow effect inflicted during the link",
+        "stats": {
+          "Key": "C",
+          "Max Link Generation Distance": "15m",
+          "Projectile Speed": "120m/s",
+          "Projectile Hit Damage": "45",
+          "Damage to the Link's Secondary Target": "30",
+          "Link Maximum Duration": "4s",
+          "Slow Rate": "Begins at 0%, growing to 40% at 5m",
+          "Link Breakage Distance": "30m",
+          "Cooldown": "20s",
+          "Damage Over Time": "10/s"
+        },
+        "icon_file": "magik/teamups/received_01_chain-of-cyttorak.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "CHAIN OF CYTTORAK",
+        "icon": "https://r.res.easebar.com/pic/20260707/8f838e1f-3b43-44dc-afad-8e898565839b.png",
+        "partner": "Doctor Strange",
+        "base": {
+          "description": "Chain of Cyttorak can tether two enemies simultaneously, dragging both targets to the same location.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "SLOW RATE": "Begins at 0%, growing to 40% at 5m",
+            "Chain Damage over Time": "10/s, up to 4s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Doctor Strange, Chain of Cyttorak can tether multiple enemies at once, pulling the entire group to a singular point.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "Cyttorak Chains can link multiple enemies at once, pulling them to the same location"
+          }
+        },
+        "icon_file": "magik/teamups/provided_01_chain-of-cyttorak.png"
+      },
+      {
+        "name": "VOID PENTAGRAM",
+        "icon": "https://r.res.easebar.com/pic/20260707/30540533-596a-4c5f-bc43-2e8442fcdd08.png",
+        "partner": "The Hood",
+        "base": {
+          "description": "Casting Stepping Discs within an Hellish Magic Circle refunds energy, and each use of Stepping Discs summons a Limbo Demon.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Duration": "5s",
+            "Magic Circle Range": "8m radius",
+            "Hellfire Trail Energy Refund": "0.5",
+            "Limbo Demo Health": "100",
+            "Limbo Demo Duration": "4s",
+            "Limbo Demo Attack Range": "6.5m",
+            "Damage": "20/hit, 4 times per second"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with The Hood, the summoned Limbo Demons have heavily increased Health and a wider attack range.",
+          "stats": {
+            "Key": "C",
+            "Hell Frontier Demon Health Increase": "100",
+            "Hell Frontier Demon Attack Range Increase": "2.5m"
+          }
+        },
+        "icon_file": "magik/teamups/provided_02_void-pentagram.png"
+      }
+    ]
+  },
+  "source_name": "MAGIK",
+  "uuid": "dd9a323f-da66-4ba8-9e37-1d3e8398a9b4",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195682.html",
+  "portrait_files": [
+    "magik/portraits/portrait_1.png",
+    "magik/portraits/portrait_2.png"
+  ]
+}

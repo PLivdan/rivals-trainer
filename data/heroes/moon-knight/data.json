@@ -1,0 +1,241 @@
+{
+  "name": "MOON KNIGHT",
+  "real_name": "MARC SPECTOR",
+  "role": "DUELIST",
+  "description": "As the avatar of the Egyptian God of Vengeance, Marc Spector's body has been enhanced by Khonshu himself. Bathed in a luminous aura that pierces the darkness, Moon Knight glides through the night, ready to sear his enemies with his master's sacred Ankhs.",
+  "lore": "Mercenary Marc Spector was given a second chance at life when he became the avatar of the Egyptian moon god, Khonshu. As Moon Knight, he doles out righteous vengeance, locked in a never-ending battle with both the criminals on the streets and the voices in his head. At Khonshu's behest, Marc doles out righteous vengeance against those from across all timelines that challenge his master, putting him at odds with everyone from the mystic evils of Doctor Doom to the unknowable, alien darkness that threatens mortals and gods alike.",
+  "base_stats": {
+    "Health": "275",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/bb7f8497-b56d-4c70-a707-82b097ca5392.png",
+    "https://r.res.easebar.com/pic/20241122/7679c98b-7aba-4027-886a-2f7d666473d5.png"
+  ],
+  "forms": [
+    {
+      "name": "MOON KNIGHT",
+      "stats": {
+        "Health": "275",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/bb7f8497-b56d-4c70-a707-82b097ca5392.png",
+        "https://r.res.easebar.com/pic/20241122/7679c98b-7aba-4027-886a-2f7d666473d5.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Crescent Dart",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/f4bab63c-dd7b-4ddc-b9f5-d0481acffaf3.png",
+      "description": "Unleash Crescent Darts forward that can bounce between enemies and Ankhs, dealing damage to enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Triple shot that fires in a straight trajectory",
+        "Projectile Speed": "150m/s",
+        "Fire Rate": "The firing interval between shots is 0.05s, with an interval of 0.57s between each round of shooting",
+        "Damage": "25 damage per round",
+        "Damage Falloff": "Falloff begins at 30m, decreasing to 50% at 50m",
+        "Maximum Bounce Distance": "7m",
+        "Maximum Number of Bounces": "3",
+        "Damage Falloff Per Bounce": "-30%",
+        "Ammo": "30",
+        "Critical Hit": "Yes"
+      },
+      "icon_file": "moon-knight/abilities/01_primary_left-click_crescent-dart.png"
+    },
+    {
+      "name": "Hand of Khonshu",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/9253ada4-37a7-4cc9-9008-2d3e748d8dc1.png",
+      "description": "Open a portal that allows Khonshu to bombard enemies with his talons",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Delayed Spherical Spell Field",
+        "Duration": "4.5s",
+        "Descending Range": "8m radius",
+        "Frequency": "4 hits per second",
+        "Number of Hits": "18",
+        "Range": "5m spherical radius",
+        "Damage": "150 damage per hit",
+        "Damage Falloff": "Start at 1.5m, 70% falloff at 5m",
+        "Energy Cost": "3100"
+      },
+      "icon_file": "moon-knight/abilities/02_ability_q_hand-of-khonshu.png"
+    },
+    {
+      "name": "Night Glider",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/815eee35-da1f-4c84-808b-ce71aa39df9c.png",
+      "description": "Hold SHIFT to glide",
+      "stats": {
+        "Key": "SHIFT",
+        "Horizontal Movement Speed": "8.7m/s",
+        "Descending Speed": "1.5m/s"
+      },
+      "icon_file": "moon-knight/abilities/03_ability_shift_night-glider.png"
+    },
+    {
+      "name": "Ancient Ankh",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/4dee2bf5-3255-4ce7-bfe4-463eb64bda06.png",
+      "description": "Fire an Ankh to launch up enemies within its radius towards the center",
+      "stats": {
+        "Key": "E",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Projectile Speed": "60m/s",
+        "Pull-In Range": "5m spherical radius",
+        "Pull-In Damage": "20",
+        "Bouncing Range": "7m spherical radius",
+        "Cooldown": "12s"
+      },
+      "icon_file": "moon-knight/abilities/04_ability_e_ancient-ankh.png"
+    },
+    {
+      "name": "Moonlight Hook",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/60e26c6a-92ea-4e8a-a669-4c3a9be668f7.png",
+      "description": "Launch a frontal grappling hook that pulls Moon Knight towards it",
+      "stats": {
+        "Key": "F",
+        "Casting": "Dash",
+        "Grappling Hook Speed": "120m/s",
+        "Grappling Hook Length": "25m",
+        "Maximum Distance": "21.5m/s",
+        "Cooldown": "12s"
+      },
+      "icon_file": "moon-knight/abilities/05_ability_f_moonlight-hook.png"
+    },
+    {
+      "name": "Rising Leap",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/f7f1a460-7069-42b0-b926-a5fd1c43d171.png",
+      "description": "Perform a double jump",
+      "stats": {
+        "Key": "Space",
+        "Cooldown": "6s"
+      },
+      "icon_file": "moon-knight/abilities/06_ability_space_rising-leap.png"
+    },
+    {
+      "name": "Moon Blade",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/7864c28b-7c4b-4cc4-8e74-d600e7c586ee.png",
+      "description": "Launch forward a Moon Blade that can bounce between enemies and Ankhs, dealing damage to enemies",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Projectile Speed": "120m/s",
+        "Damage": "70",
+        "Damage Falloff": "Falloff begins at 30m, decreasing to 50% at 50m",
+        "Maximum Bounce Distance": "7m",
+        "Maximum Number of Bounces": "3",
+        "Damage Falloff Per Bounce": "-30%",
+        "Bonus Health": "25, up to a max of 76 Bonus Health",
+        "Critical Hit": "Yes",
+        "Cooldown": "6s",
+        "Charges": "2"
+      },
+      "icon_file": "moon-knight/abilities/07_ability_right-click_moon-blade.png"
+    },
+    {
+      "name": "Triple Eclipse",
+      "slot": "ability",
+      "key": "V",
+      "icon": "https://r.res.easebar.com/pic/20241125/9b92fd1c-3cdc-4d9d-83cf-f43d6706a73d.png",
+      "description": "Perform a combo with his truncheon, and the third strike will launch up the enemy hit slightly",
+      "stats": {
+        "Key": "V",
+        "Casting": "Melee",
+        "Maximum Distance": "3m"
+      },
+      "icon_file": "moon-knight/abilities/08_ability_v_triple-eclipse.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "MOON GOD'S CHOSEN",
+        "icon": "https://r.res.easebar.com/pic/20251115/85d68157-5d41-4297-a2b2-d353a96dda73.png",
+        "description": "Blessed by Khonshu, Blade gains a new ability. When activated, Blade swings his Ancestral Sword in a powerful slash, dashing forward a short distance. At the end of the dash, he swiftly slashes four times, each strike sending a Darkmoon Blade forward. When a Darkmoon Blade hits an enemy, it bounces to nearby targets",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "5% Damage Boost"
+        },
+        "icon_file": "moon-knight/teamups/received_01_moon-god-s-chosen.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "LUMINOUS MOON",
+        "icon": "https://r.res.easebar.com/pic/20260707/2eb1f779-daee-4fe3-a7a4-935cca430e77.png",
+        "partner": "Cloak & Dagger",
+        "base": {
+          "description": "Enter Phased state and dash forward. Upon concluding, emit a Light Energy Healing Wave that heals Moon Knight and nearby allies.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15",
+            "Dash Duration": "0.3s",
+            "Dashing Speed": "50 m/s",
+            "Phased Duration": "0.25s",
+            "Healing Amount": "55",
+            "Healing Range": "5m radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Cloak & Dagger, the Phased state duration is extended, the dash distance increases, and the Light Energy Healing Wave boasts a larger radius and stronger healing output.",
+          "stats": {
+            "Key": "C",
+            "Dash Duration": "0.35s",
+            "Phased Duration": "0.35s",
+            "Healing Amount": "65",
+            "Healing Range": "8m radius"
+          }
+        },
+        "icon_file": "moon-knight/teamups/provided_01_luminous-moon.png"
+      },
+      {
+        "name": "BLOOD MOON",
+        "icon": "https://r.res.easebar.com/pic/20260707/4bf349e4-2510-4136-b545-4d57da1d7453.png",
+        "partner": "Elsa Bloodstone",
+        "base": {
+          "description": "Deploy an Ankh Trap. Upon triggering, an Ankh materializes at the location, while summoning a single Talon of Khonshu to Launch enemies toward the trap's center.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15",
+            "Trap Health": "100",
+            "ANKH Health": "125",
+            "Time for Trap to Turn Invisible": "1s",
+            "Talons of Khonshu Range": "5m radius",
+            "Damage": "70"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Elsa Bloodstone, triggering the trap summons multiple Talons of Khonshu to bombard the area.",
+          "stats": {
+            "Key": "C",
+            "Damage": "40",
+            "Talons of Khonshu Generated": "3"
+          }
+        },
+        "icon_file": "moon-knight/teamups/provided_02_blood-moon.png"
+      }
+    ]
+  },
+  "source_name": "MOON KNIGHT",
+  "uuid": "7dc8b934-fe12-49ae-ac3b-7d7c3a688443",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195685.html",
+  "portrait_files": [
+    "moon-knight/portraits/portrait_1.png",
+    "moon-knight/portraits/portrait_2.png"
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "name": "ANGELA",
+  "real_name": "ALDRIF ODINSDOTTIR",
+  "role": "VANGUARD",
+  "description": "As the Hand of Heven, the warrior called Angela embodies unwavering courage and determination. Able to manipulate Ichors into various weapons and unfurl her wings to soar across the battlefield, she is ready to deliver divine judgment upon her foes!",
+  "lore": "Long ago, Aldrif, the infant daughter of Odin, was stolen and raised amongst the Angels of the Tenth Realm. She rose through their ranks to become the realm's most feared and respected warrior — Angela, the Hand of Heven. When Hela kidnapped Angela's baby sister, Laussa, Angela prepared to give chase. But all of Heven was swept into a collapsing universe where gods and demons were locked in eternal combat. Angela eventually found her way back home, tracking Laussa and Hela to the Eighth City in the newly-formed Heart of Heaven.",
+  "base_stats": {
+    "Health": "350+200 Regenerative Shield",
+    "Movement Speed": "6m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20250911/7316bfed-25bc-4184-ada9-3ae2c7f5ecfb.png",
+    "https://r.res.easebar.com/pic/20250911/dcfc93c0-1dca-496b-8d1f-3163fb19e3c7.png"
+  ],
+  "forms": [
+    {
+      "name": "ANGELA",
+      "stats": {
+        "Health": "350+200 Regenerative Shield",
+        "Movement Speed": "6m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20250911/7316bfed-25bc-4184-ada9-3ae2c7f5ecfb.png",
+        "https://r.res.easebar.com/pic/20250911/dcfc93c0-1dca-496b-8d1f-3163fb19e3c7.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Spear of Ichors",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250911/5a3ec9ee-6a3b-44ac-b64c-ebb34f28c425.png",
+      "description": "Lunge forward with your spear, dealing damage that increases with Attack Charge. At full charge, Spear of Ichor can launch up enemies",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "45",
+        "Charge-Damage Conversion Ratio": "35%",
+        "Maximum Distance": "7m",
+        "Attack Interval": "0.96s per hit",
+        "Special Effect": "At full charge, Spear of Ichor can launch up enemies and cause 20 extra damage."
+      },
+      "icon_file": "angela/abilities/01_primary_left-click_spear-of-ichors.png"
+    },
+    {
+      "name": "Axes Of Ichors",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20250911/6e3c4ad4-32a2-4140-83f3-03e236885da2.png",
+      "description": "Alternate powerful strikes forward with twin axes, dealing increased damage as Attack Charge grows. The fourth strike propels you forward in a swift dash",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Damage": "First three strikes: 30; the forth strike: 50.",
+        "Charge-Damage Conversion Ratio": "45%",
+        "Maximum Distance": "4m",
+        "Attack Interval": "First three strikes: 0.4s per hit; the forth strike: 0.6s per hit.",
+        "Special Effect": "The fourth strike propels you forward in a swift dash."
+      },
+      "icon_file": "angela/abilities/02_primary_left-click_axes-of-ichors.png"
+    },
+    {
+      "name": "SHIELDED STANCE",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20250911/89c12b85-cd4c-4d3e-a6b8-b628c6de8eba.png",
+      "description": "Transform Ichors into a shield, gaining Attack Charge when absorbing damage",
+      "stats": {
+        "Key": "Right Click",
+        "Maximum Shield Value": "350",
+        "Cooldown": "1s",
+        "Cooldown After Destroyed": "4s",
+        "Delayed Recovery After Release": "2s",
+        "Recovery Speed": "60/s",
+        "Damage Resisted-Charge Conversion Ratio": "35%"
+      },
+      "icon_file": "angela/abilities/03_ability_right-click_shielded-stance.png"
+    },
+    {
+      "name": "Seraphic Soar",
+      "slot": "passive",
+      "key": "PASSIVE",
+      "icon": "https://r.res.easebar.com/pic/20250911/06ebb164-e0fe-494a-bfe9-58c81de0d369.png",
+      "description": "Glide freely through the air. Continuous flight builds Attack Charge",
+      "stats": {
+        "Key": "PASSIVE",
+        "Time Required to Enter Glide": "0.1s",
+        "Glide Activation Condition": "Maintain the forward speed faster than 5m/s for 1s",
+        "Glide Speed": "10m/s",
+        "Passive Energy Gained During Glide": "22.2/s"
+      },
+      "icon_file": "angela/abilities/04_passive_passive_seraphic-soar.png"
+    },
+    {
+      "name": "Divine Judgement",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250911/4738a04f-deef-40f5-9e53-51c71b8dcaa7.png",
+      "description": "Dive downward, switch to twin axes and infuse the ground with Ichors to create a Divine Judgement Zone upon impact. Within the zone, gain enhanced Speed and attacks grant Bonus Health to self and nearby allies",
+      "stats": {
+        "Key": "E",
+        "Damage": "Hit damage: 30; damage over time: 12.5/s",
+        "Damage Over Time Spell Field Range": "A cylindrical spell field with a radius of 8m and a height of 2m.",
+        "Cooldown": "12s",
+        "Movement Boost (Self)": "35%",
+        "Spell Field Duration": "6s",
+        "Bonus Health": "Within the Divine Judgement zone, Angela’s each Axes of Ichors hit grants 50 Bonus Health to herself and 25 Bonus Health to allies within the area.",
+        "Bonus Max Health": "200"
+      },
+      "icon_file": "angela/abilities/05_ability_e_divine-judgement.png"
+    },
+    {
+      "name": "Wingblade Ascent",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20250911/32ac3b89-8941-4ee9-9b81-fd14fdfff36b.png",
+      "description": "Take to the skies, switching back to Spear of Ichors",
+      "stats": {
+        "Key": "E",
+        "Ascent Height": "8m",
+        "Ascent Duration": "0.35s",
+        "Ascent Elevation Angle": "60°"
+      },
+      "icon_file": "angela/abilities/06_ability_e_wingblade-ascent.png"
+    },
+    {
+      "name": "Assassin's Charge",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20250911/dc923ca4-e2a4-4448-92e0-cae6d029e5f1.png",
+      "description": "Enter an accelerated dash state, enemies struck head-on are carried through the air for a short distance",
+      "stats": {
+        "Key": "Shift",
+        "Cooldown": "4s",
+        "Maximum Energy": "100",
+        "Energy Recovery Speed": "12.5/s",
+        "Energy Cost": "25/s; 75/s when piercing an enemy",
+        "One-time Energy Cost": "20",
+        "Energy Required to Activate the Ability": "30",
+        "Recover Delay": "2",
+        "Dash State Speed": "18 m/s",
+        "Maximum Enemies Could Be Carried": "2",
+        "Passive Energy Gained During the Dash": "25/s",
+        "Special Effect": "Every enemy pierced grants Angela with a 50/s passive energy recovery.",
+        "Piercing Damage": "30"
+      },
+      "icon_file": "angela/abilities/07_ability_shift_assassin-s-charge.png"
+    },
+    {
+      "name": "Heven's Retribution",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20250911/0240ecc1-d434-46cc-82ba-abdae0c275ef.png",
+      "description": "Wrap your spear in ribbons and hurl it with force. Upon impact, the ribbons bind nearby enemies. Angela can leap to the spear's location, damaging surrounding enemies and creating a Divine Judgement Zone",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3100",
+        "Projectile Speed": "60 m/s",
+        "Spell Field Damage": "40",
+        "Spell Field Range": "8m spherical radius",
+        "Hit Ground Damage": "100",
+        "HIt Ground Spell Field Range": "8m spherical radius",
+        "Special Effect": "Mobility abilities of enemies bound by the ribbons will be disabled. Enemies within a certain distance around the spear will be slowed.",
+        "Slow Rate": "80%",
+        "Projectile Damage": "30",
+        "SUMMONS' HEALTH": "650"
+      },
+      "icon_file": "angela/abilities/08_ability_q_heven-s-retribution.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Celestial Command",
+        "icon": "https://r.res.easebar.com/pic/20250911/9761dd6e-a640-43f4-84d0-db6613e412ad.png",
+        "description": "Angela shares fragments of her Ichors with Thor, empowering him to hurl a Thunder Spear that restores Thorforce for each enemy struck. Afterward, Thor can leap to the spear's explosion point, dealing a second wave of damage to all enemies within range",
+        "stats": {
+          "Key": "Passive",
+          "Team-Up Bonus": "+100 Max Health"
+        },
+        "icon_file": "angela/teamups/received_01_celestial-command.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "ASGARDIANS OF THE GALAXY",
+        "icon": "https://r.res.easebar.com/pic/20260707/ff740409-0bb7-47dc-9879-fb6eec082d22.png",
+        "partner": "Star-Lord",
+        "base": {
+          "description": "Activation grants Reveal within a targeted area. Activating the ability again performs a slam attack; enemies hit by the slam are Grounded.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "25s",
+            "Reveal Spell Field Range": "50m spherical radius spell field",
+            "Ground Slam Spell Field Range": "10m spherical radius spell field",
+            "Ground Slam Damage": "65",
+            "Ground Bind Duration": "2s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Star-Lord, Angela gains Bonus Health scaling with the number of enemies struck by the slam.",
+          "stats": {
+            "Key": "C",
+            "Bonus Health": "Gain 75 Bonus Health per target hit, up to 200"
+          }
+        },
+        "icon_file": "angela/teamups/provided_01_asgardians-of-the-galaxy.png"
+      },
+      {
+        "name": "ODIN'S UNACKNOWLEDGED",
+        "icon": "https://r.res.easebar.com/pic/20260707/22a763cb-4e99-45fd-afaa-3f053c79f084.png",
+        "partner": "Loki",
+        "base": {
+          "description": "Project an Illusion forward. The illusion utilizes Assassin's Charge to thrust at enemies. Enemies struck head-on will be carried through the air for a short while.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "20s",
+            "Illusion Max Damage Absorbed": "250"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Loki, the ability gains two charges.",
+          "stats": {
+            "Key": "C",
+            "Special Effect": "The ability gains 2 charges"
+          }
+        },
+        "icon_file": "angela/teamups/provided_02_odin-s-unacknowledged.png"
+      }
+    ]
+  },
+  "source_name": "ANGELA",
+  "uuid": "03af29d0-1a53-4077-9062-8201ed327635",
+  "article_url": "https://www.marvelrivals.com/20250911/41360_1258873.html",
+  "portrait_files": [
+    "angela/portraits/portrait_1.png",
+    "angela/portraits/portrait_2.png"
+  ]
+}

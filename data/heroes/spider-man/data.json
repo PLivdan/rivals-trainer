@@ -1,0 +1,272 @@
+{
+  "name": "SPIDER-MAN",
+  "real_name": "PETER PARKER",
+  "role": "DUELIST",
+  "description": "Swinging around the arena on his signature weblines, your friendly neighborhood Spider-Man, AKA Peter Parker, catches his rivals by surprise with sneaky, sticky bursts of webbing and unexpected attacks from above. Look out… here comes the Spider-Man!",
+  "lore": "Bitten by a radioactive spider, young Peter Parker gained the ability to cling to almost any surface, a “spider-sense” that warns him of danger, and the proportional speed, strength, and agility of an arachnid. Now, he strives to use his great power responsibly as the wall-crawling wonder known as Spider-Man. Since the Timestream Entanglement, Spider-Man has been swinging between two battlefronts. When he’s not rallying New York’s heroes to fight against ancient forces of darkness, he’s busy protecting the Web of Life and Destiny with his fellow Web-Warriors in Tokyo Webworld.",
+  "base_stats": {
+    "Health": "250",
+    "Movement Speed": "6 m/s"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20241122/1be08d9c-f643-4600-897f-fc68d3ae89d4.png",
+    "https://r.res.easebar.com/pic/20241122/18cc7289-36bd-455e-ae80-6b0eae74da7b.png"
+  ],
+  "forms": [
+    {
+      "name": "SPIDER-MAN",
+      "stats": {
+        "Health": "250",
+        "Movement Speed": "6 m/s"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20241122/1be08d9c-f643-4600-897f-fc68d3ae89d4.png",
+        "https://r.res.easebar.com/pic/20241122/18cc7289-36bd-455e-ae80-6b0eae74da7b.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Spider-Power",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/b69dc2e7-1a28-471e-a000-19b06a1adac4.png",
+      "description": "Swing fists forward to strike, dealing extra damage to the enemy with a Spider-Tracer",
+      "stats": {
+        "Key": "Left Click",
+        "Casting": "Melee",
+        "Special Mechanic": "The default attack is a punch, but after landing two consecutive punches, the next attack will be a flying kick",
+        "Punch": "",
+        "Damage": "40",
+        "Maximum Distance": "4m",
+        "Attack Interval": "0.82s per kick",
+        "Kick": ""
+      },
+      "icon_file": "spider-man/abilities/01_primary_left-click_spider-power.png"
+    },
+    {
+      "name": "Web-Cluster",
+      "slot": "primary",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20241120/51836fcc-b278-46b2-80d6-3450f9902f18.png",
+      "description": "Shoot a Web-Cluster that deals damage and attaches a Spider-Tracer to the hit enemy",
+      "stats": {
+        "Key": "Right Click",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Charges": "5",
+        "Recharge Speed": "2s per shot",
+        "Projectile Speed": "120 m/s",
+        "Damage": "30",
+        "Damage Falloff": "Falloff begins at 20m, decreasing to 50% at 40m",
+        "Critical Hit": "No",
+        "Spider-Tracer Duration": "3s",
+        "Spider-Tracer Damage": "45"
+      },
+      "icon_file": "spider-man/abilities/02_primary_right-click_web-cluster.png"
+    },
+    {
+      "name": "Spectacular Spin",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20241120/df0e1190-adea-471c-aa47-186aaabe41dc.png",
+      "description": "Launch Web-Clusters all around to damage and Stun enemies",
+      "stats": {
+        "Key": "Q",
+        "Casting": "Spherical Spell Field",
+        "Range": "8m spherical radius",
+        "Duration": "2.4s",
+        "Attack Interval": "0.08s per hit",
+        "Damage": "15 damage per hit",
+        "Bonus Health (Self)": "250",
+        "Slow Effect": "-3% per hit",
+        "Slow Duration": "1s",
+        "Hits Required to Stun": "20",
+        "Stun Duration": "1.5s",
+        "Energy Cost": "2800",
+        "Special Effect": "Striking an enemy applies a stacking Slow effect, and after reaching a certain number of stacks, the enemy will be Stunned"
+      },
+      "icon_file": "spider-man/abilities/03_ability_q_spectacular-spin.png"
+    },
+    {
+      "name": "Web-Swing",
+      "slot": "ability",
+      "key": "SHIFT",
+      "icon": "https://r.res.easebar.com/pic/20241120/fb95e6a5-5e9d-44d7-b565-2cda190e0cb8.png",
+      "description": "Shoot a strand of webbing to swing.",
+      "stats": {
+        "Key": "SHIFT",
+        "Casting": "Dash",
+        "Maximum Webbing Length": "30m",
+        "Charges": "3",
+        "Recharge Speed": "6s per charge"
+      },
+      "icon_file": "spider-man/abilities/04_ability_shift_web-swing.png"
+    },
+    {
+      "name": "Get Over Here!",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20241120/d3b40d5d-cb78-4e6d-990c-0ec61404f8e0.png",
+      "description": "Shoot webbing to reel in the hit enemy. If the enemy is tagged with a Spider-Tracer, Spider-Man will get pulled to them instead",
+      "stats": {
+        "Key": "E",
+        "Casting": "Projectile that fires in a straight trajectory",
+        "Projectile Speed": "80 m/s",
+        "Maximum Distance": "20m",
+        "Projectile Damage": "25",
+        "Kicking Distance": "24m",
+        "Kick Damage": "55",
+        "Cooldown": "8s",
+        "Special Mechanic": "Attack enemies marked with a Spider-Tracer, pulling Spider-Man towards them and performing a flying kick"
+      },
+      "icon_file": "spider-man/abilities/05_ability_e_get-over-here.png"
+    },
+    {
+      "name": "Amazing Combo",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20241120/db4cbe9c-98b6-47b2-849b-655e63c86f87.png",
+      "description": "Launch an enemy upward, dealing extra damage to the enemy with a Spider-Tracer",
+      "stats": {
+        "Key": "F",
+        "Casting": "Melee",
+        "Range": "4m spherical radius",
+        "Damage": "70",
+        "Charges": "2",
+        "Recharge Speed": "6s per charge",
+        "Cooldown": "2s"
+      },
+      "icon_file": "spider-man/abilities/06_ability_f_amazing-combo.png"
+    },
+    {
+      "name": "Thwip and Flip",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241124/82debb10-0166-41c3-914e-9dee98cd30af.png",
+      "description": "Perform a double jump",
+      "stats": {
+        "Key": "Space",
+        "Special Mechanic": "Can only be cast again after landing"
+      },
+      "icon_file": "spider-man/abilities/07_ability_space_thwip-and-flip.png"
+    },
+    {
+      "name": "Spider-Sense",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20241120/70f075d3-fdcc-4339-b537-061af16fae55.png",
+      "description": "Give a warning of enemies that have been around",
+      "stats": {
+        "Key": "Passive",
+        "Disappearance Time To Trigger Detection": "3s",
+        "Range": "8m spherical radius"
+      },
+      "icon_file": "spider-man/abilities/08_passive_passive_spider-sense.png"
+    },
+    {
+      "name": "Wall Crawl",
+      "slot": "ability",
+      "key": "Space",
+      "icon": "https://r.res.easebar.com/pic/20241120/e0ab4409-cfaa-4e13-9731-240a09a6a553.png",
+      "description": "Press Space to wall crawl, and while crawling, left-click to sprint",
+      "stats": {
+        "Key": "Space",
+        "Wall-Crawling Speed": "3 m/s",
+        "Sprinting Speed": "9 m/s"
+      },
+      "icon_file": "spider-man/abilities/09_ability_space_wall-crawl.png"
+    }
+  ],
+  "team_ups": {
+    "received": [
+      {
+        "name": "Inferno Blast",
+        "icon": "https://r.res.easebar.com/pic/20250712/76419110-b69d-460d-a1d3-4ccbceb7f6de.png",
+        "description": "Human Torch stores Pyrokinetic Energy in Spider-Man's suit, enabling him to unleash an Inferno Blast that sprays a fiery web while performing a backflip to create distance. The flames damage enemies and apply a Burn-Tracer. Detonating these Burn-Tracers inflicts Damage Over Time",
+        "stats": {
+          "Key": "C",
+          "Damage": "30",
+          "Maximum Distance": "8m",
+          "Burn-Tracer Duration": "3s",
+          "Burn-Tracer DoT Duration": "4s",
+          "Burn-Tracer DoT Damage": "15/s",
+          "Backflip Distance": "7m",
+          "Cooldown": "12s"
+        },
+        "icon_file": "spider-man/teamups/received_01_inferno-blast.png"
+      },
+      {
+        "name": "Sticky Spider-Bomb",
+        "icon": "https://r.res.easebar.com/pic/20260117/65af9b66-0441-49bc-aa49-9756d53c483d.png",
+        "description": "Cyber-Spiders Peni Parker whips up a Sticky Bomb for Spider-Man! Prime it, then toss it before the timer's up for a blast that damages nearby enemies and attaches a Spider-Tracer to them. If not thrown in time, it explodes on Spider-Man, recharging a Web-Cluster shot and granting Bonus Health",
+        "stats": {
+          "Key": "C",
+          "Countdown Duration": "3s",
+          "Projectile Damage": "10",
+          "Spell Field Damage": "30",
+          "Spell Field Range": "5m radius spherical spell field",
+          "Bonus Health": "50",
+          "Cooldown": "20"
+        },
+        "icon_file": "spider-man/teamups/received_02_sticky-spider-bomb.png"
+      }
+    ],
+    "provided": [
+      {
+        "name": "SYMBIOTE BOND",
+        "icon": "https://r.res.easebar.com/pic/20260707/800f4d4c-e1f7-4ccd-85c3-a1fa10eb5591.png",
+        "partner": "Venom",
+        "base": {
+          "description": "Venom shares a part of his symbiote with Spider-Man, activating their symbiote abilities. Spider-Man can convert the symbiotes into explosive spikes that inflict harm on nearby enemies and relentlessly drive them back.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Damage Reduction Rate": "90%",
+            "One-Time Damage": "30",
+            "Damage Over Time": "10/hit, once per second",
+            "Damage Range": "5m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Venom, this triggers additional Touch of Klyntar tendrils that continuously tether and damage enemies on top of the base effect.",
+          "stats": {
+            "Key": "C",
+            "Damage Over Time": "1/hit, 10 times per second",
+            "Slow Rate": "50%"
+          }
+        },
+        "icon_file": "spider-man/teamups/provided_01_symbiote-bond.png"
+      },
+      {
+        "name": "PARKER POWER-UP",
+        "icon": "https://r.res.easebar.com/pic/20260707/101f4233-a0af-4629-94b2-02395d1cb489.png",
+        "partner": "Peni Parker",
+        "base": {
+          "description": "Peni Parker whips up a Sticky Spider-Bomb for Spider-Man! Prime it, then toss it before the timer's up for a blast that damages nearby enemies and attaches a Spider-Tracer to them. If not thrown in time, it explodes on Spider-Man, recharging all Web-Cluster shots.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Sticky Spider-Bomb Explosion Damage": "50",
+            "Bonus Health": "50",
+            "Explosion Countdown": "2s"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Peni Parker, Spider-Tracers applied by Web-Cluster are upgraded. Detonating these upgraded marks generates <Buff>Bonus Health for Spider-Man.",
+          "stats": {
+            "Key": "C",
+            "Bonus Health from Detonating Mark": "40"
+          }
+        },
+        "icon_file": "spider-man/teamups/provided_02_parker-power-up.png"
+      }
+    ]
+  },
+  "source_name": "SPIDER-MAN",
+  "uuid": "feef5830-45b0-435e-8f7b-829241918b4d",
+  "article_url": "https://www.marvelrivals.com/20241123/41360_1195680.html",
+  "portrait_files": [
+    "spider-man/portraits/portrait_1.png",
+    "spider-man/portraits/portrait_2.png"
+  ]
+}

@@ -100,6 +100,16 @@
   .opt.correct{background:#12402c;border-color:var(--good);color:#b6f5d3}
   .opt.wrong{background:#411a20;border-color:var(--bad);color:#ffb8c0}
   .opt:disabled{cursor:default}
+  .opt.face{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 6px}
+  .opt.face img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:top center;
+    border:2px solid var(--line);background:var(--panel)}
+  .opt.face .nm{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.2px;line-height:1.15}
+  .opts.effs{grid-template-columns:1fr}
+  .opt.eff-opt{text-align:left;font-size:12.5px;font-weight:600;line-height:1.45;text-transform:none;padding:12px 14px}
+  .tufaces{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:8px}
+  .tufaces .pico{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top center;
+    border:2px solid var(--gold);background:var(--panel2)}
+  .tufaces .plus{font-size:24px;color:var(--mut);font-weight:800}
   .reveal{margin-top:16px;padding:14px;background:#0c1120;border:1px solid var(--line);border-radius:12px;
     font-size:13px;color:var(--mut);text-align:left;display:none}
   .reveal.show{display:block}
@@ -183,6 +193,7 @@ const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const cdLabel=n=>n+'s';
+const firstInt=s=>{const m=(s||'').match(/\d+/);return m?+m[0]:null;};
 
 fetch('site_data.json').then(r=>r.json()).then(d=>{S.heroes=d.heroes;init()});
 
@@ -192,7 +203,14 @@ function init(){
   $$('.chip[data-r]').forEach(c=>c.onclick=()=>{S.role=c.dataset.r;
     $$('.chip[data-r]').forEach(x=>x.classList.toggle('on',x===c));renderGrid()});
   $('#ov').onclick=e=>{if(e.target.id==='ov')closeSheet()};
-  S.allCds=[...new Set(S.heroes.flatMap(h=>h.abilities.filter(a=>a.cd).map(a=>a.cd)))].sort((a,b)=>a-b);
+  const cdN=[...S.heroes.flatMap(h=>h.abilities.filter(a=>a.cd).map(a=>a.cd)),
+             ...S.heroes.flatMap(h=>h.teamups.filter(t=>t.cd).map(t=>t.cd))];
+  S.allCds=[...new Set(cdN)].sort((a,b)=>a-b);
+  const dmgN=[...S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dmg))),
+              ...S.heroes.flatMap(h=>h.teamups.map(t=>firstInt(t.dmg)))].filter(Boolean);
+  S.allDmg=[...new Set(dmgN)].sort((a,b)=>a-b);
+  S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
+  S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
   buildScope(); renderGrid(); newCd(); renderTuLearn();
   $('#cdrestart').onclick=()=>{cd.score=0;cd.tot=0;cd.streak=0;cd.best=0;syncCd();newCd()};
   $('#cdscope').onchange=()=>{cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd()};
@@ -262,13 +280,33 @@ function closeSheet(){$('#ov').classList.remove('show')}
 
 /* ---------- COOLDOWN QUIZ ---------- */
 const cd={score:0,tot:0,streak:0,best:0,q:null};
-function cdPool(){
+function nearestOptions(correct,pool){
+  const others=[...new Set(pool||[])].filter(v=>v!==correct);
+  const below=shuffle(others.filter(v=>v<correct).sort((a,b)=>b-a).slice(0,4));
+  const above=shuffle(others.filter(v=>v>correct).sort((a,b)=>a-b).slice(0,4));
+  const picks=[];
+  if(below.length)picks.push(below.pop());
+  if(above.length)picks.push(above.pop());
+  const rest=shuffle([...below,...above]);
+  while(picks.length<3&&rest.length)picks.push(rest.pop());
+  while(picks.length<3&&others.length){const v=rnd(others);if(!picks.includes(v))picks.push(v);}
+  return shuffle([correct,...picks]);
+}
+function heroFaceOptions(correctSlug,excludeSlug){
+  const role=S.bySlug[correctSlug].role;
+  const pool=S.heroes.map(h=>h.slug).filter(s=>s!==correctSlug&&s!==excludeSlug);
+  const picks=shuffle(pool.filter(s=>S.bySlug[s].role===role)).slice(0,2);
+  const rest=shuffle(pool.filter(s=>!picks.includes(s)));
+  while(picks.length<3&&rest.length)picks.push(rest.pop());
+  return shuffle([correctSlug,...picks]);
+}
+function abScope(){
   const scope=$('#cdscope').value;
   let hs=S.heroes;
   if(scope.startsWith('role:'))hs=hs.filter(h=>h.role.includes(scope.slice(5)));
   else if(scope.startsWith('hero:'))hs=hs.filter(h=>h.slug===scope.slice(5));
   const out=[];
-  hs.forEach(h=>h.abilities.forEach(a=>{if(a.cd)out.push({...a,hero:h.name})}));
+  hs.forEach(h=>h.abilities.forEach(a=>{if(a.icon)out.push({...a,hero:h.name,heroSlug:h.slug})}));
   return out;
 }
 function buildScope(){
@@ -281,39 +319,59 @@ function buildScope(){
     .map(h=>`<option value="hero:${h.slug}">${esc(h.name)}</option>`).join('');
   sel.innerHTML=o;
 }
-function pickCdOptions(correct){
-  const others=(S.allCds||[]).filter(v=>v!==correct);
-  const below=shuffle(others.filter(v=>v<correct).sort((a,b)=>b-a).slice(0,4));
-  const above=shuffle(others.filter(v=>v>correct).sort((a,b)=>a-b).slice(0,4));
-  const picks=[];
-  if(below.length)picks.push(below.pop());
-  if(above.length)picks.push(above.pop());
-  const rest=shuffle([...below,...above]);
-  while(picks.length<3&&rest.length)picks.push(rest.pop());
-  while(picks.length<3&&others.length){const v=rnd(others);if(!picks.includes(v))picks.push(v);}
-  return shuffle([correct,...picks]);
-}
 function newCd(){
-  const pool=cdPool(); if(!pool.length){$('#cdq').innerHTML='<p class="muted">No cooldown abilities in this scope.</p>';return}
-  const a=rnd(pool);
-  const opts=pickCdOptions(a.cd);
-  cd.q=a;
+  const all=abScope();
+  if(!all.length){$('#cdq').innerHTML='<p class="muted">No abilities in this scope.</p>';return}
+  const single=$('#cdscope').value.startsWith('hero:');
+  const cds=all.filter(a=>a.cd), durs=all.filter(a=>firstInt(a.dur));
+  const bag=[];
+  if(cds.length)bag.push('cooldown','cooldown');
+  if(durs.length)bag.push('duration');
+  if(!single)bag.push('hero');
+  const type=bag.length?rnd(bag):'cooldown';
+  if(type==='hero')return newCdHero(rnd(all));
+  if(type==='duration')return newCdNumeric(rnd(durs),'duration');
+  return newCdNumeric(rnd(cds.length?cds:all),'cooldown');
+}
+function newCdNumeric(a,kind){
+  const correct=kind==='cooldown'?a.cd:firstInt(a.dur);
+  const opts=nearestOptions(correct,kind==='cooldown'?S.allCds:S.allDur);
+  cd.q={mode:kind,a,opts,correctIdx:opts.indexOf(correct)};
+  const ask=kind==='cooldown'?'Cooldown of this ability?':'How long does this ability last?';
   $('#cdq').innerHTML=`<img class="qi" src="${a.icon}" alt="">
     <div class="qhero">${esc(a.hero)}</div>
     <div class="qname">${esc(a.name)}</div>
-    <div class="qask">Cooldown of this ability?</div>
-    <div class="opts">${opts.map(v=>`<button class="opt" onclick="ansCd(this,${v})">${cdLabel(v)}</button>`).join('')}</div>
+    <div class="qask">${ask}</div>
+    <div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansCd(${i})">${cdLabel(v)}</button>`).join('')}</div>
     <div class="reveal" id="cdrev"></div>
     <button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
 }
-function ansCd(btn,v){
-  const a=cd.q; const correct=a.cd; cd.tot++;
-  $$('#cdq .opt').forEach(o=>{o.disabled=true;
-    if(parseFloat(o.textContent)===correct)o.classList.add('correct')});
-  if(v===correct){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}
-  else{cd.streak=0;btn.classList.add('wrong')}
+function newCdHero(a){
+  const opts=heroFaceOptions(a.heroSlug,null);
+  cd.q={mode:'hero',a,opts,correctIdx:opts.indexOf(a.heroSlug)};
+  $('#cdq').innerHTML=`<img class="qi" src="${a.icon}" alt="">
+    <div class="qhero">MYSTERY ABILITY</div>
+    <div class="qname">? ? ?</div>
+    <div class="qask">Which hero does this ability belong to?</div>
+    <div class="opts faces">${opts.map((s,i)=>{const hh=S.bySlug[s];
+      return `<button class="opt face" onclick="ansCd(${i})"><img src="${hh.icon}" alt="">
+        <span class="nm">${esc(hh.name)}</span></button>`;}).join('')}</div>
+    <div class="reveal" id="cdrev"></div>
+    <button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
+}
+function ansCd(i){
+  const q=cd.q,a=q.a; cd.tot++; const ok=i===q.correctIdx;
+  $$('#cdq .opt').forEach((o,idx)=>{o.disabled=true;
+    if(idx===q.correctIdx)o.classList.add('correct');
+    else if(idx===i)o.classList.add('wrong');});
+  if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
+  const facts=[];
+  if(a.cd_text)facts.push('Cooldown '+a.cd_text);
+  if(a.dur)facts.push('Duration '+a.dur);
+  if(a.dmg)facts.push('Damage '+a.dmg);
+  if(a.heal)facts.push('Healing '+a.heal);
   const rev=$('#cdrev');rev.classList.add('show');
-  rev.innerHTML=`<b>${esc(a.name)}</b> — cooldown <b>${esc(a.cd_text||cdLabel(correct))}</b>${a.charge?' (charge-based)':''}.<br>${esc(a.desc)}`;
+  rev.innerHTML=`<b>${esc(a.hero)} — ${esc(a.name)}</b>`+(facts.length?`<br>${esc(facts.join(' · '))}`:'')+`<br>${esc(a.desc)}`;
   $('#cdnext').classList.add('show'); syncCd();
 }
 function syncCd(){$('#cdscore').textContent=cd.score;$('#cdtot').textContent=cd.tot;
@@ -328,31 +386,61 @@ function renderTuLearn(){
 
 /* ---------- TEAM-UP QUIZ ---------- */
 const tu={score:0,tot:0,streak:0,q:null};
-function tuPool(){const o=[];S.heroes.forEach(h=>h.teamups.forEach(t=>{if(t.partner)o.push({...t,hero:h.name})}));return o}
-function newTu(){
-  const pool=tuPool(); const t=rnd(pool);
-  const names=[...new Set(S.heroes.map(h=>h.name))];
-  const norm=t.partner.toUpperCase();
-  let opts=shuffle(names.filter(n=>n.toUpperCase()!==norm&&n.toUpperCase()!==t.hero.toUpperCase())).slice(0,3);
-  opts.push(names.find(n=>n.toUpperCase()===norm)||t.partner); opts=shuffle(opts);
-  const enh=(t.enhanced||'').replace(new RegExp(t.partner,'ig'),'▁▁▁▁');
-  tu.q={...t};
-  $('#tuq').innerHTML=`${t.icon?`<img class="qi" src="${t.icon}" alt="">`:''}
-    <div class="qhero">${esc(t.hero)}</div>
+function tuAllPool(){const o=[];S.heroes.forEach(h=>h.teamups.forEach(t=>{if(t.partner_slug)o.push({...t,heroSlug:h.slug,hero:h.name})}));return o;}
+function trimEff(s){return (s||'').replace(/^\s*enhanced effect:\s*/i,'').replace(/^when teaming up\s*(with\s+)?[^,]+,\s*/i,'');}
+function tuHead(t){const a=S.bySlug[t.heroSlug],p=S.bySlug[t.partner_slug];
+  return `<div class="tufaces">
+      <img class="pico" src="${a.icon}" title="${esc(t.hero)}" alt=""><span class="plus">+</span>
+      <img class="pico" src="${p.icon}" title="${esc(t.partner)}" alt=""></div>
     <div class="qname">${esc(t.name)}</div>
-    <div class="qask">Which hero completes this team-up?</div>
-    <div class="eff" style="text-align:left;margin:0 auto 16px;max-width:460px">
-      <b>Base:</b> ${esc(t.base)}<br><span class="e">Enhanced:</span> ${esc(enh)}</div>
-    <div class="opts">${opts.map(n=>`<button class="opt" style="font-size:14px" onclick="ansTu(this,'${esc(n).replace(/'/g,"\\'")}')">${esc(n)}</button>`).join('')}</div>
+    <div class="qhero">${esc(t.hero)} + ${esc(t.partner)}</div>`;
+}
+function newTu(){
+  const pool=tuAllPool();
+  const t=rnd(pool);
+  const dmgN=firstInt(t.dmg), hasEff=t.enhanced&&t.enhanced.length>30;
+  let type;
+  if(dmgN&&Math.random()<0.4)type='damage';
+  else if(t.cd&&Math.random()<0.6)type='cooldown';
+  else if(hasEff)type='effect';
+  else type=t.cd?'cooldown':(dmgN?'damage':'effect');
+  if(type==='effect')return newTuEffect(pool,t);
+  const correct=type==='cooldown'?t.cd:dmgN;
+  const opts=nearestOptions(correct,type==='cooldown'?S.allCds:S.allDmg);
+  const label=type==='cooldown'?cdLabel:(v=>String(v));
+  tu.q={mode:type,t,opts,correctIdx:opts.indexOf(correct)};
+  const ask=type==='cooldown'?"What's this team-up's cooldown?":"How much damage does this team-up deal?";
+  const ctx=hasEff?`<div class="eff" style="text-align:left;margin:8px auto 14px;max-width:470px"><span class="e">Effect:</span> ${esc(trimEff(t.enhanced))}</div>`:'';
+  $('#tuq').innerHTML=tuHead(t)+`<div class="qask">${ask}</div>${ctx}
+    <div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansTu(${i})">${label(v)}</button>`).join('')}</div>
     <div class="reveal" id="turev"></div>
     <button class="next" id="tunext" onclick="newTu()">Next →</button>`;
 }
-function ansTu(btn,n){
-  const t=tu.q; tu.tot++; const ok=n.toUpperCase()===t.partner.toUpperCase();
-  $$('#tuq .opt').forEach(o=>{o.disabled=true;if(o.textContent.toUpperCase()===t.partner.toUpperCase())o.classList.add('correct')});
-  if(ok){tu.score++;tu.streak++}else{tu.streak=0;btn.classList.add('wrong')}
+function newTuEffect(pool,t){
+  const withEnh=pool.filter(x=>x.enhanced&&x.enhanced.length>30);
+  if(!(t.enhanced&&t.enhanced.length>30))t=rnd(withEnh);
+  const distract=shuffle(withEnh.filter(x=>x.name!==t.name)).slice(0,3);
+  const opts=shuffle([t,...distract]);
+  tu.q={mode:'effect',t,opts,correctIdx:opts.indexOf(t)};
+  $('#tuq').innerHTML=tuHead(t)+`<div class="qask">What does this team-up's enhanced effect do?</div>
+    <div class="opts effs">${opts.map((o,i)=>`<button class="opt eff-opt" onclick="ansTu(${i})">${esc(trimEff(o.enhanced))}</button>`).join('')}</div>
+    <div class="reveal" id="turev"></div>
+    <button class="next" id="tunext" onclick="newTu()">Next →</button>`;
+}
+function ansTu(i){
+  const q=tu.q,t=q.t; tu.tot++; const ok=i===q.correctIdx;
+  $$('#tuq .opt').forEach((o,idx)=>{o.disabled=true;
+    if(idx===q.correctIdx)o.classList.add('correct');
+    else if(idx===i)o.classList.add('wrong');});
+  if(ok){tu.score++;tu.streak++}else{tu.streak=0}
+  const facts=[];
+  if(t.cd_text)facts.push('Cooldown '+t.cd_text);
+  if(t.dmg)facts.push('Damage '+t.dmg);
+  if(t.heal)facts.push('Healing '+t.heal);
   $('#turev').classList.add('show');
-  $('#turev').innerHTML=`<b>${esc(t.name)}</b> pairs <b>${esc(t.hero)}</b> with <b>${esc(t.partner)}</b>.<br><span class="e">Enhanced:</span> ${esc(t.enhanced)}`;
+  $('#turev').innerHTML=`<b>${esc(t.name)}</b> — ${esc(t.hero)} + ${esc(t.partner)}.`+
+    (facts.length?`<br>${esc(facts.join(' · '))}`:'')+
+    `<br><span class="e">Enhanced:</span> ${esc(t.enhanced||t.base)}`;
   $('#tunext').classList.add('show');
   $('#tuscore').textContent=tu.score;$('#tutot').textContent=tu.tot;$('#tustreak').textContent=tu.streak;
 }

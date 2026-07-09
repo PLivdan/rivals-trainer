@@ -72,12 +72,21 @@ def build():
             })
         teamups = []
         for t in d["team_ups"]["provided"]:
+            ts = {**(t["base"]["stats"] or {}), **(t["enhanced"]["stats"] or {})}
+            cd_disp = ts.get("Cooldown")
+            dmg = ts.get("Damage") or pick_stat(ts, ("damage",), DMG_X)
+            heal = pick_stat(ts, ("healing", "health recovery"), HEAL_X)
             teamups.append({
                 "name": t["name"],
                 "partner": t.get("partner", ""),
                 "icon": ("data/heroes/" + t["icon_file"]) if t.get("icon_file") else None,
                 "base": t["base"]["description"],
                 "enhanced": t["enhanced"]["description"],
+                "cd": canon_cd(cd_disp),
+                "cd_text": cd_disp,
+                "charge": bool(cd_disp and "charge" in cd_disp.lower()),
+                "dmg": dmg,
+                "heal": heal,
             })
         received = [{
             "name": t["name"],

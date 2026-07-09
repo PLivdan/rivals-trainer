@@ -1,5 +1,8 @@
 # Marvel Rivals Hero Assets
 
+**Live trainer:** https://plivdan.github.io/rivals-trainer/
+
+
 Structured scrape of every hero's abilities, team-ups, base stats and **transparent
 icon art** from the official Marvel Rivals "Hero Ability Data Dossier"
 (`marvelrivals.com/heroes`). Data reflects the current live season.

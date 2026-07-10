@@ -128,6 +128,13 @@
   .tbadge.ultimate{background:#3a2f10;color:var(--gold);border-color:#5c4a18}
   .tbadge.teamup{background:#171f3c;color:#9db8ff;border-color:#26325c}
   .tbadge.passive{background:#22283f;color:#b9c2e6}
+  .subtag{font-size:9.5px;font-weight:800;text-transform:uppercase;padding:1px 7px;border-radius:20px;letter-spacing:.3px}
+  .subtag.Vanguard{background:#173154;color:var(--van)} .subtag.Duelist{background:#4a1b23;color:var(--due)}
+  .subtag.Strategist{background:#123c31;color:var(--str)}
+  .uptag{font-size:9.5px;font-weight:800;text-transform:uppercase;color:var(--gold);letter-spacing:.3px}
+  .subhead{margin:18px 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+    color:var(--mut);border-top:1px solid var(--line);padding-top:14px}
+  .subhead.Vanguard{color:var(--van)} .subhead.Duelist{color:var(--due)} .subhead.Strategist{color:var(--str)}
   .gbody{display:flex;gap:11px}
   .gicon{width:48px;height:48px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
   .gmain{min-width:0}
@@ -278,6 +285,27 @@ const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const cdLabel=n=>n+'s';
 const firstInt=s=>{const m=(s||'').match(/\d+/);return m?+m[0]:null;};
+const ROLES3=['Vanguard','Duelist','Strategist'];
+function tagSubroles(){
+  S.heroes.forEach(h=>{
+    h.multiRole=ROLES3.filter(r=>h.role.includes(r)).length>1;
+    let cur=null;
+    h.abilities.forEach(a=>{
+      const m=(a.name||'').match(/-\s*(vanguard|duelist|strategist)\b/i);
+      if(m)cur=m[1][0].toUpperCase()+m[1].slice(1).toLowerCase();
+      a.subrole=h.multiRole?cur:null;
+      a.upgraded=/upgraded/i.test(a.name||'');
+      a.cleanName=(a.name||'').replace(/\s*-\s*(vanguard|duelist|strategist)(\s+upgraded)?\s*$/i,'')
+        .replace(/\s*-\s*upgraded\s*$/i,'').trim();
+    });
+  });
+}
+function pickByHero(pool){
+  if(!pool||!pool.length)return null;
+  const by={}; pool.forEach(x=>{(by[x.heroSlug]=by[x.heroSlug]||[]).push(x);});
+  const slugs=Object.keys(by); const s=slugs[Math.floor(Math.random()*slugs.length)];
+  const items=by[s]; return items[Math.floor(Math.random()*items.length)];
+}
 
 fetch('site_data.json').then(r=>r.json()).then(d=>{S.heroes=d.heroes;init()});
 
@@ -296,6 +324,7 @@ function init(){
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
   S.cdMode='mixed';
+  tagSubroles();
   S.cards=allCards();
   S.cardFilter={q:'',role:'all',type:'all'};
   buildScope(); renderGrid(); newCd(); renderTuLearn();
@@ -344,6 +373,22 @@ function abChips(a){
     a.dur?`<span class="stat dur">⏱ ${esc(a.dur)}</span>`:'',
   ].join('');
 }
+function abRow(a){
+  const ch=abChips(a);
+  const nm=a.subrole?a.cleanName:a.name;
+  return `<div class="ab"><img src="${a.icon}" alt="">
+      <div class="t"><div><span class="kbd">${esc(a.key||'—')}</span> <span class="abnm">${esc(nm)}</span>${a.upgraded?' <span class="uptag">▲ Upgraded</span>':''}</div>
+        <div class="abd">${esc(a.desc)}</div>
+        ${ch?`<div class="chips">${ch}</div>`:''}</div></div>`;
+}
+function abilitiesHTML(h){
+  if(!h.multiRole)return h.abilities.map(abRow).join('');
+  const groups={};
+  h.abilities.forEach(a=>{const k=a.subrole||'Other';(groups[k]=groups[k]||[]).push(a);});
+  const order=[...ROLES3.filter(r=>groups[r]),...Object.keys(groups).filter(k=>!ROLES3.includes(k))];
+  return order.map(k=>`<div class="subhead ${ROLES3.includes(k)?k:''}">${esc(k)}${ROLES3.includes(k)?' Build':''}</div>`
+    +groups[k].map(abRow).join('')).join('');
+}
 function tuPartner(t){
   if(!t.partner)return '';
   const ic=t.partner_icon?`<img class="pico" src="${t.partner_icon}" alt="">`:'';
@@ -358,13 +403,10 @@ function tuRow(t){
 }
 function openSheet(slug){
   const h=S.heroes.find(x=>x.slug===slug); const role=h.role.split(' ')[0];
-  const abs=h.abilities.map(a=>{const ch=abChips(a);return `<div class="ab">
-      <img src="${a.icon}" alt="">
-      <div class="t"><div><span class="kbd">${esc(a.key||'—')}</span> <span class="abnm">${esc(a.name)}</span></div>
-        <div class="abd">${esc(a.desc)}</div>
-        ${ch?`<div class="chips">${ch}</div>`:''}</div></div>`;}).join('');
-  const tus=h.teamups.map(tuRow).join('');
-  const rec=h.received.map(t=>`<div class="tu"><div class="top">
+  const abs=abilitiesHTML(h);
+  const seenT=new Set(), seenR=new Set();
+  const tus=h.teamups.filter(t=>!seenT.has(t.name)&&seenT.add(t.name)).map(tuRow).join('');
+  const rec=h.received.filter(t=>!seenR.has(t.name)&&seenR.add(t.name)).map(t=>`<div class="tu"><div class="top">
       ${t.icon?`<img class="tico" src="${t.icon}" alt="">`:''}<span class="abnm">${esc(t.name)}</span></div>
       <div class="eff muted">${esc(t.desc)}</div></div>`).join('');
   $('#sheet').innerHTML=`<div class="hd">${(h.icon||h.thumb)?`<img src="${h.icon||h.thumb}">`:''}
@@ -455,9 +497,9 @@ function newCd(){
   if(type==='duration'&&!durs.length)type='cooldown';
   if(type==='hero'&&(single||!abis.length))type='cooldown';
   if(type==='cooldown'&&!cds.length)type=durs.length?'duration':'hero';
-  if(type==='hero')return newCdHero(rnd(abis));
-  if(type==='duration')return newCdNumeric(rnd(durs),'duration');
-  return newCdNumeric(rnd(cds.length?cds:items),'cooldown');
+  if(type==='hero')return newCdHero(pickByHero(abis));
+  if(type==='duration')return newCdNumeric(pickByHero(durs),'duration');
+  return newCdNumeric(pickByHero(cds.length?cds:items),'cooldown');
 }
 function newCdNumeric(item,kind){
   const correct=kind==='cooldown'?item.cd:firstInt(item.dur);
@@ -523,7 +565,7 @@ function tuHead(t){const a=S.bySlug[t.heroSlug],p=S.bySlug[t.partner_slug];
 }
 function newTu(){
   const pool=tuAllPool();
-  const t=rnd(pool);
+  const t=pickByHero(pool);
   const dmgN=firstInt(t.dmg), hasEff=t.enhanced&&t.enhanced.length>30;
   let type;
   if(dmgN&&Math.random()<0.4)type='damage';
@@ -544,7 +586,7 @@ function newTu(){
 }
 function newTuEffect(pool,t){
   const withEnh=pool.filter(x=>x.enhanced&&x.enhanced.length>30);
-  if(!(t.enhanced&&t.enhanced.length>30))t=rnd(withEnh);
+  if(!(t.enhanced&&t.enhanced.length>30))t=pickByHero(withEnh);
   const distract=shuffle(withEnh.filter(x=>x.name!==t.name)).slice(0,3);
   const opts=shuffle([t,...distract]);
   tu.q={mode:'effect',t,opts,correctIdx:opts.indexOf(t)};
@@ -580,6 +622,7 @@ function allCards(){
       const k=(a.key||'').toUpperCase();
       const type=a.slot==='passive'?'passive':(k==='Q'?'ultimate':(a.slot==='primary'?'basic':'ability'));
       out.push({type,hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:a.icon,name:a.name,key:a.key,
+        subrole:a.subrole,cleanName:a.cleanName,upgraded:a.upgraded,
         desc:a.desc,cd:a.cd,cd_text:a.cd_text,dur:a.dur,dmg:a.dmg,heal:a.heal});
     });
     h.teamups.forEach(t=>{
@@ -606,11 +649,14 @@ function cardHTML(c){
   const body=c.type==='teamup'
     ?`<div class="cdesc"><b>Base:</b> ${esc(c.base)}${c.enhanced?`<br><span class="e">Enhanced:</span> ${esc(c.enhanced)}`:''}</div>`
     :`<div class="cdesc">${esc(c.desc)}</div>`;
+  const nm=c.subrole?c.cleanName:c.name;
+  const sub=c.subrole?` <span class="subtag ${c.subrole}">${esc(c.subrole)}</span>`:'';
+  const up=c.upgraded?' <span class="uptag">▲ Upgraded</span>':'';
   return `<div class="gcard">
     <div class="ghead"><img class="gface" src="${c.heroIcon}" loading="lazy" alt="">
-      <span class="ghero">${esc(c.hero)}</span><span class="tbadge ${c.type}">${TYPELABEL[c.type]}</span></div>
+      <span class="ghero">${esc(c.hero)}</span>${sub}<span class="tbadge ${c.type}">${TYPELABEL[c.type]}</span></div>
     <div class="gbody"><img class="gicon" src="${c.icon}" loading="lazy" alt="">
-      <div class="gmain"><div class="gname">${c.key?`<span class="kbd">${esc(c.key)}</span> `:''}${esc(c.name)}</div>
+      <div class="gmain"><div class="gname">${c.key?`<span class="kbd">${esc(c.key)}</span> `:''}${esc(nm)}${up}</div>
         ${partner}${body}${chips?`<div class="chips">${chips}</div>`:''}</div></div></div>`;
 }
 function typeMatch(c,f){
@@ -630,7 +676,7 @@ function renderCards(){
 /* ---------- FLASHCARDS ---------- */
 const fc={score:0,tot:0,streak:0,type:'all',card:null,revealed:false};
 function fcDeck(){return S.cards.filter(c=>typeMatch(c,fc.type)&&(c.dmg||c.cd||c.dur||(c.desc&&c.desc.length>10)));}
-function newFlash(){const deck=fcDeck();fc.card=rnd(deck);fc.revealed=false;renderFlash();}
+function newFlash(){const deck=fcDeck();fc.card=pickByHero(deck)||rnd(deck);fc.revealed=false;renderFlash();}
 function renderFlash(){
   const c=fc.card; if(!c)return;
   if(!fc.revealed){
@@ -638,8 +684,8 @@ function renderFlash(){
       <div class="fcleft"><img src="${c.heroIcon}" alt=""></div>
       <div class="fcright">
         <img class="fcicon" src="${c.icon}" alt="">
-        <div class="qhero">${esc(c.hero)}${c.type==='teamup'&&c.partner?' + '+esc(c.partner):''}</div>
-        <div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.name)}</div>
+        <div class="qhero">${esc(c.hero)}${c.subrole?' · '+esc(c.subrole):''}${c.type==='teamup'&&c.partner?' + '+esc(c.partner):''}</div>
+        <div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.subrole?c.cleanName:c.name)}${c.upgraded?' <span class="uptag">▲</span>':''}</div>
         <div class="qask ffront">${c.type==='teamup'?'What does this team-up do? (effect · cooldown · damage)':'What does it do? (damage · effect · cooldown · duration)'}</div>
         <button class="next show" onclick="revealFlash()">Reveal answer</button>
       </div></div>`;

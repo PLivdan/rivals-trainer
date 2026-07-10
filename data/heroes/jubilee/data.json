@@ -129,7 +129,7 @@
       "description": "Charge up and unleash a massive ring of outward-flying firework clusters, Knocking Back nearby enemies. These clusters then orbit you, creating a field that damages enemies and heals allies. Expanding the cluster radius outward will Launch Up struck enemies",
       "stats": {
         "Key": "Q",
-        "Energy Cost": "5500",
+        "Energy Cost": "4500",
         "Ability Duration": "10s",
         "Spell Field Range": "Inner circle radius 6m; Outer circle radius 10m",
         "Spell Field Damage": "20/s",

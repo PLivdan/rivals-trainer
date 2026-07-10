@@ -226,6 +226,12 @@
       <span class="chip ftype" data-t="ultimates">Ultimates</span>
       <span class="chip ftype" data-t="teamups">Team-ups</span>
     </div>
+    <div class="controls" style="justify-content:center;gap:6px">
+      <span class="count muted">Difficulty</span>
+      <span class="chip fdiff on" data-d="easy">Easy</span>
+      <span class="chip fdiff" data-d="medium">Hide hero</span>
+      <span class="chip fdiff" data-d="hard">Icon only</span>
+    </div>
     <div class="quizwrap">
       <div class="score">
         <span class="pill">Got <b id="fscore">0</b>/<span id="ftot">0</span></span>
@@ -347,6 +353,8 @@ function init(){
   $$('.chip.ftype').forEach(c=>c.onclick=()=>{fc.type=c.dataset.t;
     $$('.chip.ftype').forEach(x=>x.classList.toggle('on',x===c));
     fc.score=0;fc.tot=0;fc.streak=0;$('#fscore').textContent=0;$('#ftot').textContent=0;$('#fstreak').textContent=0;newFlash();});
+  $$('.chip.fdiff').forEach(c=>c.onclick=()=>{fc.difficulty=c.dataset.d;
+    $$('.chip.fdiff').forEach(x=>x.classList.toggle('on',x===c));renderFlash();});
 }
 function show(v){$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
   ['browse','cards','cooldowns','flash','teamups'].forEach(x=>$('#v-'+x).classList.toggle('hide',x!==v));
@@ -674,25 +682,32 @@ function renderCards(){
 }
 
 /* ---------- FLASHCARDS ---------- */
-const fc={score:0,tot:0,streak:0,type:'all',card:null,revealed:false};
+const fc={score:0,tot:0,streak:0,type:'all',difficulty:'easy',card:null,revealed:false};
 function fcDeck(){return S.cards.filter(c=>typeMatch(c,fc.type)&&(c.dmg||c.cd||c.dur||(c.desc&&c.desc.length>10)));}
 function newFlash(){const deck=fcDeck();fc.card=pickByHero(deck)||rnd(deck);fc.revealed=false;renderFlash();}
 function renderFlash(){
   const c=fc.card; if(!c)return;
-  if(!fc.revealed){
+  if(fc.revealed){
+    $('#fcard').innerHTML=`<div class="fback">${cardHTML(c)}</div>
+      <div class="fgrade"><button class="opt gradebad" onclick="gradeFlash(false)">✗ Missed</button>
+      <button class="opt gradegood" onclick="gradeFlash(true)">✓ Got it</button></div>`;
+    return;
+  }
+  const d=fc.difficulty;
+  const ask=c.type==='teamup'?'What does this team-up do? (effect · cooldown · damage)':'What does it do? (damage · effect · cooldown · duration)';
+  const nameHTML=`<div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.subrole?c.cleanName:c.name)}${c.upgraded?' <span class="uptag">▲</span>':''}</div>`;
+  const tail=`<div class="qask ffront">${ask}</div><button class="next show" onclick="revealFlash()">Reveal answer</button>`;
+  if(d==='easy'){
     $('#fcard').innerHTML=`<div class="fcfront">
       <div class="fcleft"><img src="${c.heroIcon}" alt=""></div>
       <div class="fcright">
         <img class="fcicon" src="${c.icon}" alt="">
         <div class="qhero">${esc(c.hero)}${c.subrole?' · '+esc(c.subrole):''}${c.type==='teamup'&&c.partner?' + '+esc(c.partner):''}</div>
-        <div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.subrole?c.cleanName:c.name)}${c.upgraded?' <span class="uptag">▲</span>':''}</div>
-        <div class="qask ffront">${c.type==='teamup'?'What does this team-up do? (effect · cooldown · damage)':'What does it do? (damage · effect · cooldown · duration)'}</div>
-        <button class="next show" onclick="revealFlash()">Reveal answer</button>
+        ${nameHTML}${tail}
       </div></div>`;
   }else{
-    $('#fcard').innerHTML=`<div class="fback">${cardHTML(c)}</div>
-      <div class="fgrade"><button class="opt gradebad" onclick="gradeFlash(false)">✗ Missed</button>
-      <button class="opt gradegood" onclick="gradeFlash(true)">✓ Got it</button></div>`;
+    $('#fcard').innerHTML=`<img class="qi" src="${c.icon}" alt="">
+      ${d==='medium'?nameHTML:'<div class="qname">? ? ?</div>'}${tail}`;
   }
 }
 function revealFlash(){fc.revealed=true;renderFlash();}

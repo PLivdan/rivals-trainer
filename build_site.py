@@ -76,6 +76,7 @@ def build():
             cd_disp = ts.get("Cooldown")
             dmg = ts.get("Damage") or pick_stat(ts, ("damage",), DMG_X)
             heal = pick_stat(ts, ("healing", "health recovery"), HEAL_X)
+            dur = pick_stat(ts, ("duration", "invisib", "stealth"), DUR_X)
             teamups.append({
                 "name": t["name"],
                 "partner": t.get("partner", ""),
@@ -87,6 +88,7 @@ def build():
                 "charge": bool(cd_disp and "charge" in cd_disp.lower()),
                 "dmg": dmg,
                 "heal": heal,
+                "dur": dur,
             })
         received = [{
             "name": t["name"],

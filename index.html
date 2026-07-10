@@ -33,7 +33,7 @@
   input:focus,select:focus{border-color:var(--gold)}
   .chip{border:1px solid var(--line);background:var(--panel);color:var(--mut);padding:6px 12px;border-radius:20px;
     cursor:pointer;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
-  .chip.on{color:#101425;border-color:transparent}
+  .chip.on{background:var(--gold);color:#101425;border-color:transparent}
   .chip.on[data-r=all]{background:var(--gold)}
   .chip.on[data-r=Vanguard]{background:var(--van)} .chip.on[data-r=Duelist]{background:var(--due)}
   .chip.on[data-r=Strategist]{background:var(--str)}
@@ -114,6 +114,39 @@
   .qtag{display:inline-block;margin-top:8px;font-size:10.5px;font-weight:800;letter-spacing:1px;
     text-transform:uppercase;color:var(--gold);background:#2a2013;border:1px solid #4d3c17;
     padding:2px 9px;border-radius:20px}
+  /* cards gallery */
+  .count{font-size:12px;align-self:center;margin-left:4px}
+  .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+  .gcard{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
+    border-radius:14px;padding:12px 14px}
+  .ghead{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+  .gface{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top center;
+    border:1px solid var(--line);background:var(--panel2);flex:none}
+  .ghero{font-weight:800;text-transform:uppercase;font-size:12.5px;letter-spacing:.3px}
+  .tbadge{margin-left:auto;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
+    padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--mut)}
+  .tbadge.ultimate{background:#3a2f10;color:var(--gold);border-color:#5c4a18}
+  .tbadge.teamup{background:#171f3c;color:#9db8ff;border-color:#26325c}
+  .tbadge.passive{background:#22283f;color:#b9c2e6}
+  .gbody{display:flex;gap:11px}
+  .gicon{width:48px;height:48px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
+  .gmain{min-width:0}
+  .gname{font-weight:800;text-transform:uppercase;font-size:13px;line-height:1.2}
+  .cpartner{display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-size:11.5px;color:var(--mut)}
+  .cpartner img{width:18px;height:18px;border-radius:50%;object-fit:cover;object-position:top center}
+  .cpartner b{color:var(--gold)}
+  .cdesc{color:var(--mut);font-size:12.3px;margin-top:5px;line-height:1.45}
+  .cdesc .e{color:var(--gold)}
+  /* flashcards */
+  .kbd.big{font-size:15px;padding:2px 10px}
+  .fchead{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:12px}
+  .fcbanner{height:154px;width:auto;border-radius:10px;object-fit:cover;object-position:top center}
+  .fcicon{width:90px;height:90px;flex:none;object-fit:contain;background:var(--icon);border-radius:14px;padding:8px}
+  .ffront .qask{margin-bottom:18px}
+  .fgrade{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;max-width:460px;margin-left:auto;margin-right:auto}
+  .fback .gcard{text-align:left}
+  .gradegood{background:#12402c;border-color:var(--good);color:#b6f5d3}
+  .gradebad{background:#411a20;border-color:var(--bad);color:#ffb8c0}
   .reveal{margin-top:16px;padding:14px;background:#0c1120;border:1px solid var(--line);border-radius:12px;
     font-size:13px;color:var(--mut);text-align:left;display:none}
   .reveal.show{display:block}
@@ -136,7 +169,9 @@
   <div class="logo">RIVALS <b>TRAINER</b></div>
   <nav>
     <button data-v="browse" class="on">Browse</button>
+    <button data-v="cards">Cards</button>
     <button data-v="cooldowns">Cooldown Quiz</button>
+    <button data-v="flash">Flashcards</button>
     <button data-v="teamups">Team-Ups</button>
   </nav>
 </div></header>
@@ -152,6 +187,42 @@
       <span class="chip" data-r="Strategist">Strategist</span>
     </div>
     <div id="grid" class="grid"></div>
+  </section>
+
+  <!-- CARDS -->
+  <section id="v-cards" class="hide">
+    <div class="controls">
+      <input id="cq" type="search" placeholder="Search abilities, ults, team-ups, heroes…" autocomplete="off">
+      <span class="chip on" data-r="all">All</span>
+      <span class="chip" data-r="Vanguard">Vanguard</span>
+      <span class="chip" data-r="Duelist">Duelist</span>
+      <span class="chip" data-r="Strategist">Strategist</span>
+    </div>
+    <div class="controls" style="gap:6px">
+      <span class="chip ctype on" data-t="all">All</span>
+      <span class="chip ctype" data-t="abilities">Abilities</span>
+      <span class="chip ctype" data-t="ultimates">Ultimates</span>
+      <span class="chip ctype" data-t="teamups">Team-ups</span>
+      <span class="count muted" id="cardcount"></span>
+    </div>
+    <div id="cardgrid" class="cardgrid"></div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="v-flash" class="hide">
+    <div class="controls" style="justify-content:center;gap:6px">
+      <span class="chip ftype on" data-t="all">All</span>
+      <span class="chip ftype" data-t="abilities">Abilities</span>
+      <span class="chip ftype" data-t="ultimates">Ultimates</span>
+      <span class="chip ftype" data-t="teamups">Team-ups</span>
+    </div>
+    <div class="quizwrap">
+      <div class="score">
+        <span class="pill">Got <b id="fscore">0</b>/<span id="ftot">0</span></span>
+        <span class="pill">Streak <span class="s" id="fstreak">0</span></span>
+      </div>
+      <div id="fcard" class="qcard"></div>
+    </div>
   </section>
 
   <!-- COOLDOWN QUIZ -->
@@ -210,8 +281,8 @@ fetch('site_data.json').then(r=>r.json()).then(d=>{S.heroes=d.heroes;init()});
 function init(){
   $$('nav button').forEach(b=>b.onclick=()=>show(b.dataset.v));
   $('#q').oninput=e=>{S.q=e.target.value.toLowerCase();renderGrid()};
-  $$('.chip[data-r]').forEach(c=>c.onclick=()=>{S.role=c.dataset.r;
-    $$('.chip[data-r]').forEach(x=>x.classList.toggle('on',x===c));renderGrid()});
+  $$('#v-browse .chip[data-r]').forEach(c=>c.onclick=()=>{S.role=c.dataset.r;
+    $$('#v-browse .chip[data-r]').forEach(x=>x.classList.toggle('on',x===c));renderGrid()});
   $('#ov').onclick=e=>{if(e.target.id==='ov')closeSheet()};
   const cdN=[...S.heroes.flatMap(h=>h.abilities.filter(a=>a.cd).map(a=>a.cd)),
              ...S.heroes.flatMap(h=>h.teamups.filter(t=>t.cd).map(t=>t.cd))];
@@ -222,6 +293,8 @@ function init(){
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
   S.cdMode='mixed';
+  S.cards=allCards();
+  S.cardFilter={q:'',role:'all',type:'all'};
   buildScope(); renderGrid(); newCd(); renderTuLearn();
   $('#cdrestart').onclick=()=>{cd.score=0;cd.tot=0;cd.streak=0;cd.best=0;syncCd();newCd()};
   $('#cdscope').onchange=()=>{cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd()};
@@ -234,9 +307,19 @@ function init(){
     $('#tuquiz').classList.toggle('hide',!quiz); $('#tulearn').classList.toggle('hide',quiz);
     if(quiz&&!tu.q)newTu();
   });
+  $('#cq').oninput=e=>{S.cardFilter.q=e.target.value.toLowerCase();renderCards()};
+  $$('#v-cards .chip[data-r]').forEach(c=>c.onclick=()=>{S.cardFilter.role=c.dataset.r;
+    $$('#v-cards .chip[data-r]').forEach(x=>x.classList.toggle('on',x===c));renderCards()});
+  $$('.chip.ctype').forEach(c=>c.onclick=()=>{S.cardFilter.type=c.dataset.t;
+    $$('.chip.ctype').forEach(x=>x.classList.toggle('on',x===c));renderCards()});
+  $$('.chip.ftype').forEach(c=>c.onclick=()=>{fc.type=c.dataset.t;
+    $$('.chip.ftype').forEach(x=>x.classList.toggle('on',x===c));
+    fc.score=0;fc.tot=0;fc.streak=0;$('#fscore').textContent=0;$('#ftot').textContent=0;$('#fstreak').textContent=0;newFlash();});
 }
 function show(v){$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
-  ['browse','cooldowns','teamups'].forEach(x=>$('#v-'+x).classList.toggle('hide',x!==v))}
+  ['browse','cards','cooldowns','flash','teamups'].forEach(x=>$('#v-'+x).classList.toggle('hide',x!==v));
+  if(v==='cards'&&!$('#cardgrid').innerHTML)renderCards();
+  if(v==='flash'&&!fc.card)newFlash();}
 
 /* ---------- BROWSE ---------- */
 function renderGrid(){
@@ -484,6 +567,87 @@ function ansTu(i){
   $('#tunext').classList.add('show');
   $('#tuscore').textContent=tu.score;$('#tutot').textContent=tu.tot;$('#tustreak').textContent=tu.streak;
 }
+
+/* ---------- CARDS ---------- */
+function allCards(){
+  const out=[];
+  S.heroes.forEach(h=>{
+    h.abilities.forEach(a=>{
+      if(!a.icon)return;
+      const k=(a.key||'').toUpperCase();
+      const type=a.slot==='passive'?'passive':(k==='Q'?'ultimate':(a.slot==='primary'?'basic':'ability'));
+      out.push({type,hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:a.icon,name:a.name,key:a.key,
+        desc:a.desc,cd:a.cd,cd_text:a.cd_text,dur:a.dur,dmg:a.dmg,heal:a.heal});
+    });
+    h.teamups.forEach(t=>{
+      if(!t.icon)return;
+      out.push({type:'teamup',hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:t.icon,name:t.name,key:'',
+        desc:t.enhanced||t.base,base:t.base,enhanced:t.enhanced,partner:t.partner,partnerIcon:t.partner_icon,
+        cd:t.cd,cd_text:t.cd_text,dur:t.dur,dmg:t.dmg,heal:t.heal});
+    });
+  });
+  return out;
+}
+const TYPELABEL={basic:'Basic',ability:'Ability',ultimate:'Ultimate',passive:'Passive',teamup:'Team-Up'};
+function cardChips(c){
+  return [
+    c.cd?`<span class="stat cd" title="${esc(c.cd_text||'')}">⟳ ${cdLabel(c.cd)}</span>`:'',
+    c.dur?`<span class="stat dur">⏱ ${esc(c.dur)}</span>`:'',
+    c.dmg?`<span class="stat dmg">⚔ ${esc(c.dmg)}</span>`:'',
+    c.heal?`<span class="stat heal">✚ ${esc(c.heal)}</span>`:'',
+  ].join('');
+}
+function cardHTML(c){
+  const chips=cardChips(c);
+  const partner=c.type==='teamup'&&c.partner?`<span class="cpartner">${c.partnerIcon?`<img src="${c.partnerIcon}" alt="">`:''}<b>${esc(c.partner)}</b></span>`:'';
+  const body=c.type==='teamup'
+    ?`<div class="cdesc"><b>Base:</b> ${esc(c.base)}${c.enhanced?`<br><span class="e">Enhanced:</span> ${esc(c.enhanced)}`:''}</div>`
+    :`<div class="cdesc">${esc(c.desc)}</div>`;
+  return `<div class="gcard">
+    <div class="ghead"><img class="gface" src="${c.heroIcon}" loading="lazy" alt="">
+      <span class="ghero">${esc(c.hero)}</span><span class="tbadge ${c.type}">${TYPELABEL[c.type]}</span></div>
+    <div class="gbody"><img class="gicon" src="${c.icon}" loading="lazy" alt="">
+      <div class="gmain"><div class="gname">${c.key?`<span class="kbd">${esc(c.key)}</span> `:''}${esc(c.name)}</div>
+        ${partner}${body}${chips?`<div class="chips">${chips}</div>`:''}</div></div></div>`;
+}
+function typeMatch(c,f){
+  if(f==='all')return true;
+  if(f==='ultimates')return c.type==='ultimate';
+  if(f==='teamups')return c.type==='teamup';
+  return c.type!=='ultimate'&&c.type!=='teamup';
+}
+function renderCards(){
+  const f=S.cardFilter;
+  const list=S.cards.filter(c=>(f.role==='all'||c.role.includes(f.role))&&typeMatch(c,f.type)&&
+    (c.name.toLowerCase().includes(f.q)||c.hero.toLowerCase().includes(f.q)));
+  $('#cardcount').textContent=list.length+' cards';
+  $('#cardgrid').innerHTML=list.map(cardHTML).join('')||'<p class="muted">Nothing matches.</p>';
+}
+
+/* ---------- FLASHCARDS ---------- */
+const fc={score:0,tot:0,streak:0,type:'all',card:null,revealed:false};
+function fcDeck(){return S.cards.filter(c=>typeMatch(c,fc.type)&&(c.dmg||c.cd||c.dur||(c.desc&&c.desc.length>10)));}
+function newFlash(){const deck=fcDeck();fc.card=rnd(deck);fc.revealed=false;renderFlash();}
+function renderFlash(){
+  const c=fc.card; if(!c)return;
+  if(!fc.revealed){
+    $('#fcard').innerHTML=`<div class="fchead">
+        <img class="fcbanner" src="${c.heroIcon}" alt="">
+        <img class="fcicon" src="${c.icon}" alt="">
+      </div>
+      <div class="qhero">${esc(c.hero)}${c.type==='teamup'&&c.partner?' + '+esc(c.partner):''}</div>
+      <div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.name)}</div>
+      <div class="qask ffront">${c.type==='teamup'?'What does this team-up do? (effect · cooldown · damage)':'What does it do? (damage · effect · cooldown · duration)'}</div>
+      <button class="next show" onclick="revealFlash()">Reveal answer</button>`;
+  }else{
+    $('#fcard').innerHTML=`<div class="fback">${cardHTML(c)}</div>
+      <div class="fgrade"><button class="opt gradebad" onclick="gradeFlash(false)">✗ Missed</button>
+      <button class="opt gradegood" onclick="gradeFlash(true)">✓ Got it</button></div>`;
+  }
+}
+function revealFlash(){fc.revealed=true;renderFlash();}
+function gradeFlash(ok){fc.tot++;if(ok){fc.score++;fc.streak++;}else fc.streak=0;
+  $('#fscore').textContent=fc.score;$('#ftot').textContent=fc.tot;$('#fstreak').textContent=fc.streak;newFlash();}
 </script>
 </body>
 </html>

@@ -110,6 +110,10 @@
   .tufaces .pico{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top center;
     border:2px solid var(--gold);background:var(--panel2)}
   .tufaces .plus{font-size:24px;color:var(--mut);font-weight:800}
+  .chip.cdmode.on{background:var(--gold);color:#101425;border-color:transparent}
+  .qtag{display:inline-block;margin-top:8px;font-size:10.5px;font-weight:800;letter-spacing:1px;
+    text-transform:uppercase;color:var(--gold);background:#2a2013;border:1px solid #4d3c17;
+    padding:2px 9px;border-radius:20px}
   .reveal{margin-top:16px;padding:14px;background:#0c1120;border:1px solid var(--line);border-radius:12px;
     font-size:13px;color:var(--mut);text-align:left;display:none}
   .reveal.show{display:block}
@@ -155,6 +159,12 @@
     <div class="controls" style="justify-content:center">
       <select id="cdscope"></select>
       <button class="chip on" id="cdrestart" style="color:var(--gold)">↻ Restart</button>
+    </div>
+    <div class="controls" style="justify-content:center;gap:6px">
+      <span class="chip cdmode on" data-m="mixed">Mixed</span>
+      <span class="chip cdmode" data-m="cooldown">Cooldowns</span>
+      <span class="chip cdmode" data-m="duration">Durations</span>
+      <span class="chip cdmode" data-m="hero">Which hero</span>
     </div>
     <div class="quizwrap">
       <div class="score">
@@ -211,9 +221,13 @@ function init(){
   S.allDmg=[...new Set(dmgN)].sort((a,b)=>a-b);
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
+  S.cdMode='mixed';
   buildScope(); renderGrid(); newCd(); renderTuLearn();
   $('#cdrestart').onclick=()=>{cd.score=0;cd.tot=0;cd.streak=0;cd.best=0;syncCd();newCd()};
   $('#cdscope').onchange=()=>{cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd()};
+  $$('.chip.cdmode').forEach(c=>c.onclick=()=>{S.cdMode=c.dataset.m;
+    $$('.chip.cdmode').forEach(x=>x.classList.toggle('on',x===c));
+    cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd();});
   $$('.subtabs button').forEach(b=>b.onclick=()=>{
     $$('.subtabs button').forEach(x=>x.classList.toggle('on',x===b));
     const quiz=b.dataset.t==='quiz';
@@ -300,14 +314,31 @@ function heroFaceOptions(correctSlug,excludeSlug){
   while(picks.length<3&&rest.length)picks.push(rest.pop());
   return shuffle([correctSlug,...picks]);
 }
-function abScope(){
+function cdItems(){
   const scope=$('#cdscope').value;
   let hs=S.heroes;
   if(scope.startsWith('role:'))hs=hs.filter(h=>h.role.includes(scope.slice(5)));
   else if(scope.startsWith('hero:'))hs=hs.filter(h=>h.slug===scope.slice(5));
   const out=[];
-  hs.forEach(h=>h.abilities.forEach(a=>{if(a.icon)out.push({...a,hero:h.name,heroSlug:h.slug})}));
+  hs.forEach(h=>{
+    h.abilities.forEach(a=>{if(a.icon)out.push({...a,kind:'ability',hero:h.name,heroSlug:h.slug});});
+    h.teamups.forEach(t=>{if(t.icon)out.push({...t,kind:'teamup',hero:h.name,heroSlug:h.slug,
+      partner:t.partner,partnerSlug:t.partner_slug});});
+  });
   return out;
+}
+function cdItemHead(item){
+  if(item.kind==='teamup'){
+    const a=S.bySlug[item.heroSlug], p=item.partnerSlug?S.bySlug[item.partnerSlug]:null;
+    return `<div class="tufaces">
+        <img class="pico" src="${a.icon}" alt="">${p?`<span class="plus">+</span><img class="pico" src="${p.icon}" alt="">`:''}</div>
+      <div class="qtag">TEAM-UP</div>
+      <div class="qname">${esc(item.name)}</div>
+      <div class="qhero">${esc(item.hero)}${item.partner?' + '+esc(item.partner):''}</div>`;
+  }
+  return `<img class="qi" src="${item.icon}" alt="">
+    <div class="qhero">${esc(item.hero)}</div>
+    <div class="qname">${esc(item.name)}</div>`;
 }
 function buildScope(){
   const sel=$('#cdscope');
@@ -320,36 +351,43 @@ function buildScope(){
   sel.innerHTML=o;
 }
 function newCd(){
-  const all=abScope();
-  if(!all.length){$('#cdq').innerHTML='<p class="muted">No abilities in this scope.</p>';return}
+  const items=cdItems();
+  if(!items.length){$('#cdq').innerHTML='<p class="muted">Nothing in this scope.</p>';return}
   const single=$('#cdscope').value.startsWith('hero:');
-  const cds=all.filter(a=>a.cd), durs=all.filter(a=>firstInt(a.dur));
-  const bag=[];
-  if(cds.length)bag.push('cooldown','cooldown');
-  if(durs.length)bag.push('duration');
-  if(!single)bag.push('hero');
-  const type=bag.length?rnd(bag):'cooldown';
-  if(type==='hero')return newCdHero(rnd(all));
+  const cds=items.filter(x=>x.cd);
+  const durs=items.filter(x=>x.kind==='ability'&&firstInt(x.dur));
+  const abis=items.filter(x=>x.kind==='ability');
+  const mode=S.cdMode||'mixed';
+  let type=mode;
+  if(mode==='mixed'){
+    const bag=[];
+    if(cds.length)bag.push('cooldown','cooldown','cooldown');
+    if(durs.length)bag.push('duration');
+    if(!single&&abis.length)bag.push('hero');
+    type=bag.length?rnd(bag):'cooldown';
+  }
+  if(type==='duration'&&!durs.length)type='cooldown';
+  if(type==='hero'&&(single||!abis.length))type='cooldown';
+  if(type==='cooldown'&&!cds.length)type=durs.length?'duration':'hero';
+  if(type==='hero')return newCdHero(rnd(abis));
   if(type==='duration')return newCdNumeric(rnd(durs),'duration');
-  return newCdNumeric(rnd(cds.length?cds:all),'cooldown');
+  return newCdNumeric(rnd(cds.length?cds:items),'cooldown');
 }
-function newCdNumeric(a,kind){
-  const correct=kind==='cooldown'?a.cd:firstInt(a.dur);
+function newCdNumeric(item,kind){
+  const correct=kind==='cooldown'?item.cd:firstInt(item.dur);
   const opts=nearestOptions(correct,kind==='cooldown'?S.allCds:S.allDur);
-  cd.q={mode:kind,a,opts,correctIdx:opts.indexOf(correct)};
-  const ask=kind==='cooldown'?'Cooldown of this ability?':'How long does this ability last?';
-  $('#cdq').innerHTML=`<img class="qi" src="${a.icon}" alt="">
-    <div class="qhero">${esc(a.hero)}</div>
-    <div class="qname">${esc(a.name)}</div>
-    <div class="qask">${ask}</div>
+  cd.q={mode:kind,a:item,opts,correctIdx:opts.indexOf(correct)};
+  const noun=item.kind==='teamup'?'team-up':'ability';
+  const ask=kind==='cooldown'?`Cooldown of this ${noun}?`:'How long does this last?';
+  $('#cdq').innerHTML=cdItemHead(item)+`<div class="qask">${ask}</div>
     <div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansCd(${i})">${cdLabel(v)}</button>`).join('')}</div>
     <div class="reveal" id="cdrev"></div>
     <button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
 }
-function newCdHero(a){
-  const opts=heroFaceOptions(a.heroSlug,null);
-  cd.q={mode:'hero',a,opts,correctIdx:opts.indexOf(a.heroSlug)};
-  $('#cdq').innerHTML=`<img class="qi" src="${a.icon}" alt="">
+function newCdHero(item){
+  const opts=heroFaceOptions(item.heroSlug,null);
+  cd.q={mode:'hero',a:item,opts,correctIdx:opts.indexOf(item.heroSlug)};
+  $('#cdq').innerHTML=`<img class="qi" src="${item.icon}" alt="">
     <div class="qhero">MYSTERY ABILITY</div>
     <div class="qname">? ? ?</div>
     <div class="qask">Which hero does this ability belong to?</div>
@@ -370,8 +408,10 @@ function ansCd(i){
   if(a.dur)facts.push('Duration '+a.dur);
   if(a.dmg)facts.push('Damage '+a.dmg);
   if(a.heal)facts.push('Healing '+a.heal);
+  const who=a.kind==='teamup'?`${esc(a.hero)} + ${esc(a.partner||'')}`:esc(a.hero);
   const rev=$('#cdrev');rev.classList.add('show');
-  rev.innerHTML=`<b>${esc(a.hero)} — ${esc(a.name)}</b>`+(facts.length?`<br>${esc(facts.join(' · '))}`:'')+`<br>${esc(a.desc)}`;
+  rev.innerHTML=`<b>${who} — ${esc(a.name)}</b>`+(facts.length?`<br>${esc(facts.join(' · '))}`:'')
+    +`<br>${esc(a.desc||trimEff(a.enhanced)||'')}`;
   $('#cdnext').classList.add('show'); syncCd();
 }
 function syncCd(){$('#cdscore').textContent=cd.score;$('#cdtot').textContent=cd.tot;

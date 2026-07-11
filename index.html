@@ -147,7 +147,14 @@
   .cpartner b{color:var(--gold)}
   .cdesc{color:var(--mut);font-size:12.3px;margin-top:5px;line-height:1.45}
   .cdesc .e{color:var(--gold)}
-  .statlist{margin-top:8px;border-top:1px solid var(--line);padding-top:7px}
+  .statbox{margin-top:8px;border-top:1px solid var(--line);padding-top:7px}
+  .statbox>summary{cursor:pointer;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
+    color:var(--gold);list-style:none;user-select:none}
+  .statbox>summary::-webkit-details-marker{display:none}
+  .statbox>summary::before{content:'▸';margin-right:6px;font-size:9px;color:var(--mut)}
+  .statbox[open]>summary::before{content:'▾'}
+  .statbox .scount{color:var(--mut);font-weight:700}
+  .statlist{margin-top:6px}
   .strow{display:flex;justify-content:space-between;gap:14px;font-size:12px;padding:2.5px 0;line-height:1.35}
   .strow .sk{color:var(--mut);flex:none}
   .strow .sv{color:var(--text);font-weight:700;text-align:right}
@@ -711,18 +718,20 @@ function cardChips(c){
     c.heal?`<span class="stat heal">✚ ${esc(c.heal)}</span>`:'',
   ].join('');
 }
-function statTable(stats){
+function statTable(stats,label){
   const rows=Object.entries(stats||{});
   if(!rows.length)return '';
-  return `<div class="statlist">${rows.map(([k,v])=>
+  const n=rows.filter(([,v])=>v).length;
+  const body=rows.map(([k,v])=>
     v?`<div class="strow"><span class="sk">${esc(k)}</span><span class="sv">${esc(v)}</span></div>`
-     :`<div class="ssub">${esc(k)}</div>`).join('')}</div>`;
+     :`<div class="ssub">${esc(k)}</div>`).join('');
+  return `<details class="statbox" onclick="event.stopPropagation()"><summary>${esc(label||'Stats')} <span class="scount">(${n})</span></summary><div class="statlist">${body}</div></details>`;
 }
 function cardHTML(c){
   const chips=cardChips(c);
   const partner=c.type==='teamup'&&c.partner?`<span class="cpartner">${c.partnerIcon?`<img src="${c.partnerIcon}" alt="">`:''}<b>${esc(c.partner)}</b></span>`:'';
   const body=c.type==='teamup'
-    ?`<div class="cdesc"><b>Base:</b> ${esc(c.base)}${statTable(c.base_stats)}${c.enhanced?`<br><span class="e">Enhanced:</span> ${esc(c.enhanced)}${statTable(c.enh_stats)}`:''}</div>`
+    ?`<div class="cdesc"><b>Base:</b> ${esc(c.base)}${statTable(c.base_stats,'Base stats')}${c.enhanced?`<br><span class="e">Enhanced:</span> ${esc(c.enhanced)}${statTable(c.enh_stats,'Enhanced stats')}`:''}</div>`
     :`<div class="cdesc">${esc(c.desc)}</div>${statTable(c.stats)}`;
   const nm=c.subrole?c.cleanName:c.name;
   const sub=c.subrole?` <span class="subtag ${c.subrole}">${esc(c.subrole)}</span>`:'';

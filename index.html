@@ -93,6 +93,9 @@
   .qhero{color:var(--mut);text-transform:uppercase;letter-spacing:1px;font-size:12px;margin-top:14px}
   .qname{font-size:22px;font-weight:800;text-transform:uppercase;font-style:italic;margin:2px 0 4px}
   .qask{color:var(--mut);font-size:14px;margin-bottom:18px}
+  .qask b{text-transform:uppercase;letter-spacing:.4px;font-weight:800;color:var(--gold)}
+  .qask b.cd{color:var(--gold)} .qask b.dur{color:var(--van)}
+  .qask b.dmg{color:var(--due)} .qask b.heal{color:var(--str)}
   .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .opt{background:var(--panel2);border:1px solid var(--line);color:var(--text);font-weight:800;font-size:16px;
     padding:15px;border-radius:12px;cursor:pointer;transition:.1s}
@@ -162,6 +165,15 @@
   .reveal.show{display:block}
   .reveal.bare{background:none;border:none;padding:0}
   .reveal b{color:var(--text)}
+  .cdtypewrap{display:flex;gap:10px;max-width:420px;margin:0 auto}
+  .cdinput{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--text);
+    padding:13px 14px;border-radius:11px;font-size:17px;font-weight:800;text-align:center;outline:none}
+  .cdinput:focus{border-color:var(--gold)}
+  .cdinput.correct{border-color:var(--good);background:#12402c;color:#b6f5d3}
+  .cdinput.wrong{border-color:var(--bad);background:#411a20;color:#ffb8c0}
+  .cdsubmit{flex:none;padding:13px 22px}
+  .typeverdict{font-weight:800;margin-bottom:12px;font-size:14px}
+  .typeverdict.good{color:var(--good)} .typeverdict.bad{color:var(--bad)}
   .next{margin-top:16px;background:var(--gold);color:#101425;border:none;font-weight:800;text-transform:uppercase;
     letter-spacing:.5px;padding:13px 26px;border-radius:11px;cursor:pointer;font-size:14px;display:none}
   .next.show{display:inline-block}
@@ -250,8 +262,10 @@
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
       <span class="chip cdmode on" data-m="mixed">Mixed</span>
-      <span class="chip cdmode" data-m="cooldown">Cooldowns</span>
       <span class="chip cdmode" data-m="duration">Durations</span>
+      <span class="chip cdmode" data-m="cooldown">Cooldowns</span>
+      <span class="chip cdmode" data-m="damage">Damage</span>
+      <span class="chip cdmode" data-m="healing">Healing</span>
       <span class="chip cdmode" data-m="hero">Which hero</span>
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
@@ -333,6 +347,9 @@ function init(){
   const dmgN=[...S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dmg))),
               ...S.heroes.flatMap(h=>h.teamups.map(t=>firstInt(t.dmg)))].filter(Boolean);
   S.allDmg=[...new Set(dmgN)].sort((a,b)=>a-b);
+  const healN=[...S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.heal))),
+               ...S.heroes.flatMap(h=>h.teamups.map(t=>firstInt(t.heal)))].filter(Boolean);
+  S.allHeal=[...new Set(healN)].sort((a,b)=>a-b);
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
   S.cdMode='mixed';
@@ -493,29 +510,44 @@ function newCd(){
   const items=cdItems();
   if(!items.length){$('#cdq').innerHTML='<p class="muted">Nothing in this scope.</p>';return}
   const single=$('#cdscope').value.startsWith('hero:');
-  const cds=items.filter(x=>x.cd);
-  const durs=items.filter(x=>x.type!=='teamup'&&firstInt(x.dur));
-  const abis=items.filter(x=>x.type!=='teamup');
-  const mode=S.cdMode||'mixed';
-  let type=mode;
-  if(mode==='mixed'){
+  const avail={
+    cooldown:items.filter(x=>x.cd),
+    duration:items.filter(x=>x.type!=='teamup'&&firstInt(x.dur)),
+    damage:items.filter(x=>firstInt(x.dmg)),
+    healing:items.filter(x=>firstInt(x.heal)),
+    hero:single?[]:items.filter(x=>x.type!=='teamup'),
+  };
+  let type=S.cdMode||'mixed';
+  if(type==='mixed'){
     const bag=[];
-    if(cds.length)bag.push('cooldown','cooldown','cooldown');
-    if(durs.length)bag.push('duration');
-    if(!single&&abis.length)bag.push('hero');
+    if(avail.duration.length)bag.push('duration','duration','duration','duration');
+    if(avail.cooldown.length)bag.push('cooldown','cooldown');
+    if(avail.damage.length)bag.push('damage');
+    if(avail.healing.length)bag.push('healing');
+    if(avail.hero.length)bag.push('hero');
     type=bag.length?rnd(bag):'cooldown';
   }
-  if(type==='duration'&&!durs.length)type='cooldown';
-  if(type==='hero'&&(single||!abis.length))type='cooldown';
-  if(type==='cooldown'&&!cds.length)type=durs.length?'duration':'hero';
-  if(type==='hero')return newCdHero(pickByHero(abis));
-  if(type==='duration')return newCdNumeric(pickByHero(durs),'duration');
-  return newCdNumeric(pickByHero(cds.length?cds:items),'cooldown');
+  if(!avail[type]||!avail[type].length)
+    type=['duration','cooldown','damage','healing','hero'].find(t=>avail[t].length)||'cooldown';
+  const item=pickByHero(avail[type].length?avail[type]:items);
+  if(type==='hero')return newCdHero(item);
+  newCdQuestion(item,type);
 }
-function newCdNumeric(item,kind){
-  const correct=kind==='cooldown'?item.cd:firstInt(item.dur);
-  const opts=nearestOptions(correct,kind==='cooldown'?S.allCds:S.allDur);
-  cd.q={mode:kind,a:item,opts,correctIdx:opts.indexOf(correct)};
+const CDMETA={
+  cooldown:{val:i=>i.cd, pool:()=>S.allCds, label:v=>v+'s', ph:'0s', ask:i=>`<b class="cd">Cooldown</b> of this ${i.type==='teamup'?'team-up':'ability'}?`, answer:i=>i.cd_text||(i.cd+'s')},
+  duration:{val:i=>firstInt(i.dur), pool:()=>S.allDur, label:v=>v+'s', ph:'0s', ask:()=>'How long does this <b class="dur">last</b>?', answer:i=>i.dur},
+  damage:{val:i=>firstInt(i.dmg), pool:()=>S.allDmg, label:v=>''+v, ph:'0', ask:()=>'How much <b class="dmg">damage</b> does this deal?', answer:i=>i.dmg},
+  healing:{val:i=>firstInt(i.heal), pool:()=>S.allHeal, label:v=>''+v, ph:'0', ask:()=>'How much does this <b class="heal">heal</b>?', answer:i=>i.heal},
+};
+function newCdQuestion(item,kind){
+  const meta=CDMETA[kind];
+  const useText=(kind==='duration')?Math.random()<0.6:Math.random()<0.45;
+  if(useText){
+    cd.q={mode:kind,a:item,format:'text'};
+  }else{
+    const correct=meta.val(item), opts=nearestOptions(correct,meta.pool());
+    cd.q={mode:kind,a:item,format:'mc',opts,correctIdx:opts.indexOf(correct)};
+  }
   renderCd();
 }
 function newCdHero(item){
@@ -525,22 +557,29 @@ function newCdHero(item){
 }
 function renderCd(){
   const q=cd.q; if(!q)return;
-  const item=q.a, opts=q.opts;
+  const item=q.a;
   const tail=`<div class="reveal bare" id="cdrev"></div><button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
   if(q.mode==='hero'){
     $('#cdq').innerHTML=`<img class="qi" src="${item.icon}" alt="">
       <div class="qhero">MYSTERY ABILITY</div>
       <div class="qname">? ? ?</div>
       <div class="qask">Which hero does this ability belong to?</div>
-      <div class="opts faces">${opts.map((s,i)=>{const hh=S.bySlug[s];
+      <div class="opts faces">${q.opts.map((s,i)=>{const hh=S.bySlug[s];
         return `<button class="opt face" onclick="ansCd(${i})"><img src="${hh.icon}" alt="">
           <span class="nm">${esc(hh.name)}</span></button>`;}).join('')}</div>${tail}`;
     return;
   }
-  const noun=item.type==='teamup'?'team-up':'ability';
-  const ask=q.mode==='cooldown'?`Cooldown of this ${noun}?`:'How long does this last?';
-  $('#cdq').innerHTML=cardFront(item,cd.difficulty,ask)
-    +`<div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansCd(${i})">${cdLabel(v)}</button>`).join('')}</div>${tail}`;
+  const meta=CDMETA[q.mode];
+  if(q.format==='text'){
+    const ask=meta.ask(item)+' <span class="muted" style="font-weight:600">(type your answer)</span>';
+    $('#cdq').innerHTML=cardFront(item,cd.difficulty,ask)
+      +`<div class="cdtypewrap"><input id="cdinput" class="cdinput" placeholder="${meta.ph}" autocomplete="off"
+          onkeydown="if(event.key==='Enter')ansCdText()"><button class="opt cdsubmit" onclick="ansCdText()">Submit</button></div>${tail}`;
+    const inp=$('#cdinput'); if(inp)inp.focus();
+    return;
+  }
+  $('#cdq').innerHTML=cardFront(item,cd.difficulty,meta.ask(item))
+    +`<div class="opts">${q.opts.map((v,i)=>`<button class="opt" onclick="ansCd(${i})">${meta.label(v)}</button>`).join('')}</div>${tail}`;
 }
 function ansCd(i){
   const q=cd.q,a=q.a; cd.tot++; const ok=i===q.correctIdx;
@@ -550,6 +589,19 @@ function ansCd(i){
   if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
   const rev=$('#cdrev');rev.classList.add('show');
   rev.innerHTML=cardHTML(a);
+  $('#cdnext').classList.add('show'); syncCd();
+}
+function ansCdText(){
+  const inp=$('#cdinput'); if(!inp||inp.disabled)return;
+  const val=inp.value.trim(); if(!val)return;
+  const a=cd.q.a, meta=CDMETA[cd.q.mode]; cd.tot++;
+  const userN=firstInt(val), corrN=meta.val(a);
+  const ok=userN!=null&&corrN!=null&&userN===corrN;
+  if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
+  inp.disabled=true; inp.classList.add(ok?'correct':'wrong');
+  const sub=$('#cdsubmit'); if(sub)sub.disabled=true;
+  const rev=$('#cdrev');rev.classList.add('show');
+  rev.innerHTML=`<div class="typeverdict ${ok?'good':'bad'}">${ok?'✓ Correct!':'✗ Not quite'} — answer: <b>${esc(meta.answer(a)||corrN)}</b></div>`+cardHTML(a);
   $('#cdnext').classList.add('show'); syncCd();
 }
 function syncCd(){$('#cdscore').textContent=cd.score;$('#cdtot').textContent=cd.tot;

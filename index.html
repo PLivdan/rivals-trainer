@@ -721,11 +721,10 @@ function cardChips(c){
 function statTable(stats,label){
   const rows=Object.entries(stats||{});
   if(!rows.length)return '';
-  const n=rows.filter(([,v])=>v).length;
   const body=rows.map(([k,v])=>
     v?`<div class="strow"><span class="sk">${esc(k)}</span><span class="sv">${esc(v)}</span></div>`
      :`<div class="ssub">${esc(k)}</div>`).join('');
-  return `<details class="statbox" onclick="event.stopPropagation()"><summary><span class="scount">(${n})</span></summary><div class="statlist">${body}</div></details>`;
+  return `<details class="statbox" onclick="event.stopPropagation()"><summary></summary><div class="statlist">${body}</div></details>`;
 }
 function cardHTML(c){
   const chips=cardChips(c);

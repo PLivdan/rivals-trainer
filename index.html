@@ -160,6 +160,7 @@
   .reveal{margin-top:16px;padding:14px;background:#0c1120;border:1px solid var(--line);border-radius:12px;
     font-size:13px;color:var(--mut);text-align:left;display:none}
   .reveal.show{display:block}
+  .reveal.bare{background:none;border:none;padding:0}
   .reveal b{color:var(--text)}
   .next{margin-top:16px;background:var(--gold);color:#101425;border:none;font-weight:800;text-transform:uppercase;
     letter-spacing:.5px;padding:13px 26px;border-radius:11px;cursor:pointer;font-size:14px;display:none}
@@ -347,7 +348,7 @@ function init(){
     cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd();});
   $$('.chip.cddiff').forEach(c=>c.onclick=()=>{cd.difficulty=c.dataset.d;
     $$('.chip.cddiff').forEach(x=>x.classList.toggle('on',x===c));
-    cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd();});
+    cd.q?renderCd():newCd();});
   $$('.subtabs button').forEach(b=>b.onclick=()=>{
     $$('.subtabs button').forEach(x=>x.classList.toggle('on',x===b));
     const quiz=b.dataset.t==='quiz';
@@ -516,25 +517,31 @@ function newCdNumeric(item,kind){
   const correct=kind==='cooldown'?item.cd:firstInt(item.dur);
   const opts=nearestOptions(correct,kind==='cooldown'?S.allCds:S.allDur);
   cd.q={mode:kind,a:item,opts,correctIdx:opts.indexOf(correct)};
-  const noun=item.type==='teamup'?'team-up':'ability';
-  const ask=kind==='cooldown'?`Cooldown of this ${noun}?`:'How long does this last?';
-  $('#cdq').innerHTML=cardFront(item,cd.difficulty,ask)
-    +`<div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansCd(${i})">${cdLabel(v)}</button>`).join('')}</div>
-    <div class="reveal" id="cdrev"></div>
-    <button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
+  renderCd();
 }
 function newCdHero(item){
   const opts=heroFaceOptions(item.heroSlug,null);
   cd.q={mode:'hero',a:item,opts,correctIdx:opts.indexOf(item.heroSlug)};
-  $('#cdq').innerHTML=`<img class="qi" src="${item.icon}" alt="">
-    <div class="qhero">MYSTERY ABILITY</div>
-    <div class="qname">? ? ?</div>
-    <div class="qask">Which hero does this ability belong to?</div>
-    <div class="opts faces">${opts.map((s,i)=>{const hh=S.bySlug[s];
-      return `<button class="opt face" onclick="ansCd(${i})"><img src="${hh.icon}" alt="">
-        <span class="nm">${esc(hh.name)}</span></button>`;}).join('')}</div>
-    <div class="reveal" id="cdrev"></div>
-    <button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
+  renderCd();
+}
+function renderCd(){
+  const q=cd.q; if(!q)return;
+  const item=q.a, opts=q.opts;
+  const tail=`<div class="reveal bare" id="cdrev"></div><button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
+  if(q.mode==='hero'){
+    $('#cdq').innerHTML=`<img class="qi" src="${item.icon}" alt="">
+      <div class="qhero">MYSTERY ABILITY</div>
+      <div class="qname">? ? ?</div>
+      <div class="qask">Which hero does this ability belong to?</div>
+      <div class="opts faces">${opts.map((s,i)=>{const hh=S.bySlug[s];
+        return `<button class="opt face" onclick="ansCd(${i})"><img src="${hh.icon}" alt="">
+          <span class="nm">${esc(hh.name)}</span></button>`;}).join('')}</div>${tail}`;
+    return;
+  }
+  const noun=item.type==='teamup'?'team-up':'ability';
+  const ask=q.mode==='cooldown'?`Cooldown of this ${noun}?`:'How long does this last?';
+  $('#cdq').innerHTML=cardFront(item,cd.difficulty,ask)
+    +`<div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansCd(${i})">${cdLabel(v)}</button>`).join('')}</div>${tail}`;
 }
 function ansCd(i){
   const q=cd.q,a=q.a; cd.tot++; const ok=i===q.correctIdx;
@@ -542,15 +549,8 @@ function ansCd(i){
     if(idx===q.correctIdx)o.classList.add('correct');
     else if(idx===i)o.classList.add('wrong');});
   if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
-  const facts=[];
-  if(a.cd_text)facts.push('Cooldown '+a.cd_text);
-  if(a.dur)facts.push('Duration '+a.dur);
-  if(a.dmg)facts.push('Damage '+a.dmg);
-  if(a.heal)facts.push('Healing '+a.heal);
-  const who=a.type==='teamup'?`${esc(a.hero)} + ${esc(a.partner||'')}`:esc(a.hero);
   const rev=$('#cdrev');rev.classList.add('show');
-  rev.innerHTML=`<b>${who} — ${esc(a.subrole?a.cleanName:a.name)}</b>`+(facts.length?`<br>${esc(facts.join(' · '))}`:'')
-    +`<br>${esc(a.desc||trimEff(a.enhanced)||'')}`;
+  rev.innerHTML=cardHTML(a);
   $('#cdnext').classList.add('show'); syncCd();
 }
 function syncCd(){$('#cdscore').textContent=cd.score;$('#cdtot').textContent=cd.tot;

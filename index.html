@@ -550,7 +550,7 @@ const CDMETA={
 };
 function newCdQuestion(item,kind){
   const meta=CDMETA[kind];
-  const useText=(kind==='duration')?Math.random()<0.6:Math.random()<0.45;
+  const useText=(kind==='duration')?Math.random()<0.35:Math.random()<0.22;
   if(useText){
     cd.q={mode:kind,a:item,format:'text'};
   }else{

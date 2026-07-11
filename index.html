@@ -186,6 +186,16 @@
   .cdsubmit{flex:none;padding:13px 22px}
   .typeverdict{font-weight:800;margin-bottom:12px;font-size:14px}
   .typeverdict.good{color:var(--good)} .typeverdict.bad{color:var(--bad)}
+  .cmpask{font-size:16px;margin-bottom:18px}
+  .opts.compare{grid-template-columns:1fr 1fr;gap:12px}
+  .opt.cmp{display:flex;align-items:center;gap:11px;text-align:left;padding:12px}
+  .opt.cmp img{width:46px;height:46px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
+  .opt.cmp .cmpn{display:flex;flex-direction:column;min-width:0}
+  .opt.cmp .cmph{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.3px}
+  .opt.cmp .cmpa{font-size:13px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .cmpreveal{text-align:left;font-size:13px}
+  .cmprow{display:flex;justify-content:space-between;gap:14px;padding:3px 0}
+  .cmprow .sv{color:var(--gold);font-weight:800;white-space:nowrap}
   .next{margin-top:16px;background:var(--gold);color:#101425;border:none;font-weight:800;text-transform:uppercase;
     letter-spacing:.5px;padding:13px 26px;border-radius:11px;cursor:pointer;font-size:14px;display:none}
   .next.show{display:inline-block}
@@ -278,6 +288,7 @@
       <span class="chip cdmode on" data-m="damage">Damage</span>
       <span class="chip cdmode on" data-m="healing">Healing</span>
       <span class="chip cdmode on" data-m="hero">Which hero</span>
+      <span class="chip cdmode on" data-m="compare">Compare</span>
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
       <span class="count muted">Difficulty</span>
@@ -363,6 +374,7 @@ function init(){
   S.allHeal=[...new Set(healN)].sort((a,b)=>a-b);
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
+  S.mastery=loadMastery();
   tagSubroles();
   S.cards=allCards();
   S.cardFilter={q:'',role:'all',type:'all'};
@@ -468,7 +480,7 @@ function closeSheet(){$('#ov').classList.remove('show')}
 
 /* ---------- COOLDOWN QUIZ ---------- */
 const cd={score:0,tot:0,streak:0,best:0,difficulty:'easy',q:null,
-  enabled:new Set(['duration','cooldown','damage','healing','hero'])};
+  enabled:new Set(['duration','cooldown','damage','healing','hero','compare'])};
 function nearestOptions(correct,pool){
   const others=[...new Set(pool||[])].filter(v=>v!==correct);
   const below=shuffle(others.filter(v=>v<correct).sort((a,b)=>b-a).slice(0,4));
@@ -496,6 +508,28 @@ function cdItems(){
     if(scope.startsWith('hero:'))return c.heroSlug===scope.slice(5);
     return true;
   });
+}
+/* Leitner spaced repetition: missed items resurface more, mastered rarely */
+const SR_KEY='rt_mastery_v1';
+function loadMastery(){try{return JSON.parse(localStorage.getItem(SR_KEY)||'{}');}catch(e){return {};}}
+function saveMastery(){try{localStorage.setItem(SR_KEY,JSON.stringify(S.mastery||{}));}catch(e){}}
+function itemKey(c){return c.heroSlug+'|'+c.type+'|'+(c.cleanName||c.name)+'|'+(c.subrole||'')+'|'+(c.upgraded?'u':'');}
+function getBox(c){const r=(S.mastery||{})[itemKey(c)];return r?r.box:0;}
+function markResult(c,ok){
+  if(!c)return;
+  const k=itemKey(c), r=S.mastery[k]||{box:0};
+  r.box=ok?Math.min((r.box||0)+1,5):0;
+  S.mastery[k]=r; saveMastery();
+}
+const BOXW=[10,6,3,1.5,0.7,0.3];
+function pickSR(pool){
+  if(!pool||!pool.length)return null;
+  const by={}; pool.forEach(x=>{(by[x.heroSlug]=by[x.heroSlug]||[]).push(x);});
+  const slugs=Object.keys(by), items=by[slugs[Math.floor(Math.random()*slugs.length)]];
+  const ws=items.map(x=>BOXW[Math.min(getBox(x),5)]);
+  let tot=ws.reduce((a,b)=>a+b,0), r=Math.random()*tot;
+  for(let i=0;i<items.length;i++){r-=ws[i];if(r<=0)return items[i];}
+  return items[items.length-1];
 }
 function cardFront(c,diff,ask){
   const nameHTML=`<div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.subrole?c.cleanName:c.name)}${c.upgraded?' <span class="uptag">▲</span>':''}</div>`;
@@ -530,15 +564,19 @@ function newCd(){
     healing:items.filter(x=>firstInt(x.heal)),
     hero:single?[]:items.filter(x=>x.type!=='teamup'),
   };
-  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1};
-  const order=['duration','cooldown','damage','healing','hero'];
+  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:2};
+  const order=['duration','cooldown','damage','healing','hero','compare'];
+  const canCompare=['duration','cooldown','damage','healing'].some(f=>cd.enabled.has(f)&&avail[f].length>=2);
   const bag=[];
-  for(const t of order)
-    if(cd.enabled.has(t)&&avail[t].length)
-      for(let i=0;i<weights[t];i++)bag.push(t);
-  const type=bag.length?rnd(bag):order.find(t=>avail[t].length);
+  for(const t of order){
+    if(!cd.enabled.has(t))continue;
+    if(t==='compare'){ if(canCompare)for(let i=0;i<weights.compare;i++)bag.push('compare'); }
+    else if(avail[t].length)for(let i=0;i<weights[t];i++)bag.push(t);
+  }
+  const type=bag.length?rnd(bag):order.find(t=>t!=='compare'&&avail[t]&&avail[t].length);
   if(!type){$('#cdq').innerHTML='<p class="muted">Nothing available in this scope.</p>';return}
-  const item=pickByHero(avail[type]);
+  if(type==='compare')return newCdCompare(avail);
+  const item=pickSR(avail[type]);
   if(type==='hero')return newCdHero(item);
   newCdQuestion(item,type);
 }
@@ -564,6 +602,31 @@ function newCdHero(item){
   cd.q={mode:'hero',a:item,opts,correctIdx:opts.indexOf(item.heroSlug)};
   renderCd();
 }
+function newCdCompare(avail){
+  const facets=['duration','cooldown','damage','healing'].filter(f=>cd.enabled.has(f)&&avail[f].length>=2);
+  if(!facets.length)return;
+  const facet=rnd(facets), meta=CDMETA[facet], pool=avail[facet];
+  let a=pickSR(pool), b, tries=0;
+  do{ b=pool[Math.floor(Math.random()*pool.length)]; tries++; }
+  while((b===a||meta.val(a)===meta.val(b))&&tries<50);
+  if(meta.val(a)===meta.val(b)){newCd();return;}
+  const dir=Math.random()<0.5?'less':'more';
+  const words={cooldown:['shorter','longer'],duration:['shorter','longer'],damage:['less','more'],healing:['less','more']};
+  const word=words[facet][dir==='less'?0:1];
+  const correctItem=(dir==='less')?(meta.val(a)<meta.val(b)?a:b):(meta.val(a)>meta.val(b)?a:b);
+  const opts=shuffle([a,b]);
+  cd.q={mode:'compare',facet,word,opts,correctIdx:opts.indexOf(correctItem)};
+  renderCd();
+}
+function ansCompare(i){
+  const q=cd.q, meta=CDMETA[q.facet]; cd.tot++; const ok=i===q.correctIdx;
+  $$('#cdq .opt').forEach((o,idx)=>{o.disabled=true;
+    if(idx===q.correctIdx)o.classList.add('correct'); else if(idx===i)o.classList.add('wrong');});
+  if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
+  const rev=$('#cdrev');rev.classList.add('show');
+  rev.innerHTML=`<div class="cmpreveal">${q.opts.map(it=>`<div class="cmprow"><b>${esc(it.hero)} — ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(meta.answer(it))}</span></div>`).join('')}</div>`;
+  $('#cdnext').classList.add('show'); syncCd();
+}
 function renderCd(){
   const q=cd.q; if(!q)return;
   const item=q.a;
@@ -576,6 +639,13 @@ function renderCd(){
       <div class="opts faces">${q.opts.map((s,i)=>{const hh=S.bySlug[s];
         return `<button class="opt face" onclick="ansCd(${i})"><img src="${hh.icon}" alt="">
           <span class="nm">${esc(hh.name)}</span></button>`;}).join('')}</div>${tail}`;
+    return;
+  }
+  if(q.mode==='compare'){
+    const cls={cooldown:'cd',duration:'dur',damage:'dmg',healing:'heal'}[q.facet];
+    $('#cdq').innerHTML=`<div class="qask cmpask">Which has the ${q.word.toUpperCase()} <b class="${cls}">${esc(q.facet)}</b>?</div>
+      <div class="opts compare">${q.opts.map((it,i)=>`<button class="opt cmp" onclick="ansCompare(${i})">
+        <img src="${it.icon}" alt=""><span class="cmpn"><span class="cmph">${esc(it.hero)}</span><span class="cmpa">${esc(it.subrole?it.cleanName:it.name)}</span></span></button>`).join('')}</div>${tail}`;
     return;
   }
   const meta=CDMETA[q.mode];
@@ -596,6 +666,7 @@ function ansCd(i){
     if(idx===q.correctIdx)o.classList.add('correct');
     else if(idx===i)o.classList.add('wrong');});
   if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
+  markResult(a,ok);
   const rev=$('#cdrev');rev.classList.add('show');
   rev.innerHTML=cardHTML(a);
   $('#cdnext').classList.add('show'); syncCd();
@@ -607,6 +678,7 @@ function ansCdText(){
   const userN=firstInt(val), corrN=meta.val(a);
   const ok=userN!=null&&corrN!=null&&userN===corrN;
   if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
+  markResult(a,ok);
   inp.disabled=true; inp.classList.add(ok?'correct':'wrong');
   const sub=$('#cdsubmit'); if(sub)sub.disabled=true;
   const rev=$('#cdrev');rev.classList.add('show');

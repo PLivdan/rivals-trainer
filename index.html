@@ -333,6 +333,10 @@ const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const cdLabel=n=>n+'s';
 const firstInt=s=>{const m=(s||'').match(/\d+/);return m?+m[0]:null;};
+// quiz value: primary number as an absolute amount; null if it's a percentage or a distance/area (not an amount)
+function qVal(s){if(s==null)return null;s=''+s;if(/radius|meter/i.test(s))return null;const m=s.match(/(\d+(?:\.\d+)?)(%?)/);if(!m||m[2]==='%')return null;return Math.round(parseFloat(m[1]));}
+// unit signature so comparisons only pit like-for-like (flat vs per-second vs per-hit)
+function unitSig(s){s=''+(s||'');if(/\/s\b|per second/i.test(s))return 'rate';if(/per (round|shot|hit|use)/i.test(s))return 'per';return 'flat';}
 const ROLES3=['Vanguard','Duelist','Strategist'];
 function tagSubroles(){
   S.heroes.forEach(h=>{
@@ -366,11 +370,11 @@ function init(){
   const cdN=[...S.heroes.flatMap(h=>h.abilities.filter(a=>a.cd).map(a=>a.cd)),
              ...S.heroes.flatMap(h=>h.teamups.filter(t=>t.cd).map(t=>t.cd))];
   S.allCds=[...new Set(cdN)].sort((a,b)=>a-b);
-  const dmgN=[...S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dmg))),
-              ...S.heroes.flatMap(h=>h.teamups.map(t=>firstInt(t.dmg)))].filter(Boolean);
+  const dmgN=[...S.heroes.flatMap(h=>h.abilities.map(a=>qVal(a.dmg))),
+              ...S.heroes.flatMap(h=>h.teamups.map(t=>qVal(t.dmg)))].filter(Boolean);
   S.allDmg=[...new Set(dmgN)].sort((a,b)=>a-b);
-  const healN=[...S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.heal))),
-               ...S.heroes.flatMap(h=>h.teamups.map(t=>firstInt(t.heal)))].filter(Boolean);
+  const healN=[...S.heroes.flatMap(h=>h.abilities.map(a=>qVal(a.heal))),
+               ...S.heroes.flatMap(h=>h.teamups.map(t=>qVal(t.heal)))].filter(Boolean);
   S.allHeal=[...new Set(healN)].sort((a,b)=>a-b);
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
@@ -560,8 +564,8 @@ function newCd(){
   const avail={
     duration:items.filter(x=>x.type!=='teamup'&&firstInt(x.dur)),
     cooldown:items.filter(x=>x.cd),
-    damage:items.filter(x=>firstInt(x.dmg)),
-    healing:items.filter(x=>firstInt(x.heal)),
+    damage:items.filter(x=>qVal(x.dmg)!=null),
+    healing:items.filter(x=>qVal(x.heal)!=null),
     hero:single?[]:items.filter(x=>x.type!=='teamup'),
   };
   const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:1};
@@ -583,8 +587,8 @@ function newCd(){
 const CDMETA={
   cooldown:{val:i=>i.cd, pool:()=>S.allCds, label:v=>v+'s', ph:'seconds…', ask:i=>`<b class="cd">Cooldown</b> of this ${i.type==='teamup'?'team-up':'ability'}?`, answer:i=>i.cd_text||(i.cd+'s')},
   duration:{val:i=>firstInt(i.dur), pool:()=>S.allDur, label:v=>v+'s', ph:'seconds…', ask:()=>'How long does this <b class="dur">last</b>?', answer:i=>i.dur},
-  damage:{val:i=>firstInt(i.dmg), pool:()=>S.allDmg, label:v=>''+v, ph:'amount…', ask:()=>'How much <b class="dmg">damage</b> does this deal?', answer:i=>i.dmg},
-  healing:{val:i=>firstInt(i.heal), pool:()=>S.allHeal, label:v=>''+v, ph:'amount…', ask:()=>'How much does this <b class="heal">heal</b>?', answer:i=>i.heal},
+  damage:{val:i=>qVal(i.dmg), pool:()=>S.allDmg, label:v=>''+v, ph:'amount…', ask:()=>'How much <b class="dmg">damage</b> does this deal?', answer:i=>i.dmg},
+  healing:{val:i=>qVal(i.heal), pool:()=>S.allHeal, label:v=>''+v, ph:'amount…', ask:()=>'How much does this <b class="heal">heal</b>?', answer:i=>i.heal},
 };
 function newCdQuestion(item,kind){
   const meta=CDMETA[kind];
@@ -606,8 +610,8 @@ function newCdCompare(avail){
   const facets=['duration','cooldown','damage','healing'].filter(f=>cd.enabled.has(f)&&avail[f].length>=2);
   if(!facets.length)return;
   const facet=rnd(facets), meta=CDMETA[facet], pool=avail[facet];
-  const a=pickSR(pool), va=meta.val(a);
-  const cands=pool.filter(x=>x!==a&&meta.val(x)!==va)
+  const a=pickSR(pool), va=meta.val(a), aUnit=unitSig(meta.answer(a));
+  const cands=pool.filter(x=>x!==a&&meta.val(x)!=null&&meta.val(x)!==va&&unitSig(meta.answer(x))===aUnit)
     .sort((x,y)=>Math.abs(meta.val(x)-va)-Math.abs(meta.val(y)-va));
   if(!cands.length){newCd();return;}
   const b=cands[Math.floor(Math.random()*Math.min(5,cands.length))];

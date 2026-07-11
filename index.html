@@ -564,7 +564,7 @@ function newCd(){
     healing:items.filter(x=>firstInt(x.heal)),
     hero:single?[]:items.filter(x=>x.type!=='teamup'),
   };
-  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:2};
+  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:1};
   const order=['duration','cooldown','damage','healing','hero','compare'];
   const canCompare=['duration','cooldown','damage','healing'].some(f=>cd.enabled.has(f)&&avail[f].length>=2);
   const bag=[];

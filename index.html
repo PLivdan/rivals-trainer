@@ -606,10 +606,11 @@ function newCdCompare(avail){
   const facets=['duration','cooldown','damage','healing'].filter(f=>cd.enabled.has(f)&&avail[f].length>=2);
   if(!facets.length)return;
   const facet=rnd(facets), meta=CDMETA[facet], pool=avail[facet];
-  let a=pickSR(pool), b, tries=0;
-  do{ b=pool[Math.floor(Math.random()*pool.length)]; tries++; }
-  while((b===a||meta.val(a)===meta.val(b))&&tries<50);
-  if(meta.val(a)===meta.val(b)){newCd();return;}
+  const a=pickSR(pool), va=meta.val(a);
+  const cands=pool.filter(x=>x!==a&&meta.val(x)!==va)
+    .sort((x,y)=>Math.abs(meta.val(x)-va)-Math.abs(meta.val(y)-va));
+  if(!cands.length){newCd();return;}
+  const b=cands[Math.floor(Math.random()*Math.min(5,cands.length))];
   const dir=Math.random()<0.5?'less':'more';
   const words={cooldown:['shorter','longer'],duration:['shorter','longer'],damage:['less','more'],healing:['less','more']};
   const word=words[facet][dir==='less'?0:1];

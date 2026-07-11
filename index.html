@@ -147,6 +147,11 @@
   .cpartner b{color:var(--gold)}
   .cdesc{color:var(--mut);font-size:12.3px;margin-top:5px;line-height:1.45}
   .cdesc .e{color:var(--gold)}
+  .statlist{margin-top:8px;border-top:1px solid var(--line);padding-top:7px}
+  .strow{display:flex;justify-content:space-between;gap:14px;font-size:12px;padding:2.5px 0;line-height:1.35}
+  .strow .sk{color:var(--mut);flex:none}
+  .strow .sv{color:var(--text);font-weight:700;text-align:right}
+  .ssub{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);margin:7px 0 2px}
   /* flashcards */
   .kbd.big{font-size:15px;padding:2px 10px}
   .fcfront{display:flex;align-items:stretch;gap:22px;text-align:center}
@@ -333,7 +338,7 @@ function pickByHero(pool){
   const items=by[s]; return items[Math.floor(Math.random()*items.length)];
 }
 
-fetch('site_data.json').then(r=>r.json()).then(d=>{S.heroes=d.heroes;init()});
+fetch('site_data.json?t='+Date.now()).then(r=>r.json()).then(d=>{S.heroes=d.heroes;init()});
 
 function init(){
   $$('nav button').forEach(b=>b.onclick=()=>show(b.dataset.v));
@@ -413,7 +418,7 @@ function abRow(a){
   return `<div class="ab"><img src="${a.icon}" alt="">
       <div class="t"><div><span class="kbd">${esc(a.key||'—')}</span> <span class="abnm">${esc(nm)}</span>${a.upgraded?' <span class="uptag">▲ Upgraded</span>':''}</div>
         <div class="abd">${esc(a.desc)}</div>
-        ${ch?`<div class="chips">${ch}</div>`:''}</div></div>`;
+        ${ch?`<div class="chips">${ch}</div>`:''}${statTable(a.stats)}</div></div>`;
 }
 function abilitiesHTML(h){
   if(!h.multiRole)return h.abilities.map(abRow).join('');
@@ -684,13 +689,14 @@ function allCards(){
       const k=(a.key||'').toUpperCase();
       const type=a.slot==='passive'?'passive':(k==='Q'?'ultimate':(a.slot==='primary'?'basic':'ability'));
       out.push({type,hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:a.icon,name:a.name,key:a.key,
-        subrole:a.subrole,cleanName:a.cleanName,upgraded:a.upgraded,
+        subrole:a.subrole,cleanName:a.cleanName,upgraded:a.upgraded,stats:a.stats,
         desc:a.desc,cd:a.cd,cd_text:a.cd_text,dur:a.dur,dmg:a.dmg,heal:a.heal});
     });
     h.teamups.forEach(t=>{
       if(!t.icon)return;
       out.push({type:'teamup',hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:t.icon,name:t.name,key:'',
         desc:t.enhanced||t.base,base:t.base,enhanced:t.enhanced,partner:t.partner,partnerIcon:t.partner_icon,
+        base_stats:t.base_stats,enh_stats:t.enh_stats,
         cd:t.cd,cd_text:t.cd_text,dur:t.dur,dmg:t.dmg,heal:t.heal});
     });
   });
@@ -705,12 +711,19 @@ function cardChips(c){
     c.heal?`<span class="stat heal">✚ ${esc(c.heal)}</span>`:'',
   ].join('');
 }
+function statTable(stats){
+  const rows=Object.entries(stats||{});
+  if(!rows.length)return '';
+  return `<div class="statlist">${rows.map(([k,v])=>
+    v?`<div class="strow"><span class="sk">${esc(k)}</span><span class="sv">${esc(v)}</span></div>`
+     :`<div class="ssub">${esc(k)}</div>`).join('')}</div>`;
+}
 function cardHTML(c){
   const chips=cardChips(c);
   const partner=c.type==='teamup'&&c.partner?`<span class="cpartner">${c.partnerIcon?`<img src="${c.partnerIcon}" alt="">`:''}<b>${esc(c.partner)}</b></span>`:'';
   const body=c.type==='teamup'
-    ?`<div class="cdesc"><b>Base:</b> ${esc(c.base)}${c.enhanced?`<br><span class="e">Enhanced:</span> ${esc(c.enhanced)}`:''}</div>`
-    :`<div class="cdesc">${esc(c.desc)}</div>`;
+    ?`<div class="cdesc"><b>Base:</b> ${esc(c.base)}${statTable(c.base_stats)}${c.enhanced?`<br><span class="e">Enhanced:</span> ${esc(c.enhanced)}${statTable(c.enh_stats)}`:''}</div>`
+    :`<div class="cdesc">${esc(c.desc)}</div>${statTable(c.stats)}`;
   const nm=c.subrole?c.cleanName:c.name;
   const sub=c.subrole?` <span class="subtag ${c.subrole}">${esc(c.subrole)}</span>`:'';
   const up=c.upgraded?' <span class="uptag">▲ Upgraded</span>':'';

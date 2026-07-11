@@ -69,6 +69,7 @@ def build():
                 "dmg": dmg,
                 "heal": heal,
                 "dur": dur,
+                "stats": {k: v for k, v in (a["stats"] or {}).items() if k != "Key"},
             })
         teamups = []
         for t in d["team_ups"]["provided"]:
@@ -89,6 +90,8 @@ def build():
                 "dmg": dmg,
                 "heal": heal,
                 "dur": dur,
+                "base_stats": {k: v for k, v in (t["base"]["stats"] or {}).items() if k != "Key"},
+                "enh_stats": {k: v for k, v in (t["enhanced"]["stats"] or {}).items() if k != "Key"},
             })
         received = [{
             "name": t["name"],

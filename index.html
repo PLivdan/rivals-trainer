@@ -273,12 +273,11 @@
       <button class="chip on" id="cdrestart">↻ Restart</button>
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
-      <span class="chip cdmode on" data-m="mixed">Mixed</span>
-      <span class="chip cdmode" data-m="duration">Durations</span>
-      <span class="chip cdmode" data-m="cooldown">Cooldowns</span>
-      <span class="chip cdmode" data-m="damage">Damage</span>
-      <span class="chip cdmode" data-m="healing">Healing</span>
-      <span class="chip cdmode" data-m="hero">Which hero</span>
+      <span class="chip cdmode on" data-m="duration">Durations</span>
+      <span class="chip cdmode on" data-m="cooldown">Cooldowns</span>
+      <span class="chip cdmode on" data-m="damage">Damage</span>
+      <span class="chip cdmode on" data-m="healing">Healing</span>
+      <span class="chip cdmode on" data-m="hero">Which hero</span>
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
       <span class="count muted">Difficulty</span>
@@ -364,15 +363,16 @@ function init(){
   S.allHeal=[...new Set(healN)].sort((a,b)=>a-b);
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
-  S.cdMode='mixed';
   tagSubroles();
   S.cards=allCards();
   S.cardFilter={q:'',role:'all',type:'all'};
   buildScope(); renderGrid(); newCd(); renderTuLearn();
   $('#cdrestart').onclick=()=>{cd.score=0;cd.tot=0;cd.streak=0;cd.best=0;syncCd();newCd()};
   $('#cdscope').onchange=()=>{cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd()};
-  $$('.chip.cdmode').forEach(c=>c.onclick=()=>{S.cdMode=c.dataset.m;
-    $$('.chip.cdmode').forEach(x=>x.classList.toggle('on',x===c));
+  $$('.chip.cdmode').forEach(c=>c.onclick=()=>{
+    const t=c.dataset.m;
+    if(cd.enabled.has(t)){ if(cd.enabled.size>1){cd.enabled.delete(t);c.classList.remove('on');} }
+    else{ cd.enabled.add(t); c.classList.add('on'); }
     cd.score=0;cd.tot=0;cd.streak=0;syncCd();newCd();});
   $$('.chip.cddiff').forEach(c=>c.onclick=()=>{cd.difficulty=c.dataset.d;
     $$('.chip.cddiff').forEach(x=>x.classList.toggle('on',x===c));
@@ -467,7 +467,8 @@ function openSheet(slug){
 function closeSheet(){$('#ov').classList.remove('show')}
 
 /* ---------- COOLDOWN QUIZ ---------- */
-const cd={score:0,tot:0,streak:0,best:0,difficulty:'easy',q:null};
+const cd={score:0,tot:0,streak:0,best:0,difficulty:'easy',q:null,
+  enabled:new Set(['duration','cooldown','damage','healing','hero'])};
 function nearestOptions(correct,pool){
   const others=[...new Set(pool||[])].filter(v=>v!==correct);
   const below=shuffle(others.filter(v=>v<correct).sort((a,b)=>b-a).slice(0,4));
@@ -523,25 +524,21 @@ function newCd(){
   if(!items.length){$('#cdq').innerHTML='<p class="muted">Nothing in this scope.</p>';return}
   const single=$('#cdscope').value.startsWith('hero:');
   const avail={
-    cooldown:items.filter(x=>x.cd),
     duration:items.filter(x=>x.type!=='teamup'&&firstInt(x.dur)),
+    cooldown:items.filter(x=>x.cd),
     damage:items.filter(x=>firstInt(x.dmg)),
     healing:items.filter(x=>firstInt(x.heal)),
     hero:single?[]:items.filter(x=>x.type!=='teamup'),
   };
-  let type=S.cdMode||'mixed';
-  if(type==='mixed'){
-    const bag=[];
-    if(avail.duration.length)bag.push('duration','duration','duration','duration');
-    if(avail.cooldown.length)bag.push('cooldown','cooldown');
-    if(avail.damage.length)bag.push('damage');
-    if(avail.healing.length)bag.push('healing');
-    if(avail.hero.length)bag.push('hero');
-    type=bag.length?rnd(bag):'cooldown';
-  }
-  if(!avail[type]||!avail[type].length)
-    type=['duration','cooldown','damage','healing','hero'].find(t=>avail[t].length)||'cooldown';
-  const item=pickByHero(avail[type].length?avail[type]:items);
+  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1};
+  const order=['duration','cooldown','damage','healing','hero'];
+  const bag=[];
+  for(const t of order)
+    if(cd.enabled.has(t)&&avail[t].length)
+      for(let i=0;i<weights[t];i++)bag.push(t);
+  const type=bag.length?rnd(bag):order.find(t=>avail[t].length);
+  if(!type){$('#cdq').innerHTML='<p class="muted">Nothing available in this scope.</p>';return}
+  const item=pickByHero(avail[type]);
   if(type==='hero')return newCdHero(item);
   newCdQuestion(item,type);
 }

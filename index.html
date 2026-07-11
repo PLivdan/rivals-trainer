@@ -147,9 +147,9 @@
   .cpartner b{color:var(--gold)}
   .cdesc{color:var(--mut);font-size:12.3px;margin-top:5px;line-height:1.45}
   .cdesc .e{color:var(--gold)}
-  .statbox{margin-top:8px;border-top:1px solid var(--line);padding-top:7px}
-  .statbox>summary{cursor:pointer;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
-    color:var(--gold);list-style:none;user-select:none}
+  .statbox{margin-top:6px}
+  .statbox>summary{cursor:pointer;font-size:12px;font-weight:800;
+    color:var(--gold);list-style:none;user-select:none;display:inline-block}
   .statbox>summary::-webkit-details-marker{display:none}
   .statbox>summary::before{content:'▸';margin-right:6px;font-size:9px;color:var(--mut)}
   .statbox[open]>summary::before{content:'▾'}
@@ -725,7 +725,7 @@ function statTable(stats,label){
   const body=rows.map(([k,v])=>
     v?`<div class="strow"><span class="sk">${esc(k)}</span><span class="sv">${esc(v)}</span></div>`
      :`<div class="ssub">${esc(k)}</div>`).join('');
-  return `<details class="statbox" onclick="event.stopPropagation()"><summary>${esc(label||'Stats')} <span class="scount">(${n})</span></summary><div class="statlist">${body}</div></details>`;
+  return `<details class="statbox" onclick="event.stopPropagation()"><summary><span class="scount">(${n})</span></summary><div class="statlist">${body}</div></details>`;
 }
 function cardHTML(c){
   const chips=cardChips(c);

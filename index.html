@@ -66,7 +66,7 @@
   .ov.show{display:block}
   .sheet{max-width:820px;margin:40px auto;background:var(--bg2);border:1px solid var(--line);border-radius:16px}
   .sheet .hd{display:flex;gap:16px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line);
-    position:sticky;top:0;background:var(--bg2);border-radius:16px 16px 0 0}
+    position:sticky;top:0;z-index:3;background:var(--bg2);border-radius:16px 16px 0 0}
   .sheet .hd img{width:64px;height:64px;object-fit:cover;object-position:top center;border-radius:10px;background:#0a0e1a}
   .sheet .hd .hlogo{width:46px;height:46px;object-fit:contain;border-radius:0;background:none;margin-left:auto;opacity:.9}
   .sheet h2{margin:0;font-size:22px;text-transform:uppercase;font-style:italic}
@@ -80,8 +80,8 @@
   .kbd{display:inline-block;min-width:20px;text-align:center;background:#0c1120;border:1px solid var(--line);
     border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:11px;font-weight:800;color:var(--gold)}
   .kbd.mouse{padding:1px 5px;line-height:0}
-  .kbd.mouse img{width:15px;height:15px;vertical-align:-3px}
-  .kbd.big.mouse img{width:19px;height:19px;vertical-align:-4px}
+  .kbd.mouse svg{width:14px;height:14px;vertical-align:-3px}
+  .kbd.big.mouse svg{width:17px;height:17px;vertical-align:-3px}
   .abnm{font-weight:800;text-transform:uppercase;font-size:13.5px}
   .abd{color:var(--mut);font-size:12.8px;margin-top:3px}
   .chips{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px}
@@ -375,7 +375,8 @@ const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const cdLabel=n=>n+'s';
-function keyTag(key,big){const cls='kbd'+(big?' big':'');const m={'Left Click':'mouse-left','Right Click':'mouse-right'}[key];return m?`<span class="${cls} mouse"><img src="assets/ui/${m}.png" alt="${esc(key)}"></span>`:`<span class="${cls}">${esc(key)}</span>`;}
+function mouseSVG(key){const fill=key==='Left Click'?'M12 2 A6 6 0 0 0 6 8 L6 9 L12 9 Z':'M12 2 A6 6 0 0 1 18 8 L18 9 L12 9 Z';return `<svg viewBox="0 0 24 24" fill="none" role="img" aria-label="${esc(key)}"><path d="${fill}" fill="currentColor" opacity=".8"/><rect x="6" y="2" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.6"/><path d="M6 9H18M12 2V9" stroke="currentColor" stroke-width="1.4"/></svg>`;}
+function keyTag(key,big){const cls='kbd'+(big?' big':'');return (key==='Left Click'||key==='Right Click')?`<span class="${cls} mouse">${mouseSVG(key)}</span>`:`<span class="${cls}">${esc(key)}</span>`;}
 const firstInt=s=>{const m=(s||'').match(/\d+/);return m?+m[0]:null;};
 // quiz value: primary number as an absolute amount; null if it's a percentage or a distance/area (not an amount)
 function qVal(s){if(s==null)return null;s=''+s;if(/radius|meter/i.test(s))return null;const m=s.match(/(\d+(?:\.\d+)?)(%?)/);if(!m||m[2]==='%')return null;return Math.round(parseFloat(m[1]));}
@@ -619,8 +620,10 @@ function newCd(){
   const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:1,order:1};
   const rot=['duration','cooldown','damage','healing','hero','compare','order'];
   const relFacets=['duration','cooldown','damage','healing'];
-  const canCompare=relFacets.some(f=>cd.enabled.has(f)&&avail[f].length>=2);
-  const canOrder=relFacets.some(f=>cd.enabled.has(f)&&avail[f].length>=3);
+  const enFacets=relFacets.filter(f=>cd.enabled.has(f));
+  const cmpPool=enFacets.length?enFacets:relFacets;
+  const canCompare=cmpPool.some(f=>avail[f]&&avail[f].length>=2);
+  const canOrder=cmpPool.some(f=>avail[f]&&avail[f].length>=3);
   const bag=[];
   for(const t of rot){
     if(!cd.enabled.has(t))continue;
@@ -659,7 +662,8 @@ function newCdHero(item){
   renderCd();
 }
 function newCdCompare(avail){
-  const facets=['duration','cooldown','damage','healing'].filter(f=>cd.enabled.has(f)&&avail[f].length>=2);
+  const rel=['duration','cooldown','damage','healing'],en=rel.filter(f=>cd.enabled.has(f)),fpool=en.length?en:rel;
+  const facets=fpool.filter(f=>avail[f]&&avail[f].length>=2);
   if(!facets.length)return;
   const facet=rnd(facets), meta=CDMETA[facet], pool=avail[facet];
   const a=pickSR(pool), va=meta.val(a), aUnit=unitSig(meta.answer(a));
@@ -698,7 +702,8 @@ function ordPick(i){
 }
 function ordReset(){const q=cd.q; if(!q||q.done)return; q.picked=[]; renderCd();}
 function newCdOrder(avail){
-  const facets=shuffle(['duration','cooldown','damage','healing'].filter(f=>cd.enabled.has(f)&&avail[f].length>=3));
+  const rel=['duration','cooldown','damage','healing'],en=rel.filter(f=>cd.enabled.has(f)),fpool=en.length?en:rel;
+  const facets=shuffle(fpool.filter(f=>avail[f]&&avail[f].length>=3));
   for(const facet of facets){
     const m=CDMETA[facet], pool=avail[facet], seed=pickSR(pool), unit=unitSig(m.answer(seed));
     const chosen=[seed], used=new Set([m.val(seed)]);

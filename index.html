@@ -485,25 +485,28 @@ function closeSheet(){$('#ov').classList.remove('show')}
 /* ---------- COOLDOWN QUIZ ---------- */
 const cd={score:0,tot:0,streak:0,best:0,difficulty:'easy',q:null,
   enabled:new Set(['duration','cooldown','damage','healing','hero','compare'])};
-function nearestOptions(correct,pool){
-  const others=[...new Set(pool||[])].filter(v=>v!==correct);
-  const below=shuffle(others.filter(v=>v<correct).sort((a,b)=>b-a).slice(0,4));
-  const above=shuffle(others.filter(v=>v>correct).sort((a,b)=>a-b).slice(0,4));
-  const picks=[];
-  if(below.length)picks.push(below.pop());
-  if(above.length)picks.push(above.pop());
-  const rest=shuffle([...below,...above]);
-  while(picks.length<3&&rest.length)picks.push(rest.pop());
-  while(picks.length<3&&others.length){const v=rnd(others);if(!picks.includes(v))picks.push(v);}
+function nearestOptions(correct,pool,n=3){
+  const uniq=[...new Set(pool||[])].filter(v=>v!==correct);
+  const below=uniq.filter(v=>v<correct).sort((a,b)=>b-a);
+  const above=uniq.filter(v=>v>correct).sort((a,b)=>a-b);
+  let nb=Math.min(Math.floor(Math.random()*(n+1)),below.length);
+  let na=Math.min(n-nb,above.length);
+  nb=Math.min(nb+(n-nb-na),below.length);
+  const picks=[...below.slice(0,nb),...above.slice(0,na)];
+  const rest=shuffle([...below.slice(nb),...above.slice(na)]);
+  while(picks.length<n&&rest.length)picks.push(rest.pop());
   return shuffle([correct,...picks]);
 }
-function heroFaceOptions(correctSlug,excludeSlug){
+function heroFaceOptions(correctSlug,excludeSlug,n=3){
   const role=S.bySlug[correctSlug].role;
   const pool=S.heroes.map(h=>h.slug).filter(s=>s!==correctSlug&&s!==excludeSlug);
-  const picks=shuffle(pool.filter(s=>S.bySlug[s].role===role)).slice(0,2);
-  const rest=shuffle(pool.filter(s=>!picks.includes(s)));
-  while(picks.length<3&&rest.length)picks.push(rest.pop());
-  return shuffle([correctSlug,...picks]);
+  const same=shuffle(pool.filter(s=>S.bySlug[s].role===role));
+  const diff=shuffle(pool.filter(s=>S.bySlug[s].role!==role));
+  const nSame=Math.min(rnd([0,1,1,2,2,3]),same.length,n);
+  const picks=same.slice(0,nSame);
+  const pad=shuffle([...diff,...same.slice(nSame)]);
+  while(picks.length<n&&pad.length)picks.push(pad.pop());
+  return shuffle([correctSlug,...picks.slice(0,n)]);
 }
 function cdItems(){
   const scope=$('#cdscope').value;

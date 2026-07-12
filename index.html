@@ -37,6 +37,12 @@
   .chip.on[data-r=all]{background:var(--gold)}
   .chip.on[data-r=Vanguard]{background:var(--van)} .chip.on[data-r=Duelist]{background:var(--due)}
   .chip.on[data-r=Strategist]{background:var(--str)}
+  .chip[data-r]::before{content:"";display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:6px;
+    background:currentColor;-webkit-mask:var(--ri) center/contain no-repeat;mask:var(--ri) center/contain no-repeat}
+  .chip[data-r=all]{--ri:url(assets/roles/all-roles.webp)}
+  .chip[data-r=Vanguard]{--ri:url(assets/roles/vanguard.webp)}
+  .chip[data-r=Duelist]{--ri:url(assets/roles/duelist.webp)}
+  .chip[data-r=Strategist]{--ri:url(assets/roles/strategist.webp)}
   /* browse grid */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
   .card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
@@ -50,6 +56,11 @@
     letter-spacing:.5px;padding:2px 8px;border-radius:20px}
   .role.Vanguard{background:#173154;color:var(--van)} .role.Duelist{background:#4a1b23;color:var(--due)}
   .role.Strategist{background:#123c31;color:var(--str)}
+  .role::before{content:"";display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:5px;
+    background:currentColor;-webkit-mask:var(--ri) center/contain no-repeat;mask:var(--ri) center/contain no-repeat}
+  .role.Vanguard{--ri:url(assets/roles/vanguard.webp)}
+  .role.Duelist{--ri:url(assets/roles/duelist.webp)}
+  .role.Strategist{--ri:url(assets/roles/strategist.webp)}
   /* detail overlay */
   .ov{position:fixed;inset:0;background:#05070ccc;display:none;z-index:40;overflow:auto}
   .ov.show{display:block}

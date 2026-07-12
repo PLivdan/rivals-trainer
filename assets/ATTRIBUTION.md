@@ -4,8 +4,13 @@ The role icons in `assets/roles/` and the stat icons in `assets/stats/` are from
 **mr-calculator** project (https://github.com/mr-calculator/mr-calculator.github.io),
 used under its MIT-style license. Source files:
 
-- `assets/roles/*.webp`  <-  `public/img/heroes/roles/*.webp`
-- `assets/stats/*.webp`  <-  `public/img/heroes/challenge-icons/{damage,healing}.webp`
+- `assets/roles/*.webp`            <-  `public/img/heroes/roles/*.webp`
+- `assets/stats/*.webp`            <-  `public/img/heroes/challenge-icons/{damage,healing}.webp`
+- `assets/heroes/<slug>/*.webp`    <-  `public/img/heroes/data/<slug>/{head,full-body,logo}.webp`
+
+Hero slug overrides applied when copying: `hulk` <- `bruce-banner`, `iron-man` <- `ironman`.
+These character renders are transparent PNGs/WebPs and may be game-derived art (see
+"Content/data may be licensed differently" below).
 
 ## License (from the mr-calculator repository)
 

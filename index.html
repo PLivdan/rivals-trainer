@@ -196,6 +196,22 @@
   .cmpreveal{text-align:left;font-size:13px}
   .cmprow{display:flex;justify-content:space-between;gap:14px;padding:3px 0}
   .cmprow .sv{color:var(--gold);font-weight:800;white-space:nowrap}
+  .opts.order{grid-template-columns:1fr;gap:10px}
+  .opt.ord{display:flex;align-items:center;gap:11px;text-align:left;padding:12px}
+  .opt.ord img{width:46px;height:46px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
+  .opt.ord .cmpn{display:flex;flex-direction:column;min-width:0;flex:1}
+  .opt.ord .cmph{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.3px}
+  .opt.ord .cmpa{font-size:13px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .opt.ord .ordbadge{width:26px;height:26px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:900;background:var(--panel);border:1px solid var(--line);color:var(--mut)}
+  .opt.ord.picked{border-color:var(--gold)}
+  .opt.ord.picked .ordbadge{background:var(--gold);color:#101425;border-color:transparent}
+  .opt.ord.correct .ordbadge{background:var(--good);color:#06231a;border-color:transparent}
+  .opt.ord.wrong .ordbadge{background:var(--bad);color:#2a0b10;border-color:transparent}
+  .opt.ord .ordv{margin-left:auto;color:var(--gold);font-weight:800;white-space:nowrap;font-size:13px}
+  .ordreset{background:transparent;border:1px solid var(--line);color:var(--mut);font-weight:700;border-radius:8px;
+    padding:6px 12px;cursor:pointer;margin:2px auto 0;display:block}
+  .ordreset:hover{color:var(--text);border-color:var(--gold)}
   .next{margin-top:16px;background:var(--gold);color:#101425;border:none;font-weight:800;text-transform:uppercase;
     letter-spacing:.5px;padding:13px 26px;border-radius:11px;cursor:pointer;font-size:14px;display:none}
   .next.show{display:inline-block}
@@ -289,6 +305,7 @@
       <span class="chip cdmode on" data-m="healing">Healing</span>
       <span class="chip cdmode on" data-m="hero">Which hero</span>
       <span class="chip cdmode on" data-m="compare">Compare</span>
+      <span class="chip cdmode on" data-m="order">Order</span>
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
       <span class="count muted">Difficulty</span>
@@ -484,7 +501,7 @@ function closeSheet(){$('#ov').classList.remove('show')}
 
 /* ---------- COOLDOWN QUIZ ---------- */
 const cd={score:0,tot:0,streak:0,best:0,difficulty:'easy',q:null,
-  enabled:new Set(['duration','cooldown','damage','healing','hero','compare'])};
+  enabled:new Set(['duration','cooldown','damage','healing','hero','compare','order'])};
 function nearestOptions(correct,pool,n=3){
   const uniq=[...new Set(pool||[])].filter(v=>v!==correct);
   const below=uniq.filter(v=>v<correct).sort((a,b)=>b-a);
@@ -571,18 +588,22 @@ function newCd(){
     healing:items.filter(x=>qVal(x.heal)!=null),
     hero:single?[]:items.filter(x=>x.type!=='teamup'),
   };
-  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:1};
-  const order=['duration','cooldown','damage','healing','hero','compare'];
-  const canCompare=['duration','cooldown','damage','healing'].some(f=>cd.enabled.has(f)&&avail[f].length>=2);
+  const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:1,order:1};
+  const rot=['duration','cooldown','damage','healing','hero','compare','order'];
+  const relFacets=['duration','cooldown','damage','healing'];
+  const canCompare=relFacets.some(f=>cd.enabled.has(f)&&avail[f].length>=2);
+  const canOrder=relFacets.some(f=>cd.enabled.has(f)&&avail[f].length>=3);
   const bag=[];
-  for(const t of order){
+  for(const t of rot){
     if(!cd.enabled.has(t))continue;
     if(t==='compare'){ if(canCompare)for(let i=0;i<weights.compare;i++)bag.push('compare'); }
+    else if(t==='order'){ if(canOrder)for(let i=0;i<weights.order;i++)bag.push('order'); }
     else if(avail[t].length)for(let i=0;i<weights[t];i++)bag.push(t);
   }
-  const type=bag.length?rnd(bag):order.find(t=>t!=='compare'&&avail[t]&&avail[t].length);
+  const type=bag.length?rnd(bag):rot.find(t=>t!=='compare'&&t!=='order'&&avail[t]&&avail[t].length);
   if(!type){$('#cdq').innerHTML='<p class="muted">Nothing available in this scope.</p>';return}
   if(type==='compare')return newCdCompare(avail);
+  if(type==='order')return newCdOrder(avail);
   const item=pickSR(avail[type]);
   if(type==='hero')return newCdHero(item);
   newCdQuestion(item,type);
@@ -635,6 +656,37 @@ function ansCompare(i){
   rev.innerHTML=`<div class="cmpreveal">${q.opts.map(it=>`<div class="cmprow"><b>${esc(it.hero)} — ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(meta.answer(it))}</span></div>`).join('')}</div>`;
   $('#cdnext').classList.add('show'); syncCd();
 }
+function ordSeq(q){const m=CDMETA[q.facet];return q.items.map((_,i)=>i).sort((a,b)=>q.asc?m.val(q.items[a])-m.val(q.items[b]):m.val(q.items[b])-m.val(q.items[a]));}
+function ordPick(i){
+  const q=cd.q; if(!q||q.mode!=='order'||q.done||q.picked.includes(i))return;
+  q.picked.push(i);
+  if(q.picked.length===q.items.length){
+    q.done=true; cd.tot++;
+    const seq=ordSeq(q), ok=q.picked.every((idx,r)=>idx===seq[r]);
+    if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak);}else cd.streak=0;
+    syncCd();
+  }
+  renderCd();
+}
+function ordReset(){const q=cd.q; if(!q||q.done)return; q.picked=[]; renderCd();}
+function newCdOrder(avail){
+  const facets=shuffle(['duration','cooldown','damage','healing'].filter(f=>cd.enabled.has(f)&&avail[f].length>=3));
+  for(const facet of facets){
+    const m=CDMETA[facet], pool=avail[facet], seed=pickSR(pool), unit=unitSig(m.answer(seed));
+    const chosen=[seed], used=new Set([m.val(seed)]);
+    for(const c of shuffle(pool)){
+      if(chosen.length>=3)break;
+      if(c===seed)continue;
+      const v=m.val(c);
+      if(v!=null&&!used.has(v)&&unitSig(m.answer(c))===unit){chosen.push(c);used.add(v);}
+    }
+    if(chosen.length<3)continue;
+    const asc=Math.random()<0.5, w={cooldown:['shortest','longest'],duration:['shortest','longest'],damage:['weakest','strongest'],healing:['weakest','strongest']}[facet];
+    cd.q={mode:'order',facet,items:shuffle(chosen),picked:[],done:false,asc,lo:asc?w[0]:w[1],hi:asc?w[1]:w[0]};
+    renderCd();return;
+  }
+  newCd();
+}
 function renderCd(){
   const q=cd.q; if(!q)return;
   const item=q.a;
@@ -654,6 +706,23 @@ function renderCd(){
     $('#cdq').innerHTML=`<div class="qask cmpask">Which has the ${q.word.toUpperCase()} <b class="${cls}">${esc(q.facet)}</b>?</div>
       <div class="opts compare">${q.opts.map((it,i)=>`<button class="opt cmp" onclick="ansCompare(${i})">
         <img src="${it.icon}" alt=""><span class="cmpn"><span class="cmph">${esc(it.hero)}</span><span class="cmpa">${esc(it.subrole?it.cleanName:it.name)}</span></span></button>`).join('')}</div>${tail}`;
+    return;
+  }
+  if(q.mode==='order'){
+    const m=CDMETA[q.facet], cls={cooldown:'cd',duration:'dur',damage:'dmg',healing:'heal'}[q.facet], seq=ordSeq(q);
+    const btns=q.items.map((it,i)=>{
+      const pos=q.picked.indexOf(i), cpos=seq.indexOf(i);
+      const st=q.done?(pos===cpos?' correct':' wrong'):(pos>=0?' picked':'');
+      const badge=pos>=0?pos+1:'';
+      const val=q.done?`<span class="ordv">${esc(m.answer(it))}</span>`:'';
+      return `<button class="opt ord${st}" ${q.done||pos>=0?'disabled':''} onclick="ordPick(${i})">
+        <span class="ordbadge">${badge}</span><img src="${it.icon}" alt="">
+        <span class="cmpn"><span class="cmph">${esc(it.hero)}${it.subrole?' · '+esc(it.subrole):''}</span><span class="cmpa">${esc(it.subrole?it.cleanName:it.name)}</span></span>${val}</button>`;
+    }).join('');
+    const reset=(!q.done&&q.picked.length)?`<button class="ordreset" onclick="ordReset()">↺ Reset</button>`:'';
+    const rev=q.done?`<div class="reveal bare show" id="cdrev"><div class="cmpreveal">${seq.map((idx,r)=>{const it=q.items[idx];return `<div class="cmprow"><b>${r+1}. ${esc(it.hero)} — ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(m.answer(it))}</span></div>`;}).join('')}</div></div>`:`<div class="reveal bare" id="cdrev"></div>`;
+    $('#cdq').innerHTML=`<div class="qask cmpask">Tap in order — <b class="${cls}">${esc(q.lo)}</b> → ${esc(q.hi)} <b class="${cls}">${esc(q.facet)}</b></div>
+      <div class="opts order">${btns}</div>${reset}${rev}<button class="next${q.done?' show':''}" id="cdnext" onclick="newCd()">Next →</button>`;
     return;
   }
   const meta=CDMETA[q.mode];

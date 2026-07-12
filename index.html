@@ -9,7 +9,7 @@
     --bg:#0d1120; --bg2:#141a2e; --panel:#1a2138; --panel2:#232c48;
     --line:#2c3654; --text:#e9edf8; --mut:#939dbf; --gold:#ffcf3f;
     --van:#4f9fff; --due:#ff5d6c; --str:#46d6a6; --good:#39d98a; --bad:#ff5566;
-    --icon:#bcd6ff;
+    --icon:#e5dfc7;
   }
   *{box-sizing:border-box}
   body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#1b2340,transparent),var(--bg);
@@ -29,7 +29,7 @@
   .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
   input[type=search],select{background:var(--panel);border:1px solid var(--line);color:var(--text);
     padding:9px 12px;border-radius:9px;font-size:14px;outline:none}
-  input[type=search]{flex:1;min-width:200px}
+  input[type=search]{flex:1;min-width:200px;background:var(--panel) url(assets/ui/search.png) no-repeat 12px center;background-size:15px;padding-left:37px}
   input:focus,select:focus{border-color:var(--gold)}
   .chip{border:1px solid var(--line);background:var(--panel);color:var(--mut);padding:6px 12px;border-radius:20px;
     cursor:pointer;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
@@ -75,9 +75,13 @@
   .sec h3{margin:0 0 12px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
   .ab{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
   .ab img{width:46px;height:46px;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px;flex:none}
+  .ab img,.tu .tico,.qcard .qi,.gicon,.fcicon,.opt.cmp img,.opt.ord img{filter:invert(1)}
   .ab .t{flex:1;min-width:0}
   .kbd{display:inline-block;min-width:20px;text-align:center;background:#0c1120;border:1px solid var(--line);
     border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:11px;font-weight:800;color:var(--gold)}
+  .kbd.mouse{padding:1px 5px;line-height:0}
+  .kbd.mouse img{width:15px;height:15px;vertical-align:-3px}
+  .kbd.big.mouse img{width:19px;height:19px;vertical-align:-4px}
   .abnm{font-weight:800;text-transform:uppercase;font-size:13.5px}
   .abd{color:var(--mut);font-size:12.8px;margin-top:3px}
   .chips{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px}
@@ -86,6 +90,12 @@
   .stat.dmg{background:#3a1620;color:#ff9aa6;border:1px solid #5c2230}
   .stat.heal{background:#12331f;color:#7fe6ad;border:1px solid #1f5236}
   .stat.dur{background:#161f3c;color:#9db8ff;border:1px solid #26325c}
+  .stat::before{content:"";display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:4px;
+    background:currentColor;-webkit-mask:var(--si) center/contain no-repeat;mask:var(--si) center/contain no-repeat}
+  .stat.cd::before{content:none}
+  .stat.dmg::before{--si:url(assets/stats/damage.webp)}
+  .stat.heal::before{--si:url(assets/stats/healing.webp)}
+  .stat.dur::before{--si:url(assets/stats/duration.png)}
   .tu{border-top:1px solid var(--line);padding:12px 0}
   .tu .top{display:flex;gap:10px;align-items:center}
   .tu .tico{width:40px;height:40px;object-fit:contain;background:var(--icon);border-radius:8px;padding:3px;flex:none}
@@ -198,6 +208,10 @@
   .cdsubmit{flex:none;padding:13px 22px}
   .typeverdict{font-weight:800;margin-bottom:12px;font-size:14px}
   .typeverdict.good{color:var(--good)} .typeverdict.bad{color:var(--bad)}
+  .typeverdict .vmark{display:inline-block;width:15px;height:15px;vertical-align:-2px;margin-right:5px;
+    background:currentColor;-webkit-mask:var(--vm) center/contain no-repeat;mask:var(--vm) center/contain no-repeat}
+  .typeverdict.good .vmark{--vm:url(assets/ui/check.png)}
+  .typeverdict.bad .vmark{--vm:url(assets/ui/close.png)}
   .cmpask{font-size:16px;margin-bottom:18px}
   .opts.compare{grid-template-columns:1fr 1fr;gap:12px}
   .opt.cmp{display:flex;align-items:center;gap:11px;text-align:left;padding:12px}
@@ -361,6 +375,7 @@ const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const cdLabel=n=>n+'s';
+function keyTag(key,big){const cls='kbd'+(big?' big':'');const m={'Left Click':'mouse-left','Right Click':'mouse-right'}[key];return m?`<span class="${cls} mouse"><img src="assets/ui/${m}.png" alt="${esc(key)}"></span>`:`<span class="${cls}">${esc(key)}</span>`;}
 const firstInt=s=>{const m=(s||'').match(/\d+/);return m?+m[0]:null;};
 // quiz value: primary number as an absolute amount; null if it's a percentage or a distance/area (not an amount)
 function qVal(s){if(s==null)return null;s=''+s;if(/radius|meter/i.test(s))return null;const m=s.match(/(\d+(?:\.\d+)?)(%?)/);if(!m||m[2]==='%')return null;return Math.round(parseFloat(m[1]));}
@@ -459,16 +474,16 @@ function renderGrid(){
 function abChips(a){
   return [
     a.cd?`<span class="stat cd" title="${esc(a.cd_text||'')}">⟳ ${cdLabel(a.cd)}${a.charge?'✦':''}</span>`:'',
-    a.dmg?`<span class="stat dmg">⚔ ${esc(a.dmg)}</span>`:'',
-    a.heal?`<span class="stat heal">✚ ${esc(a.heal)}</span>`:'',
-    a.dur?`<span class="stat dur">⏱ ${esc(a.dur)}</span>`:'',
+    a.dmg?`<span class="stat dmg">${esc(a.dmg)}</span>`:'',
+    a.heal?`<span class="stat heal">${esc(a.heal)}</span>`:'',
+    a.dur?`<span class="stat dur">${esc(a.dur)}</span>`:'',
   ].join('');
 }
 function abRow(a){
   const ch=abChips(a);
   const nm=a.subrole?a.cleanName:a.name;
   return `<div class="ab"><img src="${a.icon}" alt="">
-      <div class="t"><div><span class="kbd">${esc(a.key||'-')}</span> <span class="abnm">${esc(nm)}</span>${a.upgraded?' <span class="uptag">▲ Upgraded</span>':''}</div>
+      <div class="t"><div>${keyTag(a.key||'-',false)} <span class="abnm">${esc(nm)}</span>${a.upgraded?' <span class="uptag">▲ Upgraded</span>':''}</div>
         <div class="abd">${esc(a.desc)}</div>
         ${ch?`<div class="chips">${ch}</div>`:''}${statTable(a.stats)}</div></div>`;
 }
@@ -569,7 +584,7 @@ function pickSR(pool){
   return items[items.length-1];
 }
 function cardFront(c,diff,ask){
-  const nameHTML=`<div class="qname">${c.key?`<span class="kbd big">${esc(c.key)}</span> `:''}${esc(c.subrole?c.cleanName:c.name)}${c.upgraded?' <span class="uptag">▲</span>':''}</div>`;
+  const nameHTML=`<div class="qname">${c.key?keyTag(c.key,true)+' ':''}${esc(c.subrole?c.cleanName:c.name)}${c.upgraded?' <span class="uptag">▲</span>':''}</div>`;
   const heroLine=`<div class="qhero">${esc(c.hero)}${c.subrole?' · '+esc(c.subrole):''}${c.type==='teamup'&&c.partner?' + '+esc(c.partner):''}</div>`;
   const askHTML=ask?`<div class="qask">${ask}</div>`:'';
   if(diff==='easy'){
@@ -772,7 +787,7 @@ function ansCdText(){
   inp.disabled=true; inp.classList.add(ok?'correct':'wrong');
   const sub=$('#cdsubmit'); if(sub)sub.disabled=true;
   const rev=$('#cdrev');rev.classList.add('show');
-  rev.innerHTML=`<div class="typeverdict ${ok?'good':'bad'}">${ok?'✓ Correct!':'✗ Not quite'} · answer: <b>${esc(meta.answer(a)||corrN)}</b></div>`+cardHTML(a);
+  rev.innerHTML=`<div class="typeverdict ${ok?'good':'bad'}">${ok?'<span class="vmark"></span>Correct!':'<span class="vmark"></span>Not quite'} · answer: <b>${esc(meta.answer(a)||corrN)}</b></div>`+cardHTML(a);
   $('#cdnext').classList.add('show'); syncCd();
 }
 function syncCd(){$('#cdscore').textContent=cd.score;$('#cdtot').textContent=cd.tot;
@@ -872,9 +887,9 @@ const TYPELABEL={basic:'Basic',ability:'Ability',ultimate:'Ultimate',passive:'Pa
 function cardChips(c){
   return [
     c.cd?`<span class="stat cd" title="${esc(c.cd_text||'')}">⟳ ${cdLabel(c.cd)}</span>`:'',
-    c.dur?`<span class="stat dur">⏱ ${esc(c.dur)}</span>`:'',
-    c.dmg?`<span class="stat dmg">⚔ ${esc(c.dmg)}</span>`:'',
-    c.heal?`<span class="stat heal">✚ ${esc(c.heal)}</span>`:'',
+    c.dur?`<span class="stat dur">${esc(c.dur)}</span>`:'',
+    c.dmg?`<span class="stat dmg">${esc(c.dmg)}</span>`:'',
+    c.heal?`<span class="stat heal">${esc(c.heal)}</span>`:'',
   ].join('');
 }
 function statTable(stats,label){
@@ -898,7 +913,7 @@ function cardHTML(c){
     <div class="ghead"><img class="gface" src="${c.heroIcon}" loading="lazy" alt="">
       <span class="ghero">${esc(c.hero)}</span>${sub}<span class="tbadge ${c.type}">${TYPELABEL[c.type]}</span></div>
     <div class="gbody"><img class="gicon" src="${c.icon}" loading="lazy" alt="">
-      <div class="gmain"><div class="gname">${c.key?`<span class="kbd">${esc(c.key)}</span> `:''}${esc(nm)}${up}</div>
+      <div class="gmain"><div class="gname">${c.key?keyTag(c.key,false)+' ':''}${esc(nm)}${up}</div>
         ${partner}${body}${chips?`<div class="chips">${chips}</div>`:''}</div></div></div>`;
 }
 function typeMatch(c,f){

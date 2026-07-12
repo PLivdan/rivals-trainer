@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rivals Trainer — cooldowns & team-ups</title>
+<title>Rivals Trainer: cooldowns & team-ups</title>
 <style>
   :root{
     --bg:#0d1120; --bg2:#141a2e; --panel:#1a2138; --panel2:#232c48;
@@ -296,7 +296,7 @@
   <section id="v-cooldowns" class="hide">
     <div class="controls" style="justify-content:center">
       <select id="cdscope"></select>
-      <button class="chip on" id="cdrestart">↻ Restart</button>
+      <button class="chip on" id="cdrestart">Restart</button>
     </div>
     <div class="controls" style="justify-content:center;gap:6px">
       <span class="chip cdmode on" data-m="duration">Durations</span>
@@ -456,7 +456,7 @@ function abRow(a){
   const ch=abChips(a);
   const nm=a.subrole?a.cleanName:a.name;
   return `<div class="ab"><img src="${a.icon}" alt="">
-      <div class="t"><div><span class="kbd">${esc(a.key||'—')}</span> <span class="abnm">${esc(nm)}</span>${a.upgraded?' <span class="uptag">▲ Upgraded</span>':''}</div>
+      <div class="t"><div><span class="kbd">${esc(a.key||'-')}</span> <span class="abnm">${esc(nm)}</span>${a.upgraded?' <span class="uptag">▲ Upgraded</span>':''}</div>
         <div class="abd">${esc(a.desc)}</div>
         ${ch?`<div class="chips">${ch}</div>`:''}${statTable(a.stats)}</div></div>`;
 }
@@ -653,7 +653,7 @@ function ansCompare(i){
     if(idx===q.correctIdx)o.classList.add('correct'); else if(idx===i)o.classList.add('wrong');});
   if(ok){cd.score++;cd.streak++;cd.best=Math.max(cd.best,cd.streak)}else cd.streak=0;
   const rev=$('#cdrev');rev.classList.add('show');
-  rev.innerHTML=`<div class="cmpreveal">${q.opts.map(it=>`<div class="cmprow"><b>${esc(it.hero)} — ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(meta.answer(it))}</span></div>`).join('')}</div>`;
+  rev.innerHTML=`<div class="cmpreveal">${q.opts.map(it=>`<div class="cmprow"><b>${esc(it.hero)} · ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(meta.answer(it))}</span></div>`).join('')}</div>`;
   $('#cdnext').classList.add('show'); syncCd();
 }
 function ordSeq(q){const m=CDMETA[q.facet];return q.items.map((_,i)=>i).sort((a,b)=>q.asc?m.val(q.items[a])-m.val(q.items[b]):m.val(q.items[b])-m.val(q.items[a]));}
@@ -690,7 +690,7 @@ function newCdOrder(avail){
 function renderCd(){
   const q=cd.q; if(!q)return;
   const item=q.a;
-  const tail=`<div class="reveal bare" id="cdrev"></div><button class="next" id="cdnext" onclick="newCd()">Next →</button>`;
+  const tail=`<div class="reveal bare" id="cdrev"></div><button class="next" id="cdnext" onclick="newCd()">Next</button>`;
   if(q.mode==='hero'){
     $('#cdq').innerHTML=`<img class="qi" src="${item.icon}" alt="">
       <div class="qhero">MYSTERY ABILITY</div>
@@ -719,10 +719,10 @@ function renderCd(){
         <span class="ordbadge">${badge}</span><img src="${it.icon}" alt="">
         <span class="cmpn"><span class="cmph">${esc(it.hero)}${it.subrole?' · '+esc(it.subrole):''}</span><span class="cmpa">${esc(it.subrole?it.cleanName:it.name)}</span></span>${val}</button>`;
     }).join('');
-    const reset=(!q.done&&q.picked.length)?`<button class="ordreset" onclick="ordReset()">↺ Reset</button>`:'';
-    const rev=q.done?`<div class="reveal bare show" id="cdrev"><div class="cmpreveal">${seq.map((idx,r)=>{const it=q.items[idx];return `<div class="cmprow"><b>${r+1}. ${esc(it.hero)} — ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(m.answer(it))}</span></div>`;}).join('')}</div></div>`:`<div class="reveal bare" id="cdrev"></div>`;
-    $('#cdq').innerHTML=`<div class="qask cmpask">Tap in order — <b class="${cls}">${esc(q.lo)}</b> → ${esc(q.hi)} <b class="${cls}">${esc(q.facet)}</b></div>
-      <div class="opts order">${btns}</div>${reset}${rev}<button class="next${q.done?' show':''}" id="cdnext" onclick="newCd()">Next →</button>`;
+    const reset=(!q.done&&q.picked.length)?`<button class="ordreset" onclick="ordReset()">Reset</button>`:'';
+    const rev=q.done?`<div class="reveal bare show" id="cdrev"><div class="cmpreveal">${seq.map((idx,r)=>{const it=q.items[idx];return `<div class="cmprow"><b>${r+1}. ${esc(it.hero)} · ${esc(it.subrole?it.cleanName:it.name)}</b> <span class="sv">${esc(m.answer(it))}</span></div>`;}).join('')}</div></div>`:`<div class="reveal bare" id="cdrev"></div>`;
+    $('#cdq').innerHTML=`<div class="qask cmpask">Tap in order: <b class="${cls}">${esc(q.lo)}</b> to ${esc(q.hi)} <b class="${cls}">${esc(q.facet)}</b></div>
+      <div class="opts order">${btns}</div>${reset}${rev}<button class="next${q.done?' show':''}" id="cdnext" onclick="newCd()">Next</button>`;
     return;
   }
   const meta=CDMETA[q.mode];
@@ -759,7 +759,7 @@ function ansCdText(){
   inp.disabled=true; inp.classList.add(ok?'correct':'wrong');
   const sub=$('#cdsubmit'); if(sub)sub.disabled=true;
   const rev=$('#cdrev');rev.classList.add('show');
-  rev.innerHTML=`<div class="typeverdict ${ok?'good':'bad'}">${ok?'✓ Correct!':'✗ Not quite'} — answer: <b>${esc(meta.answer(a)||corrN)}</b></div>`+cardHTML(a);
+  rev.innerHTML=`<div class="typeverdict ${ok?'good':'bad'}">${ok?'✓ Correct!':'✗ Not quite'} · answer: <b>${esc(meta.answer(a)||corrN)}</b></div>`+cardHTML(a);
   $('#cdnext').classList.add('show'); syncCd();
 }
 function syncCd(){$('#cdscore').textContent=cd.score;$('#cdtot').textContent=cd.tot;
@@ -802,7 +802,7 @@ function newTu(){
   $('#tuq').innerHTML=tuHead(t)+`<div class="qask">${ask}</div>${ctx}
     <div class="opts">${opts.map((v,i)=>`<button class="opt" onclick="ansTu(${i})">${label(v)}</button>`).join('')}</div>
     <div class="reveal" id="turev"></div>
-    <button class="next" id="tunext" onclick="newTu()">Next →</button>`;
+    <button class="next" id="tunext" onclick="newTu()">Next</button>`;
 }
 function newTuEffect(pool,t){
   const withEnh=pool.filter(x=>x.enhanced&&x.enhanced.length>30);
@@ -813,7 +813,7 @@ function newTuEffect(pool,t){
   $('#tuq').innerHTML=tuHead(t)+`<div class="qask">What does this team-up's enhanced effect do?</div>
     <div class="opts effs">${opts.map((o,i)=>`<button class="opt eff-opt" onclick="ansTu(${i})">${esc(trimEff(o.enhanced))}</button>`).join('')}</div>
     <div class="reveal" id="turev"></div>
-    <button class="next" id="tunext" onclick="newTu()">Next →</button>`;
+    <button class="next" id="tunext" onclick="newTu()">Next</button>`;
 }
 function ansTu(i){
   const q=tu.q,t=q.t; tu.tot++; const ok=i===q.correctIdx;
@@ -826,7 +826,7 @@ function ansTu(i){
   if(t.dmg)facts.push('Damage '+t.dmg);
   if(t.heal)facts.push('Healing '+t.heal);
   $('#turev').classList.add('show');
-  $('#turev').innerHTML=`<b>${esc(t.name)}</b> — ${esc(t.hero)} + ${esc(t.partner)}.`+
+  $('#turev').innerHTML=`<b>${esc(t.name)}</b> · ${esc(t.hero)} + ${esc(t.partner)}.`+
     (facts.length?`<br>${esc(facts.join(' · '))}`:'')+
     `<br><span class="e">Enhanced:</span> ${esc(t.enhanced||t.base)}`;
   $('#tunext').classList.add('show');

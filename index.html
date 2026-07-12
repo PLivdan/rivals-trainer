@@ -48,8 +48,8 @@
   .card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
     border-radius:14px;overflow:hidden;cursor:pointer;transition:.12s;position:relative}
   .card:hover{transform:translateY(-3px);border-color:var(--gold)}
-  .card .pic{height:120px;background:#0a0e1a center/cover no-repeat;display:flex;align-items:flex-end}
-  .card .pic img{width:100%;height:100%;object-fit:cover;object-position:left center}
+  .card .pic{height:150px;background:linear-gradient(180deg,#1b2340,#0a0e1a);display:flex;align-items:flex-end;overflow:hidden}
+  .card .pic img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
   .card .meta{padding:9px 11px}
   .card .nm{font-weight:800;font-size:13.5px;text-transform:uppercase;line-height:1.15}
   .role{display:inline-block;margin-top:5px;font-size:10.5px;font-weight:800;text-transform:uppercase;
@@ -68,8 +68,9 @@
   .sheet .hd{display:flex;gap:16px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line);
     position:sticky;top:0;background:var(--bg2);border-radius:16px 16px 0 0}
   .sheet .hd img{width:64px;height:64px;object-fit:cover;object-position:top center;border-radius:10px;background:#0a0e1a}
+  .sheet .hd .hlogo{width:46px;height:46px;object-fit:contain;border-radius:0;background:none;margin-left:auto;opacity:.9}
   .sheet h2{margin:0;font-size:22px;text-transform:uppercase;font-style:italic}
-  .x{margin-left:auto;font-size:26px;color:var(--mut);cursor:pointer;background:none;border:none}
+  .x{margin-left:10px;font-size:26px;color:var(--mut);cursor:pointer;background:none;border:none}
   .sec{padding:16px 20px}
   .sec h3{margin:0 0 12px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
   .ab{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
@@ -173,8 +174,8 @@
   /* flashcards */
   .kbd.big{font-size:15px;padding:2px 10px}
   .fcfront{display:flex;align-items:stretch;gap:22px;text-align:center}
-  .fcleft{flex:none;width:170px;border-radius:12px;overflow:hidden;background:#0a0e1a}
-  .fcleft img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .fcleft{flex:none;width:170px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#1b2340,#0a0e1a)}
+  .fcleft img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
   .fcright{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
   .fcicon{width:96px;height:96px;flex:none;object-fit:contain;background:var(--icon);border-radius:14px;padding:8px;margin-bottom:10px}
   @media(max-width:560px){.fcfront{flex-direction:column;align-items:center}.fcleft{width:150px;height:200px}}
@@ -502,6 +503,7 @@ function openSheet(slug){
   $('#sheet').innerHTML=`<div class="hd">${(h.icon||h.thumb)?`<img src="${h.icon||h.thumb}">`:''}
       <div><h2>${esc(h.name)}</h2><span class="role ${role}">${esc(h.role)}</span>
       ${h.health?`<span class="muted" style="margin-left:8px">❤ ${esc(h.health)}</span>`:''}</div>
+      ${h.logo?`<img class="hlogo" src="${h.logo}" alt="">`:''}
       <button class="x" onclick="closeSheet()">×</button></div>
     <div class="sec"><h3>Abilities</h3>${abs}</div>
     ${tus?`<div class="sec"><h3>Team-Up Abilities</h3>${tus}</div>`:''}
@@ -572,7 +574,7 @@ function cardFront(c,diff,ask){
   const askHTML=ask?`<div class="qask">${ask}</div>`:'';
   if(diff==='easy'){
     return `<div class="fcfront">
-      <div class="fcleft"><img src="${c.heroIcon}" alt=""></div>
+      <div class="fcleft"><img src="${c.heroBody||c.heroIcon}" alt=""></div>
       <div class="fcright"><img class="fcicon" src="${c.icon}" alt="">${heroLine}${nameHTML}${askHTML}</div>
     </div>`;
   }
@@ -852,13 +854,13 @@ function allCards(){
       if(!a.icon)return;
       const k=(a.key||'').toUpperCase();
       const type=a.slot==='passive'?'passive':(k==='Q'?'ultimate':(a.slot==='primary'?'basic':'ability'));
-      out.push({type,hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:a.icon,name:a.name,key:a.key,
+      out.push({type,hero:h.name,heroSlug:h.slug,heroIcon:h.icon,heroBody:h.body,role:h.role,icon:a.icon,name:a.name,key:a.key,
         subrole:a.subrole,cleanName:a.cleanName,upgraded:a.upgraded,stats:a.stats,
         desc:a.desc,cd:a.cd,cd_text:a.cd_text,dur:a.dur,dmg:a.dmg,heal:a.heal});
     });
     h.teamups.forEach(t=>{
       if(!t.icon)return;
-      out.push({type:'teamup',hero:h.name,heroSlug:h.slug,heroIcon:h.icon,role:h.role,icon:t.icon,name:t.name,key:'',
+      out.push({type:'teamup',hero:h.name,heroSlug:h.slug,heroIcon:h.icon,heroBody:h.body,role:h.role,icon:t.icon,name:t.name,key:'',
         desc:t.enhanced||t.base,base:t.base,enhanced:t.enhanced,partner:t.partner,partnerIcon:t.partner_icon,
         base_stats:t.base_stats,enh_stats:t.enh_stats,
         cd:t.cd,cd_text:t.cd_text,dur:t.dur,dmg:t.dmg,heal:t.heal});

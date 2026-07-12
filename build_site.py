@@ -103,15 +103,23 @@ def build():
         if not portrait and d.get("portrait_files"):
             portrait = "data/heroes/" + d["portrait_files"][-1]
 
+        def asset(kind):
+            rel = f"assets/heroes/{h['slug']}/{kind}.webp"
+            return rel if (ROOT / rel).exists() else None
+        head, body, logo = asset("head"), asset("full-body"), asset("logo")
+
         icon_path = DATA / "heroes" / h["slug"] / "icon.png"
+        old_icon = ("data/heroes/" + h["slug"] + "/icon.png") if icon_path.exists() else None
         heroes.append({
             "slug": h["slug"],
             "name": d["name"],
             "role": d["role"].title(),
             "desc": d["description"],
             "health": d["base_stats"].get("Health", ""),
-            "thumb": portrait or first_icon(d),
-            "icon": ("data/heroes/" + h["slug"] + "/icon.png") if icon_path.exists() else None,
+            "thumb": body or portrait or first_icon(d),
+            "icon": head or old_icon,
+            "body": body,
+            "logo": logo,
             "abilities": abilities,
             "teamups": teamups,
             "received": received,

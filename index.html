@@ -5,11 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rivals Trainer: cooldowns & team-ups</title>
 <style>
+  @font-face{font-family:"Refrigerator Deluxe";src:url(assets/fonts/RefrigeratorDeluxeBold.ttf) format("truetype");
+    font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:"Refrigerator Deluxe";src:url(assets/fonts/RefrigeratorDeluxeHeavy.ttf) format("truetype");
+    font-weight:800;font-style:normal;font-display:swap}
   :root{
     --bg:#0d1120; --bg2:#141a2e; --panel:#1a2138; --panel2:#232c48;
     --line:#2c3654; --text:#e9edf8; --mut:#939dbf; --gold:#ffcf3f;
     --van:#4f9fff; --due:#ff5d6c; --str:#46d6a6; --good:#39d98a; --bad:#ff5566;
     --icon:#e5dfc7;
+    --disp:"Refrigerator Deluxe","Segoe UI",system-ui,Arial,sans-serif;
+    --body:"Segoe UI",system-ui,Arial,sans-serif;
   }
   *{box-sizing:border-box}
   body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#1b2340,transparent),var(--bg);
@@ -18,11 +24,11 @@
   header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#0d1120,#0d1120e8);
     border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
   .bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 18px}
-  .logo{font-weight:800;letter-spacing:.5px;font-size:19px;text-transform:uppercase;font-style:italic}
+  .logo{font-family:var(--disp);font-weight:800;letter-spacing:.8px;font-size:25px;text-transform:uppercase;font-style:italic}
   .logo b{color:var(--gold)}
   nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
-  nav button{background:transparent;border:1px solid transparent;color:var(--mut);font-weight:700;
-    text-transform:uppercase;letter-spacing:.4px;font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer}
+  nav button{background:transparent;border:1px solid transparent;color:var(--mut);font-weight:700;font-family:var(--disp);
+    text-transform:uppercase;letter-spacing:.8px;font-size:15.5px;padding:8px 14px;border-radius:8px;cursor:pointer}
   nav button:hover{color:var(--text)}
   nav button.on{background:var(--panel2);color:var(--gold);border-color:var(--line)}
   main{max-width:1120px;margin:0 auto;padding:22px 18px 80px}
@@ -51,7 +57,7 @@
   .card .pic{height:150px;background:linear-gradient(180deg,#1b2340,#0a0e1a);display:flex;align-items:flex-end;overflow:hidden}
   .card .pic img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
   .card .meta{padding:9px 11px}
-  .card .nm{font-weight:800;font-size:13.5px;text-transform:uppercase;line-height:1.15}
+  .card .nm{font-family:var(--disp);font-weight:800;font-size:16px;letter-spacing:.4px;text-transform:uppercase;line-height:1.1}
   .role{display:inline-block;margin-top:5px;font-size:10.5px;font-weight:800;text-transform:uppercase;
     letter-spacing:.5px;padding:2px 8px;border-radius:20px}
   .role.Vanguard{background:#173154;color:var(--van)} .role.Duelist{background:#4a1b23;color:var(--due)}
@@ -69,20 +75,20 @@
     position:sticky;top:0;z-index:3;background:var(--bg2);border-radius:16px 16px 0 0}
   .sheet .hd img{width:64px;height:64px;object-fit:cover;object-position:top center;border-radius:10px;background:#0a0e1a}
   .sheet .hd .hlogo{width:46px;height:46px;object-fit:contain;border-radius:0;background:none;margin-left:auto;opacity:.9}
-  .sheet h2{margin:0;font-size:22px;text-transform:uppercase;font-style:italic}
+  .sheet h2{margin:0;font-family:var(--disp);font-size:28px;letter-spacing:.5px;text-transform:uppercase;font-style:italic}
   .x{margin-left:10px;font-size:26px;color:var(--mut);cursor:pointer;background:none;border:none}
   .sec{padding:16px 20px}
-  .sec h3{margin:0 0 12px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+  .sec h3{margin:0 0 12px;font-family:var(--disp);font-size:14.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
   .ab{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
   .ab img{width:46px;height:46px;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px;flex:none}
   .ab img,.tu .tico,.qcard .qi,.gicon,.fcicon,.opt.cmp img,.opt.ord img{filter:invert(1)}
   .ab .t{flex:1;min-width:0}
   .kbd{display:inline-block;min-width:20px;text-align:center;background:#0c1120;border:1px solid var(--line);
-    border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:11px;font-weight:800;color:var(--gold)}
+    border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-family:var(--body);font-style:normal;font-size:11px;font-weight:800;color:var(--gold)}
   .kbd.mouse{padding:1px 5px;line-height:0}
   .kbd.mouse svg{width:14px;height:14px;vertical-align:-3px}
   .kbd.big.mouse svg{width:17px;height:17px;vertical-align:-3px}
-  .abnm{font-weight:800;text-transform:uppercase;font-size:13.5px}
+  .abnm{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:15.5px;letter-spacing:.4px}
   .abd{color:var(--mut);font-size:12.8px;margin-top:3px}
   .chips{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px}
   .stat{font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;line-height:1.4}
@@ -99,10 +105,10 @@
   .tu{border-top:1px solid var(--line);padding:12px 0}
   .tu .top{display:flex;gap:10px;align-items:center}
   .tu .tico{width:40px;height:40px;object-fit:contain;background:var(--icon);border-radius:8px;padding:3px;flex:none}
-  .tu .pico{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:top center;
+  .tu .pico{width:30px;height:30px;border-radius:7px;object-fit:cover;object-position:top center;
     border:2px solid var(--gold);background:var(--panel2);flex:none}
   .tu .pn{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mut);text-align:right}
-  .tu .pn b{color:var(--gold);text-transform:uppercase;letter-spacing:.3px}
+  .tu .pn b{color:var(--gold);font-family:var(--disp);font-size:14.5px;text-transform:uppercase;letter-spacing:.5px}
   .eff{font-size:12.8px;margin-top:6px}.eff b{color:var(--str)} .eff .e{color:var(--gold)}
   /* quiz */
   .quizwrap{max-width:640px;margin:0 auto}
@@ -112,27 +118,27 @@
   .qcard{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
     border-radius:18px;padding:26px 22px;text-align:center}
   .qcard .qi{width:96px;height:96px;object-fit:contain;background:var(--icon);border-radius:14px;padding:8px;margin:0 auto}
-  .qhero{color:var(--mut);text-transform:uppercase;letter-spacing:1px;font-size:12px;margin-top:14px}
-  .qname{font-size:22px;font-weight:800;text-transform:uppercase;font-style:italic;margin:2px 0 4px}
+  .qhero{color:var(--mut);font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:14px;margin-top:14px}
+  .qname{font-family:var(--disp);font-size:28px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;font-style:italic;margin:2px 0 4px}
   .qask{color:var(--mut);font-size:14px;margin-bottom:18px}
   .qask b{text-transform:uppercase;letter-spacing:.4px;font-weight:800;color:var(--gold)}
   .qask b.cd{color:var(--gold)} .qask b.dur{color:var(--van)}
   .qask b.dmg{color:var(--due)} .qask b.heal{color:var(--str)}
   .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .opt{background:var(--panel2);border:1px solid var(--line);color:var(--text);font-weight:800;font-size:16px;
-    padding:15px;border-radius:12px;cursor:pointer;transition:.1s}
+  .opt{background:var(--panel2);border:1px solid var(--line);color:var(--text);font-weight:800;font-size:19px;
+    font-family:var(--disp);letter-spacing:.4px;padding:15px;border-radius:12px;cursor:pointer;transition:.1s}
   .opt:hover{border-color:var(--gold)}
   .opt.correct{background:#12402c;border-color:var(--good);color:#b6f5d3}
   .opt.wrong{background:#411a20;border-color:var(--bad);color:#ffb8c0}
   .opt:disabled{cursor:default}
   .opt.face{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 6px}
-  .opt.face img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:top center;
+  .opt.face img{width:58px;height:58px;border-radius:10px;object-fit:cover;object-position:top center;
     border:2px solid var(--line);background:var(--panel)}
-  .opt.face .nm{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.2px;line-height:1.15}
+  .opt.face .nm{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;line-height:1.1}
   .opts.effs{grid-template-columns:1fr}
-  .opt.eff-opt{text-align:left;font-size:12.5px;font-weight:600;line-height:1.45;text-transform:none;padding:12px 14px}
+  .opt.eff-opt{text-align:left;font-family:var(--body);letter-spacing:0;font-size:12.5px;font-weight:600;line-height:1.45;text-transform:none;padding:12px 14px}
   .tufaces{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:8px}
-  .tufaces .pico{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top center;
+  .tufaces .pico{width:64px;height:64px;border-radius:10px;object-fit:cover;object-position:top center;
     border:2px solid var(--gold);background:var(--panel2)}
   .tufaces .plus{font-size:24px;color:var(--mut);font-weight:800}
   .chip.cdmode.on{background:var(--gold);color:#101425;border-color:transparent}
@@ -145,9 +151,9 @@
   .gcard{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
     border-radius:14px;padding:12px 14px}
   .ghead{display:flex;align-items:center;gap:9px;margin-bottom:10px}
-  .gface{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top center;
+  .gface{width:34px;height:34px;border-radius:7px;object-fit:cover;object-position:top center;
     border:1px solid var(--line);background:var(--panel2);flex:none}
-  .ghero{font-weight:800;text-transform:uppercase;font-size:12.5px;letter-spacing:.3px}
+  .ghero{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:14.5px;letter-spacing:.5px}
   .tbadge{margin-left:auto;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
     padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--mut)}
   .tbadge.ultimate{background:#3a2f10;color:var(--gold);border-color:#5c4a18}
@@ -163,9 +169,9 @@
   .gbody{display:flex;gap:11px}
   .gicon{width:48px;height:48px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
   .gmain{min-width:0}
-  .gname{font-weight:800;text-transform:uppercase;font-size:13px;line-height:1.2}
+  .gname{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:15px;letter-spacing:.4px;line-height:1.15}
   .cpartner{display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-size:11.5px;color:var(--mut)}
-  .cpartner img{width:18px;height:18px;border-radius:50%;object-fit:cover;object-position:top center}
+  .cpartner img{width:18px;height:18px;border-radius:5px;object-fit:cover;object-position:top center}
   .cpartner b{color:var(--gold)}
   .cdesc{color:var(--mut);font-size:12.3px;margin-top:5px;line-height:1.45}
   .cdesc .e{color:var(--gold)}
@@ -218,7 +224,7 @@
   .opt.cmp img{width:46px;height:46px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
   .opt.cmp .cmpn{display:flex;flex-direction:column;min-width:0}
   .opt.cmp .cmph{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.3px}
-  .opt.cmp .cmpa{font-size:13px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .opt.cmp .cmpa{font-size:15px;font-weight:800;text-transform:uppercase;line-height:1.12;letter-spacing:.4px}
   .cmpreveal{text-align:left;font-size:13px}
   .cmprow{display:flex;justify-content:space-between;gap:14px;padding:3px 0}
   .cmprow .sv{color:var(--gold);font-weight:800;white-space:nowrap}
@@ -227,7 +233,7 @@
   .opt.ord img{width:46px;height:46px;flex:none;object-fit:contain;background:var(--icon);border-radius:9px;padding:4px}
   .opt.ord .cmpn{display:flex;flex-direction:column;min-width:0;flex:1}
   .opt.ord .cmph{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.3px}
-  .opt.ord .cmpa{font-size:13px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .opt.ord .cmpa{font-size:15px;font-weight:800;text-transform:uppercase;line-height:1.12;letter-spacing:.4px}
   .opt.ord .ordbadge{width:26px;height:26px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;
     font-size:13px;font-weight:900;background:var(--panel);border:1px solid var(--line);color:var(--mut)}
   .opt.ord.picked{border-color:var(--gold)}
@@ -238,16 +244,18 @@
   .ordreset{background:transparent;border:1px solid var(--line);color:var(--mut);font-weight:700;border-radius:8px;
     padding:6px 12px;cursor:pointer;margin:2px auto 0;display:block}
   .ordreset:hover{color:var(--text);border-color:var(--gold)}
-  .next{margin-top:16px;background:var(--gold);color:#101425;border:none;font-weight:800;text-transform:uppercase;
-    letter-spacing:.5px;padding:13px 26px;border-radius:11px;cursor:pointer;font-size:14px;display:none}
+  .next{margin-top:16px;background:var(--gold);color:#101425;border:none;font-weight:800;text-transform:uppercase;font-family:var(--disp);
+    letter-spacing:1px;padding:13px 26px;border-radius:11px;cursor:pointer;font-size:16.5px;display:none}
   .next.show{display:inline-block}
   .subtabs{display:flex;gap:6px;justify-content:center;margin-bottom:18px}
-  .subtabs button{background:var(--panel);border:1px solid var(--line);color:var(--mut);font-weight:700;
-    padding:7px 16px;border-radius:9px;cursor:pointer;text-transform:uppercase;font-size:12.5px}
+  .subtabs button{background:var(--panel);border:1px solid var(--line);color:var(--mut);font-weight:700;font-family:var(--disp);
+    padding:7px 16px;border-radius:9px;cursor:pointer;text-transform:uppercase;font-size:15px;letter-spacing:.8px}
   .subtabs button.on{color:var(--gold);border-color:var(--gold)}
   .muted{color:var(--mut)} .hide{display:none!important}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}.card:hover{transform:none}}
   .tulist .tu{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:12px 14px}
-  .tulist h4{margin:22px 0 8px;text-transform:uppercase;font-size:13px;letter-spacing:.5px;color:var(--mut)}
+  .tulist h4{margin:22px 0 8px;font-family:var(--disp);text-transform:uppercase;font-size:15.5px;letter-spacing:.8px;color:var(--mut)}
   footer{max-width:1120px;margin:0 auto;padding:0 18px 40px;color:var(--mut);font-size:12px}
 </style>
 </head>

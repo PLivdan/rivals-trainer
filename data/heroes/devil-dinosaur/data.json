@@ -100,7 +100,7 @@
         "Key": "F",
         "Cooldown": "8s",
         "Bite Damge": "First 4 hits: 15 each; 5th hit: 30",
-        "Bonus Damage": "First 4 hits: 5% Maximum Health each; 5th hit: 10% Maximum Health"
+        "Bonus Damage": "First 4 hits: 8% Maximum Health each; 5th hit: 12% Maximum Health"
       },
       "icon_file": "devil-dinosaur/abilities/05_ability_f_frenzied-feast.png"
     },
@@ -198,9 +198,9 @@
           "description": "Impact Beam is replaced by a frontal water spray. This stream damages enemies while providing healing to teammates.",
           "stats": {
             "Key": "Right Click",
-            "Maximum Duration": "4s",
+            "Maximum Duration": "5s",
             "Max Attack Range": "20m",
-            "Healing Amount": "40/s"
+            "Healing Amount": "60/s"
           }
         },
         "enhanced": {

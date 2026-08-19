@@ -58,7 +58,7 @@
         "Cast to heal the ally once": "200",
         "Shield Value": "250",
         "Duration": "10s",
-        "Energy Cost": "5000"
+        "Energy Cost": "4800"
       },
       "icon_file": "luna-snow/abilities/02_ability_q_fate-of-both-worlds.png"
     },

@@ -172,10 +172,10 @@
           "description": "Recasting Healing Flower on a teammate with the effect enhances and spreads the healing aura.",
           "stats": {
             "Key": "Right Click",
-            "Healing Flower Healing Amount": "15+Target's 3% Maximum Health/s",
+            "Healing Flower Healing Amount": "12+Target's 3% Maximum Health/s",
             "Spread Spell Field Range": "8m radius",
             "Spread Healing": "7.5+Targe's 1.75% Maximum Health/s",
-            "Enhanced Heal Bonus Healing": "17.5+Target's 3.5% Maximum Health/s",
+            "Enhanced Heal Bonus Healing": "15+Target's 3.5% Maximum Health/s",
             "Spread Spell Field One-time Healing": "10, 15 when enhanced",
             "Special effect": "When Star-Lord is selected as her Team-Up partner, enhance the healing output of Healing Flower from 10 + 2.5% of target's max Health/s to 15 + 3% of target's max Health/s"
           }

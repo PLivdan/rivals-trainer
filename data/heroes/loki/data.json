@@ -48,7 +48,7 @@
         "Damage": "The projectile deals no damage, while the spell field inflicts 25 damage per cast",
         "Range": "3m spherical radius",
         "Damage Falloff": "Falloff begins at 0.5m, decreasing to 80% at 2.5m",
-        "Projectile Speed": "100 m/s",
+        "Projectile Speed": "120 m/s",
         "Area Of Effect Healing": "40 per hit",
         "Fire Rate": "1.75 rounds per second",
         "Ammo": "10",

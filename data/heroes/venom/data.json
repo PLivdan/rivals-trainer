@@ -5,7 +5,7 @@
   "description": "Using his symbiote-enhanced body as the perfect living weapon, Eddie Brock and his alien ally stand ever-ready to unleash vicious attacks upon anyone he deems an enemy. Those ensnared by Venom's tentacles have no choice but to surrender to this insatiable predator.",
   "lore": "When Spider-Man rejected a symbiotic alien that he had once believed to be a mere costume, the creature formed a new bond with a man who shared its disdain for Peter Parker. Together, the symbiote and Eddie Brock became the lethal protector known as Venom. While displaced in time and fighting in the occult wars, Venom glimpsed the horrific future awaiting this timeline. To prevent that future from happening, Venom knows he has only two options — kill the dark god Knull or imprison him on Klyntar and take his throne.",
   "base_stats": {
-    "Health": "500+250可恢复护盾",
+    "Health": "500+250 Regenerative Shield",
     "Movement Speed": "6 m/s"
   },
   "portraits": [
@@ -16,7 +16,7 @@
     {
       "name": "VENOM",
       "stats": {
-        "Health": "500+250可恢复护盾",
+        "Health": "500+250 Regenerative Shield",
         "Movement Speed": "6 m/s"
       },
       "images": [
@@ -72,7 +72,7 @@
         "Key": "SHIFT",
         "Casting": "Dash",
         "Maximum Webbing Length": "30m",
-        "Cooldown": "8s"
+        "Cooldown": "10s"
       },
       "icon_file": "venom/abilities/03_ability_shift_venom-swing.png"
     },
@@ -86,7 +86,7 @@
         "Key": "E",
         "Casting": "Instant Cast",
         "Cooldown": "15s",
-        "Special Effect": "Grant 100 Bonus Health and convert 120% of lost Health into Bonus Health"
+        "Special Effect": "Grant 100 Bonus Health and convert 110% of lost Health into Bonus Health"
       },
       "icon_file": "venom/abilities/04_ability_e_symbiotic-resilience.png"
     },

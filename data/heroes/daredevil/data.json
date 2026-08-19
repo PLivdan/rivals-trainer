@@ -88,28 +88,32 @@
     {
       "name": "INFERNAL FURY",
       "slot": "ability",
-      "key": "Right Click",
+      "key": "E",
       "icon": "https://r.res.easebar.com/pic/20251010/e0e39493-ba93-4947-a38f-7d86f314b48b.png",
       "description": "Expend Fury to unleash Devil's Chain or Devil's Throw. Devil's Chain converts damage into Bonus Health, while Devil's Throw Slows enemies on hit and temporarily enables Cross Interrogation",
       "stats": {
-        "Key": "Right Click",
-        "Special Effect": "Devil's Throw slows enemies on hit",
+        "Key": "E",
+        "Special Effect": "During the activation, Daredevil can unleash Devil's Chain or Devil's Throw. Enable Righteous Cross within 5 seconds after using this ability",
         "Fury Required for Activation": "60",
         "Bonus Max Health": "100",
         "Bonus Health Falloff": "Falloff begins at 5s and decreases by 30/s",
         "DEVIL'S CHAIN": "",
+        "Key #2": "Left Click",
         "Spell Field Range": "Box shaped spell field. Length: 8m; Width: 4m; Height: 4m",
         "High Damage Spell Field Range": "2m spherical radius spell field at the end",
         "Damage/Bonus Health Conversion": "0.7",
-        "Bonus Health Gained": "50",
+        "Bonus Health Gained": "25",
         "Damage": "40. Cause 65 damage when the target caught in the high damage range",
         "DEVIL'S THROW": "",
+        "Key #3": "Right Click",
         "Projectile Speed": "150m/s",
         "Projectile Damage": "30",
         "Max Number of Ricochets": "4. Up to 2 ricochets if there are no targets",
-        "Slow Rate": "20%"
+        "Special Effect #2": "Devil's Throw slows enemies on hit",
+        "Slow Rate": "20%",
+        "Bonus Health Gained #2": "50"
       },
-      "icon_file": "daredevil/abilities/05_ability_right-click_infernal-fury.png"
+      "icon_file": "daredevil/abilities/05_ability_e_infernal-fury.png"
     },
     {
       "name": "Sonic Pursuit",

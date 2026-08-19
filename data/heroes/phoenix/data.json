@@ -34,12 +34,12 @@
       "description": "Launch a fiery projectile forward, applying 1 Spark to enemies hit. Critical hits apply 2 Sparks. At 3 Sparks, Phoenix triggers a fiery explosion that applies 1 Spark to enemies around and Healing Over Time to self. Sparks from explosions will not stack within a brief period",
       "stats": {
         "Key": "Left Click",
-        "Damage": "55",
+        "Damage": "60",
         "Damage Falloff": "Falloff begins at 10m, decreasing to 65% at 30m",
         "Fire Rate": "0.435s per round",
         "Special Effect": "Apply 1 Spark to enemies hit. Critical hits apply 2 Sparks. At 3 Sparks, Phoenix triggers a fiery explosion that applies 1 Spark to enemies around. Sparks from explosions will not stack within a brief period.",
-        "Explosion Direct Damage": "35",
-        "Explosion Range Damage": "12",
+        "Explosion Direct Damage": "40",
+        "Explosion Range Damage": "15",
         "Explosion Range": "4m spherical radius spell field",
         "Self Healing Amount after the Explosion": "5/s for 4 s"
       },
@@ -162,9 +162,9 @@
           "description": "Fire a telekinetic shockwave forward. If it lands, the Phoenix Force rushes the enemy and delivers a powerful punch. If there are other targets nearby, the Phoenix Force rapidly blinks between them to strike them as well, inflicting Sparks on each victim while healing Phoenix.",
           "stats": {
             "Key": "C",
-            "Cooldown": "12s",
-            "Direct Hit Damage": "40",
-            "Bounce Damage": "40",
+            "Cooldown": "10s",
+            "Direct Hit Damage": "55",
+            "Bounce Damage": "55",
             "Bounce Spell Field Detection Range": "8m radius",
             "Self Health Recovery": "50",
             "Spark Stacks Added per Hit": "1",

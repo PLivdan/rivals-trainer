@@ -37,10 +37,13 @@
         "Casting": "Melee",
         "Special Mechanic": "The default attack is a punch, but after landing two consecutive punches, the next attack will be a flying kick",
         "Punch": "",
-        "Damage": "40",
-        "Maximum Distance": "4m",
-        "Attack Interval": "0.82s per kick",
-        "Kick": ""
+        "Damage": "25",
+        "Maximum Distance": "3m",
+        "Attack Interval": "0.37s per punch",
+        "Kick": "",
+        "Damage #2": "40",
+        "Maximum Distance #2": "4m",
+        "Attack Interval #2": "0.82s per kick"
       },
       "icon_file": "spider-man/abilities/01_primary_left-click_spider-power.png"
     },

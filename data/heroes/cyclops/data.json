@@ -35,10 +35,10 @@
       "stats": {
         "Key": "Left Click",
         "Tick Rate": "0.03s per use",
-        "Damage per Tick": "21",
+        "Damage per Tick": "22",
         "Hit Checks per Attack": "3",
         "Attack Interval": "0.6s",
-        "Ricochet Force CD Reduction per Hit": "0.15s"
+        "Ricochet Force CD Reduction per Hit": "0.25s"
       },
       "icon_file": "cyclops/abilities/01_primary_left-click_optic-blast.png"
     },
@@ -69,7 +69,7 @@
       "description": "Fire a beam that can diffract and track nearby enemies after hitting terrain. Upon use, Cyclops gains Bonus Health",
       "stats": {
         "Key": "E",
-        "Beam Damage": "70",
+        "Beam Damage": "75",
         "Environment Ricochet Damage Falloff": "65%",
         "Environment Refraction Damage Falloff": "20%",
         "Character Refraction Damage Falloff": "50%",
@@ -188,7 +188,7 @@
           "description": "Release stored kinetic energy to enter an enhanced state for a duration. While active, Cyclops gains significantly increased movement speed and jump height.",
           "stats": {
             "Key": "C",
-            "Cooldown": "18s",
+            "Cooldown": "15s",
             "Duration": "6s",
             "Movement Boost": "40%",
             "Enhanced Jump Speed": "5m/s"
@@ -199,7 +199,7 @@
           "stats": {
             "Key": "C",
             "Optic Blast Attack Speed Boost": "25%",
-            "Concussive Beam Attack Frequency Boost": "10%"
+            "Concussive Beam Attack Frequency Boost": "15%"
           }
         },
         "icon_file": "cyclops/teamups/provided_02_kinetic-kin.png"

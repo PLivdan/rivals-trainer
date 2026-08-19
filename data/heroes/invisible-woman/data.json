@@ -38,7 +38,7 @@
         "Special Effect": "Orbs can pierce heroes and return to Invisible Woman after reaching their maximum distance. They damage enemies and heal teammates",
         "Damage": "Deal 30 damage per hit upon being shot out and 15 damage per hit on its return journey.",
         "Damage Falloff": "No falloff",
-        "Healing Amount": "Heal 50 health per hit upon being shot out and 40 health per hit on its return journey.",
+        "Healing Amount": "Heal 50 health per hit upon being shot out and 45 health per hit on its return journey.",
         "Fire Rate": "0.5s per hit",
         "Projectile Speed": "150 m/s",
         "Maximum Flight Distance": "35m",
@@ -56,7 +56,7 @@
       "stats": {
         "Key": "Right Click",
         "Casting": "Targeted",
-        "Healing Amount": "50/sec, self 15/sec",
+        "Healing Amount": "50/sec, self 20/sec",
         "Range": "3m radius",
         "Slow Rate": "35%",
         "Slow Duration": "3s",
@@ -116,11 +116,11 @@
         "Casting": "Targeted, generates a cylindrical spell field",
         "Pass-Through Slow Rate": "55%",
         "Slow Duration": "1s",
-        "Healing Amount": "180/sec",
+        "Healing Amount": "200/sec",
         "Range": "10m radius, 40m height",
         "Duration": "8s",
         "Special Effect": "Slows enemies within range by 20%",
-        "Energy Cost": "4500"
+        "Energy Cost": "4300"
       },
       "icon_file": "invisible-woman/abilities/05_ability_q_invisible-boundary.png"
     },
@@ -194,7 +194,7 @@
             "Key": "C",
             "Cooldown": "20s",
             "Ability Duration": "4s",
-            "Healing Amount": "15/s",
+            "Healing Amount": "25/s",
             "Movement Boost": "1.2m/s"
           }
         },

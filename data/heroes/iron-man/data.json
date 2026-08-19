@@ -41,14 +41,21 @@
         "Critical Hit": "No",
         "Special Mechanic 1": "After firing the one-handed repulsor twice in a row, the next attack will fire two repulsors at once",
         "Special Mechanic 2": "Repulsor Blast and Unibeam share the same ammo count",
-        "Projectile Speed": "80 m/s",
-        "Damage": "50",
-        "Range": "5m spherical radius",
-        "Spell Field Damage": "50",
-        "Spell Field Damage Falloff": "40% falloff at 5m",
-        "Fire Rate": "1.39 rounds per second",
-        "Ammo Consumption": "16 damage per round",
-        "Two-handed Repulsors": ""
+        "Projectile Speed": "60 m/s",
+        "Damage": "35",
+        "Range": "3m spherical radius",
+        "Spell Field Damage": "45",
+        "Spell Field Damage Falloff": "40% falloff at 3m",
+        "Fire Rate": "1.67 rounds per second",
+        "Ammo Consumption": "10 damage per round",
+        "Two-handed Repulsors": "",
+        "Projectile Speed #2": "80 m/s",
+        "Damage #2": "50",
+        "Range #2": "5m spherical radius",
+        "Spell Field Damage #2": "50",
+        "Spell Field Damage Falloff #2": "40% falloff at 5m",
+        "Fire Rate #2": "1.39 rounds per second",
+        "Ammo Consumption #2": "16 damage per round"
       },
       "icon_file": "iron-man/abilities/01_primary_left-click_repulsor-blast.png"
     },
@@ -258,9 +265,11 @@
           "stats": {
             "Key": "E",
             "Unibeam Outer Ring Range": "0.75m radius",
-            "Unibeam Outer Ring Damage": "8.4/hit, 10 times per second",
+            "Unibeam Outer Ring Damage": "7/hit, 10 times per second",
             "Unibeam Damage": "14/hit, 10 times per second",
-            "Thunder Overdrive Unibeam Outer Ring Range": "18/hit, 10 times per second"
+            "Thunder Overdrive Unibeam Outer Ring Range": "1.2m radius",
+            "Thunder Overdrive Unibeam Outer Ring Range #2": "8.5/hit, 10 times per second",
+            "Thunder Overdrive Unibeam Outer Ring Range #3": "18/hit, 10 times per second"
           }
         },
         "enhanced": {

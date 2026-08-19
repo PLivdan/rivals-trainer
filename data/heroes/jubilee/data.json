@@ -36,8 +36,8 @@
         "Key": "Left Click",
         "Fire Rate": "8 per second",
         "Projectile Speed": "200m/s",
-        "Damage": "10 per hit",
-        "Healing": "14 per hit",
+        "Damage": "11 per hit",
+        "Healing": "15 per hit",
         "Energy": "48",
         "Speed Boost: Fire Rate": "20 per second",
         "Speed Boost: Damage": "5 per hit",
@@ -52,19 +52,16 @@
       "slot": "ability",
       "key": "Right Click",
       "icon": "https://r.res.easebar.com/pic/20260707/9b787ce0-b3bc-432c-a29c-926d8d1f8da8.png",
-      "description": "Launch a tracking orb of vampiric energy that damages enemies and heals allies in its radius. Striking the orb or hitting targets near it charges it up, increasing both its size and healing power. Press {Interactive} to manually recall it.",
+      "description": "Launch a tracking orb of vampiric energy that damages enemies and heals allies in its radius. Striking the orb or hitting targets near it charges it up, increasing both its size and healing power. Press F to manually recall it.",
       "stats": {
         "Key": "Right Click",
-        "Fire Rate": "8 per second",
-        "Projectile Speed": "200m/s",
-        "Damage": "10 per hit",
-        "Healing": "14 per hit",
-        "Energy": "48",
-        "Speed Boost: Fire Rate": "20 per second",
-        "Speed Boost: Damage": "5 per hit",
-        "Speed Boost: Healing": "6.5 per hit",
-        "Damage Falloff": "Falloff begins at 10m, decreasing to 70% at 30m",
-        "Attack Speed Boost Duration Per Sparkle Mark Triggered": "6s"
+        "Cooldown": "2 charges, with each charge taking 12s to recharge.",
+        "Orb Maximum Duration": "6 seconds; when reaching its max charge for the first time, duration is increased by 6 seconds",
+        "Energy Required to Charge Orb": "250 Healing/Damage",
+        "Range": "4m radius, increasing linearly with energy; up to 8m at max energy",
+        "Healing": "35/sec, increasing linearly with energy; up to 50/sec at max energy",
+        "Damage": "10 per second",
+        "Returned Energy on Recall": "0; increases linearly with energy, reaching max when the orb's remaining duration is greater than 6 seconds, restoring 1 charge"
       },
       "icon_file": "jubilee/abilities/02_ability_right-click_blooming-ball.png"
     },
@@ -112,7 +109,7 @@
       "slot": "passive",
       "key": "Passive",
       "icon": "https://r.res.easebar.com/pic/20260707/856e249b-ea9e-4fc9-8f8f-11e9ad0d3d3e.png",
-      "description": "Hitting targets with Dazzling Detonation and Firework Finale applies a Sparkle Mark. Energy Plasmoids can detonate marks, granting allies a Healing Boost and Bonus Health, while dealing burst damage and inflicting Vulnerability to enemies",
+      "description": "Hitting targets with Dazzling Detonation and Firework Finale applies a Sparkle Mark. Energy Plasmoids can detonate marks, granting allies a Healing Boost and Bonus Health, while dealing burst damage to enemies",
       "stats": {
         "Key": "Passive",
         "Bonus Health": "50",
@@ -129,7 +126,7 @@
       "description": "Charge up and unleash a massive ring of outward-flying firework clusters, Knocking Back nearby enemies. These clusters then orbit you, creating a field that damages enemies and heals allies. Expanding the cluster radius outward will Launch Up struck enemies",
       "stats": {
         "Key": "Q",
-        "Energy Cost": "4500",
+        "Energy Cost": "4300",
         "Ability Duration": "10s",
         "Spell Field Range": "Inner circle radius 6m; Outer circle radius 10m",
         "Spell Field Damage": "20/s",
@@ -180,7 +177,7 @@
             "Cooldown": "15s",
             "Field Range": "12m spherical radius spell field",
             "Ability Duration": "6s",
-            "Lifesteal Rate": "25%"
+            "Lifesteal Rate": "30%"
           }
         },
         "enhanced": {

@@ -94,7 +94,9 @@
         "Special Effect 2": "Using either stage empowers your next Double-Barrel Blaster, transforming it into Monster-Piercer",
         "Bonus Health": "Every unleash of Ruthless Pursuit and Helix Advance grants 30 bonus health. Max bonus health is 75",
         "Follow Up": "",
+        "Key #2": "E",
         "Max Damage Distance": "8m",
+        "Damage #2": "30",
         "Dash Speed": "15 m/s"
       },
       "icon_file": "elsa-bloodstone/abilities/04_ability_e_ruthless-pursuit.png"

@@ -87,7 +87,7 @@
       "description": "Awaken the Dhampir bloodline, enhancing slash speed during continuous attacks and triggering Whirlwind Slash.If all Whirlwind Slash strikes hit, your Attack Speed will further increase. While under this state, you suffer Reduced Healing, but attacks gain Lifesteal",
       "stats": {
         "Key": "E",
-        "Special Effect": "Landing all four hits of Whirlwind Slash grants 1 slash speed stack; Excess lifesteal grants Bonus Health( max 75; conversion rate 50%)",
+        "Special Effect": "Left Click/Shift key ability hits accumulate attack speed buff levels; within the Bloodline Awakening duration, attacks gain Lifesteal and movement speed boost but suffer Reduced Healing",
         "Lifesteal Proportion": "70%, Affected by Healing Reduction",
         "Self Reduce Healing Proportion": "25%",
         "Movement Speed Boost": "1.5 m/s",
@@ -97,7 +97,8 @@
         "Attack Speed Boost Proportion from Each Buff Stack": "10%",
         "Duration of Each Buff Stack": "1s",
         "Whirlwind Slash Damage": "64",
-        "Hits to Trigger the Whirlwind Slash": "5"
+        "Hits to Trigger the Whirlwind Slash": "5",
+        "Special Effect #2": "Landing all four hits of Whirlwind Slash grants 1 slash speed stack; Excess lifesteal grants Bonus Health( max 75; conversion rate 50%)"
       },
       "icon_file": "blade/abilities/04_ability_e_bloodline-awakening.png"
     },

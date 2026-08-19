@@ -95,12 +95,13 @@
         "Special Effect": "The spell field advances along the casting path",
         "Damage": "55",
         "Blinding Duration": "1.5s",
-        "Range": "Width: 6m, Height: 4.5m",
+        "Range": "Visibility is obstructed beyond 10m",
         "Vulnerability": "28%",
         "Vulnerability Duration": "3s",
+        "Range #2": "Width: 6m, Height: 4.5m",
         "Movement Speed": "20m/s",
         "Maximum Distance": "25m",
-        "Cooldown": "12s"
+        "Cooldown": "Veil of Lightforce & Terror Cape share charges, capped out at 2 with each taking 10s to recharge. After using either, both abilities enter a 2s cooldown"
       },
       "icon_file": "cloak-and-dagger/abilities/04_ability_e_terror-cape.png"
     },
@@ -116,7 +117,7 @@
         "Special Effect": "Allies within the area gain Invisibility and Movement Boost",
         "Duration": "2s",
         "Range": "10m spherical radius",
-        "Cooldown": "Veil of Lightforce & Terror Cape share charges, capped out at 2 with each taking 10s to recharge. After using either, both abilities enter a 2s cooldown"
+        "Cooldown": "12s"
       },
       "icon_file": "cloak-and-dagger/abilities/05_ability_right-click_dark-teleportation.png"
     },
@@ -185,7 +186,7 @@
         "Range": "Width: 6m, Height: 4.5m",
         "Movement Speed": "20m/s",
         "Maximum Distance": "25m",
-        "Cooldown": "12s"
+        "Cooldown": "Veil of Lightforce & Terror Cape share charges, capped out at 2 with each taking 10s to recharge. After using either, both abilities enter a 2s cooldown"
       },
       "icon_file": "cloak-and-dagger/abilities/09_ability_e_veil-of-lightforce.png"
     },
@@ -201,7 +202,7 @@
         "Healing Amount": "50/s",
         "Duration": "6s",
         "Range": "5m spherical radius",
-        "Cooldown": "Veil of Lightforce & Terror Cape share charges, capped out at 2 with each taking 10s to recharge. After using either, both abilities enter a 2s cooldown",
+        "Cooldown": "12s",
         "Special Effect": "When a Spell Field is created, allies in range get a One-Time Healing of 60"
       },
       "icon_file": "cloak-and-dagger/abilities/10_ability_right-click_dagger-storm.png"

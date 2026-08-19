@@ -68,10 +68,11 @@
         "Key": "Q",
         "Casting": "Persistent spell field that surrounds the caster",
         "Special Effect": "Revive allies within range, centered on Adam. Continuously monitor for fallen allies within this range; if they enter the area, they can be revived at the casting location",
-        "Health Upon Revival": "Allies revived will be blessed with Bonus Health equal to 70% of their Maximum Health with a 5s duration. Bonus Health falloff begins at 5s, decreasing to 0 in 2s.",
+        "Health Upon Revival": "30% of the Max Health",
         "Range": "35m spherical radius",
         "Duration": "10s",
-        "Energy Cost": "4500"
+        "Energy Cost": "4500",
+        "Health Upon Revival #2": "Allies revived will be blessed with Bonus Health equal to 70% of their Maximum Health with a 5s duration. Bonus Health falloff begins at 5s, decreasing to 0 in 2s."
       },
       "icon_file": "adam-warlock/abilities/03_ability_q_karmic-revival.png"
     },
@@ -150,13 +151,14 @@
         "description": "Storm channels her elemental power into Adam Warlock. When Adam uses Soaring Surge, his movement speed is increased. While flying, Adam leaves behind a storm-charged trail that heals and speeds up allies within it",
         "stats": {
           "Key": "F",
-          "Movement Boost": "0.25",
+          "Movement Boost": "5m/s",
           "Maximum Energy": "120",
           "Energy Cost": "30/s",
           "Energy Recovery Speed": "8/s",
           "Trail Width": "4m",
           "Trail Duration": "5s",
-          "Healing Amount": "35/s"
+          "Healing Amount": "35/s",
+          "Movement Boost #2": "0.25"
         },
         "icon_file": "adam-warlock/teamups/received_01_heavenly-harmony.png"
       }

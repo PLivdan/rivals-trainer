@@ -38,7 +38,7 @@
         "Projectile Speed": "100m/s",
         "Healing Amount": "130/s",
         "Damage": "70/s",
-        "Damage Falloff": "Damage falloff starts at 15m to a maximum of 65% at 30m",
+        "Damage Falloff": "Damage falloff starts at 15m to a maximum of 60% at 30m",
         "Fire Rate": "20 rounds per second",
         "Ammo": "100"
       },

@@ -36,10 +36,10 @@
         "Key": "Left Click",
         "Casting": "Five-round delayed hit projectiles",
         "Projectile Speed": "60 m/s",
-        "Damage": "16",
+        "Damage": "18",
         "Damage Falloff": "Falloff begins at 10m, decreasing to 80% at 20m",
         "Fire Rate": "5.56 rounds per second, with a 0.03-second interval between every two rounds",
-        "Ammo": "10 (1 dagger per release)",
+        "Ammo": "12 (1 dagger per release)",
         "Critical Hit": "No"
       },
       "icon_file": "doctor-strange/abilities/01_primary_left-click_daggers-of-denak.png"
@@ -176,7 +176,7 @@
             "Damage": "Each point of Dark Magic deals 1.3 damage.",
             "Range": "10m spherical radius spell field",
             "Damage Falloff": "Falloff begins at 6m, decreasing to 75% at 10m",
-            "Cooldown": "8s"
+            "Cooldown": "6s"
           }
         },
         "enhanced": {

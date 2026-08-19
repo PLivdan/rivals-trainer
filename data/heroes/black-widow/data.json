@@ -50,12 +50,11 @@
       "stats": {
         "Key": "Left Click",
         "Casting": "Single-cast direct hit",
-        "Damage": "120 damage per round",
-        "Damage Falloff": "Falloff begins at 10m, decreasing to 50% at 20m",
-        "Fire Rate": "15",
-        "Critical Hit": "Yes",
-        "Aiming down sights times": "0.3s",
-        "Special Effect": "Shares the same magazine with Red Room Rifle. Straight Shooter activates only after aiming down sights for a specific duration; otherwise, it will fire from the Red Room Rifle"
+        "Damage": "40 damage per round",
+        "Damage Falloff": "Falloff begins at 10m, decreasing to 75% at 40m",
+        "Fire Rate": "0.25s per hit",
+        "Ammo": "20",
+        "Critical Hit": "Yes"
       },
       "icon_file": "black-widow/abilities/02_primary_left-click_red-room-rifle.png"
     },
@@ -89,7 +88,7 @@
         "Cooldown": "10s",
         "Projectile Speed": "100 m/s",
         "Explosion Range": "3.5m to 5m radius spherical spell field",
-        "Explosion Damage": "40~60",
+        "Explosion Damage": "50~70",
         "Slow Rate": "-0.40",
         "Maximum Charge Time": "1s"
       },

@@ -184,9 +184,9 @@
           "stats": {
             "Key": "C",
             "Ability Duration": "3s",
-            "Cooldown": "15s",
+            "Cooldown": "20s",
             "Healing Amount to the Targeted ally": "40/s",
-            "Healing Amount to other allies within range": "35/s"
+            "Healing Amount to other allies within range": "15/s"
           }
         },
         "enhanced": {

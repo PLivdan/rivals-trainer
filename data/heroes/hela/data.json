@@ -213,7 +213,7 @@
           "description": "Whenever Hela participates in a KO, an Undead Monstro spawns at the fallen enemy's position. While an Undead Monstro is present, casting Piercing Night will command the Monstro to spit a Nightsword Thorn at the nearest enemy.",
           "stats": {
             "Undead Monstro Health": "150",
-            "Undead Monstro Damage": "15 per round",
+            "Undead Monstro Damage": "10 per round",
             "Damage Falloff": "Falloff begins at 20m, decreasing to 50% at 40m",
             "Attack Speed": "0.33s per round"
           }

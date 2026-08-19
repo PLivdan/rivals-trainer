@@ -93,11 +93,14 @@
         "Charges": "2",
         "Default Charging Speed": "0.1/s",
         "Default": "",
-        "Monstro Spawn Fire Rate": "5 rounds per second",
-        "Monstro Spawn Damage": "12",
-        "Monstro Spawn Damage Falloff": "Falloff begins at 20m, decreasing to 30% at 40m",
+        "Monstro Spawn Fire Rate": "2 rounds per second",
+        "Monstro Spawn Damage": "18",
+        "Monstro Spawn Damage Falloff": "Falloff begins at 20m, decreasing to 50% at 40m",
         "Enhanced": "",
-        "Duration": "2s"
+        "Duration": "2s",
+        "Monstro Spawn Fire Rate #2": "5 rounds per second",
+        "Monstro Spawn Damage #2": "12",
+        "Monstro Spawn Damage Falloff #2": "Falloff begins at 20m, decreasing to 30% at 40m"
       },
       "icon_file": "namor/abilities/04_ability_e_aquatic-dominion.png"
     },
@@ -129,7 +132,7 @@
         "icon": "https://r.res.easebar.com/pic/20251011/e1e60d27-462f-41da-90cb-96f47ef58548.png",
         "description": "Hela channels energy of the undead to empower Namor. When Namor strikes with his trident, a spectral water column erupts at the target area, slowing enemies hit. Whenever Hela or Namor assist in a KO, an invulnerable Undead Monstro spawns at the fallen enemy's position, automatically attacking the nearest foe for a short time before vanishing",
         "stats": {
-          "Key": "Passive",
+          "Key": "C",
           "Inner Circle Spell Field Range": "A cylindrical spell field with a radius of 3m and a height of 13m",
           "Outer Circle Spell Field Range": "A cylindrical spell field with a radius of 6m and a height of 11m",
           "Inner Circle Damage": "65",
@@ -139,6 +142,7 @@
           "Outer Circle Generate Delay": "0.5s",
           "Cooldown": "30s",
           "Undead Monstro": "",
+          "Key #2": "Passive",
           "Undead Monstro Duration": "3s",
           "Undead Monstro Damage": "10",
           "Undead Monstro Fire Rate": "0.5s per hit",

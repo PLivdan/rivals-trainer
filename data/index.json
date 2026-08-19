@@ -528,6 +528,18 @@
     "dir": "heroes/storm"
   },
   {
+    "name": "THE HOOD",
+    "slug": "the-hood",
+    "role": "VANGUARD",
+    "uuid": "6be6a532-3f6f-471c-a717-6e4ae69902bf",
+    "abilities": 7,
+    "team_ups": [
+      "Chaos Collision",
+      "New Moon's Shadow"
+    ],
+    "dir": "heroes/the-hood"
+  },
+  {
     "name": "THE PUNISHER",
     "slug": "the-punisher",
     "role": "DUELIST",

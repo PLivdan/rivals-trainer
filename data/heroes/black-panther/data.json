@@ -160,9 +160,9 @@
           "stats": {
             "Key": "C",
             "Spell Field Range": "8m spherical radius",
-            "Damage": "40",
+            "Damage": "30",
             "Slow Rate": "35% for 2s",
-            "Cooldown": "12s"
+            "Cooldown": "15s"
           }
         },
         "enhanced": {

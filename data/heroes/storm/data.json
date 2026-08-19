@@ -78,10 +78,11 @@
         "Tornado": "",
         "Movement Boost (Self)": "16%",
         "Movement Boost (Ally)": "8%",
-        "Special Effect": "Under this aura, Wind Blade hits reduce Bolt Rush cooldown by 0.5s (only once per cast, even if hitting multiple enemies). Increase Bolt Rush spell field range radius from 1m to 1.5m",
+        "Special Effect": "Using Wind Blade and Bolt Rush under this aura grants Storm Bonus Health. Damage Conversion Ratio: 25%, up to a max of 75 Bonus Health",
         "Thunder": "",
         "Damage Boost (Self)": "12%",
-        "Damage Boost (Ally)": "8%"
+        "Damage Boost (Ally)": "8%",
+        "Special Effect #2": "Under this aura, Wind Blade hits reduce Bolt Rush cooldown by 0.5s (only once per cast, even if hitting multiple enemies). Increase Bolt Rush spell field range radius from 1m to 1.5m"
       },
       "icon_file": "storm/abilities/03_ability_shift_weather-control.png"
     },

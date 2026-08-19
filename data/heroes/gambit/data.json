@@ -103,7 +103,7 @@
       "stats": {
         "Key": "E",
         "Cooldown": "4 charges, with each charge taking 8s to recharge.",
-        "Self Healing": "Heal 20 health per second within duration",
+        "Self Healing": "Heal 30 health per second within duration",
         "Maximum Duration": "6s",
         "Special Effect": "Within the duration, consume one stack of Sleight of Hand to use Bridge Boost and Purifying Pick-Up."
       },
@@ -132,16 +132,20 @@
       "description": "Channel kinetic energy into the bo staff, then slam it into the ground after a sweeping strike, creating a shockwave that damages nearby enemies and heals allies",
       "stats": {
         "Key": "Right Click",
-        "Casting": "Dash",
+        "Casting": "Single-cast spell field that surrounds the caster",
         "Cooldown": "2 charges, with each charge taking 8s to recharge",
         "Spell Field Range": "5m spherical radius",
-        "Damage": "25 per field",
-        "Healing": "To allies and self: 15/hit",
+        "Damage": "60",
+        "Healing": "To allies: 60; self: 60",
         "Big Easy Impact": "",
+        "Key #2": "Right Click",
+        "Casting #2": "Dash",
         "Dash Distance": "12m",
         "Spell Field Generation Quantity": "3",
         "Spell Field Generation Interval": "0.1",
-        "Range": "5m spherical radius"
+        "Range": "5m spherical radius",
+        "Damage #2": "25 per field",
+        "Healing #2": "To allies and self: 15/hit"
       },
       "icon_file": "gambit/abilities/06_ability_right-click_bayou-bash.png"
     },
@@ -157,7 +161,7 @@
         "Special Effect": "The projectile automatically tracks allies and will bounce between allies on impact. Bridge Boost bounces on a single target are set to a maximum of 2",
         "Projectile Speed": "120m/s",
         "Max Number of Ricochets": "6",
-        "Healing": "50 damage per round",
+        "Healing": "55 per round",
         "Healing Boost Ratio": "0.15",
         "Duration": "4s"
       },
@@ -242,7 +246,7 @@
             "Cooldown": "15s",
             "Spell Field Range": "5m spherical radius",
             "Spell Field Duration": "5s",
-            "Healing Amount": "50/s",
+            "Healing Amount": "55/s",
             "Damage": "50/s"
           }
         },

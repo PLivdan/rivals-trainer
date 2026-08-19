@@ -57,6 +57,10 @@ def stat_pairs(cell) -> dict:
             k = clean(tds[0].get_text())
             v = clean(tds[1].get_text())
             if k:
+                base, n = k, 2
+                while k in out:
+                    k = f"{base} #{n}"
+                    n += 1
                 out[k] = v
     return out
 

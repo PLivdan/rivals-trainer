@@ -120,7 +120,8 @@
         "Minimum Leaps": "3",
         "Maximum Leaps": "6",
         "Energy Cost": "3100",
-        "Special Mechanic": "When Mister Fantastic uses Brainiac Bounce (Ultimate Ability), immediately gain Bonus Health equal to that gained when entering inflated state"
+        "Special Mechanic": "After the minimum number of leaps, each additional leap must hit an enemy to trigger the next one",
+        "Special Mechanic #2": "When Mister Fantastic uses Brainiac Bounce (Ultimate Ability), immediately gain Bonus Health equal to that gained when entering inflated state"
       },
       "icon_file": "mister-fantastic/abilities/05_ability_q_brainiac-bounce.png"
     },

@@ -112,8 +112,9 @@
         "Casting": "Straight-line projectile that generates a spell field upon impact",
         "Projectile Speed": "80 m/s",
         "Charge Time": "0.5s - 4s",
-        "Range": "Cone-shaped spell field with a 4.5m radius and an apex angle of 80°",
+        "Range": "The projectile can travel up to 10m with a 0.5s charge. As the charge time increases, it can reach a maximum distance of 20m with a 1s charge",
         "Projectile Damage": "15",
+        "Range #2": "Cone-shaped spell field with a 4.5m radius and an apex angle of 80°",
         "Spell Field Damage": "20",
         "Cooldown": "15s"
       },

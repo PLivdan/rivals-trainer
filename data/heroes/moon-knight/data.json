@@ -41,7 +41,7 @@
         "Damage Falloff": "Falloff begins at 30m, decreasing to 50% at 50m",
         "Maximum Bounce Distance": "7m",
         "Maximum Number of Bounces": "3",
-        "Damage Falloff Per Bounce": "-30%",
+        "Damage Falloff Per Bounce": "-20%",
         "Ammo": "30",
         "Critical Hit": "Yes"
       },
@@ -183,8 +183,8 @@
           "description": "Enter Phased state and dash forward. Upon concluding, emit a Light Energy Healing Wave that heals Moon Knight and nearby allies.",
           "stats": {
             "Key": "C",
-            "Cooldown": "15",
-            "Dash Duration": "0.3s",
+            "Cooldown": "12",
+            "Dash Duration": "0.35s",
             "Dashing Speed": "50 m/s",
             "Phased Duration": "0.25s",
             "Healing Amount": "55",
@@ -197,7 +197,7 @@
             "Key": "C",
             "Dash Duration": "0.35s",
             "Phased Duration": "0.35s",
-            "Healing Amount": "65",
+            "Healing Amount": "65, gains a 3s healing effect of 20 Health/s after leaving the Phased state",
             "Healing Range": "8m radius"
           }
         },

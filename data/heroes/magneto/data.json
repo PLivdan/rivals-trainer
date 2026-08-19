@@ -92,7 +92,7 @@
         "Key": "E",
         "Casting": "Targeted",
         "Maximum Distance": "20m",
-        "Shield Value": "200",
+        "Shield Value": "250",
         "Max Shield Duration": "2.5s",
         "Cooldown": "15s",
         "Special Effect": "The shield grants one charge of Iron Ring for every 100 damage it absorbs"
@@ -107,7 +107,7 @@
       "description": "Conjure an iron shield around himself. Damage taken will transform into rings on Magneto's back",
       "stats": {
         "Key": "F",
-        "Shield Value": "200",
+        "Shield Value": "250",
         "Max Shield Duration": "2.5s",
         "Cooldown": "10s",
         "Special Effect": "The shield grants one charge of Iron Ring for every 100 damage it absorbs"

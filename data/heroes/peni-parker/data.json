@@ -141,9 +141,13 @@
         "Projectile Speed": "60 m/s",
         "Range": "3m spherical radius",
         "Damage": "5",
-        "Cooldown": "3s",
-        "Special Effect 1": "Enemies hit are ensnared for 0.7s. While trapped in the Cyber-Web, Peni Parker receives 25 healing per second. Any excess healing is converted into Bonus Health, up to a maximum of 200 Health, and grants a 25% Movement Boost",
-        "Special Effect 2": "Allies in Peni's Cyber-Webs now receive the same Healing Over Time and a Movement Boost effects as her. Movement Boost for allies is 25%, Healing is 15/s. Ally excess healing converts into Bonus Health, up to 25"
+        "Cooldown": "2 charges, with each charge taking 3s to recharge",
+        "SLOW RATE": "30%",
+        "SLOW DURATION": "1s",
+        "Web-Tracer DURATION": "5s",
+        "Special Effect 1": "If an enemy with a Web-Tracer is hit by the snare again, they will be Immobilized for 0.7s",
+        "Special Effect 2": "While trapped in the Cyber-Web, Peni Parker receives 25 healing per second. Any excess healing is converted into Bonus Health, up to a maximum of 150 Health, and grants a 25% Movement Boost",
+        "Special Effect 3": "Allies in Peni's Cyber-Webs now receive the same Healing Over Time and a Movement Boost effects as her. Movement Boost for allies is 25%, Healing is 15/s. Ally excess healing converts into Bonus Health, up to 25"
       },
       "icon_file": "peni-parker/abilities/07_ability_right-click_cyber-web-snare.png"
     }

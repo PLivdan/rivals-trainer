@@ -170,7 +170,7 @@
             "Key": "C",
             "Cooldown": "2 charges, with each charge taking 20s to recharge.",
             "Vitality Acorn Amount": "5",
-            "Vitality Acorn Healing Amount": "20 per acorn",
+            "Vitality Acorn Healing Amount": "30 per acorn",
             "Ability Cooldown Reduction": "0.5s per acorn"
           }
         },
@@ -196,7 +196,7 @@
             "Spore Fire Rate": "0.2s per shot",
             "Spore Damage": "18 per hit",
             "Damage Over Time": "5 per round for 1 second",
-            "Healing Amount": "15 per round",
+            "Healing Amount": "20 per round",
             "Bonus Health": "20 damage per round",
             "Spell Field Range": "5m spherical radius"
           }

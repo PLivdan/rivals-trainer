@@ -120,8 +120,7 @@
         "Special Effect": "Disrupt enemies' vision in range and gain XP. Enemies can damage Deadpool to end the disruption. Increase left-click attack speed for the duration.",
         "Damage Needed to Remove the Disruption": "100",
         "Spell Field Damage": "10/s",
-        "Spell Field Range": "A cylindrical spell field with a 6m radius and a height of 6m.",
-        "Damage Reduction": "20%"
+        "Spell Field Range": "A cylindrical spell field with a 6m radius and a height of 6m."
       },
       "icon_file": "deadpool/abilities/08_ability_e_deadpool-in-your-area-vanguard.png"
     },
@@ -1216,7 +1215,8 @@
           "stats": {
             "Key": "C",
             "Stun Duration": "0.3s",
-            "Cooldown": "10s"
+            "Cooldown": "10s",
+            "Vanguard Spell Field Damage": "90"
           }
         },
         "icon_file": "deadpool/teamups/provided_02_gumbo-chimichangas.png"

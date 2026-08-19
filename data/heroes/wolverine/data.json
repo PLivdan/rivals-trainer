@@ -143,7 +143,7 @@
         "Rage Per Feral Leap Snatch": "10",
         "Rage Per Berserk Claw Strike Hit": "5",
         "Rage Per Last Stand Knockback": "25",
-        "Rage Per Hit Taken": "5",
+        "Rage Per Hit Taken": "8",
         "Rage Gain From Taking Hits": "2 per second"
       },
       "icon_file": "wolverine/abilities/07_passive_passive_berserker-rage.png"

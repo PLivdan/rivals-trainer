@@ -100,8 +100,9 @@
         "Key": "E",
         "Cooldown": "15s",
         "Attack Generated Healing Spell Field Range": "10m radius spherical spell field",
-        "Healing Amount": "25/s",
+        "Healing Amount": "35 per hit",
         "Healing Spell Field That Surrounds the Caster": "10m radius spherical spell field",
+        "Healing Amount #2": "25/s",
         "Ability Duration": "Transform 3 tails: 9s; 2 tails: 8s; 1 tail: 7s"
       },
       "icon_file": "white-fox/abilities/04_ability_e_fox-form-awakening.png"
@@ -147,9 +148,13 @@
       "stats": {
         "Key": "Shift",
         "Cooldown": "6s",
-        "Dash Duration": "15m",
+        "Dash Duration": "10m",
         "Damage": "40",
-        "Predatory Pounce Second Unleash": ""
+        "Predatory Pounce Second Unleash": "",
+        "Key #2": "Shift",
+        "Cooldown #2": "6s",
+        "Dash Duration #2": "15m",
+        "Damage #2": "40"
       },
       "icon_file": "white-fox/abilities/07_ability_shift_predatory-pounce.png"
     },
@@ -161,10 +166,11 @@
       "description": "Manifest the full Nine-Tailed Fox form and continuously heal nearby allies. Cannot receive healing effects from others while in this form",
       "stats": {
         "Key": "Q",
-        "Energy Cost": "4800",
+        "Energy Cost": "4300",
         "Maximum Health": "1200",
         "Continuous Healing Spell Field Range": "10m radius spherical spell field",
-        "Healing Amount": "85/s"
+        "Healing Amount": "85/s",
+        "Special Effect": "After casting, automatically apply the Blessed by the Nine effect to all allies within a 10m radius for 3s."
       },
       "icon_file": "white-fox/abilities/08_ability_q_kumiho-unleashed.png"
     },

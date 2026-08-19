@@ -1,0 +1,216 @@
+{
+  "name": "THE HOOD",
+  "real_name": "PARKER ROBBINS",
+  "role": "VANGUARD",
+  "description": "As the Hood, Parker Robbins is treading the dangerous path toward the throne of the criminal underworld. Cloaked in a cursed mantle, he devours the firepower of his foes, feeding his own dark might. When he transforms into his full demonic state, a torrent of dark magic sweeps over all who stand in his way!",
+  "lore": "Parker Robbins' faith in heroes died along with his world's Captain America, replaced by an appetite for power and the will to take it. After stealing an enchanted cloak from the Vault, Parker tapped into its vast power to remake himself as the crime lord called The Hood. Never truly knowing if he's pulling the strings or if it's all part of Oblivion's plan, he was sent to Thebes to steal the Tablet of Death and Entropy. Despite cutting down master thief Gambit, The Hood lost his master's prize when Doom 2099 seized it from the shadows.",
+  "base_stats": {
+    "Health": "600",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260807/0945f594-632c-47c9-a4ae-bff16d7176a7.png",
+    "https://r.res.easebar.com/pic/20260807/8059db96-f48b-4887-bbe5-cb34a31e984e.png"
+  ],
+  "forms": [
+    {
+      "name": "The Hood",
+      "stats": {
+        "Health": "600",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260807/0945f594-632c-47c9-a4ae-bff16d7176a7.png",
+        "https://r.res.easebar.com/pic/20260807/8059db96-f48b-4887-bbe5-cb34a31e984e.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "Accursed Pistols",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260807/7534b549-9d70-4acc-bb2e-a8f41a149c25.png",
+      "description": "Shoot forward dual-wielded pistols. Gain increased Attack Speed when Demonic Energy exceeds 50%",
+      "stats": {
+        "Key": "Left Click",
+        "Shooting Damage": "26 per round",
+        "Shooting Interval": "0.2s",
+        "Shooting Damage after Demonic Energy exceeds 50%": "21 per round",
+        "Shooting Interval after Demonic Energy exceeds 50%": "0.15s",
+        "Damage Falloff": "Falloff begins at 8m, decreasing to 55% at 20m",
+        "Ammo": "40"
+      },
+      "icon_file": "the-hood/abilities/01_primary_left-click_accursed-pistols.png"
+    },
+    {
+      "name": "Leaded Transformation",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260807/4ca514f5-22ab-4b3f-99d1-7c71bbfd8a30.png",
+      "description": "Enter Half-Demon State, transforming your arms into demonic rifles to unleash a rain of lead. These rifles have increased Attack Speed and Infinite Ammo. Every bullet that strikes an enemy triggers Lifesteal",
+      "stats": {
+        "Key": "Left Click",
+        "Shooting Damage": "4 per round",
+        "Shooting Interval": "0.05s",
+        "Lifesteal Ratio": "10%",
+        "Leaded Transformation Damage/Bonus Health Conversion": "40%, Max100",
+        "Bullet Spread Radius": "Spread radius reaches 0.5m after 10 consecutive shots (calculated at 10m distance)",
+        "Damage Falloff": "Falloff begins at 8m, decreasing to 80% at 20m"
+      },
+      "icon_file": "the-hood/abilities/02_primary_left-click_leaded-transformation.png"
+    },
+    {
+      "name": "Mantle of Oblivion",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260807/609ce727-56eb-4037-b892-cf519e448a0b.png",
+      "description": "Spread your cloak to form a spherical barrier, blocking incoming enemy attacks. When Demonic Energy exceeds 50%, the radius of the sphere expands further.",
+      "stats": {
+        "Key": "Right Click",
+        "Cooldown": "10",
+        "Max Duration": "1s",
+        "Sphere Radius": "2m",
+        "Sphere Radius after Demonic Energy exceeds 50%": "3m"
+      },
+      "icon_file": "the-hood/abilities/03_ability_right-click_mantle-of-oblivion.png"
+    },
+    {
+      "name": "Abyssal Veil",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260807/3f3f96fb-25e4-481b-8d83-1b47cd1207c3.png",
+      "description": "Throw a dark magic sphere that generates a Veil upon landing. Accursed Pistols shots passing through it generate more Demonic Energy and bullets from Leaded Transformation gain increased Lifesteal. Enemy projectiles passing through suffer reduced damage and healing output. Enemies who pass through the Veil take damage and are Blinded",
+      "stats": {
+        "Key": "E",
+        "Cooldown": "10s",
+        "Summon Duration": "6s",
+        "Veil Size": "Width: 8m, Height: 3.5m.",
+        "Damage Reduction": "35%",
+        "Healing Reduction": "20%",
+        "Leaded Transformation Lifesteal Ratio": "10%",
+        "Energy Gain Increased Per Accursed Pistols Hit": "0.75",
+        "Blind Duration": "1s",
+        "Damage": "60.00"
+      },
+      "icon_file": "the-hood/abilities/04_ability_e_abyssal-veil.png"
+    },
+    {
+      "name": "Void Walk",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260807/159f1fa3-b73a-4835-87e3-6055ac4fc848.png",
+      "description": "Enter the Void for free-flight. Upon reappearing, gain a decaying Movement Boost and damage surrounding enemies",
+      "stats": {
+        "Key": "Shift",
+        "Cooldown": "15s",
+        "Movement Boost": "40% during the Ability, decaying to 0% over 2s after it ends",
+        "Damage": "40",
+        "Spell Field Range": "4.5m spherical radius",
+        "Max Duration": "1.2s"
+      },
+      "icon_file": "the-hood/abilities/05_ability_shift_void-walk.png"
+    },
+    {
+      "name": "Ruinous Pact",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260807/d65c0319-1bc3-4016-83b6-a6bb492a0e24.png",
+      "description": "Accumulate Demonic Energy by dealing damage via Accursed Pistols, blocking attacks with Mantle of Oblivion, or by using Void Walk. Reaching full energy automatically triggers the Half-Demon State",
+      "stats": {
+        "Key": "Passive",
+        "Max Energy": "100",
+        "Energy Gain Per Accursed Pistols Hit": "2",
+        "Mantle of Oblivion Block Damage/Energy Conversion": "3.75%",
+        "Energy Gain from Void Walk": "20"
+      },
+      "icon_file": "the-hood/abilities/06_passive_passive_ruinous-pact.png"
+    },
+    {
+      "name": "Demon of the End",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260807/336a58df-f1e5-4dfa-8b8e-d066f9130ec8.png",
+      "description": "Enter Full Demon State. Fire up to 6 high-powered shots that pierce through enemies and barriers, with the final shot being the most powerful. Hitting enemies grants Bonus Health to yourself and nearby allies",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3400",
+        "Max Duration": "12",
+        "Demon State Health": "1000",
+        "First 5 Rounds Damage": "90 + 10% of Target's Max Health",
+        "Final Round Damage": "140 + 15% of Target's Max Health",
+        "Bonus Health Per Firing": "50",
+        "Damage/Bonus Health Conversion": "60%",
+        "Bonus Health Range": "8m radius",
+        "Max Bonus Health": "200"
+      },
+      "icon_file": "the-hood/abilities/07_ability_q_demon-of-the-end.png"
+    }
+  ],
+  "team_ups": {
+    "received": [],
+    "provided": [
+      {
+        "name": "Chaos Collision",
+        "icon": "https://r.res.easebar.com/pic/20260807/24d0fbab-6a6c-473f-81e0-929ea2f7594f.png",
+        "partner": "Scarlet Witch",
+        "base": {
+          "description": "Gain a New Ability. Create an arcane zone that continuously damages enemies and applies stacking Damage and Healing Reduction. Reactivate to teleport to the zone's center.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "16",
+            "Max Select Distance": "20m",
+            "Max Teleport Distance": "30m",
+            "Spell Field Duration": "4s",
+            "Spell Field Range": "5m spherical radius",
+            "Damage": "20 per hit, 2 hits per second",
+            "Damage Reduction": "5% per hit, Up to 40%",
+            "Healing Reduction": "5% per hit, Up to 40%"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Scarlet Witch, after teleporting, unleash a magical shockwave, dealing one-time damage to nearby enemies while launching them towards The Hood",
+          "stats": {
+            "Key": "C",
+            "One-Time Damage": "60"
+          }
+        },
+        "icon_file": "the-hood/teamups/provided_01_chaos-collision.png"
+      },
+      {
+        "name": "New Moon's Shadow",
+        "icon": "https://r.res.easebar.com/pic/20260807/c12a3f6d-b7f9-4860-9137-6f64ebd9c8d7.png",
+        "partner": "Moon Knight",
+        "base": {
+          "description": "Enhances Abyssal Veil into a Lunar Barrier that blocks projectiles. Upon breaking, it detonates, damaging enemies and applying Damage and Healing Reduction. Enemies passing through take damage and are briefly Blinded.",
+          "stats": {
+            "Key": "E",
+            "Summons' Health": "200",
+            "Explosion Damage": "30",
+            "Damage Reduction": "35%",
+            "Healing Reduction": "35%",
+            "Explosion Range": "8m spherical radius"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Moon Knight, the Lunar Barrier has greater shield value, and The Hood's attacks that pass through it gain a bounce effect",
+          "stats": {
+            "Key": "E",
+            "Summons' Health": "300",
+            "Max Bounce Distance": "3m",
+            "Max Number of Bounces": "3",
+            "Damage Falloff Per Bounce": "50%"
+          }
+        },
+        "icon_file": "the-hood/teamups/provided_02_new-moon-s-shadow.png"
+      }
+    ]
+  },
+  "source_name": "THE HOOD",
+  "uuid": "6be6a532-3f6f-471c-a717-6e4ae69902bf",
+  "article_url": "https://www.marvelrivals.com/20260807/41360_1310474.html",
+  "portrait_files": [
+    "the-hood/portraits/portrait_1.png",
+    "the-hood/portraits/portrait_2.png"
+  ]
+}

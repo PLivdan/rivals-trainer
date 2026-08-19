@@ -35,8 +35,8 @@
       "stats": {
         "Key": "Left Click",
         "Casting": "Double projectile with spread",
-        "Damage": "13 damage per round",
-        "Damage Falloff": "Falloff begins at 15m, decreasing to 70% at 30m",
+        "Damage": "12 damage per round",
+        "Damage Falloff": "Falloff begins at 8m, decreasing to 70% at 30m",
         "Bullets Fired Each Cast": "4",
         "Crosshair Spread Radius (at 10m)": "0.2m",
         "Fire Rate": "The firing interval between shots is 0.2s, with an interval of 0.6s between each round of shooting",
@@ -112,12 +112,14 @@
         "Cooldown": "8s",
         "Special Mechanic": "When the projectile is recalled, it will move 20s toward the crosshair before returning to Psylocke",
         "Firing Phase": "",
-        "Damage": "9 per hit",
+        "Damage": "9 damage per round",
         "Projectile Speed": "120 m/s",
         "Spread Angle": "0.86°",
         "Maximum Distance": "25m",
         "Damage Falloff": "Falloff begins at 15m, decreasing to 80% at 25m",
-        "Recall Phase": ""
+        "Recall Phase": "",
+        "Damage #2": "9 per hit",
+        "Projectile Speed #2": "120 m/s"
       },
       "icon_file": "psylocke/abilities/05_ability_right-click_wing-shurikens.png"
     }
@@ -129,16 +131,20 @@
         "icon": "https://r.res.easebar.com/pic/20251212/67962d9c-35dd-4d15-9e06-5f85ea2c0aff.png",
         "description": "Cloak & Dagger share light and dark energy with Hawkeye and Psylocke. When Hawkeye uses Crescent Slash, he also releases a blade wave that heals and boosts healing for teammates, while inflicting damage and Vulnerability on enemies. Psylocke can launch a Light Boomerang Dart that heals allies, harms enemies, and provides her with temporary healing upon return. She can also unleash a ring of Dark Darts that slow enemies while she briefly enters a Phased state",
         "stats": {
-          "Key": "Right Click",
+          "Key": "C",
           "Cooldown": "20s",
           "Light Boomerang Dart": "",
-          "Projectile Damage": "Deal 50 damage. Affect a single target at most once.",
+          "Key #2": "Left Click",
+          "Projectile Damage": "Deal 40 damage upon unleashing and 20 damage when retrieved.",
           "Projectile Healing": "Heal 60 health upon unleashing and 30 health when retrieved.",
-          "Projectile Speed": "100 m/s",
+          "Projectile Speed": "150 m/s",
           "Projectile Maximum Flight Duration": "30m",
           "Self Healing": "35/s",
           "Self Healing Duration": "Grant 2s of self healing for each target hit",
           "Dark Darts": "",
+          "Key #3": "Right Click",
+          "Projectile Damage #2": "Deal 50 damage. Affect a single target at most once.",
+          "Projectile Speed #2": "100 m/s",
           "Slow Rate": "35%",
           "Slow Duration": "3s",
           "Phased State Duration": "2s"
@@ -157,7 +163,8 @@
             "Key": "C",
             "Cooldown": "20s",
             "FLEX UP": "0.5",
-            "Illusion Damage": "30%"
+            "Illusion Damage": "15%",
+            "MAGNETIC PROJECTION MAX DURATION": "3s"
           }
         },
         "enhanced": {
@@ -181,7 +188,8 @@
             "Projectile Damage": "30",
             "Healing Amount": "20",
             "Field Duration": "5s",
-            "Field Range": "6m spherical radius"
+            "Field Range": "6m spherical radius",
+            "Psionic Crossbow base damage per shot": "13"
           }
         },
         "enhanced": {

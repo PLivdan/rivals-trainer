@@ -12,6 +12,11 @@ Hero slug overrides applied when copying: `hulk` <- `bruce-banner`, `iron-man` <
 These character renders are transparent PNGs/WebPs and may be game-derived art (see
 "Content/data may be licensed differently" below).
 
+`assets/heroes/gorr-the-god-butcher/full-body.webp` is a temporary placeholder (Gorr
+launched with Season 10, Sep 11 2026; mr-calculator has not published his render yet)
+supplied manually, not pulled from mr-calculator. Swap it for the real
+head/full-body/logo set once upstream adds him.
+
 ## License (from the mr-calculator repository)
 
 Copyright 2026 mr-calculator <mr-calculator.estimate510@slmails.com>

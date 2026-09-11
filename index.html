@@ -386,8 +386,27 @@ const cdLabel=n=>n+'s';
 function mouseSVG(key){const fill=key==='Left Click'?'M12 2 A6 6 0 0 0 6 8 L6 9 L12 9 Z':'M12 2 A6 6 0 0 1 18 8 L18 9 L12 9 Z';return `<svg viewBox="0 0 24 24" fill="none" role="img" aria-label="${esc(key)}"><path d="${fill}" fill="currentColor" opacity=".8"/><rect x="6" y="2" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.6"/><path d="M6 9H18M12 2V9" stroke="currentColor" stroke-width="1.4"/></svg>`;}
 function keyTag(key,big){const cls='kbd'+(big?' big':'');return (key==='Left Click'||key==='Right Click')?`<span class="${cls} mouse">${mouseSVG(key)}</span>`:`<span class="${cls}">${esc(key)}</span>`;}
 const firstInt=s=>{const m=(s||'').match(/\d+/);return m?+m[0]:null;};
-// quiz value: primary number as an absolute amount; null if it's a percentage or a distance/area (not an amount)
-function qVal(s){if(s==null)return null;s=''+s;if(/radius|meter/i.test(s))return null;const m=s.match(/(\d+(?:\.\d+)?)(%?)/);if(!m||m[2]==='%')return null;return Math.round(parseFloat(m[1]));}
+// quiz value: primary number as an absolute amount; null if it's a percentage or a distance/area (not an amount).
+// kw ('damage'/'heal') lets it prefer a number adjacent to the relevant word when a stat cell is a
+// prose sentence with several numbers (hit counts, sub-durations, the real amount) mixed together.
+// When a cell describes more than one real damage/heal instance (e.g. a sustained tick vs a one-time
+// burst, or an escalating multi-hit combo), the larger/"headline" number wins over an earlier-mentioned one.
+function qVal(s,kw){
+  if(s==null)return null;s=''+s;
+  if(/radius|meter/i.test(s))return null;
+  const nums=[...s.matchAll(/(\d+(?:\.\d+)?)(%?)/g)].filter(n=>n[2]!=='%');
+  if(!nums.length)return null;
+  const maxOf=arr=>arr.reduce((a,b)=>parseFloat(b[1])>parseFloat(a[1])?b:a);
+  if(kw){
+    const re=new RegExp(kw,'i');
+    const tagged=nums.filter(n=>re.test(s.slice(Math.max(0,n.index-3),n.index))||re.test(s.slice(n.index+n[0].length,n.index+n[0].length+3)));
+    if(tagged.length)return Math.round(parseFloat(maxOf(tagged)[1]));
+  }
+  const isCountOrDur=n=>/^\s*(s\b|sec|seconds|hits?\b|rounds?\b|times?\b|stacks?\b|charges?\b|strikes?\b)/i.test(s.slice(n.index+n[0].length,n.index+n[0].length+12));
+  const clean=nums.filter(n=>!isCountOrDur(n)&&parseFloat(n[1])!==0);
+  const pool=clean.length?clean:nums;
+  return Math.round(parseFloat(maxOf(pool)[1]));
+}
 // unit signature so comparisons only pit like-for-like (flat vs per-second vs per-hit)
 function unitSig(s){s=''+(s||'');if(/\/s\b|per second/i.test(s))return 'rate';if(/per (round|shot|hit|use)/i.test(s))return 'per';return 'flat';}
 const ROLES3=['Vanguard','Duelist','Strategist'];
@@ -423,11 +442,11 @@ function init(){
   const cdN=[...S.heroes.flatMap(h=>h.abilities.filter(a=>a.cd).map(a=>a.cd)),
              ...S.heroes.flatMap(h=>h.teamups.filter(t=>t.cd).map(t=>t.cd))];
   S.allCds=[...new Set(cdN)].sort((a,b)=>a-b);
-  const dmgN=[...S.heroes.flatMap(h=>h.abilities.map(a=>qVal(a.dmg))),
-              ...S.heroes.flatMap(h=>h.teamups.map(t=>qVal(t.dmg)))].filter(Boolean);
+  const dmgN=[...S.heroes.flatMap(h=>h.abilities.map(a=>qVal(a.dmg,'damage'))),
+              ...S.heroes.flatMap(h=>h.teamups.map(t=>qVal(t.dmg,'damage')))].filter(Boolean);
   S.allDmg=[...new Set(dmgN)].sort((a,b)=>a-b);
-  const healN=[...S.heroes.flatMap(h=>h.abilities.map(a=>qVal(a.heal))),
-               ...S.heroes.flatMap(h=>h.teamups.map(t=>qVal(t.heal)))].filter(Boolean);
+  const healN=[...S.heroes.flatMap(h=>h.abilities.map(a=>qVal(a.heal,'heal'))),
+               ...S.heroes.flatMap(h=>h.teamups.map(t=>qVal(t.heal,'heal')))].filter(Boolean);
   S.allHeal=[...new Set(healN)].sort((a,b)=>a-b);
   S.allDur=[...new Set(S.heroes.flatMap(h=>h.abilities.map(a=>firstInt(a.dur))).filter(Boolean))].sort((a,b)=>a-b);
   S.bySlug=Object.fromEntries(S.heroes.map(h=>[h.slug,h]));
@@ -621,8 +640,8 @@ function newCd(){
   const avail={
     duration:items.filter(x=>x.type!=='teamup'&&firstInt(x.dur)),
     cooldown:items.filter(x=>x.cd),
-    damage:items.filter(x=>qVal(x.dmg)!=null),
-    healing:items.filter(x=>qVal(x.heal)!=null),
+    damage:items.filter(x=>qVal(x.dmg,'damage')!=null),
+    healing:items.filter(x=>qVal(x.heal,'heal')!=null),
     hero:single?[]:items.filter(x=>x.type!=='teamup'),
   };
   const weights={duration:4,cooldown:2,damage:1,healing:1,hero:1,compare:1,order:1};
@@ -650,8 +669,8 @@ function newCd(){
 const CDMETA={
   cooldown:{val:i=>i.cd, pool:()=>S.allCds, label:v=>v+'s', ph:'seconds…', ask:i=>`<b class="cd">Cooldown</b> of this ${i.type==='teamup'?'team-up':'ability'}?`, answer:i=>i.cd_text||(i.cd+'s')},
   duration:{val:i=>firstInt(i.dur), pool:()=>S.allDur, label:v=>v+'s', ph:'seconds…', ask:()=>'How long does this <b class="dur">last</b>?', answer:i=>i.dur},
-  damage:{val:i=>qVal(i.dmg), pool:()=>S.allDmg, label:v=>''+v, ph:'amount…', ask:()=>'How much <b class="dmg">damage</b> does this deal?', answer:i=>i.dmg},
-  healing:{val:i=>qVal(i.heal), pool:()=>S.allHeal, label:v=>''+v, ph:'amount…', ask:()=>'How much does this <b class="heal">heal</b>?', answer:i=>i.heal},
+  damage:{val:i=>qVal(i.dmg,'damage'), pool:()=>S.allDmg, label:v=>''+v, ph:'amount…', ask:()=>'How much <b class="dmg">damage</b> does this deal?', answer:i=>i.dmg},
+  healing:{val:i=>qVal(i.heal,'heal'), pool:()=>S.allHeal, label:v=>''+v, ph:'amount…', ask:()=>'How much does this <b class="heal">heal</b>?', answer:i=>i.heal},
 };
 function newCdQuestion(item,kind){
   const meta=CDMETA[kind];

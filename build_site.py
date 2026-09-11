@@ -11,6 +11,13 @@ BANNERS = {
     "deadpool": "data/heroes/deadpool/portraits/banner.jpg",
 }
 
+# Hand-verified corrections for stat cells pick_stat can't resolve on its own -
+# e.g. Wolverine's passive scales 150-300 Bonus Health with Rage before morphing
+# into a one-off heal, so there's no single clean "Healing" number to extract.
+HEAL_OVERRIDES = {
+    ("wolverine", "Regenerative Healing Factor"): "150",
+}
+
 
 def canon_cd(s: str):
     if not s:
@@ -32,7 +39,7 @@ def pick_stat(stats: dict, want, exclude=()):
 
 DMG_X = ("falloff", "boost", "shar", "reduc", "increas", "taken",
          "resist", "amplif", "bonus", "over time")
-HEAL_X = ("cooldown", "boost", "increas")
+HEAL_X = ("cooldown", "boost", "increas", "ratio", "conversion", "interval")
 DUR_X = ("cooldown",)
 
 
@@ -55,7 +62,7 @@ def build():
             st = a["stats"]
             cd_disp = st.get("Cooldown")
             dmg = st.get("Damage") or pick_stat(st, ("damage",), DMG_X)
-            heal = pick_stat(st, ("healing", "health recovery"), HEAL_X)
+            heal = HEAL_OVERRIDES.get((h["slug"], a["name"])) or pick_stat(st, ("healing", "health recovery"), HEAL_X)
             dur = pick_stat(st, ("duration", "invisib", "stealth"), DUR_X)
             abilities.append({
                 "name": a["name"],

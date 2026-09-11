@@ -78,7 +78,7 @@
         "Duration": "1.5s",
         "Movement Boost": "50%",
         "Charges": "2",
-        "Recharge Speed": "10s per charge",
+        "Recharge Speed": "12s per charge",
         "Special Effect": "During this period, Scarlet Witch enters the Projection state, can be healed by teammates"
       },
       "icon_file": "scarlet-witch/abilities/03_ability_shift_mystic-projection.png"

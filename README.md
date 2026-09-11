@@ -9,7 +9,7 @@ icon art** from the official Marvel Rivals "Hero Ability Data Dossier"
 
 ## What it grabs
 
-For all 52 heroes:
+For all 54 heroes:
 
 - Identity: display name, real name, role, tagline, lore.
 - Base stats (health, movement speed, ...) and hero portraits/renders. Multi-form

@@ -67,7 +67,7 @@
       "slot": "ability",
       "key": "Q",
       "icon": "https://r.res.easebar.com/pic/20260416/c1b8429e-cbce-4c01-ad81-b1255d6ddbb8.png",
-      "description": "Issue a Calling Card to all enemies. Instantly dash to any enemy in sight and range, tearing into them with your claws to deal Percentage Damage",
+      "description": "Issue a Calling Card to all enemies. Instantly dash to any enemy in sight and range, tearing into them with your claws to deal Damage",
       "stats": {
         "Key": "Q",
         "Energy Cost": "3100",
@@ -178,7 +178,7 @@
       "slot": "ability",
       "key": "Q",
       "icon": "https://r.res.easebar.com/pic/20260416/542f0f37-1553-45e5-b794-9a5804088ccb.png",
-      "description": "Issue a Calling Card to all enemies. Instantly dash to any enemy in sight and range, tearing into them with your claws to deal Percentage Damage",
+      "description": "Issue a Calling Card to all enemies. Instantly dash to any enemy in sight and range, tearing into them with your claws to deal Damage",
       "stats": {
         "Key": "Q",
         "Energy Cost": "3100",
@@ -187,7 +187,7 @@
         "Ability Duration": "10s",
         "Maximum Targeting Distance": "8m",
         "1st Claw Strike Damage": "30",
-        "2nd Claw Strike Damage": "30+20% Target’s Maximum Health"
+        "2nd Claw Strike Damage": "70"
       },
       "icon_file": "black-cat/abilities/10_ability_q_calling-card.png"
     },

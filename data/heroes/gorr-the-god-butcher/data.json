@@ -1,0 +1,206 @@
+{
+  "name": "GORR THE GOD BUTCHER",
+  "real_name": "GORR",
+  "role": "DUELIST",
+  "description": "Wielding All-Black the Necrosword, Gorr is the nightmare of all gods. The divine flesh he rends is reshaped into an endless tide of black berserkers, forever marching in his wake. When the God Butcher's unholy legion descends, beings both mortal and divine become sacrifices beneath his feet!",
+  "lore": "Most mortals fear the wrath of the gods, but the gods fear the wrath of Gorr! With All-Black the Necrosword in hand, Gorr has spent centuries carving his way through divine pantheons, truly earning the title of God Butcher! Once a devout believer, Gorr's prayers were never answered. After his family perished, Gorr discovered a gateway that led beyond time and space. Arriving at the God Quarry, he learned a cruel truth: the gods had heard his prayers, but never cared enough to answer. That day, his unholy crusade began!",
+  "base_stats": {
+    "Health": "175 Health + 175 Regenerative Shield",
+    "Movement Speed": "600"
+  },
+  "portraits": [
+    "https://r.res.easebar.com/pic/20260911/8100e560-3062-40cf-93cd-8c70e62a776c.png",
+    "https://r.res.easebar.com/pic/20260911/b7987022-5d6c-45c2-8223-278775fea8af.png"
+  ],
+  "forms": [
+    {
+      "name": "Gorr",
+      "stats": {
+        "Health": "175 Health + 175 Regenerative Shield",
+        "Movement Speed": "600"
+      },
+      "images": [
+        "https://r.res.easebar.com/pic/20260911/8100e560-3062-40cf-93cd-8c70e62a776c.png",
+        "https://r.res.easebar.com/pic/20260911/b7987022-5d6c-45c2-8223-278775fea8af.png"
+      ]
+    }
+  ],
+  "abilities": [
+    {
+      "name": "All-Black",
+      "slot": "primary",
+      "key": "Left Click",
+      "icon": "https://r.res.easebar.com/pic/20260911/1791f0e0-b7e6-4ff6-9ebb-5e36ed1a657a.png",
+      "description": "Unleash up to a 4-strike rapid combo with All-Black the Necrosword",
+      "stats": {
+        "Key": "Left Click",
+        "Type": "Melee",
+        "Damage": "40 for the 1st/3rd hits, 60 for the 2nd/4th hits",
+        "Attack Interval": "0.4s for the 1st/3rd hits, 0.6s for the 2nd/4th hits",
+        "Maximum Distance": "7m"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/01_primary_left-click_all-black.png"
+    },
+    {
+      "name": "Necro-Power",
+      "slot": "ability",
+      "key": "Right Click",
+      "icon": "https://r.res.easebar.com/pic/20260911/6734624c-4fde-471c-a8a5-e68ec70818a2.png",
+      "description": "Charge and launch a symbiote mass forward. Hitting an enemy Slows and teleports nearby Black Berserkers to them, or spawns a new one. Arriving Berserkers unleash a two-strike melee attack to Launch Up nearby enemies before reverting to ranged mode",
+      "stats": {
+        "Key": "Right Click",
+        "Cooldown": "6s",
+        "Damage": "30",
+        "Berserker Summon Range": "12m radius",
+        "Black Berserker Melee Damage": "20 per hit, 2 hits",
+        "Slow Effect": "15% for 2s"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/02_ability_right-click_necro-power.png"
+    },
+    {
+      "name": "Shadow Harvest",
+      "slot": "ability",
+      "key": "F",
+      "icon": "https://r.res.easebar.com/pic/20260911/f8bb12b8-55a0-4a4a-9c28-aa9292ce75cc.png",
+      "description": "Warp to a selected Black Berserker, sacrificing it for Bonus Health equal to half its Health and triggering a symbiote explosion. Briefly unlocks Shadow Scythe: fire a piercing shockwave forward. All-Black then becomes a scythe for a set duration or 4 slashes",
+      "stats": {
+        "Key": "F",
+        "Cooldown": "3s",
+        "Maximum Select Distance": "22m",
+        "Bonus Health": "50% of the Black Berserker's remaining Health, up to 50; shares the Bonus Health cap with Berserker Swarm",
+        "Explosion Damage": "5 + 5% Max Health",
+        "Explosion Range": "5m radius",
+        "Shadow Scythe Damage": "55 + 2% Max Health",
+        "Shadow Scythe Attack Interval": "0.6s",
+        "Shadow Scythe Maximum Distance": "8m",
+        "Shockwave Damage": "60"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/03_ability_f_shadow-harvest.png"
+    },
+    {
+      "name": "Black Berserker",
+      "slot": "ability",
+      "key": "E",
+      "icon": "https://r.res.easebar.com/pic/20260911/91e1a2df-26cf-4b3a-b35f-05d3205d069d.png",
+      "description": "Lob a symbiote mass that spawns a Black Berserker on landing to immediately shoot the nearest enemy. If summoned beside an enemy via Necro-Power, it unleashes a two-strike melee attack instead",
+      "stats": {
+        "Key": "E",
+        "Cooldown": "2 charges, 10s recharge each.",
+        "Summon Duration": "6s",
+        "Summon Maximum Health": "150",
+        "Summon Damage": "7.5 per hit",
+        "Summon Attack Interval": "0.7s",
+        "Summon Attack Range": "30m radius",
+        "Black Berserker Melee Damage": "20 per hit, 2 hits"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/04_ability_e_black-berserker.png"
+    },
+    {
+      "name": "Living Abyss",
+      "slot": "ability",
+      "key": "Shift",
+      "icon": "https://r.res.easebar.com/pic/20260911/a560f893-79c1-49c8-baa1-5f2248f661d6.png",
+      "description": "Surge forward as an Invincible symbiote mass, leaving a Black Berserker behind and driving all active Berserkers into a Frenzied State. Upon landing, manifest a Necroverse that continuously damages trapped enemies, converting them into Bonus Health",
+      "stats": {
+        "Key": "Shift",
+        "Cooldown": "15s",
+        "Ability Duration": "1.5s",
+        "Movement Boost": "13m/s",
+        "Attack Speed Boost to Frenzied Berserkers": "40%",
+        "Necroverse Damage": "30/s",
+        "Necroverse Range": "10m radius",
+        "Damage/Health Conversion": "100%, up to 50"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/05_ability_shift_living-abyss.png"
+    },
+    {
+      "name": "Berserker Swarm",
+      "slot": "passive",
+      "key": "Passive",
+      "icon": "https://r.res.easebar.com/pic/20260911/a92eba1c-fe73-4693-b407-f43f6f0c74c2.png",
+      "description": "Black Berserker damage grants Gorr Bonus Health. Defeating an enemy instantly spawns a Black Berserker at their location",
+      "stats": {
+        "Key": "Passive",
+        "Summon Damage/Health Conversion": "100%, up to 50; shares the Bonus Health cap with Shadow Harvest"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/06_passive_passive_berserker-swarm.png"
+    },
+    {
+      "name": "Twilight of the Gods",
+      "slot": "ability",
+      "key": "Q",
+      "icon": "https://r.res.easebar.com/pic/20260911/dd44d0ed-f0d4-4ddf-891f-ec06a86cba26.png",
+      "description": "Unseal All-Black's true power, transforming it into the Annihilablade. Upon activation, an expanding Necroverse is formed, instantly spawning a Black Berserker next to all enemies caught inside. While active, every slash of the Annihilablade deals devastating damage. The Necroverse moves with Gorr; Berserkers within the field will not expire and remain locked in a perpetual Frenzied State",
+      "stats": {
+        "Key": "Q",
+        "Energy Cost": "3400",
+        "Maximum Duration": "12",
+        "Berserker Spawn Range": "10m radius",
+        "Necroverse Range": "30m radius",
+        "Annihilablade Damage": "65 + 10% Max Health",
+        "Annihilablade Attack Interval": "0.6s",
+        "Annihilablade Maximum Distance": "10m",
+        "Damage Falloff": "Falloff begins at 8m, decreasing to 80% at 10m"
+      },
+      "icon_file": "gorr-the-god-butcher/abilities/07_ability_q_twilight-of-the-gods.png"
+    }
+  ],
+  "team_ups": {
+    "received": [],
+    "provided": [
+      {
+        "name": "Ragnarök",
+        "icon": "https://r.res.easebar.com/pic/20260911/f374035f-3b67-4b84-8560-46aa8a44a3b8.png",
+        "partner": "Hela",
+        "base": {
+          "description": "Gain a new ability to morph the All-Black into a scythe and execute a sweeping strike, damaging and briefly Grounding nearby enemies. The weapon stays in scythe form for a short duration.",
+          "stats": {
+            "Cooldown": "20s",
+            "Grounded Duration": "1s",
+            "Sweeping Range": "5m radius",
+            "Sweeping Damage": "45"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Hela, the scythe's attack range is expanded. Each hit scatters symbiote fragments, granting Bonus Health to Gorr and nearby allies",
+          "stats": {
+            "Key": "C",
+            "Bonus Health": "10 per use",
+            "Shadow Scythe Maximum Distance Boost": "2m"
+          }
+        },
+        "icon_file": "gorr-the-god-butcher/teamups/provided_01_ragnar-k.png"
+      },
+      {
+        "name": "Hive Mind",
+        "icon": "https://r.res.easebar.com/pic/20260911/e4f8a6b8-d350-4cc8-b102-4a698a5a6d49.png",
+        "partner": "Venom",
+        "base": {
+          "description": "Gain a new ability to fire a Symbiote Claw forward, dealing piercing damage to enemies in its path. Upon reaching max distance, it retracts, Launching caught enemies toward Gorr.",
+          "stats": {
+            "Key": "C",
+            "Cooldown": "15s",
+            "Symbiote Claw Maximum Flight Distance": "25m",
+            "Symbiote Claw Damage": "40 when fired, 20 when retracted"
+          }
+        },
+        "enhanced": {
+          "description": "When teaming up with Venom, Black Berserkers receive a slight Damage Boost and apply a Slow effect to enemies they strike",
+          "stats": {
+            "Key": "C",
+            "Black Berserker Damage Boost": "33%",
+            "Slow Rate": "30% for 1s"
+          }
+        },
+        "icon_file": "gorr-the-god-butcher/teamups/provided_02_hive-mind.png"
+      }
+    ]
+  },
+  "source_name": "GORR THE GOD BUTCHER",
+  "uuid": "3cd78727-99d9-41a9-ab1c-0dc5e80451c0",
+  "article_url": "https://www.marvelrivals.com/20260911/41360_1313617.html",
+  "portrait_files": [
+    "gorr-the-god-butcher/portraits/portrait_1.png",
+    "gorr-the-god-butcher/portraits/portrait_2.png"
+  ]
+}

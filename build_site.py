@@ -110,14 +110,15 @@ def build():
 
         icon_path = DATA / "heroes" / h["slug"] / "icon.png"
         old_icon = ("data/heroes/" + h["slug"] + "/icon.png") if icon_path.exists() else None
+        thumb = body or portrait or first_icon(d)
         heroes.append({
             "slug": h["slug"],
             "name": d["name"],
             "role": d["role"].title(),
             "desc": d["description"],
             "health": d["base_stats"].get("Health", ""),
-            "thumb": body or portrait or first_icon(d),
-            "icon": head or old_icon,
+            "thumb": thumb,
+            "icon": head or old_icon or thumb,
             "body": body,
             "logo": logo,
             "abilities": abilities,

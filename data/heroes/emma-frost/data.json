@@ -5,7 +5,7 @@
   "description": "For Emma Frost, war is the purest form of art. With her formidable telepathic abilities, she intricately weaves a deadly mental web that ensnares her foes, while her indestructible diamond form lets her lead her teammates fearlessly into the fray. Forever elegant and composed, Emma reigns as the one true queen of the battlefield!",
   "lore": "Emma Frost is a wealthy socialite, a fashion icon, and a powerful telepath. Though she once used her Mutant abilities to influence others for her own personal gain, she now devotes her talents to Charles Xavier's dream of coexistence between Mutants and mankind. After Krakoa was transported to the year 2099 through a temporal storm, Emma and her Hellfire Trading Company defended the island nation against multiple hostile corporations. She then convinced the Quiet Council to approve a new Hellfire Gala to chart her people's future in this new timeline.",
   "base_stats": {
-    "Health": "600",
+    "Health": "650",
     "Movement Speed": "6m/s"
   },
   "portraits": [
@@ -16,7 +16,7 @@
     {
       "name": "Emma Frost",
       "stats": {
-        "Health": "600",
+        "Health": "650",
         "Movement Speed": "6m/s"
       },
       "images": [

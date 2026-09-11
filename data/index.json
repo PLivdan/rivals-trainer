@@ -192,6 +192,18 @@
     "dir": "heroes/gambit"
   },
   {
+    "name": "GORR THE GOD BUTCHER",
+    "slug": "gorr-the-god-butcher",
+    "role": "DUELIST",
+    "uuid": "3cd78727-99d9-41a9-ab1c-0dc5e80451c0",
+    "abilities": 7,
+    "team_ups": [
+      "Ragnarök",
+      "Hive Mind"
+    ],
+    "dir": "heroes/gorr-the-god-butcher"
+  },
+  {
     "name": "GROOT",
     "slug": "groot",
     "role": "VANGUARD",
